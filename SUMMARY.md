@@ -58,14 +58,14 @@
 
 ## 网络图模型
 
-* [网络图模型](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/README.md)
-  * [大规模图处理](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/README.md)
-    * [社区检测与搜索](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/community-detection.md)
-    * [中心度分析](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/centrality-analysis.md)
-    * [网络形成模型](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/modeling-of-network-formation.md)
-    * [异构信息网络](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/heterogeneous-network.md)
-  * [网络映射](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/wang-luo-ying-she/README.md)
-    * [结构维持的网络映射](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/wang-luo-ying-she/xin-xi-wang-luo-ying-she.md)
-    * [性质维持的网络映射](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/wang-luo-ying-she/yi-gou-wang-luo-ying-she.md)
-    * [动态网络映射](wang-luo-tu-mo-xing-1/wang-luo-tu-mo-xing/wang-luo-ying-she/dong-tai-wang-luo-ying-she.md)
+* [网络图模型](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/README.md)
+  * [大规模图处理](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/README.md)
+    * [社区检测与搜索](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/community-detection.md)
+    * [中心度分析](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/centrality-analysis.md)
+    * [网络形成模型](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/modeling-of-network-formation.md)
+    * [异构信息网络](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/heterogeneous-network.md)
+  * [网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/README.md)
+    * [结构维持的网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/xin-xi-wang-luo-ying-she.md)
+    * [性质维持的网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/yi-gou-wang-luo-ying-she.md)
+    * [动态网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/dong-tai-wang-luo-ying-she.md)
 
