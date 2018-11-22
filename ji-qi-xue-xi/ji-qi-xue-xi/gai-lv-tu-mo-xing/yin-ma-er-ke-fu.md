@@ -276,5 +276,9 @@ $$A =  \left[  \begin{matrix} 0.5\ \ \  \ 0.2\ \ \ \ 0.3\\ 0.3\ \ \  \ 0.5\ \ \ 
 
                                                          $$P(x)=\frac{1}{Z}\prod\limits_{Q\in\mathcal{C}}\psi_Q(x_Q)$$ 
 
+## Source
+
+{% embed url="https://www.zhihu.com/question/35866596/answer/236886066" %}
+
 
 
