@@ -2,6 +2,8 @@
 
 ![](../../../.gitbook/assets/v2-714c1843f78b6aecdb0c57cdd08e1c6a_hd.jpg)
 
+![](../../../.gitbook/assets/v2-376fd85a490e161978130ddd759244d4_hd.jpg)
+
 ## [有向图vs.无向图](https://www.zhihu.com/question/35866596/answer/236886066)
 
 上图可以看到，贝叶斯网络（信念网络）都是有向的，马尔科夫网络无向。所以，贝叶斯网络适合为有单向依赖的数据建模，马尔科夫网络适合实体之间互相依赖的建模。具体地，他们的核心差异表现在如何求 ![P=\(Y\)](https://www.zhihu.com/equation?tex=P%3D%28Y%29) ，即怎么表示 ![Y=&#xFF08;y\_{1},\cdots,y\_{n}&#xFF09;](https://www.zhihu.com/equation?tex=Y%3D%EF%BC%88y_%7B1%7D%2C%5Ccdots%2Cy_%7Bn%7D%EF%BC%89) 这个的联合概率。
