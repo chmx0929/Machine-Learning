@@ -123,7 +123,31 @@ _AdaBoost的训练误差界_：AdaBoost算法最终分类器的训练误差界�
 
 #### 证明：
 
-当
+（1）当 $$G(x_i)\neq y_i$$ 时，不等式左边每个误分权值为 $$1$$ ，不等式右边因为 $$y_if(x_i)<0$$ ，所以每个误分权值 $$\exp(-y_if(x_i))\geq1$$  ，所以不等式 $$\frac{1}{N}\sum\limits_{i=1}^NI(G(x_i)\neq y_i)\leq\frac{1}{N}\sum\limits_{i}\exp(-y_if(x_i))$$ 得证
+
+（2）证等式部分 $$\frac{1}{N}\sum\limits_{i}\exp(-y_if(x_i))=\prod\limits_mZ_m$$
+
+                                $$\frac{1}{N}\sum\limits_{i}\exp(-y_if(x_i))$$
+
+                                  $$=\frac{1}{N}\sum\limits_{i}\exp(-\sum\limits_{m=1}^M\alpha_my_iG_m(x_i))$$ 
+
+由$$w_{m+1,i}=\frac{w_{mi}}{Z_m}\exp(-\alpha_my_iG_m(x_i)),\ \ \ i=1,2,\dots,N$$和$$Z_m=\sum\limits_{i=1}^Nw_{mi}\exp(-\alpha_my_iG_m(x_i))$$ 
+
+                代入移项得到 $$w_{mi}\exp(-\alpha_my_iG_m(x_i))=Z_mw_{m+1,i}$$ ，代入需要证明式子得
+
+                                  $$=\sum\limits_iw_{1i}\prod\limits_{m=1}^M\exp(-\alpha_my_iG_m(x_i))$$ 
+
+                                  $$=Z_1\sum\limits_iw_{2i}\prod\limits_{m=2}^M\exp(-\alpha_my_iG_m(x_i))$$ 
+
+                                  $$=Z_1Z_2\sum\limits_iw_{3i}\prod\limits_{m=3}^M\exp(-\alpha_my_iG_m(x_i))$$ 
+
+                                                         ... ...
+
+                                  $$=Z_1Z_2\dots Z_{M-1}\sum\limits_iw_{Mi}\exp(-\alpha_My_iG_M(x_i))$$ 
+
+                                  $$=\prod\limits_{m=1}^MZ_m$$ 
+
+这一定理说明，可以再每一轮选取适当的 $$G_m$$ 使得 $$Z_m$$ 最小，从而使训练误差下降最快。
 
 
 
