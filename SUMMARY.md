@@ -16,6 +16,7 @@
   * [数据预分析](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-ji-zhi-biao.md)
   * [数据预处理](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/README.md)
     * [数据降维](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/shu-ju-jiang-wei.md)
+    * [特征选择](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/te-zheng-xuan-ze.md)
   * [模式挖掘](shu-ju-wa-jue/shu-ju-wa-jue/mo-shi-wa-jue.md)
   * [聚类分析](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi.md)
   * [文本挖掘](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue.md)
