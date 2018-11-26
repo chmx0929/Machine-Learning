@@ -17,12 +17,14 @@
   * [数据预处理](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/README.md)
     * [数据降维](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/shu-ju-jiang-wei.md)
   * [模式挖掘](shu-ju-wa-jue/shu-ju-wa-jue/mo-shi-wa-jue.md)
+  * [聚类分析](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi.md)
   * [文本挖掘](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue.md)
 
 ## 机器学习
 
 * [机器学习](ji-qi-xue-xi/ji-qi-xue-xi/README.md)
   * [模型评估与选择](ji-qi-xue-xi/ji-qi-xue-xi/mo-xing-ping-gu-yu-xuan-ze-1.md)
+  * [EM算法及推广](ji-qi-xue-xi/ji-qi-xue-xi/em-suan-fa-ji-tui-guang.md)
   * [线性模型](ji-qi-xue-xi/ji-qi-xue-xi/xian-xing-mo-xing.md)
   * [决策树模型](ji-qi-xue-xi/ji-qi-xue-xi/jue-ce-shu-mo-xing.md)
   * [支持向量机](ji-qi-xue-xi/ji-qi-xue-xi/zhi-chi-xiang-liang-ji.md)
@@ -36,6 +38,7 @@
       * [LightGBM](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/boosting/lightgbm.md)
     * [结合策略](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/jie-he-ce-lve.md)
   * [概率图模型](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/README.md)
+    * [贝叶斯网络](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/bei-ye-si-wang-luo.md)
     * [隐马尔可夫](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/yin-ma-er-ke-fu.md)
     * [条件随机场](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/tiao-jian-sui-ji-chang.md)
 
