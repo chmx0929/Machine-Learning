@@ -36,11 +36,11 @@
       * [XGBoost](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/boosting/xgboost.md)
       * [LightGBM](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/boosting/lightgbm.md)
     * [结合策略](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/jie-he-ce-lve.md)
-  * [EM算法及推广](ji-qi-xue-xi/ji-qi-xue-xi/em-suan-fa-ji-tui-guang.md)
   * [概率图模型](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/README.md)
     * [贝叶斯网络](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/bei-ye-si-wang-luo.md)
     * [隐马尔可夫](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/yin-ma-er-ke-fu.md)
     * [条件随机场](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/tiao-jian-sui-ji-chang.md)
+  * [EM算法](ji-qi-xue-xi/ji-qi-xue-xi/em-suan-fa.md)
 
 ## 深度学习
 
