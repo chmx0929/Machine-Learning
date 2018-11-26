@@ -24,7 +24,6 @@
 
 * [机器学习](ji-qi-xue-xi/ji-qi-xue-xi/README.md)
   * [模型评估与选择](ji-qi-xue-xi/ji-qi-xue-xi/mo-xing-ping-gu-yu-xuan-ze-1.md)
-  * [EM算法及推广](ji-qi-xue-xi/ji-qi-xue-xi/em-suan-fa-ji-tui-guang.md)
   * [线性模型](ji-qi-xue-xi/ji-qi-xue-xi/xian-xing-mo-xing.md)
   * [决策树模型](ji-qi-xue-xi/ji-qi-xue-xi/jue-ce-shu-mo-xing.md)
   * [支持向量机](ji-qi-xue-xi/ji-qi-xue-xi/zhi-chi-xiang-liang-ji.md)
@@ -37,6 +36,7 @@
       * [XGBoost](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/boosting/xgboost.md)
       * [LightGBM](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/boosting/lightgbm.md)
     * [结合策略](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/jie-he-ce-lve.md)
+  * [EM算法及推广](ji-qi-xue-xi/ji-qi-xue-xi/em-suan-fa-ji-tui-guang.md)
   * [概率图模型](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/README.md)
     * [贝叶斯网络](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/bei-ye-si-wang-luo.md)
     * [隐马尔可夫](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/yin-ma-er-ke-fu.md)
