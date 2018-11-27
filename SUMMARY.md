@@ -8,7 +8,8 @@
   * [线性代数](shu-xue-ji-chu/shu-xue-ji-chu/xian-xing-dai-shu.md)
   * [概率统计](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji.md)
   * [时间序列](shu-xue-ji-chu/shu-xue-ji-chu/shi-jian-xu-lie.md)
-  * [估参优化](shu-xue-ji-chu/shu-xue-ji-chu/gu-can-you-hua.md)
+  * [参数估计](shu-xue-ji-chu/shu-xue-ji-chu/can-shu-gu-ji.md)
+  * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti.md)
 
 ## 数据挖掘
 
@@ -41,7 +42,6 @@
     * [贝叶斯网络](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/bei-ye-si-wang-luo.md)
     * [隐马尔可夫](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/yin-ma-er-ke-fu.md)
     * [条件随机场](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/tiao-jian-sui-ji-chang.md)
-  * [EM算法](ji-qi-xue-xi/ji-qi-xue-xi/em-suan-fa.md)
 
 ## 深度学习
 
