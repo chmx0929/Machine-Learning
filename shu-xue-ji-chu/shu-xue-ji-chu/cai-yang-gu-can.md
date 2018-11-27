@@ -1,8 +1,20 @@
-# 参数估计
+# 采样估参
+
+## 采样方法
+
+### 接受-拒绝抽样\(Acceptance-Rejection Sampling\)
+
+### 重要性抽样\(Importance sampling\)
+
+### MCMC——Metropolis-Hasting
+
+### 吉布斯采样\(MCMC—Gibbs Sampling\)
+
+## 参数估计
 
 根据一系列独立样本 $$X=\{x_1,x_2, \dots , x_N\}$$，以及模型 $$P(X;\theta)$$，找到参数 $$\theta$$ 
 
-## [最大似然估计\(Maximum likelihood estimation\)](https://www.jianshu.com/p/f1d3906e4a3e)
+### [最大似然估计\(Maximum likelihood estimation\)](https://www.jianshu.com/p/f1d3906e4a3e)
 
         $$P(X;\theta) = P(x_1,x_2,\dots,x_N;\theta) = \prod \limits_i P(x_i;\theta)$$
 
@@ -70,7 +82,7 @@ $$\to \theta_{ML} = \mathop{argmax}\limits_\theta \prod\limits_i P(x_i;\theta)$$
 
 4. 求解模型中参数的最优值。
 
-## [最大后验概率估计\(Maximum a posteriori\)](https://www.cnblogs.com/liliu/archive/2010/11/24/1886110.html)
+### [最大后验概率估计\(Maximum a posteriori\)](https://www.cnblogs.com/liliu/archive/2010/11/24/1886110.html)
 
 假设有五个袋子，各袋中都有无限量的饼干\(樱桃口味或柠檬口味\)，已知五个袋子中两种口味的比例分别是
 
@@ -96,7 +108,7 @@ $$\to \theta_{ML} = \mathop{argmax}\limits_\theta \prod\limits_i P(x_i;\theta)$$
 
  根据题意的描述可知， $$p$$ 的取值分别为0,25%, 50%, 75%, 1， $$g$$ 的取值分别为0.1, 0.2, 0.4, 0.2, 0.1.分别计算出 $$MAP$$ 函数的结果为：0, 0.0125, 0.125, 0.28125, 0.1.由上可知，通过 $$MAP$$ 估计可得结果是从第四个袋子中取得的最高。
 
-## EM算法\(Expectation–maximization Algorithm\)
+### EM算法\(Expectation–maximization Algorithm\)
 
 EM算法是一种迭代算法，用于含有隐变量的概率模型参数的极大似然估计，或极大后验概率估计。EM算法的每次迭代由两步组成：E步：求期望\(Expectation\)；M步求极大\(Maximization\)。
 
