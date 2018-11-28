@@ -8,7 +8,7 @@
   * [线性代数](shu-xue-ji-chu/shu-xue-ji-chu/xian-xing-dai-shu.md)
   * [概率统计](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji.md)
   * [时间序列](shu-xue-ji-chu/shu-xue-ji-chu/shi-jian-xu-lie.md)
-  * [采样估参](shu-xue-ji-chu/shu-xue-ji-chu/cai-yang-gu-can.md)
+  * [参数估计](shu-xue-ji-chu/shu-xue-ji-chu/can-shu-gu-ji.md)
   * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti.md)
 
 ## 数据挖掘

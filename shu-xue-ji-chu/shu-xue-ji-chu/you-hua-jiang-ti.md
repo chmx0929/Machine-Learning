@@ -1,6 +1,6 @@
 # 优化降梯
 
-这里介绍机器学习常用优化算法，先无约束\(梯度下降、牛顿、拟牛顿\(DFP、BFGS\)、坐标下降、最小二乘\)，后有约束\(拉格朗日、KKT、线性规划、二次规划、半正定规划、\)。深度学习中常用的优化\(SGD、Momentum、NAG、Adagrad、Aadadelta、Rmsprop\)我放到深度学习章节。
+这里介绍机器学习常用优化算法，先无约束\(梯度下降、牛顿、拟牛顿\(DFP、BFGS\)、坐标下降、最小二乘\)，后有约束\(拉格朗日、KKT、线性规划、二次规划、半正定规划\)。深度学习中常用的优化\(SGD、Momentum、NAG、Adagrad、Aadadelta、Rmsprop\)我放到深度学习章节。
 
 ## 梯度下降法\(Gradient descent\)
 
