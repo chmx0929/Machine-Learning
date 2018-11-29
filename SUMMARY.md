@@ -10,6 +10,7 @@
   * [时间序列](shu-xue-ji-chu/shu-xue-ji-chu/shi-jian-xu-lie.md)
   * [参数估计](shu-xue-ji-chu/shu-xue-ji-chu/can-shu-gu-ji.md)
   * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti.md)
+  * [随机采样](shu-xue-ji-chu/shu-xue-ji-chu/sui-ji-cai-yang.md)
 
 ## 数据挖掘
 
