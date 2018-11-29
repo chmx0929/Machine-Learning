@@ -160,6 +160,10 @@ $$P(+)cost=\frac{p\times cost_{01}}{p\times cost{01} + (1-p)\times cost_{10}}$$ 
 
                                                                       $$\tau_t = \frac{\sqrt{k}(\mu-\epsilon_0)}{\sigma}$$ 
 
+下图为服从自由度为 $$k-1$$ 的t分布，其中 $$k = 10$$ 
+
+![](../../.gitbook/assets/v2-972478b7a55121dda9681c7174fc2cf1_hd.png)
+
 ### 交叉验证t检验
 
 ### McNemar检验
