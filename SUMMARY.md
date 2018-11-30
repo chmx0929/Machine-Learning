@@ -1,6 +1,6 @@
 # Table of contents
 
-* [目录](README.md)
+* [简介](README.md)
 
 ## 数学基础
 
