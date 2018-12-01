@@ -14,7 +14,7 @@ GitBook地址：[https://chmx0929.gitbook.io/machine-learning](https://chmx0929.
 
 [Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)
 
-以及[机器之心](https://www.jiqizhixin.com/)、知乎、博客
+以及[机器之心](https://www.jiqizhixin.com/)、知乎、博客和各算法paper
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
