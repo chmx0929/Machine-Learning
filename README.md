@@ -10,7 +10,7 @@ GitBook地址：[https://chmx0929.gitbook.io/machine-learning](https://chmx0929.
 
 [Deep Learning\(Goodfellow Ian\)](http://item.jd.com/12128543.html)
 
-[数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)
+[数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理\(宗成庆\)](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)
 
 [Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)
 
