@@ -47,6 +47,13 @@
 ## 深度学习
 
 * [深度学习](shen-du-xue-xi/shen-du-xue-xi/README.md)
+  * [深度前馈网络](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/README.md)
+    * [非线性的学习](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/fei-xian-xing-de-xue-xi.md)
+    * [基于梯度的学习](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/ji-yu-ti-du-de-xue-xi.md)
+  * [深度学习正则化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua.md)
+  * [深度学习优化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua.md)
+  * [卷积网络](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo.md)
+  * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo.md)
   * [计算机视觉](shen-du-xue-xi/shen-du-xue-xi/ji-suan-ji-shi-jue-1/README.md)
     * [基础结构](shen-du-xue-xi/shen-du-xue-xi/ji-suan-ji-shi-jue-1/ji-chu-jie-gou.md)
 
