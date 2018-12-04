@@ -44,6 +44,14 @@ Continuous Bag-of-Word\(CBOW\)顾名思义，即连续词袋模型，即文本�
 
 更新隐藏层到输出层权重：
 
+首先，我们计算第 $$j$$ 个输出单元的输入 $$u_j$$ 在 $$E$$ 的导数：
+
+                                                              $$\frac{\partial E}{\partial u_j}=y_j-t_j:=e_j$$ 
+
+其中 $$t_j=1$$ 只有在第 $$j$$ 个输出单元确实是我们输入词的下一个词向量 $$y$$ ，否则为 $$0$$ 。
+
+### Multi-word context
+
 ## Source
 
 {% embed url="https://arxiv.org/pdf/1411.2738.pdf" %}
