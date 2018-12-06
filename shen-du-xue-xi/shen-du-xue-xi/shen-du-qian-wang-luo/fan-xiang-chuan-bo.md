@@ -24,6 +24,30 @@
 
 ## 反向传播
 
+在进行DNN反向传播算法前，我们需要选择一个损失函数，来度量训练样本计算出的输出和真实的训练样本输出之间的损失。DNN可选择的损失函数有不少，为了专注算法，这里我们使用最常见的均方差来度量损失。当然，针对不同的任务，可以选择不同的损失函数。即对于每个样本，我们期望最小化下式：
+
+                                                             $$J(W,b,x,y)=\frac{1}{2}||a^{(L)}-y||_2^2$$ 
+
+其中， $$a^{(L)}$$ 和 $$y$$ 为 $$n_{out}$$ 维度的向量，而 $$||S||_2$$ 为 $$S$$ 的 $$L_2$$ 范数。损失函数有了，现在我们开始用梯度下降法迭代求解每一层的 $$W$$ 和 $$b$$ 
+
+#### 第一步
+
+首先是输出层（第 $$L$$ 层）。输出层的 $$W$$ 和 $$b$$ 满足下式：
+
+                                                      $$a^{(L)}=\sigma(z^{(L)})=\sigma(W^{(L)}a^{(L-1)}+b^{(L)})$$ 
+
+这样对于输出层的参数，我们的损失函数变为：
+
+                              $$J(W,b,x,y)=\frac{1}{2}||a^{(L)}-y||_2^2=\frac{1}{2}||\sigma(W^{(L)}a^{(L-1)}+b^{(L)})-y||_2^2$$ 
+
+这样求解 $$W$$ 和 $$b$$ 的梯度就简单了：
+
+      $$\frac{\partial J(W,b,x,y)}{\partial W^{(L)}}=\frac{\partial J(W,b,x,y)}{\partial a^{(L)}}\frac{\partial a^{(L)}}{\partial W^{(L)}}=\frac{\partial J(W,b,x,y)}{\partial a^{(L)}}\frac{\partial a^{(L)}}{\partial z^{(L)}}\frac{\partial z^{(L)}}{\partial W^{(L)}}=(a^{(L)}-y)\odot\sigma'(z^{(L)})(a^{(L-1)})^T$$ 
+
+          $$\frac{\partial J(W,b,x,y)}{\partial b^{(L)}}=\frac{\partial J(W,b,x,y)}{\partial a^{(L)}}\frac{\partial a^{(L)}}{\partial b^{(L)}}=\frac{\partial J(W,b,x,y)}{\partial a^{(L)}}\frac{\partial a^{(L)}}{\partial z^{(L)}}\frac{\partial z^{(L)}}{\partial b^{(L)}}=(a^{(L)}-y)\odot\sigma'(z^{(L)})$$ 
+
+上面式子前两项之所以是Hadamard积（ $$\odot$$ ）
+
 ## Source
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/84666595" %}

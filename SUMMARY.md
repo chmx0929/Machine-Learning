@@ -53,6 +53,7 @@
     * [基于梯度的学习](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/ji-yu-ti-du-de-xue-xi.md)
     * [隐藏单元](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/yin-cang-dan-yuan.md)
     * [架构设计](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/jia-gou-she-ji.md)
+    * [前向传播](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/qian-xiang-chuan-bo.md)
     * [反向传播](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/fan-xiang-chuan-bo.md)
   * [深度学习正则化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua.md)
   * [深度学习优化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua.md)
