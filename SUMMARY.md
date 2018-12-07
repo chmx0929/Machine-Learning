@@ -71,7 +71,9 @@
   * [命名实体识别](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ming-ming-shi-ti-shi-bie.md)
   * [关键词提取](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/guan-jian-ci-ti-qu.md)
   * [句法分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ju-fa-fen-xi.md)
-  * [文本向量化](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua.md)
+  * [文本向量化](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/README.md)
+    * [Continuous Bag-of-Word](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/continuous-bag-of-word.md)
+    * [Skip-Gram](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/skip-gram.md)
   * [情感分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi.md)
 
 ## 网络图模型
