@@ -136,5 +136,7 @@ $$(a^{(L-1)})^T$$ 在第一个式子的最后是因为若 $$Y=WX+B$$ ，那么 $
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/84666595" %}
 
+{% embed url="https://arxiv.org/pdf/1411.2738.pdf" %}
+
 
 
