@@ -204,11 +204,55 @@ Negative Sampling就是这么一种求解word2vec模型的方法，它摒弃了�
 
 既然名字叫Negative Sampling（负采样），那么肯定使用了采样的方法。
 
-比如我们有一个训练样本，中心词是 $$w$$ ，它周围上下文共有 $$2c$$ 个词，记为Context\(w\)。由于这个中心词 $$w$$ 的确和Context\(w\)相关存在，因此它是一个真实的正例。通过Negative Sampling采样，我们可以得到 $$n$$ 个和 $$w$$ 不同的中心词 $$w_i,i=1,2,\dots,n$$ ，这样Context\(w\)和
+比如我们有一个训练样本，中心词是 $$w$$ ，它周围上下文共有 $$2c$$ 个词，记为Context\(w\)。由于这个中心词 $$w$$ 的确和Context\(w\)相关存在，因此它是一个真实的正例。通过Negative Sampling采样，我们可以得到 $$n$$ 个和 $$w$$ 不同的中心词 $$w_i,i=1,2,\dots,n$$ ，这样Context\(w\)和 $$w_i$$ 就组成了 $$n$$ 个并不真实存在的负例。利用这一个正例和 $$n$$ 个负例，我们进行二元逻辑回归，得到负采样对应每个词 $$w_i$$ 对应的模型参数 $$\theta_i$$ ，和每个词的词向量。
+
+从上面的描述可以看出，Negative Sampling由于没有采用霍夫曼树，每次只是通过采样 $$n$$ 个不同的中心词做负例，就可以训练模型，因此整个过程要比Hierarchical Softmax简单。我们只需要弄明白两个问题：
+
+                 （1）如果通过一个正例和neg个负例进行二元逻辑回归
+
+                 （2） 如何进行负采样
 
 ### 基于Negative Sampling的模型梯度计算
 
+Negative Sampling也是采用了二元逻辑回归来求解模型参数，通过负采样，我们得到了 $$n$$ 个负例 $$(Context(w), w_i),i=1,2,\dots,n$$ ，为了统一描述，我们将正例定义为 $$w_0$$ 
+
+在逻辑回归中，我们的正例应该期望满足：
+
+                                 $$P(Context(w_0),w_i)=\sigma(x_{w_0}^T\theta^{w_i}),\ y_i=1,\ i=0$$ 
+
+我们的负例期望满足：
+
+                                $$P(Context(w_0),w_i)=\sigma(x_{w_0}^T\theta^{w_i}),\ y_i=0,\ i=1,2,\dots,n$$ 
+
+我们期望可以最大化下式：
+
+                                $$\prod\limits_{i=0}^nP(Context(w_0),w_i)=\sigma(x_{w_0}^T\theta^{w_0})\prod\limits_{i=1}^n(1-\sigma(x_{w_0}^T\theta^{w_i}))$$ 
+
+利用逻辑回归和上一章的内容，我们容易写出此时模型的似然函数（因为只有1个正例）：
+
+                                                $$\prod\limits_{i=0}^n\sigma(x_{w_0}^T\theta^{w_i})^{y_i}(1-\sigma(x_{w_0}^T\theta^{w_i}))^{1-y_i}$$ 
+
+此时对应的对数似然函数为
+
+                                 $$L = \sum\limits_{i=0}^ny_i\log(\sigma(x_{w_0}^T\theta^{w_i}))+(1-y_i)\log(1-\sigma(x_{w_0}^T\theta^{w_i}))$$ 
+
+和Hierarchical Softmax类似，我们采用随机梯度上升法，仅仅每次只用一个样本更新梯度，来进行迭代更新得到我们需要的 $$x_{w_i},\theta^{w_i},i=0,1,\dots,n$$ ，这里我们需要求出 $$x_{w_i},\theta^{w_i},i=0,1,\dots,n$$ 的梯度：
+
+首先我们计算 $$\theta^{w_i}$$ 的梯度：
+
+                                    $$\frac{\partial L}{\partial \theta^{w_i}} = y_i(1-\sigma(x_{w_0}^T\theta^{w_i}))x_{w_0}-(1-y_i)\sigma(x_{w_0}^T\theta^{w_i})x_{w_0}$$ 
+
+                                              $$ = (y_i-\sigma(x_{w_0}^T\theta^{w_i}))x_{w_0}$$ 
+
+同样的方法，我们可以求出 $$x_{w_0}$$ 的梯度如下：
+
+                                           $$\frac{\partial L}{\partial x^{w_0}}=\sum\limits_{i=0}^n(y_i-\sigma(x_{w_0}^T\theta^{w_i}))\theta^{w_i}$$ 
+
+有了梯度表达式，我们就可以用梯度上升法进行迭代来一步步的求解我们需要的 $$x_{w_i},\theta^{w_i},i=0,1,\dots,n$$ 
+
 ### Negative Sampling负采样方法
+
+word2vec采样的方法并不复杂，如果词汇表的大小为 $$V$$ ，那么我们就将一段长度为 $$1$$ 的线段分成 $$V$$ 份，每份对应词汇表中的一个词。当然每个词对应的线段长度是不一致的，高频词对应的线段长，低频次对应的线段短。每个词 $$w$$ 的线段长度由下式决定
 
 ### 基于Negative Sampling的CBOW模型
 
