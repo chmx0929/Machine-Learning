@@ -57,6 +57,7 @@
     * [反向传播](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/fan-xiang-chuan-bo.md)
   * [深度学习正则化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/README.md)
     * [参数范数惩罚](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/can-shu-fan-shu-cheng-fa.md)
+    * [作为约束的范数惩罚](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/zuo-wei-yue-shu-de-fan-shu-cheng-fa.md)
   * [深度学习优化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua.md)
   * [卷积网络](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo.md)
   * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo.md)
