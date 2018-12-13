@@ -52,7 +52,29 @@ Bagging集成必须根据所有成员的累积投票做一个预测。在这种�
 
 集成预测器被定义为重新标准化所有集成成员预测的几何平均：
 
-                                                     $$P_{ensemble}(y=y|v)=\frac{\tilde{P}_{ensemble}(y=y|v)}{\sum\limits_{y'}\tilde{P}_{ensemble(y=y'|v)}}$$ 
+                                                     $$P_{ensemble}(y=y|v)=\frac{\tilde{P}_{ensemble}(y=y|v)}{\sum\limits_{y'}\tilde{P}_{ensemble(y=y'|v)}}$$
 
+其中
 
+                                         $$\tilde{P}_{ensemble}(y=y|v)=\sqrt[2^n]{\prod\limits_{d\in \{0,1\}^n}P(y=y|v;d)}$$ 
+
+为了证明权重比例推断规则是精确的，我们简化 $$\tilde{P}_{ensemble}$$ ：
+
+                                        $$\tilde{P}_{ensemble}(y=y|v)=\sqrt[2^n]{\prod\limits_{d\in \{0,1\}^n}P(y=y|v;d)}$$ 
+
+                                                        $$=\sqrt[2^n]{\prod_{d\in\{0,1\}^n}softmax(W^T(d\odot v)+b)_y}$$ 
+
+                                                        $$=\sqrt[2^n]{\prod_{d\in\{0,1\}^n}\frac{\exp(W^T_{y,:}(d\odot v)+b_y)}{\sum\limits_{y'}\exp(W^T_{y',:}(d\odot v)+b_{y'}}}$$ 
+
+                                                        $$=\frac{\sqrt[2^n]{\prod_{d\in\{0,1\}^n}\exp(W^T_{y,:}(d\odot v)+b_y)}}{\sqrt[2^n]{\prod_{d\in\{0,1\}^n}\sum\limits_{y'}\exp(W^T_{y',:}(d\odot v)+b_{y'})}}$$ 
+
+由于 $$\tilde{P}$$ 将被标准化，我们可以放心地忽略那些相对 $$y$$ 不变的乘法：
+
+                                        $$\tilde{P}_{ensemble}(y=y|v)\propto \sqrt[2^n]{\prod\limits_{d\in\{0,1\}^n}\exp(W^T_{y,:}(d\odot v)+b_y)}$$ 
+
+                                                                              $$ = \exp(\frac{1}{2^n}\sum\limits_{d\in \{0,1\}^n}W^T_{y,:}(d\odot v)+b_y)$$ 
+
+                                                                               $$=\exp(\frac{1}{2}W^T_{y,:}v+b_y)$$ 
+
+将其代入 $$P_{ensemble}(y=y|v)=\frac{\tilde{P}_{ensemble}(y=y|v)}{\sum\limits_{y'}\tilde{P}_{ensemble(y=y'|v)}}$$
 
