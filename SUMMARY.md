@@ -9,9 +9,10 @@
   * [概率统计](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji.md)
   * [时间序列](shu-xue-ji-chu/shu-xue-ji-chu/shi-jian-xu-lie.md)
   * [参数估计](shu-xue-ji-chu/shu-xue-ji-chu/can-shu-gu-ji.md)
-  * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti.md)
+  * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/README.md)
+    * [Jacobian和Hessian矩阵](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/jacobian-he-hessian-ju-zhen.md)
   * [信息理论](shu-xue-ji-chu/shu-xue-ji-chu/xin-xi-li-lun.md)
-  * [随机采样](shu-xue-ji-chu/shu-xue-ji-chu/sui-ji-cai-yang.md)
+  * [随机算法](shu-xue-ji-chu/shu-xue-ji-chu/sui-ji-suan-fa.md)
 
 ## 数据挖掘
 
@@ -70,7 +71,8 @@
     * [Dropout](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/dropout.md)
     * [对抗训练](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/dui-kang-xun-lian.md)
     * [切面距离、正切传播和流形正切分类器](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/qie-mian-ju-li-zheng-qie-chuan-bo-he-liu-xing-zheng-qie-fen-lei-qi.md)
-  * [深度学习优化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua.md)
+  * [深度学习优化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/README.md)
+    * [学习和纯优化异同](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/xue-xi-he-chun-you-hua-yi-tong.md)
   * [卷积网络](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo.md)
   * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo.md)
   * [计算机视觉](shen-du-xue-xi/shen-du-xue-xi/ji-suan-ji-shi-jue-1/README.md)
