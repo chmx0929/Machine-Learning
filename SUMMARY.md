@@ -73,6 +73,7 @@
     * [切面距离、正切传播和流形正切分类器](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/qie-mian-ju-li-zheng-qie-chuan-bo-he-liu-xing-zheng-qie-fen-lei-qi.md)
   * [深度学习优化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/README.md)
     * [学习和纯优化异同](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/xue-xi-he-chun-you-hua-yi-tong.md)
+    * [神经网络优化中的挑战](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/shen-jing-wang-luo-you-hua-zhong-de-tiao-zhan.md)
   * [卷积网络](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo.md)
   * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo.md)
   * [计算机视觉](shen-du-xue-xi/shen-du-xue-xi/ji-suan-ji-shi-jue-1/README.md)
