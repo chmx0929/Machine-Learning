@@ -74,6 +74,7 @@
   * [深度学习优化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/README.md)
     * [学习和纯优化异同](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/xue-xi-he-chun-you-hua-yi-tong.md)
     * [神经网络优化中的挑战](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/shen-jing-wang-luo-you-hua-zhong-de-tiao-zhan.md)
+    * [基本算法](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/ji-ben-suan-fa.md)
   * [卷积网络](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo.md)
   * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo.md)
   * [计算机视觉](shen-du-xue-xi/shen-du-xue-xi/ji-suan-ji-shi-jue-1/README.md)
