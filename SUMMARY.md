@@ -76,7 +76,7 @@
     * [神经网络优化中的挑战](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/shen-jing-wang-luo-you-hua-zhong-de-tiao-zhan.md)
     * [优化算法](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/you-hua-suan-fa.md)
     * [参数初始化策略](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/can-shu-chu-shi-hua-ce-lve.md)
-    * [Untitled](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/untitled.md)
+    * [优化策略和元算法](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-you-hua/untitled.md)
   * [卷积网络](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo.md)
   * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo.md)
   * [计算机视觉](shen-du-xue-xi/shen-du-xue-xi/ji-suan-ji-shi-jue-1/README.md)
