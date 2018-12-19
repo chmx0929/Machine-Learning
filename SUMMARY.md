@@ -10,6 +10,7 @@
   * [时间序列](shu-xue-ji-chu/shu-xue-ji-chu/shi-jian-xu-lie.md)
   * [参数估计](shu-xue-ji-chu/shu-xue-ji-chu/can-shu-gu-ji.md)
   * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/README.md)
+    * [极大、极小和鞍点](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/ji-da-ji-xiao-he-an-dian.md)
     * [Jacobian和Hessian矩阵](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/jacobian-he-hessian-ju-zhen.md)
   * [信息理论](shu-xue-ji-chu/shu-xue-ji-chu/xin-xi-li-lun.md)
   * [随机算法](shu-xue-ji-chu/shu-xue-ji-chu/sui-ji-suan-fa.md)
