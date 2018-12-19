@@ -2,6 +2,10 @@
 
 GitBook地址：[https://chmx0929.gitbook.io/machine-learning](https://chmx0929.gitbook.io/machine-learning)
 
+eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/eBooks)
+
+若有问题欢迎在GitHub中提Issue讨论：[https://github.com/chmx0929/Machine-Learning](https://github.com/chmx0929/Machine-Learning)
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 各部分内容主要基于以下文献进行整理与进一步阐述推导：
@@ -15,10 +19,6 @@ GitBook地址：[https://chmx0929.gitbook.io/machine-learning](https://chmx0929.
 [Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)
 
 以及[机器之心](https://www.jiqizhixin.com/)、知乎、博客和各算法paper
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-若有问题欢迎在GitHub中提Issue讨论：[https://github.com/chmx0929/Machine-Learning](https://github.com/chmx0929/Machine-Learning)
 
 
 
