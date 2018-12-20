@@ -8,6 +8,8 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 炼丹传送门：[https://github.com/fengdu78/lihang-code](https://github.com/fengdu78/lihang-code) 统计学习方法（李航）
 
+                        [https://github.com/jiqizhixin/ML-Tutorial-Experiment](https://github.com/jiqizhixin/ML-Tutorial-Experiment) 深度学习
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 各部分内容主要基于以下文献进行整理与进一步阐述推导：
