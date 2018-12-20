@@ -1,8 +1,8 @@
-# 计算机视觉
+# 深度学习与计算机视觉
 
 ## **四大任务** <a id="ji-suan-ji-shi-jue-de-si-da-ren-wu"></a>
 
-![](../../../.gitbook/assets/1537685932183%20%281%29.png)
+![](../../.gitbook/assets/1537685932183%20%281%29.png)
 
                                （a）图像层面的目标分类，（b）边界框层面的一般目标检测
 
@@ -10,21 +10,21 @@
 
 ## 主要难题
 
-![](../../../.gitbook/assets/1537685931153.png)
+![](../../.gitbook/assets/1537685931153.png)
 
 ## 框架
 
-![](../../../.gitbook/assets/1537685931633.png)
+![](../../.gitbook/assets/1537685931633.png)
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](../../.gitbook/assets/image%20%281%29.png)
 
-![](../../../.gitbook/assets/tu-pian-3.jpg)
+![](../../.gitbook/assets/tu-pian-3.jpg)
 
-![](../../../.gitbook/assets/1537685930708.png)
+![](../../.gitbook/assets/1537685930708.png)
 
-![&#x91CC;&#x7A0B;&#x7891;&#x68C0;&#x6D4B;&#x6846;&#x67B6; RCNN &#x7684;&#x7EC6;&#x8282;&#x56FE;&#x793A;](../../../.gitbook/assets/1537685931950.png)
+![&#x91CC;&#x7A0B;&#x7891;&#x68C0;&#x6D4B;&#x6846;&#x67B6; RCNN &#x7684;&#x7EC6;&#x8282;&#x56FE;&#x793A;](../../.gitbook/assets/1537685931950.png)
 
-![&#x7528;&#x4E8E;&#x4E00;&#x822C;&#x76EE;&#x6807;&#x68C0;&#x6D4B;&#x7684;&#x9886;&#x5148;&#x6846;&#x67B6;&#x7684;&#x9AD8;&#x5C42;&#x9762;&#x793A;&#x610F;&#x56FE;](../../../.gitbook/assets/1537685932455.png)
+![&#x7528;&#x4E8E;&#x4E00;&#x822C;&#x76EE;&#x6807;&#x68C0;&#x6D4B;&#x7684;&#x9886;&#x5148;&#x6846;&#x67B6;&#x7684;&#x9AD8;&#x5C42;&#x9762;&#x793A;&#x610F;&#x56FE;](../../.gitbook/assets/1537685932455.png)
 
 ## **基础性子问题**
 
@@ -34,15 +34,15 @@
 
  作为任何检测器的主要组件之一，优良的特征表示在目标检测中至关重要。
 
-![](../../../.gitbook/assets/1537685934040%20%281%29.png)
+![](../../.gitbook/assets/1537685934040%20%281%29.png)
 
-![](../../../.gitbook/assets/1537685932592.png)
+![](../../.gitbook/assets/1537685932592.png)
 
-![HyperNet &#x548C; ION &#x7684;&#x6BD4;&#x8F83;&#x3002;LRN &#x662F;&#x6307;&#x5C40;&#x90E8;&#x54CD;&#x5E94;&#x5F52;&#x4E00;&#x5316;](../../../.gitbook/assets/1537685933235.png)
+![HyperNet &#x548C; ION &#x7684;&#x6BD4;&#x8F83;&#x3002;LRN &#x662F;&#x6307;&#x5C40;&#x90E8;&#x54CD;&#x5E94;&#x5F52;&#x4E00;&#x5316;](../../.gitbook/assets/1537685933235.png)
 
-![](../../../.gitbook/assets/1537685935932.png)
+![](../../.gitbook/assets/1537685935932.png)
 
-![](../../../.gitbook/assets/1537685933354.png)
+![](../../.gitbook/assets/1537685933354.png)
 
 ###  **形境建模**
 
@@ -54,9 +54,9 @@
 
 3.    尺寸形境：在场景中目标相对其它物体所存在的尺寸限制。
 
-![&#x4F7F;&#x7528;&#x4E86;&#x5F62;&#x5883;&#x4FE1;&#x606F;&#x7684;&#x68C0;&#x6D4B;&#x5668;&#x6C47;&#x603B;](../../../.gitbook/assets/1537686167060.png)
+![&#x4F7F;&#x7528;&#x4E86;&#x5F62;&#x5883;&#x4FE1;&#x606F;&#x7684;&#x68C0;&#x6D4B;&#x5668;&#x6C47;&#x603B;](../../.gitbook/assets/1537686167060.png)
 
-![&#x80FD;&#x63A2;&#x7D22;&#x5C40;&#x90E8;&#x5468;&#x56F4;&#x5F62;&#x5883;&#x7279;&#x5F81;&#x7684;&#x4EE3;&#x8868;&#x6027;&#x65B9;&#x6CD5;&#xFF1A;MRCNN &#x3001;GBDNet &#x3001;ACCNN &#x548C; CoupleNet](../../../.gitbook/assets/1537685934254.png)
+![&#x80FD;&#x63A2;&#x7D22;&#x5C40;&#x90E8;&#x5468;&#x56F4;&#x5F62;&#x5883;&#x7279;&#x5F81;&#x7684;&#x4EE3;&#x8868;&#x6027;&#x65B9;&#x6CD5;&#xFF1A;MRCNN &#x3001;GBDNet &#x3001;ACCNN &#x548C; CoupleNet](../../.gitbook/assets/1537685934254.png)
 
 ### **检测提议方法**
 
@@ -68,17 +68,17 @@
 
 3.    高效率。
 
-![](../../../.gitbook/assets/1537685937215.png)
+![](../../.gitbook/assets/1537685937215.png)
 
-![](../../../.gitbook/assets/1537685934132.png)
+![](../../.gitbook/assets/1537685934132.png)
 
 ###  **其它特殊问题**
 
-![](../../../.gitbook/assets/1537685935048.png)
+![](../../.gitbook/assets/1537685935048.png)
 
 ##  **数据集和表现评估**
 
-![](../../../.gitbook/assets/1537685935500.png)
+![](../../.gitbook/assets/1537685935500.png)
 
 ## Source
 

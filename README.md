@@ -6,6 +6,8 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 若有问题欢迎在GitHub中提Issue讨论：[https://github.com/chmx0929/Machine-Learning](https://github.com/chmx0929/Machine-Learning)
 
+炼丹传送门：[https://github.com/fengdu78/lihang-code](https://github.com/fengdu78/lihang-code) 统计学习方法（李航）
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 各部分内容主要基于以下文献进行整理与进一步阐述推导：

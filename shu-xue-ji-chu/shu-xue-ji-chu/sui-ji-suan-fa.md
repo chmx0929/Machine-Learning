@@ -21,13 +21,23 @@
 
 ### 蒙特卡罗采样的基础
 
-## 吉布斯采样\(Gibbs sampling\)
+### 逆采样\(Inverse Sampling\)
+
+### 拒绝采样\(Reject Sampling\)
+
+### MCMC采样
+
+### M-H采样
+
+### 吉布斯采样\(Gibbs sampling\)
 
 ## Source
 
 {% embed url="https://www.zhihu.com/question/20254139/answer/33572009" %}
 
 {% embed url="https://www.jiqizhixin.com/articles/061001" %}
+
+{% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/84792383" %}
 
 
 
