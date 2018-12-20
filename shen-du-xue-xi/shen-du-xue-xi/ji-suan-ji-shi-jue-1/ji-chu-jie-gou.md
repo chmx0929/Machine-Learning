@@ -24,7 +24,7 @@
 
 ### 卷积\(Convolution\) <a id="juan-ji-convolution"></a>
 
-![&#x4E8C;&#x7EF4;&#x5377;&#x79EF;&#x793A;&#x610F;&#x56FE;](../../../.gitbook/assets/image%20%282%29.png)
+![&#x4E8C;&#x7EF4;&#x5377;&#x79EF;&#x793A;&#x610F;&#x56FE;](../../../.gitbook/assets/image%20%284%29.png)
 
 ![padding                                                strides                                                        dilation](../../../.gitbook/assets/timline-jie-tu-20180911092534.png)
 

@@ -16,7 +16,7 @@
 
 ![](../../../.gitbook/assets/1537685931633.png)
 
-![](../../../.gitbook/assets/image.png)
+![](../../../.gitbook/assets/image%20%281%29.png)
 
 ![](../../../.gitbook/assets/tu-pian-3.jpg)
 
