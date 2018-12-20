@@ -20,27 +20,21 @@
 
 ### 属性
 
-描述数据的一个特征或特性
-
 #### 非数字类型的属性：
 
-1、Nominal: categories, states, or "names of things" eg.\(blue, red, black...\)
+1、名词性属性：类别状态的数据，或者一类名称（比如，红、绿、蓝）
 
-2、Binary: Nominal attribute with only 2 states\(0 and 1\)
+2、二元性属性：只有 $$2$$ 个状态的数据（比如，男/女）
 
-                    Symmetric binary: both outcomes equally important eg.\(gender - male/female\)
-
-                    Asymmetric binary: outcomes not equally important eg.\(medical test - positive vs. negative\)
-
-3、ordinal: Values have a meaningful order \(ranking\) but magnitude between successive values is not known eg.\(size - {small, medium, large}\)
+3、有序属性：有一定排序含义的数据（比如，小、中、大）
 
 #### 数字类型的属性
 
-1、Quantity \(integer or real-valued\)
+1、数量性属性：整数或实数等
 
-2、Interval: Measured on a scale of equal-sized units, Values have order, No true zero-point eg.\(calendar\)
+2、间隔性属性：基于等间隔测量的属性（比如，日历）
 
-3、Ratio: Inherent zero-point, We can speak of values as being an order of magnitude larger than the unit of measurement eg.\(length\)
+3、比率性属性： 百分比等
 
 ### 离散属性 vs. 连续属性
 

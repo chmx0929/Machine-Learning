@@ -81,6 +81,7 @@
   * [卷积网络](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo/README.md)
     * [卷积运算](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo/juan-ji-yun-suan.md)
     * [卷积动机](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo/juan-ji-dong-ji.md)
+    * [池化](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo/chi-hua.md)
   * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo.md)
   * [计算机视觉](shen-du-xue-xi/shen-du-xue-xi/ji-suan-ji-shi-jue-1/README.md)
     * [基础结构](shen-du-xue-xi/shen-du-xue-xi/ji-suan-ji-shi-jue-1/ji-chu-jie-gou.md)
