@@ -332,7 +332,57 @@ $$f_1(x_i)$$ 的值是样例 $$x_i$$ 落在第一棵树上的叶子节点值。�
 
 ![](../../../../.gitbook/assets/tree_split1.png)
 
+对于某个特征 $$k$$ ，算法首先根据特征分布的分位数找到特征切割点的候选集合 $$S_k=\{s_{k1},s_{k2},\dots,s_{kl}\}$$  ；然后将特征 $$k$$  的值根据集合 $$S_k$$  划分到桶\(bucket\)中，接着对每个桶内的样本统计值 $$G$$ 、 $$H$$  进行累加统计，最后在这些累计的统计量上寻找最佳分裂点。
 
+不同于基本的穷举算法，paper指出两种近似算法：一种是全局算法，即在初始化tree的时候划分好候选分割点，并且在树的每一层都使用这些候选分割点；另一种是局部算法，即每一次划分的时候都重新计算候选分割点。这两者各有利弊，全局算法不需要多次计算候选节点，但需要一次获取较多的候选节点供后续树生长使用，而局部算法一次获取的候选节点较少，可以在分支过程中不断改善，即适用于生长更深的树，两者在effect和accuracy做trade off。
+
+![](../../../../.gitbook/assets/1670295-04b7f0115030729b.webp)
+
+从算法伪代码可以看出近似算法的核心是如何根据分位数采样得到分割点的候选集合 $$S$$ 。XGBoost提出了Weighted Quantile Sketch来解决这个问题。
+
+在讲述Weighted Quantile Sketch之前，必须先要介绍一下什么是Quantile。这是Weighted Quantile Sketch的关键，如果不理解Quantile，就不会理解，在当数据量非常大难以被全部加载进内存时或者分布式环境下时，XGBoost的近似算法是如何寻找分割点的候选集合 $$S$$ 的。
+
+### Quantile
+
+#### $$\phi$$ -quantile
+
+输入数据： 14, 19, 3, 15, 4, 6, 1, 13, 13, 7, 11, 8, 4, 5, 15, 2
+
+则排序后，该组数据为： 1, 2, 3, 4, 4, 5, 6, 7, 8, 11, 13, 13, 14, 15, 15, 19. 如下图所示：
+
+![](../../../../.gitbook/assets/quantile.png)
+
+在上面的序列中，
+
+第1小的数是什么？ 很明显是：1 \(rank=1\)。 第4小的数是什么？ 答案是：4 \(rank=4\)。
+
+第50%小的数是什么？ 50% \* 16 = 8（rank=8\)， 则答案为：7
+
+什么是分位点呢？ $$\phi$$ -quantile表示 $$\text{rank}=\lfloor\phi\times N\rfloor$$ 的元素，其中， $$N$$ 为序列中元素的个数。例如，在上面的例子中： 0.25-quantile是什么？ rank=0.25×16=4，所以答案为：4
+
+#### $$\epsilon$$-approximate $$\phi$$-quantiles
+
+$$\epsilon$$-approximate $$\phi$$-quantiles 的意思就是：在 $$\phi$$-quantiles 误差$$\epsilon$$-approximate 以内位置的取值。即近似分位点。
+
+即 $$\phi$$-quantiles 是在区间 $$[\lfloor(\phi-\epsilon)\times N\rfloor,\lfloor(\phi+\epsilon)\times N\rfloor]$$  ，而不是之前的精确的 $$\lfloor\phi\times N\rfloor$$  。还是上面的例子，令 $$\epsilon=0.1,\ \phi=0.5$$ ，由数据可知 $$N = 16$$ ，此时 $$[\lfloor(\phi-\epsilon)\times N\rfloor,\lfloor(\phi+\epsilon)\times N\rfloor]$$ 为 $$[6.4,9.6]$$ ，即rank为 $$\{\7,8,9}$$ ，$$0.1$$-approximate $$0.5$$-quantiles 为 $$\{6,7,8\}$$。
+
+ 这个物理含义是什么呢？就是说，如果我们允许 $$\epsilon\times N$$  是 $$1.6$$ 的误差的话，那么 $$0.5$$ -quantiles 的值为 $$6,7,8$$ 都可以。
+
+#### $$\epsilon$$ -approximate quantile summary
+
+我们已经可以看到，即便是求一个序列的$$\epsilon$$-approximate $$\phi$$-quantiles，也必须先对数据进行排序，而如果我们的内存不足以让全部数据排序时，应该怎么解决？早在2001年，M.Greenwald和S. Khanna提出了GK Summay分位点近似算法（$$\epsilon$$-approximate $$\phi$$-quantiles），直到到2007年被Q. Zhang和W. Wang提出的多层level的merge与compress/prune框架进行高度优化，而被称为A fast algorithm for approximate quantiles，目前XGBoost框架套用A fast algorithm算法结构。
+
+GK Summay巧妙地设计了$$\epsilon$$-approximate quantile summary。$$\epsilon$$-approximate quantile summary 是一种数据结构，该数据结构能够以 $$\epsilon\times N$$ 的精度计算任意的分位查询。当一个序列无法全部加载到内存时，常常采用quantile suammary近似的计算分位点。
+
+大致来讲下思路：$$\epsilon$$-approximate quantile summary 这个数据结构不需要一次存入所有的数据，它先用一些元组存入部分数据（当然在内部需要排序），这些元组记录的是现有的value值和一些位置信息，有了这些信息，就保证了能够以 $$\epsilon\times N$$ 的精度计算任意的分位查询。只要流式系统中每个时刻都维持这种summary结构，每次查询都能满足精度要求，但是流式数据实时更新，需要解决新增数据的summary更新问题。为此，算法提供了insert操作，insert操作可以保证现有的summary结构仍然可以保证 $$\epsilon\times N$$ 的精度。当然，每次数据插入都需要新增元组，summary结构不能持续增加而不删除，因此到达一定程度需要对summary进行delete。同时，delete操作也可以保证现有的summary结构仍然可以保证 $$\epsilon\times N$$  的精度
+
+### Weighted Datasets
+
+现在我们回到XGBoost中，在建立第 $$i$$  棵树的时候已经知道数据集在前面 $$i-1$$  棵树的误差，因此采样的时候是需要考虑误差，对于误差大的特征值采样粒度要加大，误差小的特征值采样粒度可以减小，也就是说采样的样本是需要权重的。
+
+ 重新审视目标函数
+
+### Weighted Quantile Sketch
 
 ## XGBoost一些细节
 
