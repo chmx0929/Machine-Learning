@@ -394,6 +394,20 @@ GK Summay巧妙地设计了$$\epsilon$$-approximate quantile summary。$$\epsilo
 
 ![](../../../../.gitbook/assets/weighted.png)
 
+#### 问题转换
+
+$$D_k=\{(x_{1k},h_1),(x_{2k},h_2),\dots,(x_{nk},h_n)\}$$ 表示每个训练样本的第 $$k$$ 维特征值和对应二阶导数。接下来定义排序函数为 $$r_k(\cdot):R\to[0,\infty)$$ 
+
+                                                       $$r_k(z)=\frac{1}{\sum\limits_{(x,h)\in D_k}h}\sum\limits_{(x,h)\in D_k,x<z}h$$ 
+
+函数表示特征的值小于 $$z$$ 的样本分布占比，其中二阶导数 $$h$$ 可以视为权重。
+
+ 在这个排序函数下，我们找到一组点 $$\{s_{k1},s_{k2},\dots,s_{kl}\}$$ ，满足
+
+                                                         $$|r_k(s_{k,j})-r_k(s_{k,j+1})|<\varepsilon$$ 
+
+其中， $$s_{k1}=\min\limits_i x_{ik}$$ ， $$s_{kl}=\min\limits_i x_{ik}$$ ，
+
 ### Weighted Quantile Sketch
 
 ## XGBoost一些细节
