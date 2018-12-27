@@ -382,6 +382,18 @@ GK Summay巧妙地设计了$$\epsilon$$-approximate quantile summary。$$\epsilo
 
  重新审视目标函数
 
+                                  $$\sum\limits_i[L(y_i,\hat{y}_i^{K-1})+g_if_K(x_i)+\frac{1}{2}h_if_K^2(x_i)]+\Omega(f_K)+c$$ 
+
+                                         $$\Rightarrow \sum\limits_i[\frac{1}{2}h_i(f_K(x_i)-(-g_i/h_i))^2]+\Omega(f_K)+c$$ 
+
+因此可以将该目标还是看作是关于标签的 $$-g_i/h_i$$ 和权重为 $$h_i$$ 的平方误差形式。 $$h_i$$ 为样本的二阶导数
+
+#### 二阶导数为权重的解释
+
+如果损失函数是Square loss，即 $$L(y,\hat{y})=(y-\hat{y})^2$$ ，则 $$h = 2$$ ，那么实际上式不带权（每个样本的权重一样）。如果损失函数是Log loss，则 $$h = pred*(1-pred)$$ 。 这是个开口朝下的一元二次函数，所以最大值在 $$pred=0.5$$ 。当 $$pred$$ 在 $$0.5$$ 附近，值都比较大，也就是权重都比较大，在切直方图时，我们希望桶比较均匀，因此这部分就会被切分的更细。
+
+![](../../../../.gitbook/assets/weighted.png)
+
 ### Weighted Quantile Sketch
 
 ## XGBoost一些细节
