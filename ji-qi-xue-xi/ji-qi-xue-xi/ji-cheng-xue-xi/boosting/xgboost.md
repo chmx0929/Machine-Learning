@@ -326,6 +326,14 @@ $$f_1(x_i)$$ 的值是样例 $$x_i$$ 落在第一棵树上的叶子节点值。�
 
  后面的所有过程都是重复这个过程，这里就不再啰嗦了。
 
+## XGBoost近似分位数算法
+
+当数据量非常大难以被全部加载进内存时或者分布式环境下时，exact greedy算法将不再合适。因此作者提出近似算法（Approximate Algorithm）来寻找分割点。 近似算法的大致流程见下面的算法
+
+![](../../../../.gitbook/assets/tree_split1.png)
+
+
+
 ## XGBoost一些细节
 
 ### 如何理解训练过程的参数min\_child\_weight
@@ -406,7 +414,45 @@ $$x_1$$ 在第一个节点处被选择为分裂特征，在特征值为 $$10$$ �
 
 ‘cover’ - the average coverage of the feature when it is used in trees。大概的意义就是特征覆盖了多少个样本。 这里，我们不妨假设损失函数是mse，也就是 $$0.5*(y_i-y_{pred})^2$$ ，我们求其二阶导数，很容易得到为常数 $$1$$ 。也就是每个样本对应的二阶导数都是 $$1$$ ，那么这个cover指标不就是意味着，在某个特征在某个结点进行分裂时所覆盖的样本个数。
 
+## XGBoot系统设计
 
+### 分块并行 – Column Block for Parallel Learning
+
+在建树的过程中，最耗时是找最优的切分点，而这个过程中，最耗时的部分是将数据排序。为了减少排序的时间，XGBoost采用Block结构存储数据。它有如下几点特征：
+
+* Block中的数据以稀疏格式CSC进行存储。CSC格式请参考该[文章](https://www.cnblogs.com/rollenholt/p/5960523.html)。
+* Block中的特征进行排序（不对缺失值排序），且只需要排序依次，以后的分裂树的过程可以复用。
+
+对于exact greedy算法来说，Xgboost将所有的数据放到了一个Block中。在Block中，可以同时对所有叶子进行分裂点的计算，因此对Block进行一次扫描将可以得到所有叶子的分割特征点候选者的统计数据。（We do the split finding of all leaves collectively, so one scan over the block will collect the statistics of the split candidates in all leaf branches.） Block 中特征还需存储指向样本的索引，这样才能根据特征的值来取梯度。如下图所示：
+
+![](../../../../.gitbook/assets/20181219121148985.png)
+
+对于approximate算法来说，Xgboost使用了多个Block，存在多个机器上或者磁盘中。每个Block对应原来数据的子集。不同的Block可以在不同的机器上计算。该方法对Local策略尤其有效，因为Local策略每次分支都重新生成候选切分点。
+
+Block结构还有其它好处，数据按列存储，可以同时访问所有的列，很容易实现并行的寻找分裂点算法。缺点是空间消耗大了一倍。
+
+### 缓存优化 – Cache-aware Access
+
+使用Block结构的一个缺点是取梯度的时候，是通过索引来获取的，而这些梯度的获取顺序是按照特征的大小顺序的。这将导致非连续的内存访问，可能使得CPU cache缓存命中率低，从而影响算法效率。如下图所示：
+
+![](../../../../.gitbook/assets/xgboost-cache-missing.png)
+
+因此，对于exact greedy算法中, 使用缓存预取（cache-aware prefetching）。具体来说，对每个线程分配一个连续的buffer，读取梯度信息并存入Buffer中（这样就实现了非连续到连续的转化），然后再统计梯度信息。该方式在训练样本数大的时候特别有用，见下图：
+
+![](../../../../.gitbook/assets/xgboost-cache-aware-access-exact-greedy.png)
+
+可以看到，对于大规模数据，效果十分明显。
+
+在approximate 算法中，对Block的大小进行了合理的设置。定义Block的大小为Block中最多的样本数。设置合适的大小是很重要的，设置过大则容易导致命中率低，过小则容易导致并行化效率不高。经过实验，发现 $$2^{16}$$ 比较好。如下图：
+
+![](../../../../.gitbook/assets/xgboost-cache-aware-access-approximate-algorithm.png)
+
+### Blocks for Out-of-core Computation
+
+当数据量太大不能全部放入主内存的时候，为了使得out-of-core计算称为可能，将数据划分为多个Block并存放在磁盘上。计算的时候，使用独立的线程预先将Block放入主内存，因此可以在计算的同时读取磁盘。但是由于磁盘IO速度太慢，通常更不上计算的速度。因此，需要提升磁盘IO的销量。XGBoost采用了2个策略：
+
+* Block压缩（Block Compression）：将Block按列压缩（LZ4压缩算法？），读取的时候用另外的线程解压。对于行索引，只保存第一个索引值，然后只保存该数据与第一个索引值之差\(offset\)，一共用16个bits来保存 offset，因此，一个block一般有2的16次方个样本。
+* Block拆分（Block Sharding）：将数据划分到不同磁盘上，为每个磁盘分配一个预取（pre-fetcher）线程，并将数据提取到内存缓冲区中。然后，训练线程交替地从每个缓冲区读取数据。这有助于在多个磁盘可用时增加磁盘读取的吞吐量。
 
 ## Source
 
