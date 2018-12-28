@@ -82,8 +82,40 @@
     * [卷积运算](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo/juan-ji-yun-suan.md)
     * [卷积动机](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo/juan-ji-dong-ji.md)
     * [池化](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo/chi-hua.md)
-  * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo.md)
-  * [深度学习与计算机视觉](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-yu-ji-suan-ji-shi-jue.md)
+  * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/README.md)
+    * [展开计算图](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/zhan-kai-ji-suan-tu.md)
+
+## 计算机视觉
+
+* [计算机视觉](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/README.md)
+  * [图像分类](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/README.md)
+    * [LeNet-5](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/lenet-5.md)
+    * [AlexNet](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/alexnet.md)
+    * [VGGNet](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/vggnet.md)
+    * [GoogleNet](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/googlenet.md)
+    * [ResNet](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/resnet.md)
+    * [DenseNet](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/densenet.md)
+    * [DPN](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/dpn.md)
+  * [目标检测](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/mu-biao-jian-ce/README.md)
+    * [相关研究](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/mu-biao-jian-ce/xiang-guan-yan-jiu.md)
+    * [基于区域提名的方法](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/mu-biao-jian-ce/ji-yu-qu-yu-ti-ming-de-fang-fa.md)
+    * [端到端的方法](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/mu-biao-jian-ce/duan-dao-duan-de-fang-fa.md)
+  * [语义分割](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/yu-yi-fen-ge/README.md)
+    * [全卷积网络](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/yu-yi-fen-ge/quan-juan-ji-wang-luo.md)
+    * [CRF/MRF的使用](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/yu-yi-fen-ge/crfmrf-de-shi-yong.md)
+    * [实例分割](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/yu-yi-fen-ge/shi-li-fen-ge.md)
+  * [图像检索的深度哈希编码](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/README.md)
+    * [传统哈希编码方法](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/chuan-tong-ha-xi-bian-ma-fang-fa.md)
+    * [CNNH](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/cnnh.md)
+    * [DSH](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/dsh.md)
+
+## 语音识别
+
+* [语音识别](yu-yin-shi-bie/yu-yin-shi-bie/README.md)
+  * [传统语音识别基础](yu-yin-shi-bie/yu-yin-shi-bie/chuan-tong-yu-yin-shi-bie-ji-chu.md)
+  * [基于WFST的语音编码](yu-yin-shi-bie/yu-yin-shi-bie/ji-yu-wfst-de-yu-yin-bian-ma.md)
+  * [深度语音识别](yu-yin-shi-bie/yu-yin-shi-bie/shen-du-yu-yin-shi-bie.md)
+  * [CTC解码](yu-yin-shi-bie/yu-yin-shi-bie/ctc-jie-ma.md)
 
 ## 自然语言处理
 

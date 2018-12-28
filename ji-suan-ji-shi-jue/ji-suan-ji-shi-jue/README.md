@@ -1,4 +1,4 @@
-# 深度学习与计算机视觉
+# 计算机视觉
 
 ## **四大任务** <a id="ji-suan-ji-shi-jue-de-si-da-ren-wu"></a>
 
