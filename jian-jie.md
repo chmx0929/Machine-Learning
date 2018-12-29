@@ -12,9 +12,9 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 各部分内容主要基于以下文献进行整理与进一步阐述推导：
 
-[机器学习\(周志华\)](http://item.jd.com/11867803.html)、[统计学习方法\(李航\)](http://item.jd.com/12385906.html)、[百面机器学习\(诸葛越\)](http://item.jd.com/12401859.html)
+[机器学习\(周志华\)](http://item.jd.com/11867803.html)、[统计学习方法\(李航\)](http://item.jd.com/12385906.html)、[百面机器学习\(诸葛越\)](http://item.jd.com/12401859.html)、[机器学习\(吴恩达\)](https://github.com/AcceptedDoge/machine-learning-yearning-cn)
 
-[Deep Learning\(Goodfellow Ian\)](http://item.jd.com/12128543.html)
+[Deep Learning\(Goodfellow Ian\)](http://item.jd.com/12128543.html)、[深度学习核心技术与实践\(猿辅导研究团队\)](http://item.jd.com/12316912.html)
 
 [数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理\(宗成庆\)](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)
 
