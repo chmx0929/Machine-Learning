@@ -1,6 +1,7 @@
 # Table of contents
 
-* [简介](README.md)
+* [目录](README.md)
+* [简介](jian-jie.md)
 
 ## 数学基础
 
