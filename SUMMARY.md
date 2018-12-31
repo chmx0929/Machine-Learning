@@ -85,6 +85,7 @@
     * [池化](shen-du-xue-xi/shen-du-xue-xi/juan-ji-wang-luo/chi-hua.md)
   * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/README.md)
     * [展开计算图](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/zhan-kai-ji-suan-tu.md)
+    * [循环神经网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/xun-huan-shen-jing-wang-luo.md)
 
 ## 计算机视觉
 
