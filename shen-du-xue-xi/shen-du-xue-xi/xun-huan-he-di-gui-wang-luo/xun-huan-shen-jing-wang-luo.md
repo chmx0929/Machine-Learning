@@ -54,11 +54,65 @@ RNN反向传播算法的思路和DNN是一样的，即通过梯度下降法一�
 
 为了简化描述，这里的损失函数我们为对数损失函数，输出的激活函数为softmax函数，隐藏层的激活函数为tanh函数。对于RNN，由于我们在序列的每个位置都有损失函数，因此最终的损失 $$L$$ 为：
 
-                     
+                                                                            $$L = \sum\limits_{t=1}^\tau L^{(t)}$$ 
+
+由 $$o^{(t)}=Vh^{(t)}+c$$ ，可计算 $$V,c$$ 的梯度：
+
+                             $$\frac{\partial L}{\partial c}=\sum\limits_{t=1}^\tau\frac{\partial L^{(t)}}{\partial c}=\sum\limits_{t=1}^\tau\frac{\partial L^{(t)}}{\partial o^{(t)}}\frac{\partial o^{(t)}}{\partial c}=\sum\limits_{t=1}^\tau\frac{\partial L^{(t)}}{\partial \hat{y}^{(t)}}\frac{\partial \hat{y}^{(t)}}{\partial o^{(t)}}\frac{\partial o^{(t)}}{\partial c}=\sum\limits_{t=1}^\tau\hat{y}^{(t)}-y^{(t)}$$ 
+
+                                         $$\frac{\partial L}{\partial V}=\sum\limits_{t=1}^\tau\frac{\partial L^{(t)}}{\partial V}=\sum\limits_{t=1}^\tau\frac{\partial L^{(t)}}{\partial o^{(t)}}\frac{\partial o^{(t)}}{\partial V}=\sum\limits_{t=1}^\tau(\hat{y}^{(t)}-y^{(t)})(h^{(t)})^\top$$ 
+
+对于 $$c$$ 的求导，，由于激活函数是softmax，损失函数是对数损失，因此该推导过程与[深度学习（二）：DNN损失函数和激活函数的选择](https://blog.csdn.net/anshuai_aw1/article/details/84666595)里的公式（4）完全一样。
+
+对于 $$V$$ 的求导，为什么 $$(h^{(t)})^\top$$ 会放在后面，那是因为在实际矩阵求导得链式法则里面，对于两步的链式法则：
+
+（1）如果是**标量对矩阵求导**改成链式法则，那么求导得后半部分不用提前。比如 $$y=f(u),u=f(x)$$ ， $$y$$ 为标量， $$u,x$$ 为矩阵，则： $$\frac{\partial y}{\partial x}=\frac{\partial y}{\partial u}(\frac{\partial u}{\partial x})^\top$$ 
+
+（2）如果是**标量对向量求导**改成链式法则，那么求导得后半部分不用提前。比如 $$y=f(u),u=f(x)$$ ， $$y$$ 为标量， $$u,x$$ 为向量，则： $$\frac{\partial y}{\partial x}=(\frac{\partial u}{\partial x})^\top\frac{\partial y}{\partial u}$$ 
+
+但是 $$W,U,b$$ 的梯度计算就比较复杂了。从RNN的模型可以看出，在反向传播时，在某一序列位置 $$t$$ 的梯度损失由当前位置的输出对应的梯度损失和序列索引位置 $$t-1$$ 时的梯度损失两部分共同决定。对于 $$W$$ 在某一序列位置 $$t$$ 的梯度损失需要反向传播一步步的计算。我们定义序列索引 $$t$$ 位置的隐藏状态的梯度为
+
+                                                                            $$\delta^{(t)}=\frac{\partial L}{\partial h^{(t)}}$$ 
+
+这里我们可以像DNN一样从 $$\delta^{(t+1)}$$ 递推 $$\delta^{(t)}$$ 
+
+            $$\delta^{(t)}=\frac{\partial L}{\partial o^{(t)}}\frac{\partial o^{(t)}}{\partial h^{(t)}}+\frac{\partial L}{\partial h^{(t+1)}}\frac{\partial h^{(t+1)}}{\partial h^{(t)}}=V^\top(\hat{y}^{(t)}-y^{(t)})+W^\top\delta^{(t+1)}\text{diag}(1-(h^{(t+1)})^2)$$     （8）
+
+                                                       $$\delta^{(\tau)}=\frac{\partial L}{\partial o^{(\tau)}}\frac{o^{(\tau)}}{h^{(\tau)}}=V^\top(\hat{y}^{(\tau)}-y^{(\tau)})$$                                                       （9）
+
+公式（8）中两部分相加的原因是：
+
+                                                  $$h^{(t)}\to o^{(t)}\to L$$       $$h^{(t)}\to h^{(t+1)}\to L$$ 
+
+所以 $$L$$ 对 $$h^{(t)}$$ 求导时，要分别经过 $$o^{(t)}$$ 和 $$h^{(t+1)}$$ 对 $$h^{(t)}$$ 进行求导。
+
+$$\frac{\partial L}{\partial o^{(\tau)}}\frac{o^{(\tau)}}{h^{(\tau)}}$$的导数是 $$V^\top(\hat{y}^{(\tau)}-y^{(\tau)})$$ ，这是显然的。重点是 $$\frac{\partial L}{\partial h^{(t+1)}}\frac{\partial h^{(t+1)}}{\partial h^{(t)}}$$ 的导数怎么求。根据公式
+
+                                                $$h^{(t)}=\sigma(z^{(t)})=\sigma(Ux^{(t)}+Wh^{(t-1)}+b)$$ 
+
+在前面我们假设隐含层的激活函数是tanh，即 $$y=\text{tanh}(x)$$ ，它的导数为 $$y' = 1-y^2$$ 。结合[深度学习（一）：DNN前向传播算法和反向传播算法](https://blog.csdn.net/anshuai_aw1/article/details/84615935)中公式（12），有
+
+                $$\frac{\partial L}{\partial h^{(t+1)}}\frac{\partial h^{(t+1)}}{\partial h^{(t)}}=W^\top\delta^{(t+1)}\odot(1-(h^{(t+1)})^2)=W^\top\delta^{(t+1)}\text{diag}(1-(h^{(t+1)})^2)$$ 
+
+这里是双曲正切激活函数，用矩阵中对角线元素表示向量中各个值的导数，可以去掉哈达马乘积，转化为矩阵乘法。
+
+对于 $$W^\top\delta^{(t+1)}\text{diag}(1-(h^{(t+1)})^2)$$ ，正确的运算顺序应该是先 $$\delta^{(t+1)}\text{diag}(1-(h^{(t+1)})^2)$$ （注意这里的哈德玛乘积的意思，即 $$n$$ 个元素对应位置相乘，并非 $$n*1$$ 乘以 $$n*n$$ ），然后再用 $$W^\top$$ 与上面的结果运算。 即先进行哈德玛乘积。
+
+有了 $$\delta^{(t)}$$ ，计算 $$W,U,b$$ 就容易了，这里给出对应的梯度计算表达式：
+
+                              $$\frac{\partial L}{\partial W}=\sum\limits_{t=1}^\tau\frac{\partial L}{\partial h^{(t)}}\frac{\partial h^{(t)}}{\partial 6W}=\sum\limits_{t=1}^\tau\text{diag}(1-(h^{(t)})^2)\delta^{(t)}(h^{(t-1)})^\top$$ 
+
+                                      $$\frac{\partial L}{\partial b}=\sum\limits_{t=1}^\tau\frac{\partial L}{\partial h^{(t)}}\frac{\partial h^{(t)}}{\partial b}=\sum\limits_{t=1}^\tau\text{diag}(1-(h^{(t)})^2)\delta^{(t)}$$ 
+
+                                $$\frac{\partial L}{\partial U}=\sum\limits_{t=1}^\tau\frac{\partial L}{\partial h^{(t)}}\frac{\partial h^{(t)}}{\partial U}=\sum\limits_{t=1}^\tau\text{diag}(1-(h^{(t)})^2)\delta^{(t)}(x^{(t)})^\top$$ 
 
 ## Source
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/85163572" %}
+
+{% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/84666595" %}
+
+{% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/84615935" %}
 
 
 
