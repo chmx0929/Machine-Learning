@@ -86,6 +86,7 @@
   * [循环和递归网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/README.md)
     * [展开计算图](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/zhan-kai-ji-suan-tu.md)
     * [循环神经网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/xun-huan-shen-jing-wang-luo.md)
+    * [长短期记忆](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/chang-duan-qi-ji-yi.md)
 
 ## 计算机视觉
 
@@ -110,14 +111,6 @@
     * [传统哈希编码方法](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/chuan-tong-ha-xi-bian-ma-fang-fa.md)
     * [CNNH](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/cnnh.md)
     * [DSH](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/dsh.md)
-
-## 语音识别
-
-* [语音识别](yu-yin-shi-bie/yu-yin-shi-bie/README.md)
-  * [传统语音识别基础](yu-yin-shi-bie/yu-yin-shi-bie/chuan-tong-yu-yin-shi-bie-ji-chu.md)
-  * [基于WFST的语音编码](yu-yin-shi-bie/yu-yin-shi-bie/ji-yu-wfst-de-yu-yin-bian-ma.md)
-  * [深度语音识别](yu-yin-shi-bie/yu-yin-shi-bie/shen-du-yu-yin-shi-bie.md)
-  * [CTC解码](yu-yin-shi-bie/yu-yin-shi-bie/ctc-jie-ma.md)
 
 ## 自然语言处理
 

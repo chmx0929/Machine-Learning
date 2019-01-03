@@ -20,7 +20,13 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 [Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)
 
-以及[机器之心](https://www.jiqizhixin.com/)、[知乎](https://www.zhihu.com/signup?next=%2F)、博客和各算法paper
+以及[机器之心](https://www.jiqizhixin.com/)、[知乎](https://www.zhihu.com/signup?next=%2F)、各算法paper、以及优秀博客：
+
+{% embed url="http://colah.github.io/" %}
+
+{% embed url="https://blog.csdn.net/anshuai\_aw1" %}
+
+{% embed url="https://www.cnblogs.com/pinard/" %}
 
 
 
