@@ -9,18 +9,18 @@
   * [线性代数](shu-xue-ji-chu/shu-xue-ji-chu/xian-xing-dai-shu.md)
   * [概率统计](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji.md)
   * [时间序列](shu-xue-ji-chu/shu-xue-ji-chu/shi-jian-xu-lie.md)
+  * [信息理论](shu-xue-ji-chu/shu-xue-ji-chu/xin-xi-li-lun.md)
   * [参数估计](shu-xue-ji-chu/shu-xue-ji-chu/can-shu-gu-ji.md)
   * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/README.md)
     * [极大、极小和鞍点](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/ji-da-ji-xiao-he-an-dian.md)
     * [Jacobian和Hessian矩阵](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/jacobian-he-hessian-ju-zhen.md)
-  * [信息理论](shu-xue-ji-chu/shu-xue-ji-chu/xin-xi-li-lun.md)
-  * [随机算法](shu-xue-ji-chu/shu-xue-ji-chu/sui-ji-suan-fa.md)
 
 ## 数据挖掘
 
 * [数据挖掘](shu-ju-wa-jue/shu-ju-wa-jue/README.md)
   * [数据预分析](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-ji-zhi-biao.md)
   * [数据预处理](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/README.md)
+    * [数据采样](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/shu-ju-cai-yang.md)
     * [数据降维](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/shu-ju-jiang-wei.md)
     * [特征选择](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/te-zheng-xuan-ze.md)
   * [模式挖掘](shu-ju-wa-jue/shu-ju-wa-jue/mo-shi-wa-jue.md)
