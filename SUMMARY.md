@@ -87,6 +87,8 @@
     * [展开计算图](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/zhan-kai-ji-suan-tu.md)
     * [循环神经网络](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/xun-huan-shen-jing-wang-luo.md)
     * [长短期记忆](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/chang-duan-qi-ji-yi.md)
+    * [注意力机制](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/zhu-yi-li-ji-zhi.md)
+  * [生成对抗网络](shen-du-xue-xi/shen-du-xue-xi/sheng-cheng-dui-kang-wang-luo.md)
 
 ## 计算机视觉
 
