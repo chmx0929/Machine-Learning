@@ -35,6 +35,7 @@
   * [决策树模型](ji-qi-xue-xi/ji-qi-xue-xi/jue-ce-shu-mo-xing.md)
   * [支持向量机](ji-qi-xue-xi/ji-qi-xue-xi/zhi-chi-xiang-liang-ji.md)
   * [贝叶斯分类器](ji-qi-xue-xi/ji-qi-xue-xi/bei-ye-si-fen-lei-qi.md)
+  * [高斯混合模型](ji-qi-xue-xi/ji-qi-xue-xi/gao-si-hun-he-mo-xing.md)
   * [集成学习](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/README.md)
     * [Bagging](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/bagging.md)
     * [Boosting](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/boosting/README.md)

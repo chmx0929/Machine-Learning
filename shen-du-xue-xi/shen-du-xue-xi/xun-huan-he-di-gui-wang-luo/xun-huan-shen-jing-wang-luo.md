@@ -221,6 +221,14 @@ OK！大功告成！这就是最经典的RNN结构，我们像搭积木一样把
 * 语音识别。输入是语音信号序列，输出是文字序列。
 * ... ... ...
 
+## 相关问题
+
+### RNN为什么采用tanh而不是ReLU?
+
+{% embed url="https://www.zhihu.com/question/61265076/answer/186347780" %}
+
+
+
 ## Source
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/85163572" %}
