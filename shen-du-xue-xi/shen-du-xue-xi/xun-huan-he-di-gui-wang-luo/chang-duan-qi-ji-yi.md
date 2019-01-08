@@ -64,11 +64,27 @@ LSTM的第一步是确定我们将从细胞状态中丢弃的信息。这个决�
 
 ![](../../../.gitbook/assets/lstm3-focus-o.png)
 
+## BiLSTM
+
+双向LSTM（BiLSTM）和双向RNN所述同理，有些时候预测可能需要由前面若干输入和后面若干输入共同决定，这样会更加准确。因此提出了双向循环神经网络，网络结构如下图。可以看到Forward层和Backward层共同连接着输出层，其中包含了 $$6$$ 个共享权值 $$W_1,W_2,W_3,W_4,W_5,W_6$$ 。
+
+![](../../../.gitbook/assets/tu-shi-yi.png)
+
+![](../../../.gitbook/assets/spjuakl62r.png)
+
+在Forward层从 $$1$$ 时刻到t时刻正向计算一遍，得到并保存每个时刻向前隐含层的输出。在Backward层沿着时刻t到时刻1反向计算一遍，得到并保存每个时刻向后隐含层的输出。最后在每个时刻结合Forward层和Backward层的相应时刻输出的结果得到最终的输出，用数学表达式如下：
+
+![](../../../.gitbook/assets/tu-shi-er.png)
+
+
+
 ## Source
 
 {% embed url="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" %}
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/85168486" %}
+
+{% embed url="http://www.tensorflownews.com/2018/05/04/keras\_lstm/" %}
 
 
 
