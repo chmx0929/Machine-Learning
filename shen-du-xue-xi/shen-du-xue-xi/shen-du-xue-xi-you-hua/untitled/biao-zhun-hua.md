@@ -46,9 +46,21 @@ Batch Normalization在前向传播时有三个主要任务：
 
 SGD通过最小化以下损失函数来求解神经网络的最优值：
 
-                                                     $$\Theta = \mathop{\arg\min}\limits_{\Theta}\frac{1}{N}\sum\limits_{i=1}^Nl(x_i,\Theta)$$ 
+                                                         $$\Theta = \mathop{\arg\min}\limits_{\Theta}\frac{1}{N}\sum\limits_{i=1}^Nl(x_i,\Theta)$$ 
 
 其中 $$\Theta$$ 是神经网络中的参数； $$\{x_1,x_2,\dots,x_N\}$$ 是训练数据集。
+
+为了综合随机梯度下降和批量梯度下降这两种算法的优点，Mini-Batch梯度下降在单个样本迭代和全部样本迭代之间找到了一个折中点，既加快了参数的迭代速度，也避免了单个样本数据带来的波动性。当Mini-Batch中的数据量为 $$m$$ 时，可以通过如下公式计算出梯度：
+
+                                                           $$\Delta\Theta=\eta\cdot \frac{1}{m}\sum\limits_{i=1}^m\frac{\partial l(x_i,\Theta)}{\partial \Theta}$$ 
+
+其中 $$\eta$$ 为学习率。
+
+可以证明，通过小批量样本计算出的梯度可以正确地表示全部训练数据的梯度，平切没皮的数据量越大，样本梯度越接近于总体梯度。另外，得益于现代平行计算技术，使用Mini-Batch比 $$m$$ 词单样本的计算效率更高，因此比原始的随机梯度下降方法更快。
+
+#### 2、从批量样本推断总体均值与方差
+
+
 
 ## Source
 
