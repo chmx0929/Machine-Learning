@@ -1,2 +1,2 @@
-# GoogleNet
+# GoogLeNet
 
