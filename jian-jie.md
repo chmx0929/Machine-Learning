@@ -18,7 +18,7 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 [数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理\(宗成庆\)](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)
 
-[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)
+[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)
 
 以及[机器之心](https://www.jiqizhixin.com/)、[知乎](https://www.zhihu.com/signup?next=%2F)、各算法paper、以及优秀博客：
 

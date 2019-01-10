@@ -84,7 +84,7 @@ $$X_1$$ 与 $$X_2$$ 的相关性通过协方差与他们的标准差获得：$$\
 
 ## 数据转化
 
-**目的：**1、归一化    2、概念层次生成
+**目的：**1、标准化    2、概念层次生成
 
 **方法：**
 
@@ -94,15 +94,30 @@ $$X_1$$ 与 $$X_2$$ 的相关性通过协方差与他们的标准差获得：$$\
 
 **3、整合：**概要（比如各种统计指标均值，方差...），数据立方构造
 
-**4、归一化**
+**4、标准化**
 
-min-max normalization： $$v' = \frac{v-min_A}{max_A-min_A}(new\_max_A-new\_min_A)+new\_min_A$$ 
+min-max 标准化： $$v' = \frac{v-min_A}{max_A-min_A}(new\_max_A-new\_min_A)+new\_min_A$$ 
 
-z-score normalization： $$v'=\frac{v-\mu_A}{\sigma_A}$$ 
+z-score 标准化： $$v'=\frac{v-\mu_A}{\sigma_A}$$ 
 
-normalization by decimal scaling： $$v' = \frac{v}{10^j}$$, where $$j$$ is the smallest integer such that $$Max(|v'|)<1$$
+十进制缩放标准化： $$v' = \frac{v}{10^j}$$, where $$j$$ is the smallest integer such that $$Max(|v'|)<1$$
 
 softmax： $$v_i'=\frac{e^{v_i}}{\sum_{k=1}^K e^{v_k}}$$ 
+
+数据标准化又叫作数据归一化，是数据挖掘过程中常用的数据预处理方式。当我们使用真实世界中的数据进行分析时，会遇到两个问题：
+
+* 特征变量之间的量纲单位不同
+* 特征变量之间的变化尺度\(scale\)不同
+
+特征变量的尺度不同导致参数尺度规模也不同，带来的最大问题就是在优化阶段，梯度变化会产生震荡，减慢收敛速度。经标准化的数据，各个特征变量对梯度的影响变得统一，梯度的变化会更加稳定，如下图
+
+![](../../../.gitbook/assets/1670644-2b87fba30d7d8c39%20%281%29.webp)
+
+总结起来，数据标准化有以下三个优点：
+
+* 数据标准化能够是数值变化更稳定，从而使梯度的数量级不会变化过大。
+* 在某些算法中，标准化后的数据允许使用更大的步长，以提高收敛地速度。
+* 数据标准化可以提高被特征尺度影响较大的算法的精度，比如k-means、kNN、带有正则的线性回归。
 
 **5、离散化**
 
