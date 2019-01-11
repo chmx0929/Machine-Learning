@@ -46,15 +46,91 @@
 
 ### 1、明确变量，写出完全数据的对数似然函数
 
+可以设想观测数据 $$y_j,\ j=1,2,\dots,N$$ ，是这样产生的：首先依概率 $$\alpha_k$$ 选择第 $$k$$ 个高斯分布分模型 $$\phi(y|\theta_k)$$ ；然后依第 $$k$$ 个分模型的概率分布 $$\phi(y|\theta_k)$$ 生成观测数据 $$y_j$$ 。这时观测数据 $$y_j,\ j=1,2,\dots,N$$ 是已知的；反映观测数据 $$y_j$$ 来自第 $$k$$ 个分模型的数据是未知的， $$k=1,2,\dots,K$$ ，以隐变量 $$\gamma_{jk}$$ 表示，其定义如下：
 
+                           $$\gamma_{jk}=\begin{cases}1,\ \ \ 第j个观测来自第k个分模型\\ 0,\ \ \ 否则\end{cases}, \ \ j=1,2,\dots,N;k=1,2,\dots,K$$  $$\gamma_{jk}$$ 是0-1随机变量。
+
+有了观测数据 $$y_j$$ 及未观测数据 $$\gamma_{jk}$$ ，那么完全数据是
+
+                                                $$(y_j,\gamma_{j1},\gamma_{j2},\dots,\gamma_{jK}),\ j=1,2,\dots,N$$ 
+
+于是，可以写出完全数据的似然函数：
+
+                                              $$P(y,\gamma|\theta)=\prod\limits_{j=1}^NP(y_j,\gamma_{j1},\gamma_{j2},\dots,\gamma_{jK}|\theta)$$ 
+
+                                                                  $$= \prod\limits_{k=1}^K\prod\limits_{j=1}^N[\alpha_k\phi(y_j|\theta_k)]^{\gamma_{jk}}$$ 
+
+                                                                  $$= \prod\limits_{k=1}^K\alpha_k^{n_k}\prod\limits_{j=1}^N[\phi(y_j|\theta_k)]^{\gamma_{jk}}$$ 
+
+                                                                  $$= \prod\limits_{k=1}^K\alpha_k^{n_k}\prod\limits_{j=1}^N[\frac{1}{\sqrt{2\pi}\sigma_k}\exp(-\frac{(y_j-\mu_k)^2}{2\sigma^2_k})]^{\gamma_{jk}}$$ 
+
+式中， $$n_k = \sum\limits_{j=1}^N\gamma_{jk}$$ ， $$\sum\limits_{k=1}^Kn_k = N$$ 。
+
+那么，完全数据的对数似然函数为：
+
+                     $$\log P(y,\gamma|\theta)=\sum\limits_{k=1}^K\{n_k\log\alpha_k+\sum\limits_{j=1}^N\gamma_{jk}[\log(\frac{1}{\sqrt{2\pi}})-\log\sigma_k-\frac{1}{2\sigma_k^2}(y_j-\mu_k)^2]\}$$ 
 
 ### 2、EM算法的E步：确定Q函数
 
+                $$Q(\theta,\theta^{(i)})=E[\log P(y,\gamma|\theta)|y,\theta^{(i)}]$$ 
 
+                                    $$ = E\{\sum\limits_{k=1}^K\{n_k\log\alpha_k+\sum\limits_{j=1}^N\gamma_{jk}[\log(\frac{1}{\sqrt{2\pi}})-\log\sigma_k-\frac{1}{2\sigma_k^2}(y_j-\mu_k)^2]\}\}$$ 
+
+                                    $$=\sum\limits_{k=1}^K\{\sum\limits_{j=1}^N(E\gamma_{jk})\log\alpha_k+\sum\limits_{j=1}^N(E\gamma_{jk})[\log(\frac{1}{\sqrt{2\pi}})-\log\sigma_k-\frac{1}{2\sigma^2_k}(y_j-\mu_k)^2]\}$$ 
+
+这里需要计算 $$E(\gamma_{jk}|y,\theta)$$ ，记为 $$\hat{\gamma}_{jk}$$ 
+
+                             $$\hat{\gamma}_{jk}=E(\gamma_{jk}|y,\theta)=P(\gamma_{jk}=1|y,\theta)$$ 
+
+                                     $$=\frac{P(\gamma_{jk}=1,y_j|\theta)}{\sum\limits_{k=1}^KP(\gamma_{jk}=1,y_j|\theta)}$$ 
+
+                                     $$=\frac{P(y_j|\gamma_{jk}=1,\theta)P(\gamma_{jk}=1|\theta)}{\sum\limits_{k=1}^KP(y_j|\gamma_{jk}=1,\theta)P(\gamma_{jk}=1|\theta)}$$ 
+
+                                     $$= \frac{\alpha_k\phi(y_j|\theta_k)}{\sum\limits_{k=1}^K\alpha_k\phi(y_j|\theta_k)}, \ \ j=1,2,\dots,N;k=1,2,\dots,K$$ 
+
+$$\hat{\gamma}_{jk}$$ 是在当前模型参数下第 $$j$$ 个观测数据来自第 $$k$$ 个分模型的概率，称为分模型 $$k$$ 对观测数据 $$y_i$$ 的响应度。
+
+将 $$\hat{\gamma}_{jk}=E\gamma_{jk}$$ 及 $$n_k=\sum\limits_{j=1}^NE\gamma_{jk}$$ 代入 $$Q(\theta,\theta^{(i)})$$ 即得
+
+               $$Q(\theta,\theta^{(i)})=\sum\limits_{k=1}^K\{n_k\log\alpha_k+\sum\limits_{j=1}^N\hat{\gamma}_{jk}[\log(\frac{1}{\sqrt{2\pi}})-\log\sigma_k-\frac{1}{2\sigma^2_k}(y_j-\mu_k)^2]\}$$ 
 
 ### 3、确定EM算法的M步
 
+迭代的 $$M$$ 步是球函数 $$Q(\theta,\theta^{(i)})$$ 对 $$\theta$$ 的极大值，即求新一轮迭代的模型参数：
 
+                                                            $$\theta^{(i+1)} = \mathop{\arg\max}\limits_\theta Q(\theta,\theta^{(i)})$$ 
+
+用 $$\hat{\mu}_k$$ ， $$\hat{\sigma}^2_k$$ 及 $$\hat{\alpha}_k,\ k=1,2,\dots,K$$ ，表示 $$\theta^{(i+1)}$$ 的各参数。求 $$\hat{\mu}_k$$ ， $$\hat{\sigma}^2_k$$ 只需将 $$Q(\theta,\theta^{(i)})=\sum\limits_{k=1}^K\{n_k\log\alpha_k+\sum\limits_{j=1}^N\hat{\gamma}_{jk}[\log(\frac{1}{\sqrt{2\pi}})-\log\sigma_k-\frac{1}{2\sigma^2_k}(y_j-\mu_k)^2]\}$$ 分别对 $$\mu_k$$ ， $$\sigma^2_k$$ 求偏导数并令其为 $$0$$ ，即可得到；求 $$\hat{\alpha}_k$$ 是在 $$\sum\limits_{k=1}^K\alpha_k=1$$ 条件下求偏导数并令其为 $$0$$ 得到的。结果如下：
+
+                                                      $$\hat{\mu}_k=\frac{\sum\limits_{j=1}^N\hat{\gamma}_{jk}y_j}{\sum\limits_{j=1}^N\hat{\gamma}_{jk}},\ \ k=1,2,\dots,K$$ 
+
+                                                 $$\hat{\sigma}^2_k=\frac{\sum\limits_{j=1}^N\hat{\gamma}_{jk}(y_j-\mu_k)^2}{\sum\limits_{j=1}^N\hat{\gamma}_{jk}},\ \ k=1,2,\dots,K$$ 
+
+                                                    $$\hat{\alpha}_k=\frac{n_k}{N}=\frac{\sum\limits_{j=1}^N\hat{\gamma}_{jk}}{N},\ \ k=1,2,\dots,K$$ 
+
+重复以上计算，直到对数似然函数值不再有明显的变化为止。
+
+## 高斯混合模型EM算法
+
+输入：观测数据 $$y_1,y_2,\dots,y_N$$ ，高斯混合模型；
+
+输出：高斯混合模型参数
+
+（1）取参数的初始值开始迭代
+
+（2）E步：依据当前模型参数，计算分模型 $$k$$ 对观测数据 $$y_j$$ 的响应度
+
+                                 $$\hat{\gamma}_{jk}= \frac{\alpha_k\phi(y_j|\theta_k)}{\sum\limits_{k=1}^K\alpha_k\phi(y_j|\theta_k)}, \ \ j=1,2,\dots,N;k=1,2,\dots,K$$ 
+
+（3）M步：计算新一轮迭代的模型参数
+
+                                                      $$\hat{\mu}_k=\frac{\sum\limits_{j=1}^N\hat{\gamma}_{jk}y_j}{\sum\limits_{j=1}^N\hat{\gamma}_{jk}},\ \ k=1,2,\dots,K$$ 
+
+                                                 $$\hat{\sigma}^2_k=\frac{\sum\limits_{j=1}^N\hat{\gamma}_{jk}(y_j-\mu_k)^2}{\sum\limits_{j=1}^N\hat{\gamma}_{jk}},\ \ k=1,2,\dots,K$$ 
+
+                                                    $$\hat{\alpha}_k=\frac{n_k}{N}=\frac{\sum\limits_{j=1}^N\hat{\gamma}_{jk}}{N},\ \ k=1,2,\dots,K$$ 
+
+（4）重复第（2）步和第（3）步，直到收敛。
 
 ## Source
 
