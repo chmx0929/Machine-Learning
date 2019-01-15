@@ -2,6 +2,10 @@
 
 AlexNet可以说是一个具有里程碑意义的网络结构。在2012年的ILSVRC 2012中一举刷新了纪录，Top-5错误率比上一年的冠军下降了十多个百分点，而且远远超过当年的第二名ISI，从而奠定了深度学习在计算机视觉领域的霸主地位。
 
+231n中对AlexNet的评价：
+
+* **AlexNet**. The first work that popularized Convolutional Networks in Computer Vision was the [AlexNet](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks), developed by Alex Krizhevsky, Ilya Sutskever and Geoff Hinton. The AlexNet was submitted to the [ImageNet ILSVRC challenge](http://www.image-net.org/challenges/LSVRC/2014/) in 2012 and significantly outperformed the second runner-up \(top 5 error of 16% compared to runner-up with 26% error\). The Network had a very similar architecture to LeNet, but was deeper, bigger, and featured Convolutional Layers stacked on top of each other \(previously it was common to only have a single CONV layer always immediately followed by a POOL layer\).
+
 AlexNet网络包含8个学习层：5个卷积层和3个全连接层，最后的输出层为一个1000类的Softmax层。AlexNet模型中间层分为两路，明确显示了两块GPU之间的职责划分——一块GPU运行图中顶部模型部分，另一块GPU则运行图中底部模型部分。GPU之间仅在某些层相互通信。该网络的输入是150528维的，且该网络剩下的各层的神经元数分别为253440-186624-64896-64896-43264-4096-1000。
 
 ![](../../../.gitbook/assets/hoxiq.png)
@@ -167,6 +171,8 @@ AlexNet采用了两种数据增强的变换方式：
 ![](../../../.gitbook/assets/timline-jie-tu-20190115114023.png)
 
 ## Source
+
+{% embed url="http://cs231n.github.io/convolutional-networks/\#case" %}
 
 {% embed url="http://vision.stanford.edu/teaching/cs231b\_spring1415/slides/alexnet\_tugce\_kyunghee.pdf" %}
 

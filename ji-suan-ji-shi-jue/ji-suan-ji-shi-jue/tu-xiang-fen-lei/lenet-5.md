@@ -6,6 +6,10 @@ LeNet-5是1998年LeCun发表的用于手写字符识别的经典卷积神经网�
 
 LeNet-5在论文中被用于识别MNIST数据集提供的0~9共10个手写数字。MNIST是当时Google实验室的Corinna Cortes和纽约大学柯朗研究所的Yann LeCun共同建立的手写数字数据库，包含训练集60000张即测试集10000张手写数字图片。该数据集提供的图片尺寸统一为28\*28，图中包含字符的最大尺寸为20\*20。
 
+231n中对LeNet的评价：
+
+* **LeNet**. The first successful applications of Convolutional Networks were developed by Yann LeCun in 1990’s. Of these, the best known is the [LeNet](http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf) architecture that was used to read zip codes, digits, etc.
+
 ## LeNet-5详解
 
 LeNet-5网络除输入层外包含7层，每层都含有可学习的参数。如下图所示，卷积层标记为 $$C_x$$ ，下采样层标记为 $$S_x$$ ，全连接层标记为 $$F_x$$ ，其中 $$x$$ 表示层下标（这个下标是指的在网络中的顺序，不是第几个这样的层）。
@@ -85,7 +89,7 @@ $$F_6$$ 层是与 $$C_5$$ 层相连，包含84个单元的全连接层，即有 
 
 {% embed url="https://blog.csdn.net/xuanyuansen/article/details/41800721" %}
 
-
+{% embed url="http://cs231n.github.io/convolutional-networks/\#case" %}
 
 
 
