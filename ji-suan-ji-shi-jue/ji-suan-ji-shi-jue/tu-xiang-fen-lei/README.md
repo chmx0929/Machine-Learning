@@ -1,2 +1,20 @@
 # 图像分类
 
+CS231n的博客里的描述网络结构的layer pattern，一般常见的网络都可以表示为：
+
+           $$\text{Input}\to [[\text{Conv}\to \text{ReLU}]*N\to \text{Pool}?]*M\to [\text{FC}\to \text{ReLU}]*K\to \text{FC}$$ 
+
+其中 $$\text{Pool}$$ 后面的 $$?$$ 表示 $$\text{Pool}$$ 是一个可选项。这样的pattern因为可以对小卷积核堆叠，很自然也更适合描述深层网络的构建，例如 $$\text{Input}\to\text{FC}$$ 表示一个线性分类器。
+
+串联和串联中带有并联的网络架构。近年来，GoogLeNet在其网络结构中引入了Inception模块，ResNet中引入了Residual Block，这些模块都有自己复杂的操作。换句话说，传统一味地去串联网络可能并不如这样串联为主线，带有一些并联同类操作但不同参数的模块可能在特征提取上更好。 所以这里本质上依旧是在做特征工程，只不过把这个过程放在block或者module的小的网络结构里，毕竟kernel、stride、output的大小等等超参数都要自己设置，目的还是产生更多丰富多样的特征。
+
+用在ImageNet上pre-trained过的模型。设计自己模型架构很浪费时间，尤其是不同的模型架构需要跑数据来验证性能，所以不妨使用别人在ImageNet上训练好的模型，然后在自己的数据和问题上在进行参数微调，收敛快精度更好。 我认为只要性能好精度高，选择什么样的模型架构都可以，但是有时候要结合应用场景，对实时性能速度有要求的，可能需要多小网络，或者分级小网络，或者级联的模型，或者做大网络的知识蒸馏得到小网络，甚至对速度高精度不要求很高的，可以用传统方法。
+
+## Source
+
+{% embed url="https://mp.weixin.qq.com/s?\_\_biz=MzAwNDI4ODcxNA==&mid=2652246142&idx=1&sn=4e479a9b7f8be21b657efc997eb841e6&scene=0" %}
+
+
+
+
+

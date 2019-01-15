@@ -78,6 +78,34 @@ VGGNet继承了AlexNet的很多结构，如下图所示。
 
 其实最重要的还是多个小卷积堆叠在分类精度上比单个大卷积要好。
 
+### 小池化核
+
+这里的“小”是相对于AlexNet的3\*3的池化核来说的。不过在说池化前，先说一下CS231n的博客里的描述网络结构的layer pattern，一般常见的网络都可以表示为：
+
+             $$\text{Input}\to [[\text{Conv}\to \text{ReLU}]*N\to \text{Pool}?]*M\to [\text{FC}\to \text{ReLU}]*K\to \text{FC}$$ 
+
+其中 $$\text{Pool}$$ 后面的 $$?$$ 表示 $$\text{Pool}$$ 是一个可选项。这样的pattern因为可以对小卷积核堆叠，很自然也更适合描述深层网络的构建，例如 $$\text{Input}\to\text{FC}$$ 表示一个线性分类器。
+
+不过从layer pattern中的 $$[[\text{Conv}\to \text{ReLU}]*N\to \text{Pool}?]*M$$ 部分，可以看出卷积层一般后面接完激活函数就紧跟池化层。对于这点我的理解是，池化做的事情是根据对应的max或者average方式进行特征筛选，还是在做特征工程上的事情。
+
+![](../../../.gitbook/assets/0.gif)
+
+2012年的AlexNet，其pooling的kernel size全是奇数，里面所有池化采用kernel size为3\*3，stride为2的max-pooling。而VGGNet所使用的max-pooling的kernel size均为2\*2，stride为2的max-pooling。pooling kernel size从奇数变为偶数。小kernel带来的是更细节的信息捕获，且是max-pooling更见微的同时进一步知躇。
+
+在当时也有average pooling，但是在图像任务上max-pooling的效果更胜一筹，所以图像大多使用max-pooling。在这里我认为max-pooling更容易捕捉图像上的变化，梯度的变化，带来更大的局部信息差异性，更好地描述边缘、纹理等构成语义的细节信息，这点尤其体现在网络可视化上。
+
+### 特征图
+
+网络在随层数递增的过程中，通过池化也逐渐忽略局部信息，特征图的宽度高度随着每个池化操作缩小50%，5个池化l操作使得宽或者高度变化过程为： $$224\to112\to56\to28\to14\to7$$ ，但是深度depth（或说是channel数），随着5组卷积在每次增大一倍： $$3\to 64\to128\to256\to512\to512$$ 特征信息从一开始输入的224\*224\*3被变换到7\*7\*512，从原本较为local的信息逐渐分摊到不同channel上，随着每次的conv和pool操作打散到channel层级上。
+
+特征图的宽高从512后开始进入全连接层，因为全连接层相比卷积层更考虑全局信息，将原本有局部信息的特征图（既有width，height还有channel）全部映射到4096维度。也就是说全连接层前是7\*7\*512维度的特征图，估算大概是25000，这个全连接过程要将25000映射到4096，大概是5000，换句话说全连接要将信息压缩到原来的五分之一。VGGNet有三个全连接，我的理解是作者认为这个映射过程的学习要慢点来，太快不易于捕捉特征映射来去之间的细微变化，让backprop学的更慢更细一些（更逐渐）。
+
+换句话说，维度在最后一个卷积后达到7\*7\*512，即大概25000，紧接着压缩到4096维，可能是作者认为这个过程太急，又接一个FC4096作为缓冲，同时两个FC4096后的ReLU又接Dropout0.5去过渡这个过程，因为最后即将给1k-way Softmax，所以又接了一个fc1000去降低Softmax的学习压力。
+
+feature map维度的整体变化过程是：先将local信息压缩，并分摊到channel层级，然后无视channel和local，通过FC这个变换再进一步压缩为稠密的feature map，这样对于分类器而言有好处也有坏处，好处是将local信息隐藏于/压缩到feature map中，坏处是信息压缩都是有损失的，相当于local信息被破坏了（分类器没有考虑到，其实对于图像任务而言，单张feature map上的local信息还是有用的）。
+
+但其实不难发现，卷积只增加feature map的通道数，而池化只减少feature map的宽高。如今也有不少做法用大stride卷积去替代池化，未来可能没有池化。
+
 ## Source
 
 {% embed url="http://cs231n.github.io/convolutional-networks/\#case" %}
