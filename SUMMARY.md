@@ -102,7 +102,6 @@
     * [GoogLeNet](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/googlenet.md)
     * [ResNet](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/resnet.md)
     * [DenseNet](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/densenet.md)
-    * [DPN](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-fen-lei/dpn.md)
   * [目标检测](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/mu-biao-jian-ce/README.md)
     * [相关研究](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/mu-biao-jian-ce/xiang-guan-yan-jiu/README.md)
       * [选择性搜索](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/mu-biao-jian-ce/xiang-guan-yan-jiu/xuan-ze-xing-sou-suo.md)
