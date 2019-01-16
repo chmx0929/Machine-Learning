@@ -22,9 +22,15 @@ $$x_l$$ 再与之前的所有输入拼接为 $$[x_0,x_1,\dots,x_{l-1},x_{l}]$$ �
 
 ![](../../../.gitbook/assets/fa648b32-6ad1-11e6-9625-02fdd72fdcd3.jpg)
 
+用于ImageNet的DenseNet架构
+
+![](../../../.gitbook/assets/1524374874244.jpg)
+
 ## Source
 
 {% embed url="https://github.com/liuzhuang13/DenseNet" %}
+
+{% embed url="https://www.jiqizhixin.com/articles/042201?from=synced&keyword=resnet" %}
 
 
 
