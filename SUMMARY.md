@@ -5,7 +5,6 @@
 * [测试-h](ce-shi-h/README.md)
   * [Untitled](ce-shi-h/untitled.md)
   * [sub-page test](ce-shi-h/sub-page-test.md)
-* [Untitled](untitled.md)
 
 ## 数学基础
 
