@@ -2,9 +2,6 @@
 
 * [目录](README.md)
 * [简介](jian-jie.md)
-* [测试-h](ce-shi-h/README.md)
-  * [Untitled](ce-shi-h/untitled.md)
-  * [sub-page test](ce-shi-h/sub-page-test.md)
 
 ## 数学基础
 
