@@ -110,11 +110,23 @@ NIN（Network in Network）的一个动机是，在传统的CNN中卷积层实�
 
 ![](../../../.gitbook/assets/1__z-bkiqq41whax4vqcvwng.png)
 
+综上所述，我们现在就有三种不同类型的Inception模块（这里我们按引入顺序称之为模块 A、B、C，这里使用A、B、C作为名称只是为了清晰期间，并不是它们的正式名称）。架构如下所示。这里，figure 5是模块 A，figure 6是模块 B，figure 7是模块 C。
+
+![](../../../.gitbook/assets/timline-jie-tu-20190117165319.png) ![](../../../.gitbook/assets/timline-jie-tu-20190117165338.png) ![](../../../.gitbook/assets/timline-jie-tu-20190117165357.png) ![](../../../.gitbook/assets/1527656990509.png) 
+
+其中A就是常规Inception，把5\*5换成了两个3\*3；B就是把n\*n换为1\*n和n\*1形式；C即在n\*n后面又分开了1\*n和n\*1。模块中的滤波器组被扩展（即变得更宽而不是更深，C为更宽，B为更深），以解决表征性瓶颈。如果该模块没有被拓展宽度，而是变得更深，那么维度会过多减少，造成信息损失。
+
 ### [Inception-v4](https://arxiv.org/pdf/1602.07261.pdf)
 
-借鉴了ResNet可以构建更深网络的思想，设计了更深、更优化的模型。
+借鉴了ResNet可以构建更深网络的思想，设计了更深、更优化的模型。目的是为了使模块更加一致。作者还注意到某些模块有不必要的复杂性。这允许我们通过添加更多一致的模块来提高性能。
 
 ![](../../../.gitbook/assets/1_hj3cnngz6v76h38s7-otsa.png)
+
+它们有三个主要的Inception模块（即上图右面三个，或看下图），称为 A、B 和 C（和 Inception-v2 不同，这些模块确实被命名为 A、B 和 C）。它们看起来和 Inception-v2（或 v3）变体非常相似。
+
+![](../../../.gitbook/assets/1527656989886.png)
+
+Inception-v4 引入了专用的“缩减块”（reduction block），它被用于改变网格的宽度和高度。早期的版本并没有明确使用缩减块，但也实现了其功能。
 
 ### Inception-ResNet v1和v2
 
@@ -122,6 +134,26 @@ NIN（Network in Network）的一个动机是，在传统的CNN中卷积层实�
 
 * Inception-ResNet v1 的计算成本和 Inception v3 的接近。
 * Inception-ResNet v2 的计算成本和 Inception v4 的接近。
+
+两个子版本都有相同的模块 A、B、C 和缩减块结构。唯一的不同在于超参数设置。在这一部分，我们将聚焦于结构，并参考论文中的相同超参数设置。下图上部是Inception-ResNet-v1的stem。图下部是Inception-v4和Inception-ResNet-v2的stem。
+
+![](../../../.gitbook/assets/1527656989807.png)
+
+Inception-ResNet引入残差连接，它将Inception模块的卷积运算输出添加到输入上。为了使残差加运算可行，卷积之后的输入和输出必须有相同的维度。因此，我们在初始卷积之后使用1\*1卷积来匹配深度（深度在卷积之后会增加）。
+
+![Inception-ResNet&#x7684;Inception&#x6A21;&#x5757; ABC&#x3002;&#x6C60;&#x5316;&#x5C42;&#x88AB;&#x6B8B;&#x5DEE;&#x8FDE;&#x63A5;&#x66FF;&#x4EE3;&#xFF0C;&#x5E76;&#x5728;&#x6B8B;&#x5DEE;&#x52A0;&#x8FD0;&#x7B97;&#x524D;&#x6709;&#x989D;&#x5916;&#x7684; 1\*1 &#x5377;&#x79EF;](../../../.gitbook/assets/1527656991895.png)
+
+主要Inception模块的池化运算由残差连接替代。然而，你仍然可以在缩减块中找到这些运算。缩减块 A 和 Inception-v4中的缩减块相同。
+
+![&#x7F29;&#x51CF;&#x5757; A&#xFF08;&#x4ECE; 35\*35 &#x5230; 17\*17 &#x7684;&#x5C3A;&#x5BF8;&#x7F29;&#x51CF;&#xFF09;&#x548C;&#x7F29;&#x51CF;&#x5757; B&#xFF08;&#x4ECE; 17\*17 &#x5230; 8\*8 &#x7684;&#x5C3A;&#x5BF8;&#x7F29;&#x51CF;&#xFF09;](../../../.gitbook/assets/1527656990585.png)
+
+如果卷积核的数量超过 1000，则网络架构更深层的残差单元将导致网络崩溃。因此，为了增加稳定性，作者通过 0.1 到 0.3 的比例缩放残差激活值。
+
+![&#x6FC0;&#x6D3B;&#x503C;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5E38;&#x6570;&#x8FDB;&#x884C;&#x6BD4;&#x4F8B;&#x7F29;&#x653E;&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x7F51;&#x7EDC;&#x5D29;&#x6E83;&#x3002;](../../../.gitbook/assets/1527656990753.png)
+
+Inception v4 （下图上部）和 Inception-ResNet （下图下部）的网络完整架构如下图所示：
+
+![](../../../.gitbook/assets/1527656990651.png)
 
 ## Source
 
