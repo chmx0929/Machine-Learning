@@ -8,7 +8,7 @@ CS231n的博客里的描述网络结构的layer pattern，一般常见的网络�
 
 串联和串联中带有并联的网络架构。近年来，GoogLeNet在其网络结构中引入了Inception模块，ResNet中引入了Residual Block，这些模块都有自己复杂的操作。换句话说，传统一味地去串联网络可能并不如这样串联为主线，带有一些并联同类操作但不同参数的模块可能在特征提取上更好。 所以这里本质上依旧是在做特征工程，只不过把这个过程放在block或者module的小的网络结构里，毕竟kernel、stride、output的大小等等超参数都要自己设置，目的还是产生更多丰富多样的特征。
 
-在这里推荐[何恺明18年CVPR的讲座](http://kaiminghe.com/cvpr18tutorial/cvpr2018_tutorial_kaiminghe.pdf)，串讲了几个经典模型和batch normalization。比较高屋建瓴，可以点链接看一下。总体来说：
+在这里推荐[何恺明18年CVPR的讲座](http://kaiminghe.com/cvpr18tutorial/cvpr2018_tutorial_kaiminghe.pdf)，串讲了几个经典模型和batch normalization，比较高屋建瓴，可以点链接看一下。总体来说：
 
 * （1）第一个得到广泛关注的 AlexNet，它本质上就是扩展 LeNet 的深度，并应用一些 ReLU、Dropout 等技巧。AlexNet 有 5 个卷积层和 3 个最大池化层，它可分为上下两个完全相同的分支，这两个分支在第三个卷积层和全连接层上可以相互交换信息。与Inception同年提出的优秀网络还有VGG-Net，它相比于AlexNet有更小的卷积核和更深的层级。
 * （2）VGG-Net的泛化性能非常好，常用于图像特征的抽取目标检测候选框生成等。VGG最大的问题就在于参数数量，VGG-19基本上是参数量最多的卷积网络架构。这一问题也是第一次提出 Inception 结构的GoogLeNet所重点关注的，它没有如同VGG-Net那样大量使用全连接网络，因此参数量非常小。
@@ -27,6 +27,8 @@ ZFNet，DPN这两个个网络（13、17年ILSVRC冠军）后期有时间我会�
 {% embed url="https://mp.weixin.qq.com/s?\_\_biz=MzAwNDI4ODcxNA==&mid=2652246142&idx=1&sn=4e479a9b7f8be21b657efc997eb841e6&scene=0" %}
 
 {% embed url="https://www.jiqizhixin.com/articles/2018-05-30-7?from=synced&keyword=resnet" %}
+
+{% embed url="https://www.cnblogs.com/skyfsm/p/8451834.html" %}
 
 {% embed url="http://kaiminghe.com/cvpr18tutorial/cvpr2018\_tutorial\_kaiminghe.pdf" %}
 
