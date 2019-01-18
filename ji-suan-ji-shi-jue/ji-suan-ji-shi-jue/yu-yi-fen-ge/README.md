@@ -59,6 +59,18 @@ dilated/atrous （空洞卷积）架构，这种结构代替了pooling，一方�
 
 ![](../../../.gitbook/assets/v2-84b0d01fd9de2d5ba0db880928127a8c_hd.jpg)
 
+## 评判标准
+
+对图像语义分割效果的判断一般采用如下几种方式：
+
+（1）全局均值（Global Average）：按像素正确分类的比例计算，这个指标的计算方式简单，容易应用在深度神经网络中。但是它没有考虑不同种类物体的差别，它与人类的认知也有一定的差别。
+
+（2）分类平均准确率（Class Average Accuracy）：所有分类预测准确率的平均值。
+
+（3）交集/并集的均值（Mean Intersection Over Unit，mIoU）：mIoU比分类平均准确率更严格，因为它惩罚了伪正例（False Positive）。但是它的缺点是，交叉熵损失不好直接优化。另外，它只是衡量了像素点正确分类的总数，并没有精确地描述切分边界的准确性。
+
+（4）语义轮廓得分（Semantic Contour Score）：在给定容忍距离的情况下，计算预测边界和真实边界的F1-measure。语义轮廓得分和mIoU组合的方式与人类的认知最接近。
+
 ## Source
 
 {% embed url="https://zhuanlan.zhihu.com/p/37801090" %}
