@@ -1,6 +1,6 @@
 # 语义分割
 
-图像语义分割，顾名思义，就是按照语义对每个像素点进行分类。以下图为例，语义分割问题不仅需要解决这张图片中包含哪些物体，还需要解决每个像素点属于哪个物体。
+图像语义分割，顾名思义，就是按照语义对每个像素点进行分类。以下图为例，语义分割问题不仅需要解决这张图片中包含哪些物体，还需要解决每个像素点属于哪个物体。[相关论文与demo](https://github.com/tangzhenyu/SemanticSegmentation_DL)。
 
 ![](../../../.gitbook/assets/v2-a1424df7b3f7eca9a22819fe940ac501_hd.png)
 
@@ -74,6 +74,8 @@ dilated/atrous （空洞卷积）架构，这种结构代替了pooling，一方�
 ## Source
 
 {% embed url="https://zhuanlan.zhihu.com/p/37801090" %}
+
+{% embed url="https://github.com/tangzhenyu/SemanticSegmentation\_DL" %}
 
 
 
