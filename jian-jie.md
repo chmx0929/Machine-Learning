@@ -6,9 +6,7 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 若有问题欢迎在GitHub中提Issue讨论：[https://github.com/chmx0929/Machine-Learning](https://github.com/chmx0929/Machine-Learning)
 
-炼丹传送门：[机器学习](https://github.com/fengdu78/lihang-code)、[深度学习](https://github.com/jiqizhixin/ML-Tutorial-Experiment)、[自然语言处理](https://github.com/nlpinaction/learning-nlp)
-
-有时候由于GitBook网络问题有些图片刷不出来，但是GitHub比较稳定，可以结合GitHub看。
+炼丹传送门：[机器学习](https://github.com/fengdu78/lihang-code)、[深度学习](https://github.com/jiqizhixin/ML-Tutorial-Experiment)、[自然语言处理](https://github.com/nlpinaction/learning-nlp)、[图片分类框架](https://www.cnblogs.com/skyfsm/p/8451834.html)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

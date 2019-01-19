@@ -1,6 +1,38 @@
 # CRFasRNN
 
-[线上demo](http://www.robots.ox.ac.uk/~szheng/crfasrnndemo)
+DeepLab使用CRF来袭条语义分割结果，准确率获得了非常大的提升。然而，DeepLab中的深度卷积神经网络和条件随机场相互独立，可以说是在DCNN的结果后面增加了一个独立的概率图模型。DCNN的训练与后面CRF的训练相独立，没有办法获得CRF的信息。由于CRF并没有与DCNN完全融合在一起，CRF的能力还没有得到完全的发挥。而CRFasRNN的贡献在于把CRF建模成深度神经网络的一部分，实现了端到端深度学习的解决方案。首先用CNN来建模CRF的一次迭代，然后用RNN来建模所有迭代。[线上demo](http://www.robots.ox.ac.uk/~szheng/crfasrnndemo)
+
+与传统的CNN在训练后就确定了参数的做法不同，这里的CNN的系数取决于图片上的原始信息，虽然高斯核的大小跟原始图片一样，但是它只需要很少的参数。CRF的参数如高斯核的权重和标签相容性函数在整个网络的训练中得到了优化，能够进行前向、后向传播。如下图所示，给出了将DenseCRF中的平均场建模为CNN的步骤：
+
+![](../../../../.gitbook/assets/screenshot-from-2019-01-19-11-49-27.png)
+
+这里使用 $$U_i(l)$$ 来表示前面章节中提到的负的一元势函数。也就是说：
+
+                                                          $$U_i(l)=-\psi_u(X_i=l)$$ 
+
+其中 $$i$$ 表示像素点索引， $$l$$ 表示所有可能的标注中的某一个。
+
+第一步：初始化。在每个像素点上对每个标签都做Softmax，其中 $$Z_i=\sum\limits_l\exp(U_i(l))$$ 。这步操作没有任何额外的参数，而且可以很容易地使用CNN中的Softmax来实现前向、后向传播。
+
+第二步：消息传递。在DenseCRF中，信息传递的实现实在 $$Q$$ 值上使用了 $$m$$ 个高斯核。高斯核的系数由像素位置和RGB值来决定。由于CRF可能是全局关联的，所以每个高斯核的感受野都需要是整张图片的大小。为了使求解过程更快，这里使用了[Permutohedral lattice](https://graphics.stanford.edu/papers/permutohedral/)实现。
+
+第三步：高斯核结果加权求和。
+
+第四步：相容性变换。
+
+第五步：增加一元势函数。这一步没有额外的参数。
+
+第六步：标准化。采用一个Softmax函数实现。
+
+
+
+
+
+
+
+
+
+
 
 
 
