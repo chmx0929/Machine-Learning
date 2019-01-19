@@ -106,11 +106,52 @@ feature map维度的整体变化过程是：先将local信息压缩，并分摊�
 
 但其实不难发现，卷积只增加feature map的通道数，而池化只减少feature map的宽高。如今也有不少做法用大stride卷积去替代池化，未来可能没有池化。
 
+## Code实现
+
+```python
+def VGG_16():   
+    model = Sequential()
+    
+    model.add(Conv2D(64,(3,3),strides=(1,1),input_shape=(224,224,3),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(Conv2D(64,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    
+    model.add(Conv2D(128,(3,2),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(Conv2D(128,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    
+    model.add(Conv2D(256,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(Conv2D(256,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(Conv2D(256,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    
+    model.add(Conv2D(512,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(Conv2D(512,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(Conv2D(512,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    
+    model.add(Conv2D(512,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(Conv2D(512,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(Conv2D(512,(3,3),strides=(1,1),padding='same',activation='relu',kernel_initializer='uniform'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    
+    model.add(Flatten())
+    model.add(Dense(4096,activation='relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(4096,activation='relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(1000,activation='softmax'))
+    
+    return model
+```
+
 ## Source
 
 {% embed url="http://cs231n.github.io/convolutional-networks/\#case" %}
 
 {% embed url="https://mp.weixin.qq.com/s?\_\_biz=MzAwNDI4ODcxNA==&mid=2652246142&idx=1&sn=4e479a9b7f8be21b657efc997eb841e6&scene=0" %}
+
+{% embed url="https://www.cnblogs.com/skyfsm/p/8451834.html" %}
 
 
 
