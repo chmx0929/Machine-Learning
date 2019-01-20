@@ -44,6 +44,12 @@ PrefixSpan算法的全称是Prefix-Projected Pattern Growth，即前缀投影的
 
 ![](../../../.gitbook/assets/20181226155839452.bin)
 
+PrefixSpan算法由于不用产生候选序列，且投影数据库缩小的很快，内存消耗比较稳定，作频繁序列模式挖掘的时候效果很高。比起其他的序列挖掘算法比如GSP，FreeSpan有较大优势，因此是在生产环境常用的算法。
+
+PrefixSpan运行时最大的消耗在递归的构造投影数据库。如果序列数据集较大，项数种类较多时，算法运行速度会有明显下降。因此有一些PrefixSpan的改进版算法都是在优化构造投影数据库这一块。比如使用伪投影计数。
+
+不过scikit-learn始终不太重视关联算法，一直都不包括这一块的算法集成。当然使用大数据平台的分布式计算能力也是加快PrefixSpan运行速度一个好办法。比如Spark的MLlib就内置了PrefixSpan算法。
+
 ### 算法思路
 
 现在我们来看看PrefixSpan算法的思想，PrefixSpan算法的目标是挖掘出满足最小支持度的频繁序列。那么怎么去挖掘出所有满足要求的频繁序列呢。回忆Aprior算法，它是从频繁1项集出发，一步步的挖掘2项集，直到最大的K项集。PrefixSpan算法也类似，它从长度为1的前缀开始挖掘序列模式，搜索对应的投影数据库得到长度为1的前缀对应的频繁序列，然后递归的挖掘长度为2的前缀所对应的频繁序列...以此类推，一直递归到不能挖掘到更长的前缀挖掘为止。
@@ -66,7 +72,48 @@ PrefixSpan算法的全称是Prefix-Projected Pattern Growth，即前缀投影的
 
 ### 算法流程
 
+输入：序列数据集 $$S$$ 和支持度阈值 $$\alpha$$ 
+
+输出：所有满足支持度要求的频繁序列集
+
+（1）找出所有长度为1的前缀和对应的投影数据库
+
+（2）对长度为1的前缀进行计数，将支持度低于阈值 $$\alpha$$ 的前缀对应的项从数据集 $$S$$ 删除，同时得到所有的频繁1项序列， $$i = 1$$ 。
+
+（3）对于每个长度为 $$i$$ 满足支持度要求的前缀进行递归挖掘：
+
+          （a） 找出前缀所对应的投影数据库。如果投影数据库为空，则递归返回。
+
+          （b）统计对应投影数据库中各项的支持度计数。如果所有项的支持度计数都低于阈值 $$\alpha$$ ，则递归返回。
+
+          （c）将满足支持度计数的各个单项和当前的前缀进行合并，得到若干新的前缀。
+
+          （d）令 $$i = i+1$$ ，前缀为合并单项后的各个前缀，分别递归执行第3步。
+
 ### 算法实践
+
+### Code实现
+
+{% embed url="https://spark.apache.org/docs/2.3.0/mllib-frequent-pattern-mining.html" %}
+
+```python
+from pyspark import SparkContext
+from pyspark import SparkConf
+from  pyspark.mllib.fpm import PrefixSpan
+
+sc = SparkContext("local","testing")
+
+data = [
+   [['a'],["a", "b", "c"], ["a","c"],["d"],["c", "f"]],
+   [["a","d"], ["c"],["b", "c"], ["a", "e"]],
+   [["e", "f"], ["a", "b"], ["d","f"],["c"],["b"]],
+   [["e"], ["g"],["a", "f"],["c"],["b"],["c"]]
+   ]
+rdd = sc.parallelize(data, 2)
+model = PrefixSpan.train(rdd, 0.5,4)
+
+sorted(model.freqSequences().collect())
+```
 
 ## CloSpan\(针对closed sequential patterns\)
 

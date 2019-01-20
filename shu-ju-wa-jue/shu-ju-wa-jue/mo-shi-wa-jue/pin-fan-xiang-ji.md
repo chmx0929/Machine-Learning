@@ -54,6 +54,10 @@ return: 返回所有满足频繁项集
 
 ![Frequent Pattern:{A,B,C,E,\(A,C\),\(B,C\),\(B,E\),\(C,E\),\(B,C,E\)}](../../../.gitbook/assets/timline-jie-tu-20181011110740.png)
 
+### Code实现
+
+{% embed url="https://spark.apache.org/docs/2.3.0/mllib-frequent-pattern-mining.html" %}
+
 ## FP-Growth
 
 也基于了若k-项集都不满足支持度，那含k-项集的\(k+1\)项集也不满足的思想。
@@ -73,6 +77,10 @@ return: 返回所有满足频繁项集
 ![](../../../.gitbook/assets/timline-jie-tu-20181011111550.png)
 
 ![](../../../.gitbook/assets/timline-jie-tu-20181011112550.png)
+
+### Code实现
+
+{% embed url="https://spark.apache.org/docs/2.3.0/mllib-frequent-pattern-mining.html" %}
 
 ## 项集衡量
 
