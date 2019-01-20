@@ -198,3 +198,72 @@ M步：计算模型参数的新估计值
 
 如果取初值 $$\pi^{(0)}=0.4,\ \ \ p^{(0)}=0.6,\ \ \ q^{(0)}=0.7$$ ，那么得到的模型参数的极大似然估计是 $$\hat{\pi}=0.4064,\ \ \ \hat{p}=0.5368,\ \ \ \hat{q}=0.6432$$ 。这就是说，EM算法与初值的选取有关，选择不同的初值可能得到不同的参数估计值。
 
+### Code实现
+
+E-step： $$\mu^{i+1}=\frac{\pi (p^i)^{y_i}(1-(p^i))^{1-y_i}}{\pi (p^i)^{y_i}(1-(p^i))^{1-y_i}+(1-\pi) (q^i)^{y_i}(1-(q^i))^{1-y_i}}$$ 
+
+```python
+import numpy as np
+import math
+
+pro_A, pro_B, por_C = 0.5, 0.5, 0.5
+
+def pmf(i, pro_A, pro_B, por_C):
+    pro_1 = pro_A * math.pow(pro_B, data[i]) * math.pow((1-pro_B), 1-data[i])
+    pro_2 = pro_A * math.pow(pro_C, data[i]) * math.pow((1-pro_C), 1-data[i])
+    return pro_1 / (pro_1 + pro_2)
+```
+
+M-step： $$\pi^{i+1}=\frac{1}{n}\sum_{j=1}^n\mu^{i+1}_j， p^{i+1}=\frac{\sum_{j=1}^n\mu^{i+1}_jy_i}{\sum_{j=1}^n\mu^{i+1}_j}， q^{i+1}=\frac{\sum_{j=1}^n(1-\mu^{i+1}_jy_i)}{\sum_{j=1}^n(1-\mu^{i+1}_j)}$$ 
+
+```python
+class EM:
+    def __init__(self, prob):
+        self.pro_A, self.pro_B, self.pro_C = prob
+        
+    # e_step
+    def pmf(self, i):
+        pro_1 = self.pro_A * math.pow(self.pro_B, data[i]) * math.pow((1-self.pro_B), 1-data[i])
+        pro_2 = (1 - self.pro_A) * math.pow(self.pro_C, data[i]) * math.pow((1-self.pro_C), 1-data[i])
+        return pro_1 / (pro_1 + pro_2)
+    
+    # m_step
+    def fit(self, data):
+        count = len(data)
+        print('init prob:{}, {}, {}'.format(self.pro_A, self.pro_B, self.pro_C))
+        for d in range(count):
+            _ = yield
+            _pmf = [self.pmf(k) for k in range(count)]
+            pro_A = 1/ count * sum(_pmf)
+            pro_B = sum([_pmf[k]*data[k] for k in range(count)]) / sum([_pmf[k] for k in range(count)])
+            pro_C = sum([(1-_pmf[k])*data[k] for k in range(count)]) / sum([(1-_pmf[k]) for k in range(count)])
+            print('{}/{}  pro_a:{:.3f}, pro_b:{:.3f}, pro_c:{:.3f}'.format(d+1, count, pro_A, pro_B, pro_C))
+            self.pro_A = pro_A
+            self.pro_B = pro_B
+            self.pro_C = pro_C
+```
+
+测试
+
+```python
+data=[1,1,0,1,0,0,1,0,1,1]
+
+em = EM(prob=[0.5, 0.5, 0.5])
+f = em.fit(data)
+next(f)
+
+# 第一次迭代
+f.send(1)
+
+# 第二次
+f.send(2)
+
+em = EM(prob=[0.4, 0.6, 0.7])
+f2 = em.fit(data)
+next(f2)
+
+f2.send(1)
+
+f2.send(2)
+```
+
