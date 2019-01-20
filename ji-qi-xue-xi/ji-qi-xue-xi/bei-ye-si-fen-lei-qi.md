@@ -113,3 +113,123 @@ $$P(好瓜=否)\times P_{青绿|否}\times P_{蜷缩|否}\times P_{浊响|否}\t
 
 需注意，若某个属性值在训练集中没有与某个类同时出现过，则直接用上述方法进行概率估计会出现问题，假设对一个“敲声=清脆”的测试例，有 $$P_{清脆|是}=P(敲声=清脆|好瓜=是)=\frac{0}{8}$$ 。所以无论其他属性是什么，连乘计算出概率为零。为避免这种情况，在估计概率值时通常进行“平滑”，常用“拉普拉斯修正”。
 
+## [Code实现](https://github.com/fengdu78/lihang-code/blob/master/code/%E7%AC%AC4%E7%AB%A0%20%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%28NaiveBayes%29/GaussianNB.ipynb)
+
+基于贝叶斯定理与特征条件独立假设的分类方法。模型：
+
+* 高斯模型
+* 多项式模型
+* 伯努利模型
+
+### 数据
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+
+from collections import Counter
+import math
+
+# data
+def create_data():
+    iris = load_iris()
+    df = pd.DataFrame(iris.data, columns=iris.feature_names)
+    df['label'] = iris.target
+    df.columns = ['sepal length', 'sepal width', 'petal length', 'petal width', 'label']
+    data = np.array(df.iloc[:100, :])
+    # print(data)
+    return data[:,:-1], data[:,-1]
+
+X, y = create_data()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+```
+
+### 手写实现
+
+```python
+class NaiveBayes:
+    def __init__(self):
+        self.model = None
+
+    # 数学期望
+    @staticmethod
+    def mean(X):
+        return sum(X) / float(len(X))
+
+    # 标准差（方差）
+    def stdev(self, X):
+        avg = self.mean(X)
+        return math.sqrt(sum([pow(x-avg, 2) for x in X]) / float(len(X)))
+
+    # 概率密度函数
+    def gaussian_probability(self, x, mean, stdev):
+        exponent = math.exp(-(math.pow(x-mean,2)/(2*math.pow(stdev,2))))
+        return (1 / (math.sqrt(2*math.pi) * stdev)) * exponent
+
+    # 处理X_train
+    def summarize(self, train_data):
+        summaries = [(self.mean(i), self.stdev(i)) for i in zip(*train_data)]
+        return summaries
+
+    # 分类别求出数学期望和标准差
+    def fit(self, X, y):
+        labels = list(set(y))
+        data = {label:[] for label in labels}
+        for f, label in zip(X, y):
+            data[label].append(f)
+        self.model = {label: self.summarize(value) for label, value in data.items()}
+        return 'gaussianNB train done!'
+
+    # 计算概率
+    def calculate_probabilities(self, input_data):
+        # summaries:{0.0: [(5.0, 0.37),(3.42, 0.40)], 1.0: [(5.8, 0.449),(2.7, 0.27)]}
+        # input_data:[1.1, 2.2]
+        probabilities = {}
+        for label, value in self.model.items():
+            probabilities[label] = 1
+            for i in range(len(value)):
+                mean, stdev = value[i]
+                probabilities[label] *= self.gaussian_probability(input_data[i], mean, stdev)
+        return probabilities
+
+    # 类别
+    def predict(self, X_test):
+        # {0.0: 2.9680340789325763e-27, 1.0: 3.5749783019849535e-26}
+        label = sorted(self.calculate_probabilities(X_test).items(), key=lambda x: x[-1])[-1][0]
+        return label
+
+    def score(self, X_test, y_test):
+        right = 0
+        for X, y in zip(X_test, y_test):
+            label = self.predict(X)
+            if label == y:
+                right += 1
+
+        return right / float(len(X_test))
+
+model = NaiveBayes()
+model.fit(X_train, y_train)
+print(model.predict([4.4,  3.2,  1.3,  0.2]))
+model.score(X_test, y_test)
+```
+
+### sklearn实现
+
+{% embed url="https://scikit-learn.org/stable/modules/generated/sklearn.naive\_bayes.GaussianNB.html" %}
+
+```python
+from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import BernoulliNB, MultinomialNB # 伯努利模型和多项式模型
+
+clf = GaussianNB()
+clf.fit(X_train, y_train)
+
+clf.score(X_test, y_test)
+clf.predict([[4.4,  3.2,  1.3,  0.2]])
+```
+
