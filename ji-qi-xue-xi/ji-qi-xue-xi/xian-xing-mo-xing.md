@@ -220,7 +220,7 @@ $$P(Y=k|x)=\frac{\exp(w_k\cdot x)}{1+\sum\limits_{k=1}^{K-1}\exp(w_k\cdot x)},\ 
 
 逻辑回归模型： $$f =\frac{1}{1+e^{-wx}}$$ ，其中 $$wx = w_0^**x_0+w_1^**x_1+\dots+w_n^**x_n,\ x_0=1$$ 
 
-### 手写实现
+### 数据
 
 ```python
 from math import exp
@@ -245,7 +245,11 @@ def create_data():
 
 X, y = create_data()
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+```
 
+### 手写实现
+
+```python
 class LogisticReressionClassifier:
     def __init__(self, max_iter=200, learning_rate=0.01):
         self.max_iter = max_iter
@@ -303,7 +307,7 @@ plt.legend()
 
 ### sklearn实现
 
-[sklearn.linear\_model.LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
+{% embed url="https://scikit-learn.org/stable/modules/generated/sklearn.linear\_model.LogisticRegression.html" %}
 
 solver参数决定了我们对逻辑回归损失函数的优化方法，有四种算法可以选择，分别是：
 
