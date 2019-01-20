@@ -216,6 +216,123 @@ $$P(Y=k|x)=\frac{\exp(w_k\cdot x)}{1+\sum\limits_{k=1}^{K-1}\exp(w_k\cdot x)},\ 
 
 若将 $$W$$ 视为一个投影矩阵，则多分类LDA将样本投影到 $$d'$$ 维空间。 $$d'$$ 通常远小于数据原有的属性数 $$d$$ 于是，可通过这个投影来减少样本点的维数，且投影过程中采用了类别信息，因此LDA也常被视为一种经典的监督降维技术。
 
+## [Code实现](https://github.com/fengdu78/lihang-code/blob/master/code/%E7%AC%AC6%E7%AB%A0%20%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E5%9B%9E%E5%BD%92%28LogisticRegression%29/LR.ipynb)
+
+逻辑回归模型： $$f =\frac{1}{1+e^{-wx}}$$ ，其中 $$wx = w_0^**x_0+w_1^**x_1+\dots+w_n^**x_n,\ x_0=1$$ 
+
+### 手写实现
+
+```python
+from math import exp
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+
+# data
+def create_data():
+    iris = load_iris()
+    df = pd.DataFrame(iris.data, columns=iris.feature_names)
+    df['label'] = iris.target
+    df.columns = ['sepal length', 'sepal width', 'petal length', 'petal width', 'label']
+    data = np.array(df.iloc[:100, [0,1,-1]])
+    # print(data)
+    return data[:,:2], data[:,-1]
+    
+
+X, y = create_data()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+class LogisticReressionClassifier:
+    def __init__(self, max_iter=200, learning_rate=0.01):
+        self.max_iter = max_iter
+        self.learning_rate = learning_rate
+        
+    def sigmoid(self, x):
+        return 1 / (1 + exp(-x))
+
+    def data_matrix(self, X):
+        data_mat = []
+        for d in X:
+            data_mat.append([1.0, *d])
+        return data_mat
+
+    def fit(self, X, y):
+        # label = np.mat(y)
+        data_mat = self.data_matrix(X) # m*n
+        self.weights = np.zeros((len(data_mat[0]),1), dtype=np.float32)
+
+        for iter_ in range(self.max_iter):
+            for i in range(len(X)):
+                result = self.sigmoid(np.dot(data_mat[i], self.weights))
+                error = y[i] - result 
+                self.weights += self.learning_rate * error * np.transpose([data_mat[i]])
+        print('LogisticRegression Model(learning_rate={},max_iter={})'.format(self.learning_rate, self.max_iter))
+
+    # def f(self, x):
+    #     return -(self.weights[0] + self.weights[1] * x) / self.weights[2]
+
+    def score(self, X_test, y_test):
+        right = 0
+        X_test = self.data_matrix(X_test)
+        for x, y in zip(X_test, y_test):
+            result = np.dot(x, self.weights)
+            if (result > 0 and y == 1) or (result < 0 and y == 0):
+                right += 1
+        return right / len(X_test)
+
+lr_clf = LogisticReressionClassifier()
+lr_clf.fit(X_train, y_train)
+
+lr_clf.score(X_test, y_test)
+
+x_ponits = np.arange(4, 8)
+y_ = -(lr_clf.weights[1]*x_ponits + lr_clf.weights[0])/lr_clf.weights[2]
+plt.plot(x_ponits, y_)
+
+#lr_clf.show_graph()
+plt.scatter(X[:50,0],X[:50,1], label='0')
+plt.scatter(X[50:,0],X[50:,1], label='1')
+plt.legend()
+```
+
+![](../../.gitbook/assets/download.png)
+
+### sklearn实现
+
+[sklearn.linear\_model.LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
+
+solver参数决定了我们对逻辑回归损失函数的优化方法，有四种算法可以选择，分别是：
+
+* a\) liblinear：使用了开源的liblinear库实现，内部使用了坐标轴下降法来迭代优化损失函数。
+* b\) lbfgs：拟牛顿法的一种，利用损失函数二阶导数矩阵即海森矩阵来迭代优化损失函数。
+* c\) newton-cg：也是牛顿法家族的一种，利用损失函数二阶导数矩阵即海森矩阵来迭代优化损失函数。
+* d\) sag：即随机平均梯度下降，是梯度下降法的变种，和普通梯度下降法的区别是每次迭代仅仅用一部分的样本来计算梯度，适合于样本数据多的时候。
+
+```python
+from sklearn.linear_model import LogisticRegression
+
+clf = LogisticRegression(max_iter=200)
+clf.fit(X_train, y_train)
+clf.score(X_test, y_test)
+print(clf.coef_, clf.intercept_)
+
+x_ponits = np.arange(4, 8)
+y_ = -(clf.coef_[0][0]*x_ponits + clf.intercept_)/clf.coef_[0][1]
+plt.plot(x_ponits, y_)
+
+plt.plot(X[:50, 0], X[:50, 1], 'bo', color='blue', label='0')
+plt.plot(X[50:, 0], X[50:, 1], 'bo', color='orange', label='1')
+plt.xlabel('sepal length')
+plt.ylabel('sepal width')
+plt.legend()
+```
+
+![](../../.gitbook/assets/download-1.png)
+
                                               
 
 
