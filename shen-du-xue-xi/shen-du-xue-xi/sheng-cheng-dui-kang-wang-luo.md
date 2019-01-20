@@ -34,6 +34,10 @@
 
 这里红框圈出的部分是我们要额外注意的。第一步我们训练 $$D$$ ， $$D$$ 是希望 $$V(G, D)$$ 越大越好，所以是加上梯度\(ascending\)。第二步训练 $$G$$ 时， $$V(G, D)$$ 越小越好，所以是减去梯度\(descending\)。整个训练过程交替进行。
 
+## Code实现
+
+{% embed url="https://github.com/jiqizhixin/ML-Tutorial-Experiment/blob/master/Experiments/tf\_GAN.ipynb" %}
+
 ## Source
 
 {% embed url="https://arxiv.org/abs/1406.2661" %}

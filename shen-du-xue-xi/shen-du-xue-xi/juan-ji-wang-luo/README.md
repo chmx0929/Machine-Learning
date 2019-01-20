@@ -68,3 +68,7 @@
 
 ![Dropout\(&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x4E4B;&#x540E;\) Dropconnect\(&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x4E4B;&#x524D;\)](../../../.gitbook/assets/tu-pian-2%20%283%29.png)
 
+## Code实现
+
+{% embed url="https://github.com/jiqizhixin/ML-Tutorial-Experiment/blob/master/Experiments/tf\_Keras\_CNN.ipynb" %}
+
