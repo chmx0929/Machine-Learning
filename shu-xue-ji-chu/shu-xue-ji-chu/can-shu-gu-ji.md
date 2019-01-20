@@ -198,7 +198,7 @@ M步：计算模型参数的新估计值
 
 如果取初值 $$\pi^{(0)}=0.4,\ \ \ p^{(0)}=0.6,\ \ \ q^{(0)}=0.7$$ ，那么得到的模型参数的极大似然估计是 $$\hat{\pi}=0.4064,\ \ \ \hat{p}=0.5368,\ \ \ \hat{q}=0.6432$$ 。这就是说，EM算法与初值的选取有关，选择不同的初值可能得到不同的参数估计值。
 
-### Code实现
+### [Code实现](https://github.com/fengdu78/lihang-code/blob/master/code/%E7%AC%AC9%E7%AB%A0%20EM%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E6%8E%A8%E5%B9%BF%28EM%29/em.ipynb)
 
 E-step： $$\mu^{i+1}=\frac{\pi (p^i)^{y_i}(1-(p^i))^{1-y_i}}{\pi (p^i)^{y_i}(1-(p^i))^{1-y_i}+(1-\pi) (q^i)^{y_i}(1-(q^i))^{1-y_i}}$$ 
 
