@@ -34,7 +34,9 @@
     * [划分聚类](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi/hua-fen-ju-lei.md)
     * [层次聚类](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi/ceng-ci-ju-lei.md)
     * [密度/网格聚类](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi/mi-du-wang-ge-ju-lei.md)
-  * [文本挖掘](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue.md)
+  * [文本挖掘](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue/README.md)
+    * [短语挖掘与主题模型](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue/duan-yu-wa-jue-yu-zhu-ti-mo-xing.md)
+    * [实体识别与类型标记](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue/shi-ti-shi-bie-yu-lei-xing-biao-ji.md)
 
 ## 机器学习
 

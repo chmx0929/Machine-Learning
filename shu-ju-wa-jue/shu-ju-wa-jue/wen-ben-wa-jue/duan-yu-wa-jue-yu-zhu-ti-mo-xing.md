@@ -1,14 +1,6 @@
-# 文本挖掘
+# 短语挖掘与主题模型
 
-不同于自然语言处理\(Natural Language Processing\)，数据挖掘领域对文本处理有自己的一套方法来避免自然语言处理中的两大限制：
-
-1、标注花费高\(或者大量的数词个数等统计工作\)，新语言或领域扩展性不强
-
- 2、不一定适用具体领域、动态、新兴应用\(比如Yelp,Twitter等\)
-
-## 短语挖掘与主题模型
-
-### 短语质量评价标准
+## 短语质量评价标准
 
 Popularity: 更精确的好于较精确的，比如"information retrieval" vs. "cross-language information retrieval"
 
@@ -18,7 +10,7 @@ Informativeness: 含有信息量，比如"this paper"虽然高频出现但没信
 
 Completeness: 要具有完整性，比如"vector machine" vs. "support vector machine"
 
-### 方案1：短语与主题同时推断
+## 方案1：短语与主题同时推断
 
 基本思路：Generate bag-of-words -&gt; Generate sequence of tokens
 
@@ -30,7 +22,7 @@ Completeness: 要具有完整性，比如"vector machine" vs. "support vector ma
 
 **Phrase-Discovering LDA\(PDLDA\)\[Lindsey, et al.'12\]：**将每个句子视为一个词语的时间序列，PDLDA假定生成参数\(主题\)周期性变化，基于之前 $$m$$ 个词与当前短语主题生成每个词
 
-### 方案2：先主题生成后短语构建
+## 方案2：先主题生成后短语构建
 
 基本思路：Post bag-of-words model inference, visualize topics with n-grams，短语构建作为LDA之后步骤
 
@@ -51,7 +43,7 @@ Completeness: 要具有完整性，比如"vector machine" vs. "support vector ma
 基于四个评价标准(Popularity、Discriminativeness、Condordance、Completeness)执行短语排序
 ```
 
-### 方案3：先短语挖掘后主题模型
+## 方案3：先短语挖掘后主题模型
 
 基本思路：Prior bag-of-words model inference, mine phrases and impose on the bag-of-words model
 
@@ -65,9 +57,9 @@ Completeness: 要具有完整性，比如"vector machine" vs. "support vector ma
 新形成的词组作为输入传递给PhraseLDA（这是一个扩展LDA，它限制短语中的所有单词，每个单词共享相同的潜在主题）
 ```
 
-![](../../.gitbook/assets/timline-jie-tu-20181017164833.png)
+![](../../../.gitbook/assets/timline-jie-tu-20181017164833.png)
 
-### [SegPhrase](https://github.com/shangjingbo1226/SegPhrase)
+## [SegPhrase](https://github.com/shangjingbo1226/SegPhrase)
 
 ```text
 ClassPhrase: 频繁项挖掘，特征抽取，分类
@@ -75,7 +67,7 @@ SegPhrase: 短语切分和短语质量估计
 SegPhrase+: 多一轮迭代来加强以挖掘的短语质量
 ```
 
-![](../../.gitbook/assets/timline-jie-tu-20181017171954.png)
+![](../../../.gitbook/assets/timline-jie-tu-20181017171954.png)
 
 _ClassPhrase：_
 
@@ -99,97 +91,7 @@ _SegPhrase+:_ 多跑一轮以加强短语切分
 
 用整改频率，重新计算之前基于原始频率计算的特征
 
-### [AutoPhrase](https://github.com/shangjingbo1226/AutoPhrase)
+## [AutoPhrase](https://github.com/shangjingbo1226/AutoPhrase)
 
-![](../../.gitbook/assets/timline-jie-tu-20181018093451.png)
-
-## 实体识别与类型标记
-
-![](../../.gitbook/assets/timline-jie-tu-20181018093745.png)
-
-### 传统的NER局限
-
-1、领域受限：必须已经在NER工具中记录过的实体，在实体识别在才有可能被发掘。
-
-2、名称多义：比如华盛顿，即使地名又是人名还是球队名...
-
-3、文本稀疏：某些实体只有在少数文本中提及
-
-### 基于关系图结构和传递性的实体提取与类型标记
-
-### [ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](https://github.com/INK-USC/ClusType)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018151242.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018151751.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018151826.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018151918.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018152018.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018152134.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018152343.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018152450.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018152534.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018152751.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018152850.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018152939.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018153046.png)
-
-### 细粒度实体类型的标记
-
-![](../../.gitbook/assets/timline-jie-tu-20181018153328.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018153553.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018153628.png)
-
-### [PLE\(Heterogeneous Partial-Label Embedding\)](https://github.com/INK-USC/PLE)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018153704.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018153857.png)
-
-### [AFET\(Automatic Fine-Grained Entity Typing by Hierarchical Partial-Label Embedding\)](https://github.com/INK-USC/AFET)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018154104.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018154149.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018154222%20%281%29.png)
-
-### 实体与相互间关系的联合类型标记
-
-![](../../.gitbook/assets/timline-jie-tu-20181018155824.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018155858.png)
-
-### [CoType: Joint Typing of Entities and Relations](https://github.com/INK-USC/DS-RelationExtraction)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018155932.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018160109.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018160153.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018160216.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018160244.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018160306.png)
-
-![](../../.gitbook/assets/timline-jie-tu-20181018160334.png)
-
-
-
-### 
+![](../../../.gitbook/assets/timline-jie-tu-20181018093451.png)
 
