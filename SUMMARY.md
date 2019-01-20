@@ -30,7 +30,10 @@
     * [高维及庞大项集](shu-ju-wa-jue/shu-ju-wa-jue/mo-shi-wa-jue/gao-wei-ji-pang-da-xiang-ji.md)
     * [序列模式](shu-ju-wa-jue/shu-ju-wa-jue/mo-shi-wa-jue/xu-lie-mo-shi.md)
     * [图模式](shu-ju-wa-jue/shu-ju-wa-jue/mo-shi-wa-jue/tu-mo-shi.md)
-  * [聚类分析](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi.md)
+  * [聚类分析](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi/README.md)
+    * [划分聚类](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi/hua-fen-ju-lei.md)
+    * [层次聚类](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi/ceng-ci-ju-lei.md)
+    * [密度/网格聚类](shu-ju-wa-jue/shu-ju-wa-jue/ju-lei-fen-xi/mi-du-wang-ge-ju-lei.md)
   * [文本挖掘](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue.md)
 
 ## 机器学习
@@ -41,7 +44,6 @@
   * [决策树模型](ji-qi-xue-xi/ji-qi-xue-xi/jue-ce-shu-mo-xing.md)
   * [支持向量机](ji-qi-xue-xi/ji-qi-xue-xi/zhi-chi-xiang-liang-ji.md)
   * [贝叶斯分类器](ji-qi-xue-xi/ji-qi-xue-xi/bei-ye-si-fen-lei-qi.md)
-  * [高斯混合模型](ji-qi-xue-xi/ji-qi-xue-xi/gao-si-hun-he-mo-xing.md)
   * [集成学习](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/README.md)
     * [Bagging](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/bagging.md)
     * [Boosting](ji-qi-xue-xi/ji-qi-xue-xi/ji-cheng-xue-xi/boosting/README.md)
