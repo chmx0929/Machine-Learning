@@ -147,7 +147,10 @@
 
 * [自然语言处理](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/README.md)
   * [中文分词技术](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/xin-xi-jian-suo.md)
-  * [词性标注](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ci-xing-biao-zhu-yu-ming-ming-shi-ti-shi-bie.md)
+  * [词性标注](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ci-xing-biao-zhu-yu-ming-ming-shi-ti-shi-bie/README.md)
+    * [传统词性标注模型](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ci-xing-biao-zhu-yu-ming-ming-shi-ti-shi-bie/chuan-tong-ci-xing-biao-zhu-mo-xing.md)
+    * [基于神经网络的词性标注模型](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ci-xing-biao-zhu-yu-ming-ming-shi-ti-shi-bie/ji-yu-shen-jing-wang-luo-de-ci-xing-biao-zhu-mo-xing.md)
+    * [基于Bi-LSTM的词性标注模型](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ci-xing-biao-zhu-yu-ming-ming-shi-ti-shi-bie/ji-yu-bilstm-de-ci-xing-biao-zhu-mo-xing.md)
   * [命名实体识别](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ming-ming-shi-ti-shi-bie.md)
   * [关键词提取](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/guan-jian-ci-ti-qu.md)
   * [句法分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ju-fa-fen-xi.md)
