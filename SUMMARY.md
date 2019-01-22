@@ -10,7 +10,7 @@
   * [概率统计](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji/README.md)
     * [概率基础](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji/gai-lv-ji-chu.md)
     * [连续概率](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji/lian-xu-gai-lv.md)
-    * [各种分布](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji/ge-zhong-fen-bu.md)
+    * [概率分布](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji/ge-zhong-fen-bu.md)
   * [时间序列](shu-xue-ji-chu/shu-xue-ji-chu/shi-jian-xu-lie.md)
   * [信息理论](shu-xue-ji-chu/shu-xue-ji-chu/xin-xi-li-lun.md)
   * [参数估计](shu-xue-ji-chu/shu-xue-ji-chu/can-shu-gu-ji.md)
