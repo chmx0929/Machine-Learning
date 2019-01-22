@@ -161,8 +161,11 @@
   * [文本向量化](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/README.md)
     * [Continuous Bag-of-Word](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/continuous-bag-of-word.md)
     * [Skip-Gram](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/skip-gram.md)
-    * [word2vec](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/word2vec.md)
+    * [word2vec\(Hierarchical Softmax与Negative Sampling\)](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/word2vec.md)
+    * [GloVe](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/glove.md)
+    * [fastText](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/fasttext.md)
   * [情感分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi.md)
+  * [机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi.md)
 
 ## 网络图模型
 
