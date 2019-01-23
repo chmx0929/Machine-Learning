@@ -170,7 +170,10 @@
     * [GloVe](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/glove.md)
     * [fastText](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/fasttext.md)
   * [情感分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi.md)
-  * [机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi.md)
+  * [机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/README.md)
+    * [神经网络机器翻译基本模型](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/shen-jing-wang-luo-ji-qi-fan-yi-ji-ben-mo-xing.md)
+    * [基于Attention的神经网络机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/ji-yu-attention-de-shen-jing-wang-luo-ji-qi-fan-yi.md)
+    * [基于卷积的机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/ji-yu-juan-ji-de-ji-qi-fan-yi.md)
 
 ## 网络图模型
 
