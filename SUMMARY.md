@@ -14,9 +14,13 @@
   * [时间序列](shu-xue-ji-chu/shu-xue-ji-chu/shi-jian-xu-lie.md)
   * [信息理论](shu-xue-ji-chu/shu-xue-ji-chu/xin-xi-li-lun.md)
   * [参数估计](shu-xue-ji-chu/shu-xue-ji-chu/can-shu-gu-ji.md)
-  * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/README.md)
-    * [极大、极小和鞍点](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/ji-da-ji-xiao-he-an-dian.md)
-    * [Jacobian和Hessian矩阵](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/jacobian-he-hessian-ju-zhen.md)
+  * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/README.md)
+    * [极大、极小和鞍点](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/ji-da-ji-xiao-he-an-dian.md)
+    * [Jacobian和Hessian矩阵](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/jacobian-he-hessian-ju-zhen.md)
+    * [连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/README.md)
+      * [无约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/wu-yue-shu-you-hua.md)
+      * [有约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/you-yue-shu-you-hua.md)
+    * [非连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei.md)
 
 ## 数据挖掘
 

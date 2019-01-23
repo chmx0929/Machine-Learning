@@ -1,4 +1,4 @@
-# 优化降梯
+# 连续可微
 
 这里介绍机器学习常用优化算法，先无约束\(梯度下降、牛顿、拟牛顿\(DFP、BFGS\)、坐标下降、最小二乘\)，后有约束\(拉格朗日、KKT、线性规划、二次规划、半正定规划\)。深度学习中常用的优化\(SGD、Momentum、NAG、Adagrad、Aadadelta、Rmsprop\)我放到深度学习章节。
 
@@ -73,7 +73,7 @@
 
                                                                 $$x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}$$ 
 
-![](../../../.gitbook/assets/newtoniteration_ani.gif)
+![](../../../../.gitbook/assets/newtoniteration_ani.gif)
 
 上述的一维问题的迭代法可以被推广至多维问题. 只需将导数替换为梯度 $$\nabla f(x)$$ ，并将二阶导数的倒数替换为[Hessian矩阵](https://zh.wikipedia.org/wiki/%E6%B5%B7%E6%A3%AE%E7%9F%A9%E9%98%B5)的[逆矩阵](https://zh.wikipedia.org/wiki/%E9%80%86%E7%9F%A9%E9%98%B5) $$Hf(x)$$ , 即：
 
@@ -274,7 +274,7 @@ $$S(\beta_1,\beta_2) = [6-(\beta_1+1\beta_2)]^2+[5-(\beta_1+2\beta_2)]^2+[7-(\be
 
 假设有函数 $$f(x,y)$$ ，要求其极值\(最大值/最小值\)，且满足条件： $$g(x,y)=c$$ ， $$c$$ 是常数。对不同 $$d_n$$ 的值，不难想象出 $$f(x,y)=d_n$$ 的等高线。而方程 $$g$$ 的可行集所构成的线正好是 $$g(x,y) = c$$ 。想像我们沿着 $$g = c$$ 的可行集走；因为大部分情况下 $$f$$ 的等高线和 $$g$$ 的可行集线不会重合，但在有解的情况下，这两条线会相交。想像此时我们移动 $$g = c$$ 上的点，因为 $$f$$ 是连续的方程，我们因此能走到 $$f(x,y)=d_n$$ 更高或更低的等高线上，也就是说 $$d_n$$ 可以变大或变小。只有当 $$g = c$$ 和 $$f(x,y)=d_n$$ 相切，也就是说，此时，我们正同时沿着 $$g = c$$ 和 $$f(x,y) = d_n$$ 走。这种情况下，会出现极值或鞍点。
 
-![](../../../.gitbook/assets/lagrange_multiplier.png)
+![](../../../../.gitbook/assets/lagrange_multiplier.png)
 
 用向量的形式来表达的话，我们说相切的性质在此意味着 $$f$$ 和 $$g$$ 的切线在某点上平行，同时也意味着两者的梯度平行。此时引入一个未知标量 $$\lambda$$ ，并求解：
 
@@ -427,7 +427,7 @@ KKT方程组：
 
 其他类型的问题，例如极小化问题，不同形式的约束问题，和有负变量的问题，都可以改写成其等价问题的标准型。
 
-![](../../../.gitbook/assets/9373629.png)
+![](../../../../.gitbook/assets/9373629.png)
 
 ### 二次规划\(Quadratic programming\)
 
@@ -457,11 +457,7 @@ KKT方程组：
 
 常见的用于求解线性规划的内点法经过少许改造即可求解半正定规划问题，但半正定规划的计算复杂度较高，难以直接用于大规模的问题。
 
-## Source
 
-{% embed url="https://www.jianshu.com/p/f1d3906e4a3e" %}
-
-{% embed url="https://www.cnblogs.com/liliu/archive/2010/11/24/1886110.html" %}
 
 
 
