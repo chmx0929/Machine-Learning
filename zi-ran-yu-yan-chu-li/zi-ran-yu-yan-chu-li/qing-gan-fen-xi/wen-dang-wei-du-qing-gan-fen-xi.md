@@ -34,6 +34,8 @@ Glorot等人研究了情绪分类的领域适应问题。他们提出了一种�
 
 Zhai和Zhang介绍了一种半监督自动编码器，它进一步考虑了学习阶段的情绪信息，以获得更好的文档向量，用于情感分类。更具体地，该模型通过将自动编码器中的损失函数放宽到[Bregman divergence](https://en.wikipedia.org/wiki/Bregman_divergence)并且还从标签信息导出判别性损失函数来学习文本数据的任务特定表示。
 
+
+
 ## Source
 
 {% embed url="https://arxiv.org/abs/1801.07883" %}
