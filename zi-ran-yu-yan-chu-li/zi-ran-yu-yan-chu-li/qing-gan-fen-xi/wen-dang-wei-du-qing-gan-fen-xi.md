@@ -16,7 +16,7 @@
 
 除了复杂的文档/文本表示外，研究人员还利用数据的特征 - 产品评论，进行情感分类。对于产品评论，一些研究人员发现共同模拟情绪和一些额外信息（例如，用户信息和产品信息）进行分类是有益的。另外，由于文档通常包含长依赖关系，因此注意机制也经常用于文档级情感分类。我们总结了上面的图表2中的现有技术。
 
-## 各技术简介
+## 技术简介
 
 #### [Document-level sentiment classification: An empirical comparison between SVM and ANN](https://www.sciencedirect.com/science/article/pii/S0957417412009153)
 

@@ -6,7 +6,7 @@
 
 在早期研究中，解析树（提供一些语义和句法信息）与原始单词一起用作神经模型的输入，从而可以更好地推断情感构成。但最近，CNN和RNN变得越来越流行，他们不需要解析树来从句子中提取特征。相反，CNN和RNN使用单词嵌入作为输入，它已经编码了一些语义和句法信息。此外，CNN或RNN的模型体系结构也可以帮助学习句子中单词之间的内在关系。相关工作将在下面详细介绍。
 
-## 各技术简介
+## 技术简介
 
 #### [Semi-supervised recursive autoencoders for predicting sentiment distributions](http://www.aclweb.org/anthology/D11-1014)
 
