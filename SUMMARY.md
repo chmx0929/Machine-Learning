@@ -20,7 +20,9 @@
     * [连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/README.md)
       * [无约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/wu-yue-shu-you-hua.md)
       * [有约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/you-yue-shu-you-hua.md)
-    * [非连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei.md)
+    * [非连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei/README.md)
+      * [无约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei/wu-yue-shu-you-hua.md)
+      * [有约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei/you-yue-shu-you-hua.md)
 
 ## 数据挖掘
 
@@ -46,7 +48,7 @@
     * [实体识别与类型标记](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue/shi-ti-shi-bie-yu-lei-xing-biao-ji.md)
   * [搜索排序](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-pai-xu/README.md)
     * [Learning to Rank](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-pai-xu/learning-to-rank.md)
-    * [搜索排序中的Embedding技巧](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-pai-xu/sou-suo-pai-xu-zhong-de-embedding-ji-qiao.md)
+    * [搜索排序中的Embedding](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-pai-xu/sou-suo-pai-xu-zhong-de-embedding-ji-qiao.md)
 
 ## 机器学习
 

@@ -1,4 +1,4 @@
-# 搜索排序中的Embedding技巧
+# 搜索排序中的Embedding
 
 ## Source
 
