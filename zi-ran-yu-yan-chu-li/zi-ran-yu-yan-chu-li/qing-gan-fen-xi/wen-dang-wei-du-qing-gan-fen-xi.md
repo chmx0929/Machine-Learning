@@ -34,7 +34,41 @@ Glorot等人研究了情绪分类的领域适应问题。他们提出了一种�
 
 Zhai和Zhang介绍了一种半监督自动编码器，它进一步考虑了学习阶段的情绪信息，以获得更好的文档向量，用于情感分类。更具体地，该模型通过将自动编码器中的损失函数放宽到[Bregman divergence](https://en.wikipedia.org/wiki/Bregman_divergence)并且还从标签信息导出判别性损失函数来学习文本数据的任务特定表示。
 
+#### [Effective Use of Word Order for Text Categorization with Convolutional Neural Networks](https://arxiv.org/abs/1412.1058)
 
+Johnson和Zhang提出了一个名为BoW-CNN的CNN变体，它在卷积层中采用了词袋转换。他们还设计了一个名为Seq-CNN的新模型，它通过连接多个单词的oneHot矢量来保持单词的顺序信息。
+
+#### [Document modelling with gated recurrent neural network for sentiment classification](http://aclweb.org/anthology/D15-1167)
+
+Tang等人提出了一种神经网络来学习文档表示，并考虑句子关系。它首先从单词嵌入中学习CNN或LSTM的句子表示。然后利用GRU自适应地编码句子的语义及其在情感分类的文档表示中的固有关系。
+
+#### [Learning Semantic Representations of Users and Products for Document Level Sentiment Classification](http://ir.hit.edu.cn/~dytang/paper/acl2015/acl2015.pdf)
+
+Tang等人在评论分类中应用了用户表示和产品表示。这个想法是这些表示可以捕获重要的全球线索，例如用户的个人偏好和产品的整体质量，这可以提供更好的文本表示。
+
+#### [Neural Sentiment Classification with User and Product Attention](https://aclweb.org/anthology/D16-1171)
+
+Chen还整合了用户信息和产品信息以进行分类，但通过单词和句子级别的注意，可以考虑单词级别和语义级别的全局用户偏好和产品特征。同样，[Dou](http://aclweb.org/anthology/D17-1054)使用深存储网络来捕获用户和产品信息。所提出的模型可以分为两个独立的部分。在第一部分中，LSTM用于学习文档表示。在第二部分中，由多个计算层（跳）组成的深存储器网络用于预测每个文档的评论评级。
+
+#### [Cached Long Short-Term Memory Neural Networks for Document-Level Sentiment Classification](https://arxiv.org/abs/1610.04989)
+
+Xu等人提出了一个缓存的LSTM模型来捕获长文本中的整体语义信息。模型中的内存分为几组，具有不同的遗忘率。直觉是使具有低遗忘率的存储器组捕获全局语义特征和具有高遗忘率的存储器组以学习本地语义特征。
+
+#### [Hierarchical attention networks for document classification](https://www.cs.cmu.edu/~hovy/papers/16HLT-hierarchical-attention-networks.pdf)
+
+Yang等人提出了一种用于评论文档级别情绪评级预测的分层关注网络。该模型包括两个级别的注意机制：一个在单词级别，另一个在句子级别，这允许模型在构造文档表示时或多或少地关注单个单词或句子。
+
+#### [Document-Level Multi-Aspect Sentiment Classification as Machine Comprehension](http://www.cse.ust.hk/~yqsong/papers/2017-EMNLP-AspectClassification.pdf)
+
+Yin等人将文档级方面情绪评级预测任务制定为机器理解问题，并提出了一种分层交互式关注模型。具体而言，文档和伪方面问题是交错的，以学习方面感知文档表示。
+
+#### [Attention-based LSTM Network for Cross-Lingual Sentiment Classification](https://aclweb.org/anthology/D16-1024)
+
+Zhou等人在文档层面设计了一个基于注意力的LSTM网络，用于跨语言情感分类。该模型由两个基于注意的LSTM组成，用于双语表示，每个LSTM也是分层结构的。在此设置中，它有效地将情绪信息从资源丰富的语言（英语）调整为资源贫乏的语言（中文），并有助于提高情绪分类性能。
+
+#### [End-to-End Adversarial Memory Network for Cross-domain Sentiment Classification](https://www.ijcai.org/proceedings/2017/0311.pdf)
+
+Li等人在转移学习设置中提出了用于跨域情感分类的对抗性内存网络，其中来自源域和目标域的数据被一起建模。它联合训练两个网络用于情感分类和域分类（即，文档是来自源域还是目标域）。
 
 ## Source
 

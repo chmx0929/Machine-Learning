@@ -1,7 +1,5 @@
 # 密度/网格聚类
 
-## 密度/网格聚类\(Density- and Grid-Based Methods\)
-
 基于密度方法：DBSCAN、OPTICS    基于网格方法：STING、CLIQUE
 
 ## DBSCAN\(Density-Based Spatial Clustering of Applications with Noise\)

@@ -1,7 +1,5 @@
 # 层次聚类
 
-## 层次聚类\(Hierarchical Methods\)
-
 生成一个聚类层级（用树状图展示），聚合方法：AGNES，分裂方法：DIANA，其他层级方法：BIRCH、CURE、CHAMELEON
 
 ![](../../../.gitbook/assets/timline-jie-tu-20181126200658.png)
