@@ -20,9 +20,7 @@
     * [连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/README.md)
       * [无约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/wu-yue-shu-you-hua.md)
       * [有约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/you-yue-shu-you-hua.md)
-    * [非连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei/README.md)
-      * [无约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei/wu-yue-shu-you-hua.md)
-      * [有约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei/you-yue-shu-you-hua.md)
+    * [非连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei.md)
 
 ## 数据挖掘
 
