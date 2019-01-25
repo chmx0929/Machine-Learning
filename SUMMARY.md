@@ -182,6 +182,7 @@
     * [文档维度情感分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi/wen-dang-wei-du-qing-gan-fen-xi.md)
     * [句子维度情感分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi/ju-zi-wei-du-qing-gan-fen-xi.md)
     * [方面维度情感分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi/fang-mian-wei-du-qing-gan-fen-xi.md)
+    * [其他情感分析任务](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi/qi-ta-qing-gan-fen-xi-ren-wu.md)
   * [机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/README.md)
     * [神经网络机器翻译基本模型](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/shen-jing-wang-luo-ji-qi-fan-yi-ji-ben-mo-xing.md)
     * [基于Attention的神经网络机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/ji-yu-attention-de-shen-jing-wang-luo-ji-qi-fan-yi.md)
