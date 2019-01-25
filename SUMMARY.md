@@ -45,7 +45,7 @@
     * [短语挖掘与主题模型](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue/duan-yu-wa-jue-yu-zhu-ti-mo-xing.md)
     * [实体识别与类型标记](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue/shi-ti-shi-bie-yu-lei-xing-biao-ji.md)
   * [搜索排序](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-pai-xu/README.md)
-    * [Learning to Rank](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-pai-xu/learning-to-rank.md)
+    * [排序学习](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-pai-xu/learning-to-rank.md)
     * [搜索排序中的Embedding](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-pai-xu/sou-suo-pai-xu-zhong-de-embedding-ji-qiao.md)
 
 ## 机器学习
