@@ -113,6 +113,10 @@
   * [生成对抗网络](shen-du-xue-xi/shen-du-xue-xi/sheng-cheng-dui-kang-wang-luo.md)
   * [多任务学习](shen-du-xue-xi/shen-du-xue-xi/duo-ren-wu-xue-xi.md)
   * [增强学习](shen-du-xue-xi/shen-du-xue-xi/zeng-qiang-xue-xi.md)
+  * [技术模块分析](shen-du-xue-xi/shen-du-xue-xi/ji-shu-mo-kuai-fen-xi/README.md)
+    * [Embedding](shen-du-xue-xi/shen-du-xue-xi/ji-shu-mo-kuai-fen-xi/embedding.md)
+    * [Attention](shen-du-xue-xi/shen-du-xue-xi/ji-shu-mo-kuai-fen-xi/attention.md)
+    * [Batch Normalization](shen-du-xue-xi/shen-du-xue-xi/ji-shu-mo-kuai-fen-xi/batch-normalization.md)
 
 ## 计算机视觉
 

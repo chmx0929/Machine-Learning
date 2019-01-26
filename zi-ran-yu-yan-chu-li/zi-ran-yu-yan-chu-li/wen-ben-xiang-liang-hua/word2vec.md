@@ -343,7 +343,5 @@ word2vec就是求解每一个的单词的embedding的词向量。CBOW和Skip-Gra
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/84241279" %}
 
-
-
-
+{% embed url="https://zhuanlan.zhihu.com/p/53194407" %}
 
