@@ -27,7 +27,17 @@ LSTM解决了长距离信息丢失的问题，它拥有一个记忆区，通过�
 
 ### Attention原理
 
+要介绍Attention Mechanism结构和原理，首先需要介绍下Seq2Seq模型的结构。基于RNN的Seq2Seq模型主要由两篇论文介绍，只是采用了不同的RNN模型。Ilya Sutskever等人与2014年在论文[Sequence to Sequence Learning with Neural Networks](https://arxiv.org/abs/1409.3215)中使用LSTM来搭建Seq2Seq模型。随后，2015年，Kyunghyun Cho等人在论文[Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/abs/1406.1078)提出了基于GRU的Seq2Seq模型。两篇文章所提出的Seq2Seq模型，想要解决的主要问题是，如何把机器翻译中，变长的输入 $$X$$ 映射到一个变长输出 $$Y$$ 的问题，其主要结构如下图所示
 
+![](../../../.gitbook/assets/v2-2a5ba93492e047b60f4ebc73f2862fae_hd.jpg)
+
+其中，Encoder把一个变成的输入序列 $$x_1,x_2,\dots,x_t$$ 编码成一个固定长度隐向量（背景向量，或上下文向量context） $$c$$ ， $$c$$ 有两个作用：1、做为初始向量初始化Decoder的模型，做为decoder模型预测 $$y_1$$ 的初始向量。2、做为背景向量，指导 $$y$$ 序列中每一个step的 $$y$$ 的产出。Decoder主要基于背景向量 $$c$$ 和上一步的输出 $$y_{t-1}$$ 解码得到该时刻 $$t$$ 的输出 $$y_{t}$$ ，直到碰到结束标志（EOS）为止。
+
+如上文所述，传统的Seq2Seq模型对输入序列 $$X$$ 缺乏区分度，因此，2015年，Kyunghyun Cho等人在论文[Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/abs/1406.1078)中，引入了Attention Mechanism来解决这个问题，他们提出的模型结构如下图所示
+
+![](../../../.gitbook/assets/v2-163c0c3dda50d1fe7a4f7a64ba728d27_hd.jpg)
+
+在该模型中，定义了一个条件概率：
 
 ## Attention Mechanism分类
 
