@@ -28,6 +28,10 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 {% embed url="https://www.cnblogs.com/pinard/" %}
 
+{% embed url="https://blog.csdn.net/malefactor" %}
+
+{% embed url="https://machinelearningmastery.com/blog/" %}
+
 {% embed url="https://me.csdn.net/anshuai\_aw1" %}
 
 

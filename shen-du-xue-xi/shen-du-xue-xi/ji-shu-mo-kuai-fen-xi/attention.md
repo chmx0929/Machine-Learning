@@ -39,11 +39,33 @@ LSTM解决了长距离信息丢失的问题，它拥有一个记忆区，通过�
 
 在该模型中，定义了一个条件概率：
 
+![](../../../.gitbook/assets/v2-63ec36313044de9414c6ecc76814b6ec_hd.jpg)
+
+其中， $$s_i$$ 是decoder中RNN在 $$i$$ 时刻的隐状态，其计算公式为：
+
+![](../../../.gitbook/assets/v2-de918a0ad5f38e2b2e199ae27b018b32_hd.jpg)
+
+这里的背景向量 $$c_i$$ 的计算方式，与传统的Seq2Seq模型直接累加的计算方式不一样，这里的 $$c_i$$ 是一个权重化（Weighted）之后的值，其表达式如公式5所示：
+
+![](../../../.gitbook/assets/v2-b9f1bbb8195f280965f70f76e39fc3da_hd.jpg)
+
+其中， $$i$$ 表示encoder端的第 $$i$$ 个词， $$h_j$$ 表示encoder端的第 $$j$$ 和词的隐向量， $$a_{ij}$$ 表示encoder端的第 $$j$$ 个词与decoder端的第 $$i$$ 个词之间的权值，表示源端第 $$j$$ 个词对目标端第 $$i$$ 个词的影响程度， $$a_{ij}$$ 的计算公式如公式6所示：
+
+![](../../../.gitbook/assets/v2-ba995fd335a962b129529bbdbf9bec25_hd.jpg)
+
+在公式6中， $$a_{ij}$$ 是一个softmax模型输出，概率值的和为1。 $$e_{ij}$$ 表示一个对齐模型，用于衡量encoder端的位置 $$j$$ 个词，对于decoder端的位置 $$i$$ 个词的对齐程度（影响程度），换句话说：decoder端生成位置 $$i$$ 的词时，有多少程度受encoder端的位置 $$j$$ 的词影响。对齐模型 $$e_{ij}$$ 的计算方式有很多种，不同的计算方式，代表不同的Attention模型，最简单且最常用的的对齐模型是dot product乘积矩阵，即把target端的输出隐状态 $$h_t$$ 与source端的输出隐状态进行矩阵乘。常见的对齐计算方式如下：
+
+![](../../../.gitbook/assets/v2-967a85861b81e81ac9f08067234e7dc4_hd.jpg)
+
+其中， $$\text{Score}(h_t,h_s)=a_{ij}$$ 表示源端与目标单单词对齐程度。可见，常见的对齐关系计算方式有，点乘（Dot product），权值网络映射（General）和concat映射几种方式。
+
 ## Attention Mechanism分类
 
 ### Soft Attention和Hard Attention
 
-Attention模块所进行的选择过程可以表现为某种函数映射 $$f$$ ，具体实现分为两种形式：Soft Attention和Hard Attention。如果所有候选都以一定的概率参与选择，即结果为所有候选向量的概率加权，则称为Soft Attention；如果只从候选中选取某一个候选向量，则称为Hard Attention。
+Attention模块所进行的选择过程可以表现为某种函数映射 $$f$$ ，具体实现分为两种形式：Soft Attention和Hard Attention。Kelvin Xu等人与2015年发表论文[Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/abs/1502.03044)，在Image Caption中引入了Attention，当生成第 $$i$$ 个关于图片内容描述的词时，用Attention来关联与 $$i$$ 个词相关的图片的区域。Kelvin Xu等人在论文中使用了两种Attention Mechanism，即Soft Attention和Hard Attention。我们之前所描述的传统的Attention Mechanism就是Soft Attention。Soft Attention是参数化的（Parameterization），因此可导，可以被嵌入到模型中去，直接训练。梯度可以经过Attention Mechanism模块，反向传播到模型其他部分。
+
+总的来说如果所有候选都以一定的概率参与选择，即结果为所有候选向量的概率加权，则称为Soft Attention；如果只从候选中选取某一个候选向量，则称为Hard Attention。
 
 比如图片经过多次卷积后得到一个网格，其中 $$a ,b,c,d$$ 对应于经过卷积之后从4个位置抽取出的候选向量。那么如何通过映射函数 $$f$$ 得到下一步输入到RNN中的向量 $$z(t+1)$$ 呢？首先，Attention模块会在当前步根据RNN的环境变量 $$h(t)$$ 算出一个候选向量的概率分布。对于Soft Attention，求 $$z$$ 需要将每个候选向量进行概率加权，即 $$z=p_aa+p_bb+p_cc+p_dd$$ ；Hard Attention则仅通过概率分布采样出一个候选向量赋值给 $$z(t+1)$$ 。
 
@@ -54,23 +76,139 @@ Attention模块所进行的选择过程可以表现为某种函数映射 $$f$$ �
 | 是否可导 | 可导 | 不可导 |
 | 训练方式 | 梯度下降 | 强化学习 |
 
+两种Attention Mechanism都有各自的优势，但目前更多的研究和应用还是更倾向于使用Soft Attention，因为其可以直接求导，进行梯度反向传播。
+
 ### Global Attention和Local Attention
+
+#### Global Attention
+
+与传统的Attention model一样。所有的hidden state都被用于计算Context vector 的权重，即变长的对齐向量 $$a_t$$ ，其长度等于encoder端输入句子的长度。结构如下图所示。
+
+![](../../../.gitbook/assets/v2-ed29617ad6c722ecbec1b4594bd7a375_hd.jpg)
+
+在 $$t$$ 时刻，首先基于decoder的隐状态 $$h_t$$ 和源端的隐状态 $$h_s$$ ，计算一个变长的隐对齐权值向量 $$a_t$$ ，其计算公式如下：
+
+![](../../../.gitbook/assets/v2-cd145f558eeee75b86145def0684b0d1_hd.jpg)
+
+其中， $$\text{score}$$ 是一个用于评价 $$h_t$$ 与 $$h_s$$ 之间关系的函数，即对齐函数，一般有三种计算方式，我们在上文中已经提到了。
+
+#### Local Attention
+
+Global Attention有一个明显的缺点就是，每一次，encoder端的所有hidden state都要参与计算，这样做计算开销会比较大，特别是当encoder的句子偏长，比如，一段话或者一篇文章，效率偏低。因此，为了提高效率，Local Attention应运而生。
+
+Local Attention是一种介于Kelvin Xu所提出的Soft Attention和Hard Attention之间的一种Attention方式，即把两种方式结合起来。
+
+![](../../../.gitbook/assets/v2-e4a3e42e7316ef872e9d0d579b8bc52c_hd.jpg)
+
+Local Attention首先会为decoder端当前的词，预测一个source端对齐位置（aligned position） $$p_t$$ ，然后基于 $$p_t$$ 选择一个窗口，用于计算背景向量 $$c_t$$ 。Position $$p_t$$ 的计算公式如下：
+
+![](../../../.gitbook/assets/v2-6ef8efcc11844625244857d60d9eabb4_hd.jpg)
+
+其中， $$S$$ 是encoder端句子长度， $$v_p$$ 和 $$W_p$$ 是模型参数。此时，对齐向量 $$a_t$$ 的计算公式如下：
+
+![](../../../.gitbook/assets/v2-145309bab612ece99e604613818fbde0_hd.jpg)
+
+总之，Global Attention和Local Attention各有优劣，在实际应用中，Global Attention应用更普遍，因为local Attention需要预测一个位置向量 $$p$$ ，这就带来两个问题：1、当encoder句子不是很长时，相对Global Attention，计算量并没有明显减小。2、位置向量pt的预测并不非常准确，这就直接计算的到的local Attention的准确率。
 
 ### Self Attention
 
+Self Attention与传统的Attention机制非常的不同：传统的Attention是基于source端和target端的隐变量（hidden state）计算Attention的，得到的结果是源端的每个词与目标端每个词之间的依赖关系。但Self Attention不同，它分别在source端和target端进行，仅与source input或者target input自身相关的Self Attention，捕捉source端或target端自身的词与词之间的依赖关系；然后再把source端的得到的self Attention加入到target端得到的Attention中，捕捉source端和target端词与词之间的依赖关系。因此，self Attention Attention比传统的Attention mechanism效果要好，主要原因之一是，传统的Attention机制忽略了源端或目标端句子中词与词之间的依赖关系，相对比，self Attention可以不仅可以得到源端与目标端词与词之间的依赖关系，同时还可以有效获取源端或目标端自身词与词之间的依赖关系，如下图所示。
+
+![](../../../.gitbook/assets/v2-3c164abbdfca339bc31ec28ef8e44ebf_hd.jpg)
+
+Self Attention的具体计算方式如下所示：
+
+![](../../../.gitbook/assets/v2-0849d549f18e5ab4e45e8b23487f1698_hd.jpg)
+
+Encoder的输入inputs和decoder的输入outputs，加上position embedding，做为各自的最初的输入，那么问题来了，self Attention具体是怎么实现的呢？从All Attention的结构示意图可以发现，Encoder和decoder是层叠多了类似的Multi-Head Attention单元构成，而每一个Multi-Head Attention单元由多个结构相似的Scaled Dot-Product Attention单元组成，结构如下图所示。
+
+![](../../../.gitbook/assets/v2-b78048486fac3b1b257409bcd7d779bd_hd.jpg)
+
+Self Attention也是在Scaled Dot-Product Attention单元里面实现的，如上图左图所示，首先把输入Input经过线性变换分别得到Q、K、V，注意，Q、K、V都来自于Input，只不过是线性变换的矩阵的权值不同而已。然后把Q和K做dot Product相乘，得到输入Input词与词之间的依赖关系，然后经过尺度变换（scale）、掩码（mask）和softmax操作，得到最终的Self Attention矩阵。尺度变换是为了防止输入值过大导致训练不稳定，mask则是为了保证时间的先后关系。
+
+最后，把encoder端self Attention计算的结果加入到decoder做为k和V，结合decoder自身的输出做为q，得到encoder端的attention与decoder端attention之间的依赖关系。
+
 ## 组合的Attention结构
 
-## Attention应用场景
+###  **Hierarchical Attention**
+
+Zichao Yang等人在论文[Hierarchical Attention Networks for Document Classification](https://www.cs.cmu.edu/~hovy/papers/16HLT-hierarchical-attention-networks.pdf)提出了Hierarchical Attention用于文档分类。Hierarchical Attention构建了两个层次的Attention Mechanism，第一个层次是对句子中每个词的attention，即word attention；第二个层次是针对文档中每个句子的attention，即sentence attention。网络结构如下图所示。
+
+![](../../../.gitbook/assets/v2-5046bdab04a0e964526f8ce487fdf855_hd.jpg)
+
+整个网络结构由四个部分组成：一个由双向RNN（GRU）构成的word sequence encoder，然后是一个关于词的word-level的attention layer；基于word attention layar之上，是一个由双向RNN构成的sentence encoder，最后的输出层是一个sentence-level的attention layer。
+
+### Attention over Attention
+
+Yiming Cui与2017年在论文[Attention-over-Attention Neural Networks for Reading Comprehension](https://arxiv.org/abs/1607.04423)中提出了Attention Over Attention的Attention机制，结构如下图所示。
+
+![](../../../.gitbook/assets/v2-2ea1f5105ca8daafbd37fd326cfd46a1_hd.jpg)
+
+两个输入，一个Document和一个Query，分别用一个双向的RNN进行特征抽取，得到各自的隐状态h（doc）和h（query），然后基于query和doc的隐状态进行dot product，得到query和doc的attention关联矩阵。然后按列（colum）方向进行softmax操作，得到query-to-document的attention 值a（t）；按照行（row）方向进行softmax操作，得到document-to-query的attention值b（t），再按照列方向进行累加求平均得到平均后的attention值b（t）。最后再基于上一步attention操作得到a（t）和b（t），再进行attention操作，即attention over attention得到最终query与document的关联矩阵。
+
+### Multi-step Attention
+
+2017年，FaceBook 人工智能实验室的Jonas Gehring等人在论文[Convolutional Sequence to Sequence Learning](https://arxiv.org/abs/1705.03122)提出了完全基于CNN来构建Seq2Seq模型，除了这一最大的特色之外，论文中还采用了多层Attention Mechanism，来获取encoder和decoder中输入句子之间的关系，结构如下图所示。
+
+![](../../../.gitbook/assets/v2-b2374ccd8494125f4758c0be446124e4_hd.jpg)
+
+完全基于CNN的Seq2Seq模型需要通过层叠多层来获取输入句子中词与词之间的依赖关系，特别是当句子非常长的时候，我曾经实验证明，层叠的层数往往达到10层以上才能取得比较理想的结果。针对每一个卷记得step（输入一个词）都对encoder的hidden state和decoder的hidden state进行dot product计算得到最终的Attention 矩阵，并且基于最终的attention矩阵去指导decoder的解码操作。
+
+## [Attention应用场景](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)
 
 ### **机器翻译（Machine Translation）**
 
+给定一个法语句子做为输入序列，翻译并输出一个英文句子做为输出序列。Attention用于关联输出序列中每个单词与输入序列中的某个特定单词的关联程度。
+
+“我们扩展了传统的编码器-解码器结构，赋予decoder，在生成目标端（target）的词时，可以自动（软）搜索一组与之相关的输入序列的能力。这使得模型不必将整个源句子编码成一个固定长度的向量，并且还使模型只关注源端与下一个目标词的生成有关的信息。” **-** Dzmitry Bahdanau等人，[Neural machine translation by jointly learning to align and translate](https://arxiv.org/abs/1409.0473)，2015。
+
+![](../../../.gitbook/assets/v2-016f8210eb05fb1b32bc75f4131a7dbf_hd.jpg)
+
+通过Attention来解释法语到英语单词之间的对应关系。摘自Dzmitry Bahdanau的论文。
+
 ### **图像标注（Image Captain）**
+
+基于序列的Attention Mechanism可以应用于计算机视觉问题，以帮助理解如何最好地利用卷积神经网络来省长一段关于图片内容的描述，也称为Caption。给定输入图像，输出图像的英文描述。使用Attention是为输出序列中的每个单词关注图像中不同部分。
+
+“我们提出了一种基于Attention mechanism的方法，并在在三个标准数据集上都取得了最好的成绩...我们还展示了如何利用学到的Attention来提供更多对模型生成过程的解释，并且证明Attention学习到的对齐与人类视觉感知非常一致。” **-** Kelvin Xu等人，[Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/abs/1502.03044), 2016
+
+![](../../../.gitbook/assets/v2-b5dcc3018fd35cc45336f2017d195abb_hd.jpg)
+
+基于Attention来解释，生成英文描述中某一个词时，与图片中某一区域的高度依赖关系。
 
 ### **关系抽取（EntailMent Extraction）**
 
+给定一个用英语描述前景描述（premise scenario）和假设（hypothesis），判读假设（premise）与假设（hypothesis）的关系：矛盾，相关或包含。
+
+例如：前提：“一场婚礼中拍照”，假设：“有人结婚”
+
+Attention被用来把假设中的每个单词与前提中的单词联系起来，反之亦然。
+
+“我们提出了一个基于LSTM的神经模型，它一次读取两个句子来确定两个句子之间的蕴含关系，而不是将每个句子独立映射到一个语义空间。我们引入逐字的（word-by-word）Attention Mechanism来扩展这个模型，来强化模型对单词或短语对的关系推理能力。该模型比传统的仅基于LSTM的模型高2.6个百分点，取得了一个最高成就” - Tim Rocktäschel，[Reasoning about Entailment with Neural Attention](https://arxiv.org/abs/1509.06664), 2016
+
+![](../../../.gitbook/assets/v2-a521cef39c5fdbbbce9bbe78d2cec9d4_hd.jpg)
+
+基于Attention来解释前提和假设中词与词之间的对应关系**。**
+
 ### **语音识别（Speech Recognition）**
 
+给定一段英语语音片段做为输入序列，输出对应的音素序列。Attention被用联将输出序列中的每个音素与输入序列中的特定音频帧相关联。
+
+“基于混合Attention机制的新型端到端可训练语音识别体系结构，其结合内容和位置信息帮助选择输入序列中的下一个位置用于解码。所提出的模型的一个理想特性就是它可以识别比训练集中句子的更长的句子。” - Jan Chorowski，[Attention-Based Models for Speech Recognition](https://arxiv.org/abs/1506.07503), 2015。
+
+![](../../../.gitbook/assets/v2-33df3bf4f2d6145805d164a45682eb07_hd.jpg)
+
+基于Attention来解释输出音素与输入端的声音片段的对应关系。
+
 ### **自动摘要生成（Text Summarization）**
+
+给定一篇英文文章做为输入顺序，输出一个总结英文文章注意内容的摘要句子。Attention用于将输出摘要中的每个单词与输入文档中的特定单词相关联。
+
+“将基于Attention的神经网络用语摘要抽取。我们将这个概率模型与可以产生准确的摘要的生成算法相结合。” - Alexander M. Rush，[A Neural Attention Model for Abstractive Sentence Summarization](https://arxiv.org/abs/1509.00685), 2015。
+
+![](../../../.gitbook/assets/v2-3d936a14cc60eccd6be69fa9066cc3cc_hd.jpg)
+
+基于Attention来解释输入Sentence与输出Summary之间单词的对应关系。
 
 ## Source
 
