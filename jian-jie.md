@@ -18,17 +18,17 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 [数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理\(宗成庆\)](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)、 [情感分析（刘兵）](https://item.jd.com/12206675.html)
 
-[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)、[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)
+[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)、[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)、[Computer Vision and Deep Learning（何恺明）](http://kaiminghe.com/)
 
-以及[机器之心](https://www.jiqizhixin.com/)、[知乎](https://www.zhihu.com/signup?next=%2F)、各算法paper、以及优秀博客：
+以及[机器之心](https://www.jiqizhixin.com/)、知乎和博客：
 
-{% embed url="http://colah.github.io/" %}
+知乎：[贾扬清（FAIR总监，Caffe作者）](https://www.zhihu.com/people/jiayangqing)、[陈天奇（华大PhD，XGBoost作者）](https://www.zhihu.com/people/crowowrk/activities)、[柯国霖（MSRA研究员，LightGBM作者）](https://www.zhihu.com/people/crowowrk/activities)、[刘知远（清华教师，NLP）](https://www.zhihu.com/people/zibuyu9/activities)、[王喆（Hulu研究员）](https://www.zhihu.com/people/wang-zhe-58/activities)、[何之源（MSRA研究员）](https://www.zhihu.com/people/he-zhi-yuan-16/activities)
 
-{% embed url="https://blog.csdn.net/anshuai\_aw1" %}
+博客：
 
 {% embed url="https://www.cnblogs.com/pinard/" %}
 
-{% embed url="https://handong1587.github.io/" %}
+{% embed url="https://me.csdn.net/anshuai\_aw1" %}
 
 
 
