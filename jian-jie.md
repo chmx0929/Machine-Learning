@@ -26,9 +26,9 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 博客：
 
-{% embed url="https://www.cnblogs.com/pinard/" %}
+{% embed url="https://blog.csdn.net/lqfarmer" %}
 
-{% embed url="https://blog.csdn.net/malefactor" %}
+{% embed url="https://www.cnblogs.com/pinard/" %}
 
 {% embed url="https://machinelearningmastery.com/blog/" %}
 
