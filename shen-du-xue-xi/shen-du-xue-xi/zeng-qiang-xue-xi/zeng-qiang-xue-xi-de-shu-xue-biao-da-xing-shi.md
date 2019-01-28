@@ -58,7 +58,49 @@
 
 ## 价值函数
 
+前面提到了奖励和回报两个概念，对于奖励，Agent可以通过和环境进行交互来获得；而回报则无法直接获得。价值函数（Value Function）的作用就是计算回报这个数值，将当前环境所处的状态、状态-动作对与回报关联起来。一般来说，价值函数会以两种形式展现出来。
+
+（1）状态价值函数（State-Value Function） $$v_\pi(s)$$ ，表示当环境处于 $$s$$ 状态时的期望回报：
+
+                                   $$v_\pi(s)=E_\pi[G_t|S_t=s]=E_\pi[\sum\limits_{k=0}^\infty\gamma^kR_{t+k+1}|S_t=s]$$ 
+
+（2）动作价值函数（Action-Value Function） $$q_\pi(s,a)$$ ，表示当环境处于 $$s$$ 状态且Agent采用了动作 $$a$$ 后的期望回报：
+
+                     $$q_\pi(s,a)=E_\pi[G_t|S_t=s,A_t=a]=E_\pi[\sum\limits_{k=0}^\infty\gamma^kR_{t+k+1}|S_t=s,A_t=a]$$ 
+
 ## 贝尔曼方程
 
+上面的状态价值函数是通过从当前状态开始无限延伸下去的奖励加和得到的，而实际上我们是无法得到未来所有状态的，但是可以对其进行变换使价值函数变得可解：
+
+                                     $$v_\pi=E_\pi[G_t|S_t=s]=E_\pi[\sum\limits_{k=0}^\infty\gamma^kR_{t+k+1}|S_t=s]$$ 
+
+                                            $$=E_\pi[R_{t+1}+\gamma\sum\limits_{k=0}^\infty\gamma^kR_{t+k+2}|S_t=s]$$ 
+
+                                            $$=\sum\limits_a\pi(a|s)\sum\limits_{s'}p(s'|s,a)[r(s,a,s')+\gamma E_\pi[\sum\limits_{k=0}^\infty\gamma^k R_{t+k+2}|S_{t+1}=s']]$$ 
+
+                                            $$=\sum\limits_a\pi(a|s)\sum\limits_{s'}p(s'|s,a)[r(s,a,s')+\gamma v_\pi(s')]$$ 
+
+由此可见，对于当状态为 $$s$$ 时，价值函数的取值可以通过其他状态的值求出，这个公式也别成为贝尔曼方程（Bellman Equation），是增强学习中十分重要的一个公式。同时，两个价值函数之间也可以建立起联系
+
+                                              $$q_\pi(s,a)=\sum\limits_{s'}p(s'|s,a)[r(s,a,s')+\gamma _\pi(s')]$$ 
+
+                                                                $$v_\pi=\sum\limits_a\pi(a|s)q_\pi(s,a)$$ 
+
 ## 最优策略性质
+
+在Agent与环境的交互过程中，Agent当然希望自己能够获得最多的回报，那么就需要自己有用最优的动作策略。我们可以给出最优策略的定义：对于一个策略函数 $$\pi$$ ，如果它和其他的 $$\pi'$$ 相比，对于任意一个 $$s$$ ，都有 $$v_\pi(s)\geq v_{\pi'}(s)$$ ，那么就称这个策略 $$\pi$$ 是最优的。对于最优策略的价值函数，我们定义它的状态价值函数为 $$v^*(s)$$ ，状态-动作价值函数为 $$q^*(s,a)$$ 。与前面的推导过程类似，我们可以用贝尔曼方程对其进行推导：
+
+                                                          $$v_*(s)=\max\limits_{a\in A(s)}q_{\pi^*}(s,a)$$ 
+
+                                                                      $$= \max\limits_aE_{\pi^*}[G_t|S_t=s,A_t=a]$$ 
+
+                                                                      $$=\max\limits_aE_{\pi^*}[\sum\limits_{k=0}^\infty\gamma^k R_{t+k+1}|S_t=s,A_t=a]$$ 
+
+                                                                      $$=\max\limits_aE_{\pi^*}[R_{t+1}+\gamma\sum\limits_{k=0}^\infty\gamma^kR_{t+k+2}|S_t=s,A_t=a]$$ 
+
+                                                                      $$=\max\limits_aE[R_{t+1}+\gamma v_*(S_{t+1}|S_t=s,A_t=a)]$$ 
+
+                                                                       $$= \max\limits_{a\in A(s)}\sum\limits_{s',r}p(s',r|s,a)[r+\gamma v_*(s')]$$ 
+
+从上面的公式可以看出，当知道了最优价值函数后，就可以推导出最优策略来。由于 $$v^*(s)$$ 是由最优的动作得到的，那么在公式中只要计算出所有 $$A_t$$ 对应的状态价值，找出其中价值最大的那个，就是当前状态的最优的策略。想要求出完整的策略，就需要把所有的状态遍历一遍。当然，对于那些状态很多的问题，求解最优价值函数已经十分困难，更别说遍历所有状态求解最优策略这种计算量很大的问题了。
 
