@@ -1,4 +1,26 @@
-# Jacobian和Hessian矩阵
+# 泰勒及Jacobian、Hessian
+
+## [泰勒展开式](https://www.zhihu.com/question/25627482)
+
+定义：泰勒公式是一个用函数在某点的信息描述其附近取值的公式。具有局部有效性。
+
+基本形式： $$f(x)=\sum\limits_{n=0}^{\infty}\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$$ 
+
+    一阶泰勒展开： $$f(x)\approx f(x_0)+f'(x_0)(x-x_0)$$ 
+
+    二阶泰勒展开： $$f(x)\approx f(x_0)+f'(x_0)(x-x_0)+f''(x_0)\frac{(x-x_0)^2}{2}$$ 
+
+迭代形式：假设 $$x^t=x^{t-1}+\Delta x$$ ，将 $$f(x^t)$$ 在 $$x^{t-1}$$ 处进行泰勒展开：
+
+                   $$f(x^t)=f(x^{t-1}+\Delta x) \approx f(x^{t-1})+f'(x^{t-1})\Delta x+f''(x^{t-1})\frac{\Delta x^2}{2}$$ 
+
+ 举个例子，例如函数 $$y = x^3$$ ，当自变量有变化时，即 $$\Delta x$$ ，就有：
+
+                   $$\Delta y = (x+\Delta x)^3-x^3 = 3x^2\Delta x+3x(\Delta x)^2+(\Delta x)^3$$ 
+
+当 $$\Delta x \to 0$$ 时，上式的后两项是 $$\Delta x$$ 的高阶无穷小舍去的话上式就变成了 $$\Delta y = 3x^2\Delta x$$ 。也就是说当自变量 $$x$$ 足够小的时候，也就是在某点的很小的邻域内， $$\Delta y$$ 是可以表示成 $$\Delta x$$ 的线性函数的。线性函数计算起来，求导起来会很方便，若进行 $$n$$ 次近似，就得到了泰勒展开的基本形式。
+
+## Jacobian与Hessian
 
 有时我们需要计算输入和输出都为向量的函数的所有偏导数。包含所有这样的偏导数的矩阵被称为Jacobian矩阵。具体来说，如果我们有一个函数： $$f:\mathbb{R}^m\to\mathbb{R}^n$$ ， $$f$$ 的Jacobian矩阵 $$J\in\mathbb{R}^{n\times m}$$ 定义为 $$J_{i,j}=\frac{\partial}{\partial x_j}f(x)_i$$ 。
 
