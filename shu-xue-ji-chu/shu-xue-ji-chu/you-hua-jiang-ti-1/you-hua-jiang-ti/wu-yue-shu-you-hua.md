@@ -75,15 +75,13 @@
 
                                                                      $$x_{n+1}=x_n-\frac{f'(x_n)}{f''(x_n)}$$ 
 
-注意这里的 $$x$$ 是指的一阶的值，不是指的原函数 $$f(x)$$ 的 $$x$$ 。
+上面解释了牛顿法的优化，都是以一维举例的（就一个变量 $$x$$ ）。从一维问题的迭代推广至多维问题只需将导数替换为梯度 $$\nabla f(x)$$ ，并将二阶导数的倒数替换为[Hessian矩阵](https://zh.wikipedia.org/wiki/%E6%B5%B7%E6%A3%AE%E7%9F%A9%E9%98%B5)的[逆矩阵](https://zh.wikipedia.org/wiki/%E9%80%86%E7%9F%A9%E9%98%B5) $$H(x)^{-1}$$ , 即：
 
-上面解释了牛顿法的优化，都是以一维举例的（就一个变量 $$x$$ ）。从一维问题的迭代推广至多维问题只需将导数替换为梯度 $$\nabla f(x)$$ ，并将二阶导数的倒数替换为[Hessian矩阵](https://zh.wikipedia.org/wiki/%E6%B5%B7%E6%A3%AE%E7%9F%A9%E9%98%B5)的[逆矩阵](https://zh.wikipedia.org/wiki/%E9%80%86%E7%9F%A9%E9%98%B5) $$[Hf(x)]^{-1}$$ , 即：
-
-                                             $$x_{n+1} = x_n-[Hf(x_n)]^{-1}\nabla f(x_n),\ n\geq 0$$ 
+                                                     $$x_{n+1} = x_n-H(x_n)^{-1}\nabla f(x_n),\ n\geq 0$$ 
 
 通常，使用牛顿法时会加入一个步长变量 $$\gamma\in(0,1)$$ 作微调，即：
 
-                                                    $$x_{n+1} = x_n-\gamma[Hf(x_n)]^{-1}\nabla f(x_n)$$ 
+                                                          $$x_{n+1} = x_n-\gamma H(x_n)^{-1}\nabla f(x_n)$$ 
 
 这个方法即被称为无约束牛顿法, 通常用于第一步之后的迭代。
 
