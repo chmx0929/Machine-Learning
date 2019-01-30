@@ -123,7 +123,6 @@
   * [求解增强学习问题](zeng-qiang-xue-xi/zeng-qiang-xue-xi/dong-tai-gui-hua-fa-qiu-jie-zeng-qiang-xue-xi-wen-ti/README.md)
     * [已知环境模型的问题](zeng-qiang-xue-xi/zeng-qiang-xue-xi/dong-tai-gui-hua-fa-qiu-jie-zeng-qiang-xue-xi-wen-ti/yi-zhi-huan-jing-mo-xing-de-wen-ti.md)
     * [未知环境模型的问题](zeng-qiang-xue-xi/zeng-qiang-xue-xi/dong-tai-gui-hua-fa-qiu-jie-zeng-qiang-xue-xi-wen-ti/wei-zhi-huan-jing-mo-xing-de-wen-ti.md)
-  * [AlphaGo](zeng-qiang-xue-xi/zeng-qiang-xue-xi/alphago.md)
 
 ## 计算机视觉
 
