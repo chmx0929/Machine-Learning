@@ -163,7 +163,8 @@
     * [传统哈希编码方法](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/chuan-tong-ha-xi-bian-ma-fang-fa.md)
     * [CNNH](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/cnnh.md)
     * [DSH](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/dsh.md)
-  * [光学字符识别](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie.md)
+  * [光学字符识别](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/README.md)
+    * [CTC解码](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/ctc-jie-ma.md)
 
 ## 自然语言处理
 
