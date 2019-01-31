@@ -69,6 +69,19 @@
     * [隐马尔可夫](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/yin-ma-er-ke-fu.md)
     * [条件随机场](ji-qi-xue-xi/ji-qi-xue-xi/gai-lv-tu-mo-xing/tiao-jian-sui-ji-chang.md)
 
+## 网络图模型
+
+* [网络图模型](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/README.md)
+  * [大规模图处理](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/README.md)
+    * [社区检测与搜索](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/community-detection.md)
+    * [中心度分析](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/centrality-analysis.md)
+    * [网络形成模型](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/modeling-of-network-formation.md)
+    * [异构信息网络](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/heterogeneous-network.md)
+  * [网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/README.md)
+    * [结构维持的网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/xin-xi-wang-luo-ying-she.md)
+    * [性质维持的网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/yi-gou-wang-luo-ying-she.md)
+    * [动态网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/dong-tai-wang-luo-ying-she.md)
+
 ## 深度学习
 
 * [深度学习](shen-du-xue-xi/shen-du-xue-xi/README.md)
@@ -199,16 +212,7 @@
     * [基于Attention的神经网络机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/ji-yu-attention-de-shen-jing-wang-luo-ji-qi-fan-yi.md)
     * [基于卷积的机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/ji-yu-juan-ji-de-ji-qi-fan-yi.md)
 
-## 网络图模型
+## 语音识别
 
-* [网络图模型](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/README.md)
-  * [大规模图处理](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/README.md)
-    * [社区检测与搜索](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/community-detection.md)
-    * [中心度分析](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/centrality-analysis.md)
-    * [网络形成模型](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/modeling-of-network-formation.md)
-    * [异构信息网络](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/da-gui-mo-tu-chu-li/heterogeneous-network.md)
-  * [网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/README.md)
-    * [结构维持的网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/xin-xi-wang-luo-ying-she.md)
-    * [性质维持的网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/yi-gou-wang-luo-ying-she.md)
-    * [动态网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/dong-tai-wang-luo-ying-she.md)
+* [语音识别](yu-yin-shi-bie/yu-yin-shi-bie.md)
 
