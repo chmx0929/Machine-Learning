@@ -292,9 +292,199 @@ whole global name is whole global name
 
 其中，可见，此处开始\_init\_中，没有给self实例初始化对应的name，而后面的函数sayYourName中，虽然可以调用到self.name而没有出现AttributeError错误，但是实际上此处的值，不是所期望的，传入的name，即"Tim"，而是类中的name的值，即"class global name"。
 
+## lambda
+
+### 逻辑解释
+
+lambda原型为：lambda 参数:操作\(参数\)。lambda函数也叫匿名函数，即没有具体名称的函数，它允许快速定义单行函数，可以用在任何需要函数的地方。这区别于def定义的函数。
+
+### 举例说明
+
+```python
+#单个参数的：
+g = lambda x : x ** 2
+print g(3)
+"""
+9
+"""
+#多个参数的：
+g = lambda x, y, z : (x + y) ** z
+print g(1,2,2)
+"""
+9
+"""
+```
+
+将一个 list 里的每个元素都平方：
+
+```python
+map( lambda x: x*x, [y for y in range(10)] )
+```
+
+这个写法要好过
+
+```python
+def sq(x):
+    return x * x
+ 
+map(sq, [y for y in range(10)])
+```
+
+因为后者多定义了一个（污染环境的）函数，尤其如果这个函数只会使用一次的话。进一步讲，匿名函数本质上就是一个函数，它所抽象出来的东西是一组运算。这是什么意思呢？类比
+
+```python
+a = [1, 2, 3]
+```
+
+和
+
+```python
+f = lambda x : x + 1
+```
+
+我们会发现，等号右边的东西完全可以脱离等号左边的东西而存在，等号左边的名字只是右边之实体的标识符。如果能习惯 \[1, 2, 3\] 单独存在，那么 lambda x : x + 1 也能单独存在其实也就不难理解了，它的意义就是给「某个数加一」这一运算本身。
+
+现在回头来看 map\(\) 函数，它可以将一个函数映射到一个可枚举类型上面。沿用上面给出的 a 和 f，可以写
+
+```python
+map(f, a)
+```
+
+也就是将函数 f 依次套用在 a 的每一个元素上面，获得结果 \[2, 3, 4\]。现在用 lambda 表达式来替换 f，就变成：
+
+```python
+map( lambda x : x + 1, [1, 2, 3] )
+```
+
+会不会觉得现在很一目了然了？尤其是类比
+
+```python
+a = [1, 2, 3]
+r = []
+for each in a:
+    r.append(each+1)
+```
+
+## apply
+
+### 逻辑解释
+
+python中apply函数的格式为：apply\(func, \*args_,_ \*\*kwargs\)。当然，func可以是匿名函数。
+
+用途：当一个函数的参数存在于一个元组或者一个字典中时，用来间接的调用这个函数，并将元组或者字典中的参数按照顺序传递给参数。
+
+解析：args是一个包含按照函数所需参数传递的位置参数的一个元组，简单来说，假如A函数的函数位置为 A\(a=1,b=2\),那么这个元组中就必须严格按照这个参数的位置顺序进行传递\(a=3,b=4\)，而不能是\(b=4,a=3\)这样的顺序。kwargs是一个包含关键字参数的字典，而其中args如果不传递，kwargs需要传递，则必须在args的位置留空。
+
+apply的返回值就是函数func函数的返回值。
+
+### 举例说明
+
+```python
+def function(a,b):
+    print(a,b)
+apply(function,('good','better'))
+apply(function,(2,3+6))
+apply(function,('cai','quan'))
+apply(function,('cai',),{'b':'caiquan'}) 
+apply(function,(),{'a':'caiquan','b':'Tom'})
+
+'''
+结果：
+('good', 'better')
+(2, 9)
+('cai', 'quan')
+('cai', 'caiquan')
+('caiquan', 'Tom')
+'''
+```
+
+有时候，函数的参数可能是DataFrame中的行或者列。
+
+```python
+#函数应用和映射
+import numpy as np
+import pandas as pd
+df=pd.DataFrame(np.random.randn(4,3),columns=list('bde'),index=['utah','ohio','texas','oregon'])
+print(df)
+"""
+               b         d         e
+utah   -0.667969  1.974801  0.738890
+ohio   -0.896774 -0.790914  0.474183
+texas   0.043476  0.890176 -0.662676
+oregon  0.701109 -2.238288 -0.154442
+"""
+ 
+#将函数应用到由各列或行形成的一维数组上。DataFrame的apply方法可以实现此功能
+f=lambda x:x.max()-x.min()
+#默认情况下会以列为单位，分别对列应用函数
+t1=df.apply(f)
+print(t1)
+t2=df.apply(f,axis=1)
+print(t2)
+ 
+"""
+b    1.597883
+d    4.213089
+e    1.401566
+dtype: float64
+utah      2.642770
+ohio      1.370957
+texas     1.552852
+oregon    2.939397
+dtype: float64
+"""
+ 
+#除标量外，传递给apply的函数还可以返回由多个值组成的Series
+def f(x):
+    return pd.Series([x.min(),x.max()],index=['min','max'])
+t3=df.apply(f)
+#从运行的结果可以看出，按列调用的顺序，调用函数运行的结果在右边依次追加
+print(t3)
+ 
+"""
+            b         d         e
+min -0.896774 -2.238288 -0.662676
+max  0.701109  1.974801  0.738890
+"""
+ 
+#元素级的python函数，将函数应用到每一个元素
+#将DataFrame中的各个浮点值保留两位小数
+f=lambda x: '%.2f'%x
+t3=df.applymap(f)
+print(t3)
+"""
+            b      d      e
+utah    -0.67   1.97   0.74
+ohio    -0.90  -0.79   0.47
+texas    0.04   0.89  -0.66
+oregon   0.70  -2.24  -0.15
+"""
+ 
+#注意，之所以这里用map,是因为Series有一个元素级函数的map方法。而dataframe只有applymap。
+t4=df['e'].map(f)
+print(t4)
+ 
+"""
+utah     0.74
+ohio     0.47
+texas   -0.66
+oregon  -0.15
+"""
+```
+
+## 引入自定义模块
+
+
+
 ## Source
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82344884" %}
+
+{% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82347016" %}
+
+{% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82347055" %}
+
+
 
 
 
