@@ -602,6 +602,84 @@ package_runoob.runoob1.func1()
 package_runoob.runoob2.func2()
 ```
 
+## 下划线命名规则
+
+### 变量
+
+#### \_XXX
+
+单下划线开头的变量，表明这是一个受保护（protected）的变量，**原则上不允许直接访问，但是外部类还是可以访问到这个变量**。因为这只是一个程序员之间的约定，用于警告说明这是一个受保护的变量，外部类不要去访问它。 以单下划线'"\_'为前缀的名称，如\_xxx，应该被视为API中非公开的部分（不管是函数，方法还是数据成员）。此时，应该将它们看做一种实现细节，在修改他们时无需对外部通知。 如果你写了代码‘from &lt;模块/包名&gt; import \*’，那么以''\_"开头的名称都不会被导入，除非模块或包中的'\_\_all\_\_'列表显示地包含了它们。不过值得注意的是，如果使用import a\_module这样导入模块，仍然可以用a\_module.\_some\_var这样的形式访问到这样的对象。
+
+#### \_\_XXX
+
+双下划线开头的，表示的是私有类型（private）的变量，**只能允许这个类本身进行访问，甚至它的子类也不可以**，用于命名一个类属性（类变量），调用时名字会被改变（在类Student内部，\_\_name会变成\_student\_\_name，如self.\_Student\_\_name）。双下划线开头的实例变量是不是一定不能从外部访问呢？其实也不是，仍然可以通过\_Student\_\_name来访问\_\_name变量。
+
+```python
+>>> class A(object): 
+...     def _internal_use(self): 
+...         pass
+...     def __method_name(self): 
+...         pass
+... 
+>>> dir(A()) 
+['_A__method_name', ..., '_internal_use']
+```
+
+#### \_\_XXX\_\_
+
+以双下划线开头，并且以双下划线结尾的，是内置变量，内置变量是可以直接访问的，如\_\_init\_\_,\_\_import\_\_或是\_\_file\_\_。所以，不要自己定义这类变量。
+
+#### XXX\_
+
+单下划线结尾的变量一般只是为了避免与Python关键字的命名冲突。
+
+#### XXX\_XXX
+
+USER\_CONSTANT，大写加下划线，对于不会发生改变的全局变量，使用大写加下划线。
+
+### 函数和方法
+
+#### 受保护方法：小写和一个前导下划线
+
+这里和受保护变量一样，并不是真正的受保护权限。同时也应该注意一般函数不要使用两个前导下划线（当遇到两个前导下划线时，Python的名称改编特性将发挥作用）。
+
+```python
+def _secrete(self):
+    print "don't test me."
+```
+
+#### 特殊方法：小写和两个前导下划线，两个后置下划线
+
+这种风格只应用于特殊函数，比如操作符重载等。对Python系统来说，这将确保不会与用户自定义的名称冲突。通常，你将会覆写这些方法，并在里面实现你所需要的功能，以便Python调用它们。例如，当定义一个类时，你经常会覆写'\_\_init\_\_'方法。
+
+```python
+def __add__(self, other):
+    return int.__add__(other)
+```
+
+ 这种风格只应用于特殊函数，比如操作符重载等。
+
+### 类
+
+类总是使用驼峰式命名，即所有单词首字母大写其余字母小写。类名应该简写，精确，并足以从中理解类所完成的工作。 常见的一个方法是使用表示其类型或者特性的后缀，例如: SQLEngine、MimeTypes
+
+```python
+class UserProfile(object):
+    def __init__(self, profile):
+        return self._profile = profile
+ 
+    def profile(self):
+        return self._profile
+```
+
+模块和包
+
+除了特殊模块init之外，模块名称都是用不带下划线的小写字母。若是实现了一个协议，那么通常使用lib作为后缀。
+
+```python
+import smtplib
+```
+
 ## Source
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82344884" %}
@@ -609,6 +687,8 @@ package_runoob.runoob2.func2()
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82347016" %}
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82347055" %}
+
+{% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82498280" %}
 
 
 
