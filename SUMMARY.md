@@ -178,6 +178,8 @@
     * [DSH](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/dsh.md)
   * [光学字符识别](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/README.md)
     * [CTC解码](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/ctc-jie-ma.md)
+  * [人脸识别](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/ren-lian-shi-bie.md)
+  * [三维重建](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/san-wei-zhong-jian.md)
 
 ## 自然语言处理
 
@@ -215,4 +217,9 @@
 ## 语音识别
 
 * [语音识别](yu-yin-shi-bie/yu-yin-shi-bie.md)
+
+## 工具基础
+
+* [工具基础](gong-ju-ji-chu/gong-ju-ji-chu/README.md)
+  * [python](gong-ju-ji-chu/gong-ju-ji-chu/python.md)
 
