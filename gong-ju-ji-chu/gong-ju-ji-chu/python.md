@@ -474,7 +474,133 @@ oregon  -0.15
 
 ## 引入自定义模块
 
+### 逻辑解释
 
+#### python模块
+
+Python 模块\(Module\)，是一个 Python 文件，以 .py 结尾，包含了 Python 对象定义和Python语句。
+
+模块让你能够有逻辑地组织你的 Python 代码段。
+
+把相关的代码分配到一个模块里能让你的代码更好用，更易懂。
+
+模块能定义函数，类和变量（所以，一开始我认为的函数必须在类里是错的...受java的毒了），模块里也能包含可执行的代码。
+
+#### python包
+
+包是一个分层次的文件目录结构，它定义了一个由模块及子包，和子包下的子包等组成的 Python 的应用环境。简单来说，包就是文件夹，但该文件夹下必须存在 \_init\_.py 文件, 该文件的内容可以为空。\_init\_.py 用于标识当前文件夹是一个包。
+
+### 举例说明
+
+#### 同级目录
+
+如果需要引入同级目录下的文件，则可以采用import一个模块的形式，即可调用。
+
+考虑同一目录下的两个python文件，test.py 需要调用support.py 中的函数，目录结构如下：
+
+```text
+|-- test.py
+|-- support.py
+```
+
+support.py 中的代码如下：
+
+```python
+def print_func( par ): 
+     print "Hello : ", 
+     par return
+```
+
+test.py 调用的代码如下：
+
+```python
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+# 导入模块
+import support
+ 
+# 现在可以调用模块里包含的函数了
+support.print_func("Runoob")
+```
+
+可以看到，上面的support.py 只有一个函数。假如这个函数在类中的话，即support.py 为：
+
+```python
+class  supportClass(object):
+    def print_func( par ):
+        print ("Hello : ", par)
+        return 
+```
+
+那么如果test.py 中的代码不变，就会报错：
+
+```python
+AttributeError: module 'support' has no attribute 'print_func'
+```
+
+这是因为，虽然import进来了support这个模块，但是print\_func并不是直接在这个模块中的，而是在类supportClass中。所以直接调用support.print\_func\("Runoob"\)就出错了。最显然的解决方式为，在test.py 中这么写：
+
+```python
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+# 导入模块
+import support #或者写成from support import *
+ 
+# 现在可以调用模块里包含的函数了
+support.supportClass.print_func("Runoob") #输出：Hello :  Runoob
+```
+
+题外话：无论是import XXX 还是 from XXX import AAA ，XXX都是模块，AAA可以是这个模块中的函数，类或者变量。**不要把类的名字和module的名字设成一样**，否则，会报：
+
+```python
+Python AttributeError: 'module' object has no attribute xxxx
+```
+
+导致在这个问题的原因是模块名和要引用的类或方法或变量的名字重了。说通俗点就是，python脚本名字（模块名）和要引用的内容（模块内的类，变量等）的名字重复了，导致原本“类-&gt;属性/方法”的引用意图被解析为了"模块-&gt;属性”的引用意图。当模块下面没有这个属性，就抛出了这个错误。解决办法是换不重复的命名。 这与JAVA要求文件名和类名是一样的要求是完全不同的。
+
+#### 子目录
+
+如果需要引入子目录下的文件，则可以采用import一个包的形式，将子目录封装成包，即可调用。考虑一个在 package\_runoob 目录下的 runoob1.py、runoob2.py、\_init\_.py 文件，test.py 为测试调用包的代码，目录结构如下：
+
+```text
+test.py
+package_runoob
+|-- __init__.py
+|-- runoob1.py
+|-- runoob2.py
+```
+
+\_init\_.py可以是空文件。
+
+test.py 调用代码如下：
+
+```python
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+# 导入 Phone 包
+from package_runoob.runoob1 import func1
+from package_runoob.runoob2 import func2
+ 
+func1()
+func2()
+```
+
+也可以采用
+
+```python
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+# 导入 Phone 包
+import package_runoob.runoob1
+import package_runoob.runoob2
+ 
+package_runoob.runoob1.func1()
+package_runoob.runoob2.func2()
+```
 
 ## Source
 
