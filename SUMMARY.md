@@ -177,7 +177,10 @@
     * [CNNH](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/cnnh.md)
     * [DSH](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/tu-xiang-jian-suo-de-shen-du-ha-xi-bian-ma/dsh.md)
   * [光学字符识别](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/README.md)
-    * [CTC解码](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/ctc-jie-ma.md)
+    * [CTC解码](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/ctc-jie-ma/README.md)
+      * [前向后向](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/ctc-jie-ma/qian-xiang-hou-xiang.md)
+      * [目标函数](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/ctc-jie-ma/mu-biao-han-shu.md)
+      * [基本原理](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/guang-xue-zi-fu-shi-bie/ctc-jie-ma/ji-ben-yuan-li.md)
   * [人脸识别](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/ren-lian-shi-bie.md)
   * [三维重建](ji-suan-ji-shi-jue/ji-suan-ji-shi-jue/san-wei-zhong-jian.md)
 
