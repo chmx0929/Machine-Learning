@@ -26,5 +26,9 @@
 
 [ftp://ftp.idsia.ch/pub/juergen/icml2006.pdf](ftp://ftp.idsia.ch/pub/juergen/icml2006.pdf)
 
+{% embed url="https://distill.pub/2017/ctc/" %}
+
+{% embed url="http://vsooda.github.io/2018/02/04/ctc/" %}
+
 
 
