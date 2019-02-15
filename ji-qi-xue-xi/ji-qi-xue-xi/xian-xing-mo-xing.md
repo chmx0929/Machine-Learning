@@ -196,7 +196,7 @@ $$P(Y=k|x)=\frac{\exp(w_k\cdot x)}{1+\sum\limits_{k=1}^{K-1}\exp(w_k\cdot x)},\ 
 
 如何确定 $$w$$ 呢？注意到上式的分子和分母都是关于 $$w$$ 的二次项，因此上式的解 $$w$$ 的长度无关，只与其方向有关。不失一般性，令 $$w^TS_ww=1$$ ，上式等价于
 
-                                                   $$\mathop{min}\limits_w( -w^TS_bw)\ \ \ \ s.t.\ \ w^TS_ww=1$$ 
+                                                   $$\mathop{\min}\limits_w( -w^TS_bw)\ \ \ \ s.t.\ \ w^TS_ww=1$$ 
 
 由拉格朗日乘子法，上式等价于
 
