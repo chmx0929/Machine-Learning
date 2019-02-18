@@ -114,6 +114,8 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 于是，对任意训练样本 $$(x_i,y_i)$$ ，总有 $$\alpha_i=0$$ 或 $$y_if(x_i)=1$$ \(即需要满足最上面最后一个等式约束\)。若 $$\alpha_i=0$$ ，则该样本将不会在 $$f(x)=w\cdot x+b = \sum\limits_{i=1}^N\alpha_iy_ix_i^Tx+b$$ 的求和中出现，也就不会对 $$f(x)$$ 有任何影响；若 $$\alpha_i>0$$ ，则必有 $$y_if(x_i)=1$$ ，所对应的样本点位于最大间隔边界上，是一个支持向量。这显示出支持向量的一个重要性质：训练完成后，大部分的训练样本都不需要保留，最终模型仅与支持向量有关。
 
+那么，如何求解 $$\mathop{max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jx_i^Tx_j\ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ \alpha_i\geq0,\ i=1,2,\dots,N$$ 呢？不难发现，这是一个二次规划问题，可使用通用的二次规划算法来求解；然而，该问题的规模正比于训练样本数，这会在实际任务中造成很大的开销。为了避免这个障碍，人们提出利用问题本身的特性，提出了很多高效的算法，SMO（Sequential Minimal Optimization）是其中一个著名的代表。
+
 ## 线性支持向量机与软间隔最大化
 
 ### 线性支持向量机
