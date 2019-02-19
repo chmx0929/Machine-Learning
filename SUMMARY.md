@@ -85,13 +85,13 @@
 ## 深度学习
 
 * [深度学习](shen-du-xue-xi/shen-du-xue-xi/README.md)
-  * [深度前馈网络](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/README.md)
-    * [非线性的学习](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/fei-xian-xing-de-xue-xi.md)
-    * [基于梯度的学习](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/ji-yu-ti-du-de-xue-xi.md)
-    * [激活函数](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/yin-cang-dan-yuan.md)
-    * [架构设计](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/jia-gou-she-ji.md)
-    * [前向传播](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/qian-xiang-chuan-bo.md)
-    * [反向传播](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-wang-luo/fan-xiang-chuan-bo.md)
+  * [深度前馈网络](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-kui-wang-luo/README.md)
+    * [非线性的学习](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-kui-wang-luo/fei-xian-xing-de-xue-xi.md)
+    * [基于梯度的学习](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-kui-wang-luo/ji-yu-ti-du-de-xue-xi.md)
+    * [激活函数](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-kui-wang-luo/ji-huo-han-shu.md)
+    * [架构设计](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-kui-wang-luo/jia-gou-she-ji.md)
+    * [前向传播](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-kui-wang-luo/qian-xiang-chuan-bo.md)
+    * [反向传播](shen-du-xue-xi/shen-du-xue-xi/shen-du-qian-kui-wang-luo/fan-xiang-chuan-bo.md)
   * [深度学习正则化](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/README.md)
     * [参数范数惩罚](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/can-shu-fan-shu-cheng-fa.md)
     * [作为约束的范数惩罚](shen-du-xue-xi/shen-du-xue-xi/shen-du-xue-xi-zheng-ze-hua/zuo-wei-yue-shu-de-fan-shu-cheng-fa.md)
@@ -124,10 +124,10 @@
     * [注意力机制](shen-du-xue-xi/shen-du-xue-xi/xun-huan-he-di-gui-wang-luo/zhu-yi-li-ji-zhi.md)
   * [生成对抗网络](shen-du-xue-xi/shen-du-xue-xi/sheng-cheng-dui-kang-wang-luo.md)
   * [多任务学习](shen-du-xue-xi/shen-du-xue-xi/duo-ren-wu-xue-xi.md)
-  * [技术分析](shen-du-xue-xi/shen-du-xue-xi/ji-shu-mo-kuai-fen-xi/README.md)
-    * [Embedding](shen-du-xue-xi/shen-du-xue-xi/ji-shu-mo-kuai-fen-xi/embedding.md)
-    * [Attention](shen-du-xue-xi/shen-du-xue-xi/ji-shu-mo-kuai-fen-xi/attention.md)
-    * [Batch Normalization](shen-du-xue-xi/shen-du-xue-xi/ji-shu-mo-kuai-fen-xi/batch-normalization.md)
+  * [技术分析](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/README.md)
+    * [Embedding](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/embedding.md)
+    * [Attention](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/attention.md)
+    * [Batch Normalization](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/batch-normalization.md)
 
 ## 增强学习
 
