@@ -14,6 +14,8 @@ Bagging基于自助采样法，给定包含 $$m$$ 个样本的数据集，我们
 
 随机森林的训练效率常常优于纯Bagging思想的决策树群，因为在个体决策树的构建过程中，Bagging使用的是“确定型”决策树，在选择划分属性时要对结点的所有属性进行考察，而随即森林使用的“随机型”决策树则只考察一个属性子集。
 
+可以看出，随机森林对Bagging只做了小改动，但是与Bagging中基学习器的“多样性”仅通过样本扰动（通过对初始训练样本采样）而来不同，随机森林中基学习器的多样性不仅来自样本扰动，还来自属性扰动，这就使得集成的泛化性能可通过个体学习器之间差异度的增加而进一步提升。
+
 ### [Code实现](https://github.com/chmx0929/UIUCclasses/blob/master/412DataMining/Assignment/Assignment4/haow4_assign4/code/RandomForest.py)
 
 ```python
