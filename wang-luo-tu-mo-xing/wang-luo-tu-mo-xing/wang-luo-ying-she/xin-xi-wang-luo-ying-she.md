@@ -71,9 +71,19 @@
 
 ![](../../../.gitbook/assets/timline-jie-tu-20181018161121.png)
 
+一阶相似度：直接相连节点间，例如6与7。定义节点 $$v_i$$ 和 $$v_j$$ 间的联合概率为：
+
+                                                         $$p_1(v_i,v_j)=\frac{1}{1+\exp(-\vec{\mu_i}^T\cdot \vec{\mu_j})}$$ 
+
 ![](../../../.gitbook/assets/timline-jie-tu-20181018161218.png)
 
+二阶相似度：通过其他中介节点相连的节点间例如5与6。用的是一个条件概率
+
+                                                            $$p_2(v_j|v_i)=\frac{\exp(\vec{\mu_j'^T}\cdot \vec{\mu_i})}{\sum_{k=1}^{|V|}\exp(\vec{\mu_k^T}\cdot \vec{\mu_i})}$$ 
+
 ![](../../../.gitbook/assets/timline-jie-tu-20181018161243.png)
+
+目标是让NRL前后节点间相似度不变，也节点表示学习前如果两个节点比较相似，那么embedding后的这两个节点表示向量也要很相似。文中用的是KL散度，度量两个概率分布之间的距离。
 
 ![](../../../.gitbook/assets/timline-jie-tu-20181018161307.png)
 
@@ -81,11 +91,17 @@
 
 ### [SDNE](https://www.kdd.org/kdd2016/papers/files/rfp0191-wangAemb.pdf)
 
-SDNE\(Structural Deep Network Embedding\)
+SDNE\(Structural Deep Network Embedding\)的一大贡献在于提出了一种新的半监督学习模型，结合一阶估计与二阶估计的优点，用于表示网络的全局结构属性和局部结构属性。
 
 ![](../../../.gitbook/assets/timline-jie-tu-20181030121026.png)
 
 ![](../../../.gitbook/assets/timline-jie-tu-20181030121114.png)
+
+对节点的描述特征向量（比如点的「邻接向量」）使用autoencoder编码，取autoencoder中间层作为向量表示，以此来让获得2ndproximity（相似邻居的点相似度较高，因为两个节点的「邻接向量」相似，说明它们共享了很多邻居，最后映射成的向量y也会更接近）。
+
+目标函数：
+
+![](../../../.gitbook/assets/20170724124532747.png)
 
 ### GraRep
 
