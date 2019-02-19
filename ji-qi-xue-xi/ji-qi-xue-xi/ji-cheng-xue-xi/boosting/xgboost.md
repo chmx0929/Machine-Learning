@@ -578,6 +578,10 @@ Block结构还有其它好处，数据按列存储，可以同时访问所有的
 * Block压缩（Block Compression）：将Block按列压缩（LZ4压缩算法？），读取的时候用另外的线程解压。对于行索引，只保存第一个索引值，然后只保存该数据与第一个索引值之差\(offset\)，一共用16个bits来保存 offset，因此，一个block一般有2的16次方个样本。
 * Block拆分（Block Sharding）：将数据划分到不同磁盘上，为每个磁盘分配一个预取（pre-fetcher）线程，并将数据提取到内存缓冲区中。然后，训练线程交替地从每个缓冲区读取数据。这有助于在多个磁盘可用时增加磁盘读取的吞吐量。
 
+## 算法实现
+
+{% embed url="https://github.com/dmlc/xgboost" %}
+
 ## Source
 
 {% embed url="https://arxiv.org/abs/1603.02754" %}
