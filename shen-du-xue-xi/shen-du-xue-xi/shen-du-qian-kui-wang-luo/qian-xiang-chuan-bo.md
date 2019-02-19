@@ -34,6 +34,8 @@
 * （2）for $$l$$ in $$(2,L)$$ ：
 *                      $$a^{(l)}=\sigma(z^{(l)})=\sigma(W^{(l)}a^{(l-1)}+b^{(l)})$$ 
 
+最后结果即输出 $$a^{(L)}$$ 
+
 ## Source
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/84615935" %}
