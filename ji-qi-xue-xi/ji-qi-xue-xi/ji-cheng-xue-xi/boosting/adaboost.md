@@ -54,7 +54,7 @@
 *            $$w_{m+1,i}=\frac{w_{mi}}{Z_m}\exp(-\alpha_my_iG_m(x_i)),\ \ \ i=1,2,\dots,N$$ 可写为
 *            $$w_{m+1,i} = \begin{cases}\frac{w_{mi}}{Z_m}e^{-\alpha_m},\ \ \ G_m(x_i)=y_i\\ \frac{w_{mi}}{Z_m}e^{a_m},\ \ \ \ \ G_m(x_i)\neq y_i\end{cases}$$ 
 *             由此可知，被基本分类器 $$G_m(x)$$ 误分类样本的权值得以扩大，而被正确分类的样本的权值却
-*             得以缩小。两相比较，由$$\alpha_m=\frac{1}{2}\ln\frac{1-e_m}{e_m}$$ 知误分类样本的权值被放大 $$e^{2\alpha_m}=\frac{1-e_m}{e_m}$$ 被。因
+*             得以缩小。两相比较，由$$\alpha_m=\frac{1}{2}\ln\frac{1-e_m}{e_m}$$ 知误分类样本的权值被放大 $$e^{2\alpha_m}=\frac{1-e_m}{e_m}$$ 倍。因
 *             此，误分类样本在下一轮学习中起更大的作用。不改变所给的训练数据，而不断改变训练数据
 *             权值的分布，使得训练数据在基本分类器的学习中起不同的作用，这就是AdaBoost的一个特点
 
