@@ -147,7 +147,7 @@ _AdaBoost的训练误差界_：AdaBoost算法最终分类器的训练误差界�
 
                                   $$=\prod\limits_{m=1}^MZ_m$$ 
 
-这一定理说明，可以再每一轮选取适当的 $$G_m$$ 使得 $$Z_m$$ 最小，从而使训练误差下降最快。
+这一定理说明，可以在每一轮选取适当的 $$G_m$$ 使得 $$Z_m$$ 最小，从而使训练误差下降最快。
 
 ## [Code实现](https://github.com/fengdu78/lihang-code/blob/master/code/%E7%AC%AC8%E7%AB%A0%20%E6%8F%90%E5%8D%87%E6%96%B9%E6%B3%95%28AdaBoost%29/Adaboost.ipynb)
 
