@@ -680,6 +680,170 @@ class UserProfile(object):
 import smtplib
 ```
 
+## 生成器与yield
+
+### 简单生成器
+
+要创建一个generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的\[\]改成\(\)，就创建了一个generator：
+
+```python
+>>> L = [x * x for x in range(10)]
+>>> L
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> g = (x * x for x in range(10))
+>>> g
+<generator object <genexpr> at 0x104feab40>
+```
+
+创建L和g的区别仅在于最外层的\[\]和\(\)，L是一个list，而g是一个generator。 我们可以直接打印出list的每一个元素，但我们怎么打印出generator的每一个元素呢？ 如果要一个一个打印出来，可以通过generator的next\(\)方法：
+
+```python
+>>> g.next()
+0
+>>> g.next()
+1
+>>> g.next()
+4
+>>> g.next()
+9
+>>> g.next()
+16
+>>> g.next()
+25
+>>> g.next()
+36
+>>> g.next()
+49
+>>> g.next()
+64
+>>> g.next()
+81
+>>> g.next()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+```
+
+### 带yeild的生成器
+
+我们先来看一个函数：
+
+```python
+def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        print (b)
+        a, b = b, a + b
+        n = n + 1
+```
+
+调用结果：
+
+```python
+fib(6)
+1
+1
+2
+3
+5
+8
+```
+
+仔细观察，可以看出，fib函数实际上是定义了斐波拉契数列的推算规则，可以从第一个元素开始，推算出后续任意的元素，这种逻辑其实非常类似generator。 就是说，上面的函数和generator仅一步之遥。要把fib函数变成generator，只需要把print b改为yield b就可以了：
+
+```python
+def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        yield b
+        a, b = b, a + b
+        n = n + 1
+```
+
+这就是定义generator的另一种方法。如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator：
+
+```python
+>>> fib(6)
+<generator object fib at 0x104feaaa0>
+```
+
+这里，最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next\(\)的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。 举个简单的例子，定义一个generator，依次返回数字1，3，5：
+
+```python
+>>> def odd():
+...     print ('step 1')
+...     yield 1
+...     print ('step 2')
+...     yield 3
+...     print ('step 3')
+...     yield 5
+...
+>>> o = odd()
+>>> o.next()
+step 1
+1
+>>> o.next()
+step 2
+3
+>>> o.next()
+step 3
+5
+>>> o.next()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+```
+
+可以看到，odd不是普通函数，而是generator，在执行过程中，遇到yield就中断，下次又继续执行。执行3次yield后，已经没有yield可以执行了，所以，第4次调用next\(\)就报错。 回到fib的例子，我们在循环过程中不断调用yield，就会不断中断。当然要给循环设置一个条件来退出循环，不然就会产生一个无限数列出来。 同样的，把函数改成generator后，我们基本上从来不会用next\(\)来调用它，而是直接使用for循环来迭代：
+
+```python
+>>> for n in fib(6):
+...     print (n)
+...
+1
+1
+2
+3
+5
+8
+```
+
+### 加强的生成器
+
+生成器中有一些加强特性,所以除了 next\(\)来获得下个生成的值,用户可以将值回送给生成器\[send\(\)\],在生成器中抛出异常,以及要求生成器退出\[close\(\)\]
+
+```python
+def gen(x):
+    count = x
+    while True:
+        val = (yield count) 
+        if val is not None:
+            count = val
+        else:
+            count += 1
+ 
+f = gen(5)
+print (f.next())
+print (f.next())
+print (f.next())
+print ('====================')
+print (f.send(9))#发送数字9给生成器
+print (f.next())
+print (f.next())
+```
+
+输出：
+
+```python
+5
+6
+7
+====================
+9
+10
+1
+```
+
 ## Source
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82344884" %}
@@ -689,6 +853,8 @@ import smtplib
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82347055" %}
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/82498280" %}
+
+{% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/84140299" %}
 
 
 
