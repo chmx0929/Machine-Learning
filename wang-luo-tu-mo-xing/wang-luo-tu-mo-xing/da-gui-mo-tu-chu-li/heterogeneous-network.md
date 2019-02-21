@@ -214,6 +214,26 @@ An iterative algorithm that clustering result $$\Theta$$ and quality weight vect
 
 ![](../../../.gitbook/assets/timline-jie-tu-20181015101025.png)
 
+算法流程：
+
+Step 0： $$\forall k \in \{1,\dots ,K\},\ \forall i \in \{1,\dots ,m\}$$ 初始化 $$f^{(k)}_i(0)=y_i^{(k)}$$ 且 $$t=0$$ 
+
+Step 1：基于当前的 $$f^{(k)}_i(t)$$ ，计算：
+
+                               $$f^{(k)}_i(t+1) = \frac{\sum^m_{j=1,j\neq i}\lambda_{ij}S_{ij}f^{(k)}_j(t)+2\lambda_{ii}S_{ii}f^{(k)}_i(t)+\alpha_iy_i^{(k)}}{\sum^m_{j=1,j\neq i}\lambda_{ij}+2\lambda_{ii}+\alpha_i}$$ 
+
+Step 2：重复上步直到收敛或变化小于一定阈值
+
+Step 3：对于每个 $$i\in \{1,\dots,m\}$$ ，根据第p个数据指定主体 $$\mathcal{X}_i$$ 类别：
+
+                         $$c_{ip}=\arg \max_{1\leq k\leq K}f_{ip}^{(k)*}$$ ，其中 $$f^{(k)*}_i=[f_{i1}^{(k)}*,\dots,f_{in_i}^{(k)}*]^T$$ 
+
+这里解释一下上述算法流程，第0步label一共 $$K$$ 个，有 $$m$$ 个关系图所以初始化没什么可说的。
+
+重点是第1步： $$\lambda$$ 作为参数调节异构网络中信息传播率， $$\alpha$$ 作为参数调节每轮ground truth参数。
+
+式子分子分为三块，第一部分 $$\lambda_{ij}S_{ij}f_j^{(k)}(t)$$ 为
+
 #### RankClass
 
 GNetMine将每个主体同等对待，RankClass中高排序的主体会在分类中起到更大作用
