@@ -28,6 +28,7 @@
 * [数据挖掘](shu-ju-wa-jue/shu-ju-wa-jue/README.md)
   * [数据预分析](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-ji-zhi-biao.md)
   * [数据预处理](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/README.md)
+    * [排序算法](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/pai-xu-suan-fa.md)
     * [数据采样](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/shu-ju-cai-yang.md)
     * [数据降维](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/shu-ju-jiang-wei.md)
     * [特征选择](shu-ju-wa-jue/shu-ju-wa-jue/shu-ju-yu-chu-li/te-zheng-xuan-ze.md)
