@@ -209,6 +209,7 @@
     * [word2vec\(Hierarchical Softmax与Negative Sampling\)](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/word2vec.md)
     * [GloVe](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/glove.md)
     * [fastText](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/fasttext.md)
+    * [Bert](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/wen-ben-xiang-liang-hua/bert.md)
   * [情感分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi/README.md)
     * [文档维度情感分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi/wen-dang-wei-du-qing-gan-fen-xi.md)
     * [句子维度情感分析](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/qing-gan-fen-xi/ju-zi-wei-du-qing-gan-fen-xi.md)
