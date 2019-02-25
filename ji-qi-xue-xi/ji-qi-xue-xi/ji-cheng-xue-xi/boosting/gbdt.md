@@ -76,7 +76,7 @@
 
 求 $$f_1(x)$$ 即回归树 $$T_1(x)$$ ，首先通过以下优化问题：
 
-                                        $$\min\limits_s[\min\limits_{c_1}\sum\limits_{x_i\in R_1}(y_i-c_1)^2+\min\limits_2\sum\limits_{x_i\in R_2}(y_i-c_2)^2]$$ 
+                                        $$\min\limits_s[\min\limits_{c_1}\sum\limits_{x_i\in R_1}(y_i-c_1)^2+\min\limits_{c_2}\sum\limits_{x_i\in R_2}(y_i-c_2)^2]$$ 
 
 求解训练数据的切分点 $$s$$ ：
 
