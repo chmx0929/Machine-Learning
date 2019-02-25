@@ -1,6 +1,6 @@
 # 搜索排序中的Embedding
 
-这里主要基于[王喆](https://github.com/wzhe06)对于2018年[KDD Best Paper](https://dl.acm.org/citation.cfm?id=3219885)的分析进行整理。
+这里主要基于[王喆](https://github.com/wzhe06)对于2018年[KDD Best Paper](https://dl.acm.org/citation.cfm?id=3219885)的分析进行整理。airbnb并没有直接把embedding similarity直接得到搜索结果，而是基于embedding得到不同的user-listing pair feature，然后输入搜索排序模型，得到最终的排序结果。
 
 ## 业务场景
 
@@ -106,6 +106,58 @@ Airbnb如何解决如此严重的数据稀疏问题，训练出有意义的user 
 user\_type的定义同理，我们可以看一下airbnb用了什么用户属性，从上表中我们看到有device type，是否填了简介，有没有头像照片，之前定过的平均价位等等，可以看出都是一些非常基础和通用的属性，这对于我们来说也有借鉴意义，因为任何网络服务都可以很容易的找出这些属性。
 
 有了user type和listing type之后，一种直观的生成新的booking session sequence的方式是这样，直接把user type当作原来的user id，生成一个由listing type组成的booking session。这种方法能够解决数据稀疏性的问题，却无法直接得到user type embedding。为了让user type embedding和listing type embedding在同一个vector space中生成，airbnb采用了一种比较“反直觉”的方式。
+
+针对某一user id按时间排序的booking session， $$(l_1,l_2,...,l_M)$$ ，我们用（user\_type, listing\_type）组成的元组替换掉原来的listing item，因此sequence变成$$((u_{type1},l_{type1}),(u_{type2},l_{type2}),\dots,(u_{typeM},l_{typeM})) $$，这里 __$$ l_{type1}$$ 指的就是listing l1对应的listing type， $$u_{type1} $$ 指的是该user在book listing l1时的user type，由于某一user的user\_type会随着时间变化，所以 __$$u_{type1},u_{type2}$$ 不一定相同。
+
+有了该sequence的定义，下面的问题就是如何训练embedding使得user type和listing type在一个空间内了。训练所用的objective完全沿用了上一篇文章的objective的形式，但由于我们用一个（user type，listing type）的元组替换掉了原来的listing，如何确定central item就成为了一个核心问题。针对该问题，文章的原话是这么说的。
+
+> instead of listing l , the center item that needs to be updated is either user\_type \(ut\) or listing\_type \(lt\) depending on which one is caught in the sliding window.
+
+这个表述很有意思但也比较模糊，就是说在通过sliding window的形式计算objective的时候，central item可以是user type 也可以是listing type，这取决于我们在sliding window中“抓住”了哪个。
+
+**什么叫“抓住”？如何“抓住”，文章没有给出精确的定义，非常欢迎大家作出自己的解读。**这里我先给出我的猜测。
+
+因为文章之后列出了central item分别是user type和item type时的objective如下
+
+![](../../../.gitbook/assets/v2-933c8f3f27ae6803899d001578c6f083_r.jpg)
+
+![](../../../.gitbook/assets/v2-0a35f9d7db5545c1209692507bd24725_r.jpg)
+
+其中 $$ D_{book} $$ 是central item附近的user type和item type的集合。如果这样的话，这两个objective是完全一样的。
+
+所以我推测airbnb应该是把所有元组扁平化了一下，把user type和item type当作完全相同的item去训练embedding了，如果是这样的话二者当然是在一个vector space中。虽然整个过程就很tricky，但也不失为一个好的工程解决办法。
+
+接下来为了引入“房主拒绝”（reject）这个action，airbnb又在objective中加入了reject这样一个negative signal，方法与上一篇文章中加入negative signal的方法相同，在此不再赘述。
+
+其实除了计算user embedding外，airbnb在分享的slides中提到他们还直接把query embedding了，从最后的搜索效果来看，query embedding跟listing embedding也是处于一个vector space，大家可以从下图中看出embedding方法的神奇。
+
+![](../../../.gitbook/assets/v2-d15a41297d4f2d462efe7d2a8d09f28d_r.jpg)
+
+![](../../../.gitbook/assets/v2-4c82a1bd68707fe8507855f966511edb_r.jpg)
+
+可以看到，在引入embedding之前，搜索结果只能是文本上的关键词搜索，引入embedding之后，搜索结果甚至能够捕捉到搜索词的语义信息。比如输入France Skiing，虽然结果中没有一个listing带有Skiing这个关键词，但这个结果无一例外都是法国的滑雪胜地，这无疑是更接近用户动机的结果。
+
+在这篇Slides中Airbnb并没有具体介绍是如何生成query embedding，大家可以思考一下query embedding的具体生成过程。
+
+## 排序搜索模型和特征
+
+airbnb采用的搜索排序模型是一个pairwise的支持Lambda Rank的GBDT模型。该模型已经由airbnb的工程师开源，感兴趣的同学可以去学习一下（[github地址](https://github.com/yarny/gbdt)）。至于什么是pairwise，什么是LambdaRank，不是本文的重点，不做过多介绍，感兴趣的同学可以自行学习。
+
+我们关注的重点回到特征工程上来，airbnb基于embedding生成了哪些feature呢？这些feature又是如何驱动搜索结果的“实时”个性化呢？
+
+下面列出了基于embedding的所有feature
+
+![](../../../.gitbook/assets/v2-35da385c9408ae556dbe92e476ac914f_r.jpg)
+
+我们可以很清楚的看到，最后一个feature UserTypeListingTypeSim指的是 user type和listing type的similarity，该feature使用了我们这篇文章介绍的包含用户长期兴趣的embedding，除此之外的其他feature都是基于上篇文章介绍的listing embedding。比如EmbClickSim指的是candidate listing与用户最近点击过的listing的相似度。
+
+这里我想我们可以回答这个问题了，为什么airbnb在文章题目中强调是real time personalization？原因就是由于在这些embedding相关的feature中，我们加入了“最近点击listing的相似度”，“最后点击listing的相似度”这类特征，由于这类特征的存在，用户在点击浏览的过程中就可以得到实时的反馈，搜索结果也是实时地根据用户的点击行为而改变，所以这无疑是一个real time个性化系统。
+
+最后贴出引入embedding前后airbnb搜索排序模型的效果提升以及各feature的重要度，大家可以做参考。
+
+![](../../../.gitbook/assets/v2-b322b27b46fa9ef0c04cda1604260d63_hd.jpg)
+
+![](../../../.gitbook/assets/v2-c07c3f3e82ec21617d494b9692b1d0dc_r.jpg)
 
 ## 冷启动问题
 
