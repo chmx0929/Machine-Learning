@@ -364,7 +364,7 @@ $$f_1(x_i)$$ 的值是样例 $$x_i$$ 落在第一棵树上的叶子节点值。�
 
 $$\epsilon$$-approximate $$\phi$$-quantiles 的意思就是：在 $$\phi$$-quantiles 误差$$\epsilon$$-approximate 以内位置的取值。即近似分位点。
 
-即 $$\phi$$-quantiles 是在区间 $$[\lfloor(\phi-\epsilon)\times N\rfloor,\lfloor(\phi+\epsilon)\times N\rfloor]$$  ，而不是之前的精确的 $$\lfloor\phi\times N\rfloor$$  。还是上面的例子，令 $$\epsilon=0.1,\ \phi=0.5$$ ，由数据可知 $$N = 16$$ ，此时 $$[\lfloor(\phi-\epsilon)\times N\rfloor,\lfloor(\phi+\epsilon)\times N\rfloor]$$ 为 $$[6.4,9.6]$$ ，即rank为 $$\{\7,8,9}$$ ，$$0.1$$-approximate $$0.5$$-quantiles 为 $$\{6,7,8\}$$。
+即 $$\phi$$-quantiles 是在区间 $$[\lfloor(\phi-\epsilon)\times N\rfloor,\lfloor(\phi+\epsilon)\times N\rfloor]$$  ，而不是之前的精确的 $$\lfloor\phi\times N\rfloor$$  。还是上面的例子，令 $$\epsilon=0.1,\ \phi=0.5$$ ，由数据可知 $$N = 16$$ ，此时 $$[\lfloor(\phi-\epsilon)\times N\rfloor,\lfloor(\phi+\epsilon)\times N\rfloor]$$ 为 $$[6.4,9.6]$$ ，即rank为 $$\{7,8,9\}$$ ，$$0.1$$-approximate $$0.5$$-quantiles 为 $$\{6,7,8\}$$。
 
  这个物理含义是什么呢？就是说，如果我们允许 $$\epsilon\times N$$  是 $$1.6$$ 的误差的话，那么 $$0.5$$ -quantiles 的值为 $$6,7,8$$ 都可以。
 
