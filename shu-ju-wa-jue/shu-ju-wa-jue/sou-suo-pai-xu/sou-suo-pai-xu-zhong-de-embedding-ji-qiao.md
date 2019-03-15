@@ -71,13 +71,13 @@ Airbnb采用了click session数据对listing进行embedding，其中click sessio
 
 ![](../../../.gitbook/assets/v2-c1cf96d935beb8b54f666c6a8796ff07_hd.png)
 
-其中Db代表了所有booked session中所有滑动窗口中central listing和booked listing的pair集合。
+其中 $$D_b$$ 代表了所有booked session中所有滑动窗口中central listing和booked listing的pair集合。
 
 下面这一项就比较容易理解了，为了更好的发现同一市场（marketplace）内部listing的差异性，Airbnb加入了另一组negative sample，就是在central listing同一市场的listing集合中进行随机抽样，获得一组新的negative samples。同理，我们可以用跟之前negative sample同样的形式加入到objective中。
 
 ![](../../../.gitbook/assets/v2-2927ff63cf41a57e76874c8ddc97ad7f_hd.jpg)
 
-其中Dmn就是新的同一地区的negative samples的集合。
+其中 $$D_{m_n}$$ 就是新的同一地区的negative samples的集合。
 
 至此，lisitng embedding的objective就定义完成了，embedding的训练过程就是word2vec negative sampling模型的标准训练过程，这里不再详述。
 
@@ -89,7 +89,7 @@ Airbnb采用了click session数据对listing进行embedding，其中click sessio
 
 1. book行为的总体数量本身就远远小于click的行为，所以booking session集合的大小是远远小于click session的
 2. 单一用户的book行为很少，大量用户在过去一年甚至只book过一个房源，这导致很多booking session sequence的长度为1
-3. 大部分listing被book的次数也少的可怜，大家知道w2v要训练出较稳定有意义的embedding，item最少需要出现5-10次，但大量listing的book次数少于5次，根本无法得到有效的embedding。
+3. 大部分listing被book的次数也少的可怜，大家知道word2vec要训练出较稳定有意义的embedding，item最少需要出现5-10次，但大量listing的book次数少于5次，根本无法得到有效的embedding。
 
 Airbnb如何解决如此严重的数据稀疏问题，训练出有意义的user embedding和listing embedding呢？
 
