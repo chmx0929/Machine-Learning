@@ -10,9 +10,33 @@
 
 推荐系统涉及到的两大实体：user和item往往是不同类型的东西，例如user是人，item是电商的宝贝，他们表面上的特征可能是没有任何的重叠的，这不同于搜索引擎里的query和doc都是文本：
 
+![](../../../.gitbook/assets/640.jpg)
+
+正是由于user和item不同类型的东西，所以推荐里匹配可能比搜索里的更难。
+
+## 传统匹配模型
+
+###  **Collaborative Filtering Models**
+
+###  **Generic Feature-based Models**
+
+## **深度学习匹配模型**
+
+###  **基于representation learning的方法**
+
+####  **基于Collaborative Filtering的方法**
+
+####  **基于Collaborative Filtering + Side Info的方法**
+
+###  **基于matching function learning的方法**
+
+###  **representation learning和matching function learning的融合**
+
 ## Source
 
-{% embed url="https://maimai.cn/article/detail?fid=1170312617&efid=-F35kBMAyHRjNk71aY7ekA&from=singlemessage&isappinstalled=0" %}
+{% embed url="https://zhuanlan.zhihu.com/p/45849695" %}
+
+{% embed url="https://www.comp.nus.edu.sg/~xiangnan/sigir18-deep.pdf" %}
 
 
 
