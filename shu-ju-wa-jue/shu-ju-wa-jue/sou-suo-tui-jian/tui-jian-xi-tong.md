@@ -99,13 +99,27 @@ user和item分别用一个embedding表示，然后用户对item的偏好程度�
 
 ## **深度学习匹配模型**
 
-###  **基于representation learning的方法**
+representation learning，这类方法是分别由NN，学习出user和item的embedding，然后由两者的embedding做简单的内积或cosine等，计算出他们的得分。
+
+matching function learning，这类方法是不直接学习出user和item的embedding表示，而是由基础的匹配信号，由NN来融合基础的匹配信号，最终得到他们的匹配分。
+
+![](../../../.gitbook/assets/timline-jie-tu-20190318115706.png)
+
+### **基于representation learning的方法**
+
+![](../../../.gitbook/assets/timline-jie-tu-20190318120032.png)
+
+![](../../../.gitbook/assets/timline-jie-tu-20190318120233.png)
 
 ####  **基于Collaborative Filtering的方法**
 
 ####  **基于Collaborative Filtering + Side Info的方法**
 
 ###  **基于matching function learning的方法**
+
+![](../../../.gitbook/assets/timline-jie-tu-20190318120059.png)
+
+![](../../../.gitbook/assets/timline-jie-tu-20190318120332.png)
 
 ###  **representation learning和matching function learning的融合**
 
