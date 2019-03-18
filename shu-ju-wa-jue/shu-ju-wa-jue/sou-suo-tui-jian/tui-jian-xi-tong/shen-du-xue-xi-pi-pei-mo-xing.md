@@ -127,6 +127,42 @@ Item-level attention：用户历史作用过的item，对用户的表示的贡�
 
 这篇论文的模型就是将user的embedding和item的embedding concat到一起，然后用几层FC来学习他们的匹配程度。
 
+然而很不幸的是，MLP在抓取多阶信息的时候，表现并不好，MLP效果并没有比内积好。有一篇论文证明了，MLP在抓取多阶的信息的时候，表现并不好：
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318171921.png)
+
+这篇论文要说的是，即使是二维的1阶的数据，也需要100个节点的一层FC才能比较好的拟合；而如果是2阶的数据，100个节点的一层FC拟合得非常差，所以MLP在抓取多阶信息上并不擅长。
+
+#### [NeuMF: Neural Matrix Factorization \(He et al, WWW’17\)](http://papers.www2017.com.au.s3-website-ap-southeast-2.amazonaws.com/proceedings/p173.pdf)
+
+这篇论文其实是MF和MLP的一个融合，MF适合抓取乘法关系，MLP在学习match function上更灵活：
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318172418.png)
+
+user和item分别用一个单独的向量做内积（element-wise product，没求和）得到一个向量v1；然后user和item分别另外用一个单独的向量，通过几层FC，融合出另外一个向量v2，然后v1和v2拼接\(concat\)到一起，再接一个或多个FC就可以得到他们的匹配分。
+
+#### [ONCF: Outer-Product based NCF \(He et al, IJCAI’18\)](https://www.ijcai.org/proceedings/2018/0308.pdf)
+
+上述的模型，user向量和item向量要不是element-wise product，要不是concat，这忽略了embedding的不同维度上的联系。一个直接的改进就是使用outer-product，也就是一个m维的向量和n维的向量相乘，得到一个m\*n的二维矩阵（即两个向量的每一个维度都两两相乘）:![](https://pic3.zhimg.com/80/v2-5eba607c3236ac35bb4d1150cda787a2_hd.jpg)
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318172954.png)
+
+其中也包含了内积的结果。
+
+然后就得到一个mn的矩阵，然后就可以接MLP学习他们的匹配分。但是由于m\*n比较大，所以这样子是内存消耗比较大的：
+
+![](https://pic4.zhimg.com/80/v2-46521105f72901f3b62c5013651af037_hd.jpg)
+
+很自然的一个改进就是将全连接，改成局部全连接，这就是CNN了。
+
+使用CNN来处理上述的outer-product的二维矩阵，可以起到大大节省内存的效果：
+
+![](https://pic4.zhimg.com/80/v2-30f796258622a8d4c142cf7d064b046f_hd.jpg)
+
+效果上，ConvNCF要比NeuMF和MLP都要好：
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318172855.png)
+
 **Based on Translation framework**
 
 ### **基于Collaborative Filtering + Side Info的方法**
