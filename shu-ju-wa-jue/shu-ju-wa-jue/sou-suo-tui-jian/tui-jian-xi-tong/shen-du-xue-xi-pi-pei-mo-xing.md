@@ -115,6 +115,26 @@ Item-level attention：用户历史作用过的item，对用户的表示的贡�
 
 ![](../../../../.gitbook/assets/timline-jie-tu-20190318120332.png)
 
+### **基于Collaborative Filtering的方法**
+
+**Based on Neural Collaborative Filtering\(NCF\) framework**
+
+#### [Neural Collaborative Filtering Framework \(He et al, WWW’17\)](https://www.comp.nus.edu.sg/~xiangnan/papers/ncf.pdf)
+
+这篇论文是使用NN来学习match function的通用框架：
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318165524.png)
+
+这篇论文的模型就是将user的embedding和item的embedding concat到一起，然后用几层FC来学习他们的匹配程度。
+
+**Based on Translation framework**
+
+### **基于Collaborative Filtering + Side Info的方法**
+
+**Based on Multi-Layer Perceptron**
+
+**Based on Factorization Machines\(FM\)**
+
 ##  **representation learning和matching function learning的融合**
 
 ## Source
