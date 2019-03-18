@@ -50,7 +50,9 @@
     * [排序学习](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/pai-xu-xue-xi.md)
     * [搜索排序](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-pai-xu/README.md)
       * [搜索排序中的Embedding](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-pai-xu/sou-suo-pai-xu-zhong-de-embedding-ji-qiao.md)
-    * [推荐系统](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/tui-jian-xi-tong.md)
+    * [推荐系统](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/tui-jian-xi-tong/README.md)
+      * [传统匹配模型](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/tui-jian-xi-tong/chuan-tong-pi-pei-mo-xing.md)
+      * [深度学习匹配模型](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/tui-jian-xi-tong/shen-du-xue-xi-pi-pei-mo-xing.md)
 
 ## 机器学习
 
