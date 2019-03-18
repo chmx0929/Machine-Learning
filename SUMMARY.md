@@ -48,6 +48,7 @@
     * [实体识别与类型标记](shu-ju-wa-jue/shu-ju-wa-jue/wen-ben-wa-jue/shi-ti-shi-bie-yu-lei-xing-biao-ji.md)
   * [搜索推荐](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/README.md)
     * [搜索排序](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-pai-xu/README.md)
+      * [排序学习](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-pai-xu/pai-xu-xue-xi.md)
       * [搜索排序中的Embedding](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-pai-xu/sou-suo-pai-xu-zhong-de-embedding-ji-qiao.md)
     * [推荐系统](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/tui-jian-xi-tong.md)
 

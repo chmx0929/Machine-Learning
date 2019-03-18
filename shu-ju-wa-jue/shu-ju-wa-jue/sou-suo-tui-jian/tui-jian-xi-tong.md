@@ -18,6 +18,18 @@
 
 ###  **Collaborative Filtering Models**
 
+协同过滤（CF）是推荐里最通用、最著名的算法了。CF的基本假设是：一个用户的行为，可以由跟他行为相似的用户进行推测。协同过滤一般分为user-based和item-based、model-based三类方法。user-based和item-based、model-based的协同过滤的算法的思想通俗的讲，就是：
+
+* user-based：两个用户A和B很相似，那么可以把B购买过的商品推荐给A（如果A没买过）；例如你和你的师兄都是学机器学习的，那么你的师兄喜欢的书籍，你也很有可能喜欢
+* item-based: 两个item：A和B很相似，那么某个用户购买过A，则可以给该用户推荐B。例如一个用户购买过《模式识别》这本书，它很有可能也喜欢《推荐系统》这本书。计算两个item是否相似的一种简单方法是，看看他们的共现概率，即他们被用户同时购买的概率
+* model-based: 用机器学习的思想来建模解决，例如聚类、分类、PLSA、矩阵分解等
+
+CF要解决的问题用数学化的语言来表达就是：一个矩阵的填充问题，已经打分的item为observed data，未打分的是missing data：
+
+![](../../../.gitbook/assets/timline-jie-tu-20190318101806.png)
+
+
+
 ###  **Generic Feature-based Models**
 
 ## **深度学习匹配模型**
