@@ -165,11 +165,79 @@ user和item分别用一个单独的向量做内积（element-wise product，没�
 
 **Based on Translation framework**
 
+MF-based的model是让user和他喜欢的item的向量更接近，而translation-based的模型是，让用户的向量加上一个relation vector尽量接近item的向量：
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318173445.png)
+
+#### [TransRec \(He et al, Recsys’17\)](https://arxiv.org/pdf/1707.02410.pdf)
+
+这篇论文的主要思想是，item是在一个transition空间中的，用户下一次会喜欢的item和他上一个喜欢的item有很大关系。
+
+这篇论文要解决的下一个物品的推荐问题，利用三元关系组来解决这个问题：，主要的思想是：
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318174002.png)
+
+那么用户喜欢下一次物品的概率和下述式子成正比：
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318174047.png)
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318173800.png)
+
+#### [Latent Relational Metric Learning\(Tay et al, WWW’18\)](https://arxiv.org/pdf/1707.05176.pdf)
+
+这个论文主要是relation vector通过若干个memory vector的加权求和得到，然后采用pairwise ranking的方法来学习。
+
+首先和attention里的k、q、v类似，计算出attention weight:
+
+![](https://pic2.zhimg.com/80/v2-8cfdf170a9c94af63845fcec8921c951_hd.jpg)
+
+其中p和q分别是user和item的向量。然后对memory vector进行加权求和得到relation vector\(该论文中用了6个memory vector\):
+
+![](https://pic1.zhimg.com/80/v2-e55a476d67a4a641ec6239cbc37d0dfc_hd.jpg)
+
+如果item\_q是user\_p喜欢的item，那么随机采样另一对p和q，就可以进行pairwise ranking的学习，即正样本的 $$|p+r-q|$$  （$$p$$ 喜欢 $$q$$）应该小于负样本的 $$|p'+r-q'|$$  \( $$p'$$ 不喜欢 $$q'$$ ，这里的正负样本用同一个 $$r$$ \)：
+
+![](../../../../.gitbook/assets/v2-b8547ce589403bbec95783988952d461_r.jpg)
+
 ### **基于Collaborative Filtering + Side Info的方法**
 
-**Based on Multi-Layer Perceptron**
+推荐里的特征向量往往是高维稀疏的，例如CF中feature vector = user\_ID + item\_ID。对于这些高维稀疏特征来说，抓取特征特征之间的组合关系非常关键：
 
-**Based on Factorization Machines\(FM\)**
+* 二阶特征组合：
+
+  * users like to use food delivery apps at meal-time
+  * app category和time之间的二阶组合
+
+  三阶特征组合：
+
+  * male teenagers like shooting games
+  * gender, age, 和app category之间的三阶组合
+
+对于feature-based的方法来说，能抓取特征的交互作用和关系非常重要。
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318174607.png)
+
+#### **Based on Multi-Layer Perceptron**
+
+#### \*\*\*\*[**Wide&Deep \(Cheng et al, Recsys’16\)**](https://arxiv.org/abs/1606.07792)\*\*\*\*
+
+这个模型主要是将LR和DNN一起联合训练，注意是联合训练，一般的ensemble是两个模型是单独训练的。思想主要是：
+
+* LR擅长记忆；DNN擅长泛化（包括抓取一些难以人工设计的交叉特征）
+
+  LR部分需要大量的人工设计的feature，包括交叉特征
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318175442.png)
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318175504.png)
+
+#### \*\*\*\*[**Deep Crossing \(Shan et al, KDD’16\)**](https://www.kdd.org/kdd2016/papers/files/adf0975-shanA.pdf)\*\*\*\*
+
+这篇论文和wide&deep的主要差别是加了残差连接：
+
+![](../../../../.gitbook/assets/timline-jie-tu-20190318175636.png)
+
+#### **Based on Factorization Machines\(FM\)**
 
 ##  **representation learning和matching function learning的融合**
 
