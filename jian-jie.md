@@ -16,9 +16,9 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 [Deep Learning\(Goodfellow Ian\)](http://item.jd.com/12128543.html)、[深度学习核心技术与实践\(猿辅导研究团队\)](http://item.jd.com/12316912.html)
 
-[数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理\(宗成庆\)](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)、 [情感分析（刘兵）](https://item.jd.com/12206675.html)
+[数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理\(宗成庆\)](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)、 [情感分析\(刘兵\)](https://item.jd.com/12206675.html)
 
-[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)、[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)、[Computer Vision and Deep Learning（何恺明）](http://kaiminghe.com/)
+[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)、[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)、[Computer Vision and Deep Learning\(何恺明\)](http://kaiminghe.com/)
 
 以及[机器之心](https://www.jiqizhixin.com/)、知乎和博客：
 

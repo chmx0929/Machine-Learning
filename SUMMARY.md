@@ -224,10 +224,6 @@
     * [基于Attention的神经网络机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/ji-yu-attention-de-shen-jing-wang-luo-ji-qi-fan-yi.md)
     * [基于卷积的机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/ji-yu-juan-ji-de-ji-qi-fan-yi.md)
 
-## 语音识别
-
-* [语音识别](yu-yin-shi-bie/yu-yin-shi-bie.md)
-
 ## 工具基础
 
 * [工具基础](gong-ju-ji-chu/gong-ju-ji-chu/README.md)
