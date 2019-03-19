@@ -22,7 +22,7 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 以及[机器之心](https://www.jiqizhixin.com/)、知乎和博客：
 
-知乎：[贾扬清（阿里VP，Caffe作者）](https://www.zhihu.com/people/jiayangqing)、[陈天奇（华大PhD，XGBoost作者）](https://www.zhihu.com/people/crowowrk/activities)、[柯国霖（MSRA研究员，LightGBM作者）](https://www.zhihu.com/people/crowowrk/activities)、[刘知远（清华教师，NLP）](https://www.zhihu.com/people/zibuyu9/activities)、[王喆（Hulu研究员）](https://www.zhihu.com/people/wang-zhe-58/activities)、[何之源（MSRA研究员）](https://www.zhihu.com/people/he-zhi-yuan-16/activities)
+知乎：[贾扬清](https://www.zhihu.com/people/jiayangqing)、[陈天奇](https://www.zhihu.com/people/crowowrk/activities)、[柯国霖](https://www.zhihu.com/people/crowowrk/activities)、[刘知远](https://www.zhihu.com/people/zibuyu9/activities)、[王喆](https://www.zhihu.com/people/wang-zhe-58/activities)、[何之源](https://www.zhihu.com/people/he-zhi-yuan-16/activities)
 
 博客：
 
