@@ -8,9 +8,9 @@
 
 证明：
 
-对于第 $$i$$ 个数（ $$i\leq k$$ ），被选中的概率为 $$1$$ 。当走到第 $$k+1$$ 步时， 被 $$k+1$$ 个元素替换的概率为 $$k+1$$ 个元素被选中的概率乘以 $$i$$ 被选择替换的概率，即 $$\frac{k}{k+1}\times \frac{1}{k}=\frac{1}{k+1}$$ 。则被保留的概率为 $$1-\frac{1}{k+1}=\frac{k}{k+1}$$ 。依次类推，不被 $$k+2$$ 个元素替换的概率为 $$1-\frac{k}{k+2}\times\frac{1}{k}=\frac{k+1}{k+2}$$ 。则运行到第 $$n$$ 步时，被保留的概率为被选中的概率乘以不被替换的概率，即 $$1\times\frac{k}{k+1}\times\frac{k+1}{k+2}\times\cdots\times\frac{n-1}{n}=\frac{k}{n}$$ 。
+对于第 $$i$$ 个数（ $$i\leq k$$ ），被选中的概率为 $$1$$ 。当走到第 $$k+1$$ 步时， 被第 $$k+1$$ 个元素替换的概率为 $$k+1$$ 个元素被选中的概率乘以 $$i$$ 被选择替换的概率，即 $$\frac{k}{k+1}\times \frac{1}{k}=\frac{1}{k+1}$$ 。则被保留的概率为 $$1-\frac{1}{k+1}=\frac{k}{k+1}$$ 。依次类推，不被 $$k+2$$ 个元素替换的概率为 $$1-\frac{k}{k+2}\times\frac{1}{k}=\frac{k+1}{k+2}$$ 。则运行到第 $$n$$ 步时，被保留的概率为被选中的概率乘以不被替换的概率，即 $$1\times\frac{k}{k+1}\times\frac{k+1}{k+2}\times\cdots\times\frac{n-1}{n}=\frac{k}{n}$$ 。
 
-对于第 $$j$$ 个数（ $$i\leq k$$ ）。在第 $$j$$ 步被选中的概率为 $$\frac{k}{j}$$ 。不被 $$j+1$$ 个元素替换的概率为 $$1-\frac{k}{j+1}\times\frac{1}{k}=\frac{j}{j+1}$$ 。则运行到第 $$n$$ 步时，被保留的概率为被选中的概率乘以不被替换的概率，即 $$\frac{k}{j}\times\frac{j}{j+1}\times\frac{j+1}{j+2}\times\cdots\times\frac{n-1}{n}=\frac{k}{n}$$ 。
+对于第 $$j$$ 个数（ $$i\leq k$$ ）。在第 $$j$$ 步被选中的概率为 $$\frac{k}{j}$$ 。不被第 $$j+1$$ 个元素替换的概率为 $$1-\frac{k}{j+1}\times\frac{1}{k}=\frac{j}{j+1}$$ 。则运行到第 $$n$$ 步时，被保留的概率为被选中的概率乘以不被替换的概率，即 $$\frac{k}{j}\times\frac{j}{j+1}\times\frac{j+1}{j+2}\times\cdots\times\frac{n-1}{n}=\frac{k}{n}$$ 。
 
 所以，对于每一个元素，被保留的概率都为 $$\frac{k}{n}$$ 。
 
