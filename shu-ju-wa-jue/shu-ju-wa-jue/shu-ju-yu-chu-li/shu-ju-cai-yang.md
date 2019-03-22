@@ -8,6 +8,8 @@
 
 证明：
 
+对于第 $$i$$ 个数（ $$i\leq k$$ ），被选中的概率为 $$1$$ 。当走到第 $$k+1$$ 步时， 被 $$k+1$$ 个元素替换的概率为 $$k+1$$ 个元素被选中的概率乘以 $$i$$ 被选择替换的概率，即 $$\frac{k}{k+1}\times \frac{1}{k}=\frac{1}{k+1}$$ 。则被保留的概率为 $$1-\frac{1}{k+1}=\frac{k}{k+1}$$ 。依次类推，
+
 ## 逆采样\(Inverse Sampling\)
 
 在蒙特卡罗方法中，有一个关键的问题需要解决，即如何基于概率密度函数去采得 $$n$$ 个 $$x$$ 的样本。
@@ -400,7 +402,7 @@ M-H采样已经可以很好的解决蒙特卡罗方法需要的任意概率分�
 
 {% embed url="https://blog.csdn.net/anshuai\_aw1/article/details/84883617" %}
 
-
+{% embed url="https://www.cnblogs.com/snowInPluto/p/5996269.html" %}
 
 
 
