@@ -130,16 +130,20 @@
 
                                                    $$f(x)=x^m-a$$     $$f'(x)=mx^{m-1}$$ 
 
-代入牛顿法公式  $$\Rightarrow x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}=x_n-\frac{x_n^m-a}{mx_n^{m-1}}=x_n-\frac{x_n}{m}+\frac{ax_n}{mx_n^m}=(1-\frac{1}{m})x_n+\frac{ax_n}{mx_n^m}$$
+代入牛顿法公式  
 
-代码如下：
+$$\Rightarrow x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}=x_n-\frac{x_n^m-a}{mx_n^{m-1}}=x_n-(\frac{x_n^m}{mx_n^{m-1}}-\frac{a}{mx_n^{m-1}})$$
+
+                 $$=x_n-(\frac{x}{m}-\frac{a}{mx_n^{m-1}})=x_n-\frac{x_n}{m}+\frac{a}{mx_n^{m-1}}=(1-\frac{1}{m})x_n+\frac{a}{mx_n^{m-1}}$$ 
+
+代码如下\(求平方根，即 $$m = 2$$ ， $$x_{n+1} = (1-\frac{1}{2})x_n+\frac{a}{2x_n}=\frac{1}{2}(x_n+\frac{a}{x_n})$$ \)：
 
 ```python
 class Solution:
-    def mySqrt(self, x):
-        r = x
-        while r > x / r:
-            r = (r + x / r) // 2
+    def mySqrt(self, a):
+        x = a
+        while x > a / x:
+            x = (x + a / x) // 2
         return int(r)
 ```
 
