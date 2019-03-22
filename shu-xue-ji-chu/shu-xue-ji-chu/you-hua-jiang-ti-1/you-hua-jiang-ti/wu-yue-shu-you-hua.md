@@ -85,7 +85,7 @@
 
 这个方法即被称为无约束牛顿法, 通常用于第一步之后的迭代。
 
-#### 统计学习方法（李航）牛顿法详解
+### 统计学习方法（李航）牛顿法详解
 
 考虑无约束最优化问题： $$\mathop{min}\limits_{x\in R^n}f(x)$$ 
 
@@ -111,7 +111,7 @@
 
 将上式作为迭代公式的算法就是牛顿法。
 
-#### 具体算法如下
+### 具体算法如下
 
 输入：目标函数 $$f(x)$$ ，梯度 $$g(x)=\nabla f(x)$$ ，海塞矩阵 $$H(x)$$ ，精度要求 $$\varepsilon$$ 
 
@@ -123,6 +123,25 @@
 4. \(4\) 计算 $$H_k=H(x^{(k)})$$ ，并求 $$p_k$$ ： $$H_kp_k=-g_k$$ 
 5. \(5\) 置 $$x^{(k+1)}=x^{(k)}+p_k$$ 
 6. \(6\) 置 $$k = k+1$$ ，转\(2\) 
+
+### 牛顿法举例
+
+我们刷leetcode时有这样一道题，[求解平方根\(只保留整数部分\)](https://leetcode-cn.com/problems/sqrtx/)。牛顿迭代法是已知的实现求方根最快的方法之一，只需要迭代几次后就能得到相当精确的结果。设 $$x$$ 的 $$m$$ 次方根为 $$a$$，则推导公式如下 ：
+
+                                                   $$f(x)=x^m-a$$     $$f'(x)=mx^{m-1}$$ 
+
+代入牛顿法公式  $$\Rightarrow x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}=x_n-\frac{x_n^m-a}{mx_n^{m-1}}=x_n-\frac{x_n}{m}+\frac{ax_n}{mx_n^m}=(1-\frac{1}{m})x_n+\frac{ax_n}{mx_n^m}$$
+
+代码如下：
+
+```python
+class Solution:
+    def mySqrt(self, x):
+        r = x
+        while r > x / r:
+            r = (r + x / r) // 2
+        return int(r)
+```
 
 ## 拟牛顿法\(quasi-Newton method\)
 
