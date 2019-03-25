@@ -12,13 +12,13 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 ### 各部分内容主要基于以下文献进行整理与进一步阐述推导：
 
-#### 研究生时期\(UIUC\)课件：
+#### 学生时期课件：
 
 [Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)
 
 #### 流行课程及顶会演讲：
 
-[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)、[Computer Vision and Deep Learning\(何恺明\)](http://kaiminghe.com/)、[Machine Learning\(李航\)](http://www.hangli-hl.com/index.html)
+[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)、[Computer Vision and Deep Learning\(何恺明\)](http://kaiminghe.com/)、[Machine Learning\(李航\)](http://www.hangli-hl.com/index.html)、[Data Mining\(任翔\)](http://www-bcf.usc.edu/~xiangren/)、[Data Mining\(蒋朦\)](http://www.meng-jiang.com/)
 
 #### 经典/优秀书籍：
 
