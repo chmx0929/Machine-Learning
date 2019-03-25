@@ -10,7 +10,17 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-各部分内容主要基于以下文献进行整理与进一步阐述推导（我只是大自然的搬运工，把认为优秀的文献按体系进行摘录）：
+### 各部分内容主要基于以下文献进行整理与进一步阐述推导：
+
+#### 研究生时期\(UIUC\)课件：
+
+[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)
+
+#### 流行课程及顶会演讲：
+
+[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)、[Computer Vision and Deep Learning\(何恺明\)](http://kaiminghe.com/)、[Machine Learning\(李航\)](http://www.hangli-hl.com/index.html)
+
+#### 经典/优秀书籍：
 
 [机器学习\(周志华\)](http://item.jd.com/11867803.html)、[统计学习方法\(李航\)](http://item.jd.com/12385906.html)、[百面机器学习\(诸葛越\)](http://item.jd.com/12401859.html)、[机器学习\(吴恩达\)](https://github.com/AcceptedDoge/machine-learning-yearning-cn)
 
@@ -18,13 +28,11 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 [数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理\(宗成庆\)](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)、 [情感分析\(刘兵\)](https://item.jd.com/12206675.html)
 
-[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)、[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)、[Computer Vision and Deep Learning\(何恺明\)](http://kaiminghe.com/)
+#### 知乎：
 
-以及[机器之心](https://www.jiqizhixin.com/)、知乎和博客：
+[贾扬清](https://www.zhihu.com/people/jiayangqing)、[陈天奇](https://www.zhihu.com/people/crowowrk/activities)、[柯国霖](https://www.zhihu.com/people/crowowrk/activities)、[刘知远](https://www.zhihu.com/people/zibuyu9/activities)、[王喆](https://www.zhihu.com/people/wang-zhe-58/activities)、[何之源](https://www.zhihu.com/people/he-zhi-yuan-16/activities)
 
-知乎：[贾扬清](https://www.zhihu.com/people/jiayangqing)、[陈天奇](https://www.zhihu.com/people/crowowrk/activities)、[柯国霖](https://www.zhihu.com/people/crowowrk/activities)、[刘知远](https://www.zhihu.com/people/zibuyu9/activities)、[王喆](https://www.zhihu.com/people/wang-zhe-58/activities)、[何之源](https://www.zhihu.com/people/he-zhi-yuan-16/activities)
-
-博客：
+#### 博客：
 
 {% embed url="https://blog.csdn.net/lqfarmer" %}
 
