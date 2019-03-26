@@ -48,5 +48,15 @@ DIN/DIEN都是围绕着用户兴趣建模进行的探索，切入点是从我们
 
 在第二步中，因为需要在几个毫秒内完成近万广告的打分过程，所以这个模型结构不能过于复杂。DQM模型类似与DSSM模型，分成不同域，如用户域，广告域以及场景域。将这些域表达成向量形式，最后的输出是通过向量间的简单操作，如内积操作，生成分数。相比传统的静态质量分Qscore模型，DQM引入了个性化，所以比Qscore好很多。
 
+## Source
+
+{% embed url="https://zhuanlan.zhihu.com/p/54822778" %}
+
+{% embed url="https://mp.weixin.qq.com/s/MtnHYmPVoDAid9SNHnlzUw" %}
+
+{% embed url="https://zhuanlan.zhihu.com/p/37562283" %}
+
+{% embed url="https://zhuanlan.zhihu.com/p/34940250" %}
+
 
 

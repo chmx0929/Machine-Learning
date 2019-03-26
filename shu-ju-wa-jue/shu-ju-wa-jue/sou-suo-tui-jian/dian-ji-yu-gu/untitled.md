@@ -22,3 +22,15 @@ DL模型的over-parameterization使得我们可以通过不同的优化方法寻
 
 DL模型的复杂化除了带来在线预估引擎的性能挑战外，对离线生产链路的资源挑战也急剧放大。容易理解的是全量模型的训练时间及占用机器规模肯定会逐步增加，同时模型的并行研发规模也会大增，即：”模型个数x模型时长x机器规模”全面膨胀。在这种情况下增量/实时模型训练架构就成为了胜负手。虽然业界很多时效性强的场景\(如信息流\)online模型的效果收益是巨大和关键的，但这里我不想过多地强调效果层面的收益，而更愿意从资源架构层面做探讨。虽然DL模型采用了sgd-based优化算法，直觉来看batch训练和incremental或online训练应该同构。然而ODL\(Online Deep Learning\)所存在的问题和挑战绝不止于此，且它跟LR时代的Online Learning有很多的差异性。目前同时完成了全面DL并进而ODL化的团队不太多。当然也有团队是从OL系统直接向ODL升级的，这个路径固然看似更快捷，但也许错过了DL模型盛宴的不少美妙菜肴——batch训练是纯模型探索的更优土壤。
 
+## Source
+
+{% embed url="https://zhuanlan.zhihu.com/p/54822778" %}
+
+{% embed url="https://mp.weixin.qq.com/s/MtnHYmPVoDAid9SNHnlzUw" %}
+
+{% embed url="https://zhuanlan.zhihu.com/p/37562283" %}
+
+{% embed url="https://zhuanlan.zhihu.com/p/34940250" %}
+
+
+
