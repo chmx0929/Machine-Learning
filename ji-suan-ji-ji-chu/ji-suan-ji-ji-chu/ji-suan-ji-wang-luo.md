@@ -4,6 +4,8 @@
 
 ![](../../.gitbook/assets/ji-suan-ji-jing-wang-luo-ti-xi-jie-gou.png)
 
+![](../../.gitbook/assets/v2-2af488004591cbc12cd82c44518523de_r.jpg)
+
 | 分层 | 作用 | 协议 |
 | :---: | :---: | :---: |
 | 应用层 | 允许访问OSI环境的手段（应用协议数据单元 APDU） | FTP、DNS、Telnet、SMTP、HTTP、WWW、NFS |
@@ -13,6 +15,12 @@
 | 网络层 | 负责数据包从源到宿的传递和网际互连（包 Packet） | IP、ICMP、ARP、RARP、OSPF、IPX、RIP、IGRP（路由器） |
 | 数据链路层 | 将比特组装成帧和点到点的传递（帧 Frame） | PPP、FR、HDLC、VLAN、MAC（网桥，交换机） |
 | 物理层 | 通过媒介传输比特，确定机械及电气规范（比特 Bit） | RJ45、CLOCK、IEEE802.3（中继器，集线器） |
+
+![](../../.gitbook/assets/3985563-1891c256487e9d85.png)
+
+![](../../.gitbook/assets/3985563-5d534a249b4825a9.png)
+
+![](../../.gitbook/assets/3985563-ecf824604debcdf1.png)
 
 ## 应用层
 
@@ -59,6 +67,16 @@ URL（Uniform Resource Locator，统一资源定位符）是因特网上标准�
 ### HTTP
 
 HTTP（HyperText Transfer Protocol，超文本传输协议）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP 是万维网的数据通信的基础。
+
+请求行分为三个部分：请求方法、请求地址和协议版本。协议版本的格式为：HTTP/主版本号.次版本号，常用的有HTTP/1.0和HTTP/1.1。
+
+请求地址：URL:统一资源定位符，是一种自愿位置的抽象唯一识别方法。组成：&lt;协议&gt;：//&lt;主机&gt;：&lt;端口&gt;/&lt;路径&gt;。端口和路径有时可以省略（HTTP默认端口号是80）
+
+![](../../.gitbook/assets/3985563-54ce5eca048253be.png)
+
+![](../../.gitbook/assets/3985563-cd59a3899ef546e1.png)
+
+![](../../.gitbook/assets/3985563-539378eee14fa322.png)
 
 #### 请求方法
 
@@ -122,9 +140,11 @@ SNMP（Simple Network Management Protocol，简单网络管理协议）构成了
 
 端口：
 
-| 应用程序 | FTP | TELNET | SMTP | DNS | TFTP | HTTP | HTTPS | snmp |
+| 应用程序 | FTP | TELNET | SMTP | DNS | TFTP | HTTP | HTTPS | SNMP |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 端口号 | 21 | 23 | 25 | 53 | 69 | 80 | 443 | 161 |
+
+![](../../.gitbook/assets/v2-e584c505e895441d7b52c8f3c02c9770_r.jpg)
 
 ### TCP
 
@@ -320,6 +340,10 @@ VPN 和 NAT VPN（Virtual Private Network，虚拟专用网）、 NAT（Network 
 
 花费（Cost）：就是数据发送过程中通过路径所需要的花费；路由的服务质量；路由中需要过滤的出/入连接列表
 
+#### 将一个C类网络划分为3个子网，每个子网最少要容纳55台主机，使用的子网掩码是？
+
+子网主机数=2的Y次方-2，这里的Y是非掩码位的位数，即子网掩码中0的个数。即 $$55\leq 2^y-2$$ ，得到 $$y = 6$$ 。所以子网掩码中6个0，所以子网掩码是：11111111 11111111 11111111 11000000，转化为十进制为255.255.255.192。
+
 ## **数据链路层**
 
 主要信道：点对点信道、广播信道
@@ -366,6 +390,8 @@ VPN 和 NAT VPN（Virtual Private Network，虚拟专用网）、 NAT（Network 
 ## Source
 
 {% embed url="https://github.com/huihut/interview" %}
+
+{% embed url="https://zhuanlan.zhihu.com/p/24001696" %}
 
 
 
