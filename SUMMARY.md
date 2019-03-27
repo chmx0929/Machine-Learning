@@ -240,8 +240,13 @@
     * [基于Attention的神经网络机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/ji-yu-attention-de-shen-jing-wang-luo-ji-qi-fan-yi.md)
     * [基于卷积的机器翻译](zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li/ji-qi-fan-yi/ji-yu-juan-ji-de-ji-qi-fan-yi.md)
 
-## 工具基础
+## 计算机基础
 
-* [工具基础](gong-ju-ji-chu/gong-ju-ji-chu/README.md)
-  * [python](gong-ju-ji-chu/gong-ju-ji-chu/python.md)
+* [计算机基础](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/README.md)
+  * [操作系统](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/cao-zuo-xi-tong.md)
+  * [数据结构](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/shu-ju-jie-gou.md)
+  * [计算机网络](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/ji-suan-ji-wang-luo.md)
+  * [计算机组成原理](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/ji-suan-ji-zu-cheng-yuan-li.md)
+  * [语言特性](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/yu-yan-te-xing/README.md)
+    * [python](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/yu-yan-te-xing/python.md)
 
