@@ -34,6 +34,8 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 #### 博客：
 
+{% embed url="http://colah.github.io/" %}
+
 {% embed url="https://blog.csdn.net/lqfarmer" %}
 
 {% embed url="https://www.cnblogs.com/pinard/" %}
