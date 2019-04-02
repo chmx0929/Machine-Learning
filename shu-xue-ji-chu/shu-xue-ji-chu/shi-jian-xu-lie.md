@@ -56,7 +56,7 @@
 
 不仅仅是矩形，你能想到的任何波形都是可以如此方法用正弦波叠加起来的。这是没有接触过傅里叶分析的人在直觉上的第一个难点，但是一旦接受了这样的设定，游戏就开始有意思起来了。还是上图的正弦波累加成矩形波，我们换一个角度来看看：
 
-![](../../.gitbook/assets/68747470733a2f2f706963322e7a68696d672e636f6d2f38302f353633646562346136353939643035326233626131303836.jpg)
+![](../../.gitbook/assets/bo-xing-die-jia.jpg)
 
 在这几幅图中，最前面黑色的线就是所有正弦波叠加而成的总和，也就是越来越接近矩形波的那个图形。而后面依不同颜色排列而成的正弦波就是组合为矩形波的各个分量。这些正弦波按照频率从低到高从前向后排列开来，而每一个波的振幅都是不同的。每两个正弦波之间都还有一条直线，那并不是分割线，而是振幅为0的正弦波！也就是说，为了组成特殊的曲线，有些正弦波成分是不需要的。
 
@@ -76,11 +76,9 @@
 
 正弦波就是一个圆周运动在一条直线上的投影。所以频域的基本单元也可以理解为一个始终在旋转的圆
 
-![](../../.gitbook/assets/68747470733a2f2f706963332e7a68696d672e636f6d2f38302f383431343736653865313565316430383131346236356335.jpg)
+![](../../.gitbook/assets/fourier_series_square_wave_circles_animation.gif)
 
-动图请戳：[File:Fourier series square wave circles animation.gif](https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/File%3AFourier_series_square_wave_circles_animation.gif)
-
-                    [File:Fourier series sawtooth wave circles animation.gif](https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/File%3AFourier_series_sawtooth_wave_circles_animation.gif)
+![](../../.gitbook/assets/fourier_series_sawtooth_wave_circles_animation.gif)
 
 介绍完了频域的基本组成单元，我们就可以看一看一个矩形波，在频域里的另一个模样了：
 
@@ -96,7 +94,7 @@
 
 可以发现，在频谱中，偶数项的振幅都是0，也就对应了图中的彩色直线。振幅为0的正弦波。
 
-动图请戳：[File:Fourier series and transform.gif](https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/File%3AFourier_series_and_transform.gif)
+![](../../.gitbook/assets/fourier_series_and_transform.gif)
 
 老实说，在我学傅里叶变换时，维基的这个图还没有出现，那时我就想到了这种表达方法，而且，后面还会加入维基没有表示出来的另一个谱——相位谱。
 
