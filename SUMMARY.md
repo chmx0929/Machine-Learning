@@ -52,7 +52,7 @@
       * [前深度学习时代CTR](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/dian-ji-yu-gu/qian-shen-du-xue-xi-shi-dai-ctr/README.md)
         * [LR—CTR模型的核心和基础](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/dian-ji-yu-gu/qian-shen-du-xue-xi-shi-dai-ctr/lrctr-mo-xing-de-he-xin-he-ji-chu.md)
         * [CTR模型特征交叉方向的演化](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/dian-ji-yu-gu/qian-shen-du-xue-xi-shi-dai-ctr/ctr-mo-xing-te-zheng-jiao-cha-fang-xiang-de-yan-hua.md)
-        * [GBDT+LR—特征工程模型化的开端](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/dian-ji-yu-gu/qian-shen-du-xue-xi-shi-dai-ctr/gbdt+lr-te-zheng-gong-cheng-mo-xing-hua-de-kai-duan.md)
+        * [特征工程模型化的开端](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/dian-ji-yu-gu/qian-shen-du-xue-xi-shi-dai-ctr/gbdt+lr-te-zheng-gong-cheng-mo-xing-hua-de-kai-duan.md)
         * [FTRL—天下武功，唯快不破](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/dian-ji-yu-gu/qian-shen-du-xue-xi-shi-dai-ctr/ftrl-tian-xia-wu-gong-wei-kuai-bu-po.md)
         * [MLR—阿里曾经的主流CTR模型](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/dian-ji-yu-gu/qian-shen-du-xue-xi-shi-dai-ctr/mlr.md)
       * [基于深度学习的CTR](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/dian-ji-yu-gu/ji-yu-shen-du-xue-xi-de-ctr/README.md)
