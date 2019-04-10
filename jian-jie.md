@@ -22,7 +22,7 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 #### 经典/优秀书籍：
 
-[机器学习\(周志华\)](http://item.jd.com/11867803.html)、[统计学习方法\(李航\)](http://item.jd.com/12385906.html)、[百面机器学习\(诸葛越\)](http://item.jd.com/12401859.html)、[机器学习\(吴恩达\)](https://github.com/AcceptedDoge/machine-learning-yearning-cn)
+[机器学习\(周志华\)](http://item.jd.com/11867803.html)、[统计学习方法\(李航\)](http://item.jd.com/12385906.html)、[百面机器学习\(诸葛越\)](http://item.jd.com/12401859.html)、[机器学习\(吴恩达\)](https://github.com/AcceptedDoge/machine-learning-yearning-cn)、[南瓜书](https://datawhalechina.github.io/pumpkin-book/#/)
 
 [Deep Learning\(Goodfellow Ian\)](http://item.jd.com/12128543.html)、[深度学习核心技术与实践\(猿辅导研究团队\)](http://item.jd.com/12316912.html)
 

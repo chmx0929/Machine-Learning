@@ -1,5 +1,7 @@
 # ESMM
 
+在诸如信息检索、推荐系统、在线广告投放系统等工业级的应用中准确预估转化率（post-click conversion rate，CVR）是至关重要的。例如，在电商平台的推荐系统中，最大化场景商品交易总额（GMV）是平台的重要目标之一，而GMV可以拆解为流量×点击率×转化率×客单价，可见转化率是优化目标的重要因子；从用户体验的角度来说准确预估的转换率被用来平衡用户的点击偏好与购买偏好。
+
 阿里妈妈算法团队最近发表了一篇关于CVR预估的论文《Entire Space Multi-Task Model: An Eﬀective Approach for Estimating Post-Click Conversion Rate》，提出了一种新颖的CVR预估模型，称之为“完整空间多任务模型”（Entire Space Multi-Task Model，ESMM），下文简称为ESMM模型。ESMM模型创新地利用用户行为序列数据，在完整的样本数据空间同时学习点击率和转化率（post-view clickthrough&conversion rate，CTCVR），解决了传统CVR预估模型难以克服的样本选择偏差（sample selection bias）和训练数据过于稀疏（data sparsity ）的问题。
 
 以电子商务平台为例，用户在观察到系统展现的推荐商品列表后，可能会点击自己感兴趣的商品，进而产生购买行为。换句话说，用户行为遵循一定的顺序决策模式：impression → click → conversion。CVR模型旨在预估用户在观察到曝光商品进而点击到商品详情页之后购买此商品的概率，即pCVR = p\(conversion\|click,impression\)。
@@ -22,7 +24,41 @@
 
 整体来看，对于一个给定的展现，ESMM模型能够同时输出预估的pCTR、pCVR 和pCTCVR。它主要由两个子神经网络组成，左边的子网络用来拟合pCVR ，右边的子网络用来拟合pCTR。两个子网络的结构是完全相同的，这里把子网络命名为BASE模型。两个子网络的输出结果相乘之后即得到pCTCVR，并作为整个任务的输出。
 
-需要强调的是，ESMM模型有两个主要的特点，使其区别于传统的CVR预估模型，分别阐述如下。
+需要强调的是，ESMM模型有两个主要的特点，使其区别于传统的CVR预估模型，分别阐述如下：
+
+1、在整个样本空间建模。由下面的等式可以看出，pCVR 可以在先估计出pCTR 和pCTCVR之后推导出来。从原理上来说，相当于分别单独训练两个模型拟合出pCTR 和pCTCVR，再通过pCTCVR 除以pCTR 得到最终的拟合目标pCVR 。
+
+![](../../../../../.gitbook/assets/v2-30ac4ff47708f21bb77cfae5a8642a13_hd.jpg)
+
+但是，由于pCTR 通常很小，除以一个很小的浮点数容易引起数组不稳定问题（计算内存溢出）。所以ESMM模型采用了乘法的形式，而没有采用除法形式。
+
+pCTR 和pCTCVR 是ESMM模型需要估计的两个主要因子，而且是在整个样本空间上建模得到的，pCVR 只是一个中间变量。由此可见，ESMM模型是在整个样本空间建模，而不像传统CVR预估模型那样只在点击样本空间建模。
+
+2、共享特征表示。ESMM模型借鉴迁移学习的思路，在两个子网络的embedding层共享embedding向量（特征表示）词典。网络的embedding层把大规模稀疏的输入数据映射到低维的表示向量，该层的参数占了整个网络参数的绝大部分，需要大量的训练样本才能充分学习得到。由于CTR任务的训练样本量要大大超过CVR任务的训练样本量，ESMM模型中特征表示共享的机制能够使得CVR子任务也能够从只有展现没有点击的样本中学习，从而能够极大地有利于缓解训练数据稀疏性问题。
+
+需要补充说明的是，ESMM模型的损失函数由两部分组成，对应于pCTR 和pCTCVR 两个子任务，其形式如下：
+
+![](../../../../../.gitbook/assets/equation%20%281%29.svg)
+
+其中， $$\theta_{ctr}$$ 和 $$\theta_{cvr}$$ 分别是CTR网络和CVR网络的参数， $$l(\cdot)$$ 是交叉熵损失函数。在CTR任务中，有点击行为的展现事件构成的样本标记为正样本，没有点击行为发生的展现事件标记为负样本；在CTCVR任务中，同时有点击和购买行为的展现事件标记为正样本，否则标记为负样本。
+
+ 由于ESMM模型创新性地利用了用户的序列行为做完模型的训练样本，因此并没有公开的数据集可供测试，阿里的技术同学从淘宝的日志中采样了一部分数据，作为公开的测试集，下载地址为：[https://tianchi.aliyun.com/datalab/dataSet.html?dataId=408](https://link.zhihu.com/?target=https%3A//tianchi.aliyun.com/datalab/dataSet.html%3FdataId%3D408)。阿里妈妈的工程师们分别在公开的数据集和淘宝生产环境的数据集上做了测试，相对于其他几个主流的竞争模型，都取得了更好的性能。
+
+![](../../../../../.gitbook/assets/v2-570d27fc32ed887c232738afd12d1c8b_r.jpg)
+
+表2是在公开数据集上的不同算法AUC效果对比情况，其中BASE模型是ESMM模型中左边的子神经网络模型，由于其只在点击样本空间训练，会遭遇样本选择偏差和数据稀疏的问题，因为效果也是较差的。DIVISION模型是先分别训练出拟合CTR和CTCVR的模型，再拿CTCVR模型的预测结果除以CTR模型的预测结果得到对CVR模型的预估。ESMM-NS模型是ESMM模型的一个变种模型，其在ESMM模型的基础上去掉了特征表示共享的机制。AMAN、OVERSAMPLING、UNBIAS是三个竞争模型。
+
+![](../../../../../.gitbook/assets/v2-347c39eb050263a2a93740f0d5dd4f83_r.jpg)
+
+图3是ESMM模型在淘宝生产环境数据集上的测试效果对比。相对于BASE模型，ESMM模型在CVR任务中AUC指标提升了 2.18%，在CTCVR任务中AUC指标提升了2.32%。通常AUC指标提升0.1%就可认为是一个显著的改进。
+
+综上所述，ESMM模型是一个新颖的CVR预估方法，其首创了利用用户行为序列数据在完整样本空间建模，避免了传统CVR模型经常遭遇的样本选择偏差和训练数据稀疏的问题，取得了显著的效果。另一方面，ESMM模型的贡献在于其提出的利用学习CTR和CTCVR的辅助任务，迂回地学习CVR的思路。ESMM模型中的BASE子网络可以替换为任意的学习模型，因此ESMM的框架可以非常容易地和其他学习模型集成，从而吸收其他学习模型的优势，进一步提升学习效果，想象空间巨大。
+
+原文链接：[https://arxiv.org/abs/1804.07931](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1804.07931)
+
+ESMM模型的tensorflow实现请参考我的另一篇文章：《[构建分布式Tensorflow模型系列:CVR预估之ESMM](https://zhuanlan.zhihu.com/p/42214716)》
+
+完整源代码：[yangxudong/deeplearning](https://link.zhihu.com/?target=https%3A//github.com/yangxudong/deeplearning/tree/master/esmm)
 
 ## Source
 
