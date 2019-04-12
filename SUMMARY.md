@@ -6,7 +6,6 @@
 ## 数学基础
 
 * [数学基础](shu-xue-ji-chu/shu-xue-ji-chu/README.md)
-  * [基础知识](shu-xue-ji-chu/shu-xue-ji-chu/ji-chu-zhi-shi.md)
   * [线性代数](shu-xue-ji-chu/shu-xue-ji-chu/xian-xing-dai-shu.md)
   * [概率统计](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji/README.md)
     * [概率基础](shu-xue-ji-chu/shu-xue-ji-chu/gai-lv-tong-ji/gai-lv-ji-chu.md)
@@ -23,6 +22,7 @@
       * [无约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/wu-yue-shu-you-hua.md)
       * [有约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/you-hua-jiang-ti/you-yue-shu-you-hua.md)
     * [非连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti-1/fei-lian-xu-ke-wei.md)
+  * [备查附录](shu-xue-ji-chu/shu-xue-ji-chu/bei-cha-fu-lu.md)
 
 ## 数据挖掘
 

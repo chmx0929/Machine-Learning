@@ -4,6 +4,14 @@
 
 ![](../../../../../.gitbook/assets/v2-02a9c1175b29356250a23c4c84fe2d5d_hd.jpg)
 
+wide端对应的线性模型，输入特征可以是连续特征，也可以是稀疏的离散特征，离散特征之间进行进行交叉后可以构成更高维的特征，通过L1正则化能够很快收敛到有效的特征组合中。
+
+deep端对应的是DNN模型，每个特征对应一个低维的稠密向量，我们称之为特征的embedding，DNN能够通过反向传播调整隐藏层的权重，并且更新特征的embedding
+
+![](../../../../../.gitbook/assets/wide-and-deep.jpg)
+
+比如，在实际的新闻推荐场景中，wide model侧主要包含文章分类id、topic id、曝光位置以及其他部分离散特征，主要为了提高模型的记忆能力；deep model侧主要包含离散特征和部分连续特征，例如UserID、DocId、用户位置、分类ID、关键词ID以及各种统计类特征离散化结果，这些特征通常需要embedding向量然后拼接进行信息融合。
+
 ## Source
 
 {% embed url="https://zhuanlan.zhihu.com/p/54822778" %}

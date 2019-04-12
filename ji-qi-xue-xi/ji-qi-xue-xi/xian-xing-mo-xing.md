@@ -66,7 +66,21 @@
 
 令 $$E_{\hat{w}}=(y-X\hat{w})^T(y-X\hat{w})$$ ，对 $$\hat{w}$$ 求导得：
 
-                                                             $$\frac{}{}$$ $$\frac{\partial E_{\hat{w}}}{\partial \hat{w}} = 2X^T(X\hat{w}-y)$$ 
+                                                                  $$\frac{}{}$$ $$\frac{\partial E_{\hat{w}}}{\partial \hat{w}} = 2X^T(X\hat{w}-y)$$ 
+
+推导过程：将 $$E_{\hat{w}}=(y-X\hat{w})^T(y-X\hat{w})$$ 展开可得：
+
+                                                $$E_{\hat{w}}=y^Ty-y^TX\hat{w}-\hat{w}^TX^Ty+\hat{w}^TX^TX\hat{w}$$ 
+
+对 $$\hat{w}$$ 求导可得：
+
+                                                $$\frac{\partial E_{\hat{w}}}{\partial\hat{w}}=\frac{\partial y^Ty}{\partial\hat{w}}-\frac{\partial y^TX\hat{w}}{\partial\hat{w}}-\frac{\partial\hat{w}^TX^Ty}{\partial\hat{w}}+\frac{\partial\hat{w}^TX^TX\hat{w}}{\partial\hat{w}}$$ 
+
+由向量的求导公式可得：
+
+                                                 $$\frac{\partial E_{\hat{w}}}{\partial \hat{w}}=0-X^Ty-X^Ty+(X^TX+X^TX)\hat{w}$$  
+
+                                                                    $$\frac{}{}$$ $$\frac{\partial E_{\hat{w}}}{\partial \hat{w}} = 2X^T(X\hat{w}-y)$$ 
 
 令上式为零可得 $$\hat{w}$$ 最优解的闭式解。
 
@@ -138,11 +152,19 @@
 
                                                                     $$\ln \frac{p(y=1|x)}{p(y=0|x)} = w^Tx+b$$ 
 
-显然
+显然                                                    $$\Rightarrow\frac{p(y=1|x)}{p(y=0|x)}=e^{w^Tx+b}$$ 
 
-                                          $$p(y=1|x) = \frac{e^{w^Tx+b}}{1+e^{w^Tx+b}}$$              $$p(y=0|x) = \frac{1}{1+e^{w^Tx+b}}$$ 
+                                                            $$\Rightarrow \frac{1-p(y=0|x)}{p(y=0|x)} = e^{w^Tx+b}$$ 
 
-于是，我们可通过极大似然法来估计 $$w$$ 和 $$b$$ ，设 $$p(y=1|x)=\pi(x)$$ ， $$p(y=0|x)=1-\pi(x)$$ 给定数据集 $$\{(x_i,y_i)\}^N_{i=1}$$ ，似然函数为：
+                                                            $$\Rightarrow 1-p(y=0|x) = e^{w^Tx+b} \cdot p(y=0|x)$$ 
+
+                                                            $$\Rightarrow (1+e^{w^Tx+b}) \cdot p(y=0|x) = 1$$ 
+
+                                                            $$\Rightarrow p(y=0|x)=\frac{1}{(1+e^{w^Tx+b})}$$ 
+
+                                 $$\Rightarrow$$         $$p(y=1|x) = \frac{e^{w^Tx+b}}{1+e^{w^Tx+b}}$$              $$p(y=0|x) = \frac{1}{1+e^{w^Tx+b}}$$ 
+
+当然，我们也可通过极大似然法来估计 $$w$$ 和 $$b$$ ，设 $$p(y=1|x)=\pi(x)$$ ， $$p(y=0|x)=1-\pi(x)$$ 给定数据集 $$\{(x_i,y_i)\}^N_{i=1}$$ ，似然函数为：
 
                                                                    $$\prod\limits_{i=1}^N[\pi(x_i)]^{y_i}[1-\pi(x_i)]^{(1-y_i)}$$ 
 
