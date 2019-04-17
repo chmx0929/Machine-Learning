@@ -44,9 +44,47 @@
 
 ![](../../../.gitbook/assets/gui-bing-pai-xu-merge-sort.gif)
 
+```python
+def merge(left, right):
+    res = []
+    while left and right:
+        if left[0] < right[0]:
+            res.append(left.pop(0))
+        else:
+            res.append(right.pop(0))
+    res = res + left + right
+    return res
+
+def mergesort(lists):
+    if len(lists) <= 1:
+        return lists
+    mid = len(lists)//2
+    left = mergesort(lists[:mid])
+    right = mergesort(lists[mid:])
+    return merge(left,right)
+```
+
 ## 快速排序（Quick Sort）
 
 ![](../../../.gitbook/assets/kuai-su-pai-xu-quick-sort.gif)
+
+```python
+def partition(arr, beg, end):
+    pivot = arr[end-1]
+    i = beg - 1
+    for j in range(beg, end-1):
+        if arr[j] <= pivot:
+            i = i + 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i+1], arr[end-1] = arr[end-1], arr[i+1]
+    return i + 1
+ 
+def quicksort(arr, beg, end):
+    if beg < end - 1:
+        q = partition(arr, beg, end)
+        quicksort(arr, beg, q)
+        quicksort(arr, q+1, end)
+```
 
 ## 堆排序（Heap Sort）
 
