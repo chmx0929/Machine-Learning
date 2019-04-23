@@ -26,5 +26,7 @@ GwEN和WDL是目前比较常用的模型，非常简单，所有后续人们继�
 
 {% embed url="https://zhuanlan.zhihu.com/p/34940250" %}
 
+{% embed url="https://zhuanlan.zhihu.com/p/63186101" %}
+
 
 

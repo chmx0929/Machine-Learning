@@ -1,5 +1,9 @@
 # DIEN
 
+[DIEN](https://github.com/wzhe06/Reco-papers/blob/master/Deep%20Learning%20Recommender%20System/%5BDIEN%5D%20Deep%20Interest%20Evolution%20Network%20for%20Click-Through%20Rate%20Prediction%20%28Alibaba%202019%29.pdf)的全称为Deep Interest Evolution Network，它不仅是对DIN的进一步“进化”，更重要的是**DIEN通过引入序列模型 AUGRU模拟了用户兴趣进化的过程**。具体来讲模型的主要特点是在Embedding layer和Concatenate layer之间加入了生成兴趣的Interest Extractor Layer和模拟兴趣演化的Interest Evolving layer。其中Interest Extractor Layer使用了DIN的结构抽取了每一个时间片内用户的兴趣，Interest Evolving layer则利用序列模型AUGRU的结构将不同时间的用户兴趣串联起来，形成兴趣进化的链条。最终再把当前时刻的“兴趣向量”输入上层的多层全连接网络，与其他特征一起进行最终的CTR预估。
+
+![](../../../../../.gitbook/assets/v2-6336f27ec54b82bdcd3c8fde1df09381_r.jpg)
+
 Deep Interest Evolution Network\(DIEN\)是深度兴趣网络DIN的升级版，链接为[\[1809.03672v1\] Deep Interest Evolution Network for Click-Through Rate Prediction](http://link.zhihu.com/?target=https%3A//arxiv.org/abs/1809.03672v1)，具体实现地址为[mouna99/dien](http://link.zhihu.com/?target=https%3A//github.com/mouna99/dien)。文章中的辅助损失的设计和我们实际业务中采用的做法很相似，文章最后会提到。
 
 ## 模型动机
@@ -87,6 +91,8 @@ attention部分系数计算方式如下：其中 $$e_a$$ 是advertisement的不�
 {% embed url="https://zhuanlan.zhihu.com/p/37562283" %}
 
 {% embed url="https://zhuanlan.zhihu.com/p/34940250" %}
+
+{% embed url="https://zhuanlan.zhihu.com/p/63186101" %}
 
 
 
