@@ -87,6 +87,8 @@
 
                         $$P(y=1|x)=\frac{e^{F_1(x)}}{\sum_{i=1}^ke^{F_i(x)}}$$    $$P(y=2|x)=\frac{e^{F_1(x)}}{\sum_{i=2}^ke^{F_i(x)}}$$    ... ...
 
+其中 $$F_1\dots F_k$$ 是 $$k$$ 个不同的tree ensemble。每一轮的训练实际上是训练了 $$k$$ 棵树去拟合softmax的每一个分支模型的负梯度。可见，这k棵树同样是拟合了样本的真实标签与预测概率之差，与二分类的过程非常类似。
+
 ## 回归问题
 
 已知一个训练数据集 $$T = \{(x_1,y_1),(x_2,y_2),\dots,(x_N,y_N)\},\ x_i\in \mathcal{X}\subseteq R^n$$ ， $$\mathcal{X}$$ 为输入空间， $$y_i\in\mathcal{Y}\subseteq R$$ ， $$\mathcal{Y}$$ 为输出空间。如果将输入空间 $$\mathcal{X}$$ 划分为 $$J$$ 个互不相交的区域 $$R_1,R_2,\dots,R_J$$ ，并且在每个区域上确定输出的常量 $$c_j$$ ，那么树可表示为
