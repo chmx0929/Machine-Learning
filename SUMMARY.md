@@ -154,7 +154,6 @@
   * [生成对抗网络](shen-du-xue-xi/shen-du-xue-xi/sheng-cheng-dui-kang-wang-luo.md)
   * [多任务学习](shen-du-xue-xi/shen-du-xue-xi/duo-ren-wu-xue-xi.md)
   * [技术分析](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/README.md)
-    * [Embedding](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/embedding.md)
     * [Attention](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/attention.md)
     * [Batch Normalization](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/batch-normalization.md)
 
