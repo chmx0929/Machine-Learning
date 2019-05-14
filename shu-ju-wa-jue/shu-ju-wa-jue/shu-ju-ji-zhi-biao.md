@@ -88,7 +88,7 @@ Empirical formula\(单众数情况\)： $$mean-mode = 3\times(mean-median)$$
 
 方差：$$sample: s^2, population: \sigma^2$$ 
 
-$$s^2 = \frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2=\frac{1}{n-1}[\sum \limits_{i=1}^nx_i^2-\frac{1}{n}(\sum \limits_{i=1}^nx_i)^2]$$ 
+$$s^2 = \frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2=\frac{1}{n-1}[\sum \limits_{i=1}^nx_i^2-\frac{1}{n}(\sum \limits_{i=1}^nx_i)^2]$$       分母是 $$\frac{1}{n-1}$$ 的[原因](https://www.zhihu.com/question/20099757)
 
 $$\sigma^2 = \frac{1}{N}\sum \limits_{i=1}^n(x_i-\mu)^2 = \frac{1}{N}\sum \limits_{i=1}^n x_i^2 - \mu^2$$ 
 
@@ -290,6 +290,8 @@ $$P(X\geq a) = \int_{a}^{+\infty}f(x)dx \leq \int_{a}^{+\infty}\frac{X}{a} f(x)d
 {% embed url="https://github.com/chmx0929/UIUCclasses/blob/master/412DataMining/PDF/02Data.pdf" %}
 
 {% embed url="https://www.zhihu.com/question/27821324" %}
+
+{% embed url="https://www.zhihu.com/question/20099757" %}
 
 
 
