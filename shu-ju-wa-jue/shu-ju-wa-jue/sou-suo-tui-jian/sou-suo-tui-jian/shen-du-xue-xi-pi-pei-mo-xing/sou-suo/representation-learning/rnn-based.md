@@ -1,8 +1,10 @@
-# Decomposable attention model for matching
+# RNN-based
 
-![](../../../../../../../../.gitbook/assets/lark20190528155824.png)
+![](../../../../../../../.gitbook/assets/lark20190528154613.png)
 
+## LSTM-RNN
 
+![](../../../../../../../.gitbook/assets/lark20190528170208.png)
 
 ## Source
 

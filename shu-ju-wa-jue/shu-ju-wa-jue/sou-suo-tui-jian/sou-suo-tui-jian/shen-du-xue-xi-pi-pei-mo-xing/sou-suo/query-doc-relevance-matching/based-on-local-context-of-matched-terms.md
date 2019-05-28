@@ -1,6 +1,14 @@
 # Based on local context of matched terms
 
-![](../../../../../../../../.gitbook/assets/lark20190528162449.png)
+![](../../../../../../../.gitbook/assets/lark20190528162449.png)
+
+## DeepRank
+
+![](../../../../../../../.gitbook/assets/lark20190528162337.png)
+
+## PACRR
+
+![](../../../../../../../.gitbook/assets/lark20190528162415.png)
 
 ## Source
 

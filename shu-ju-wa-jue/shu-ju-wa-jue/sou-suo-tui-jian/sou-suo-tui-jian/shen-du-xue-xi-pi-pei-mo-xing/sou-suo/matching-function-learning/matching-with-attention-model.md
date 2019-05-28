@@ -1,6 +1,10 @@
-# Conv-KNRM
+# Matching with attention model
 
-![](../../../../../../../../.gitbook/assets/lark20190528162150.png)
+## Decomposable attention model for matching
+
+![](../../../../../../../.gitbook/assets/lark20190528155824.png)
+
+
 
 ## Source
 
