@@ -155,7 +155,7 @@
   * [多任务学习](shen-du-xue-xi/shen-du-xue-xi/duo-ren-wu-xue-xi.md)
   * [技术分析](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/README.md)
     * [Attention](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/attention.md)
-    * [Batch Normalization](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/batch-normalization.md)
+    * [Normalization](shen-du-xue-xi/shen-du-xue-xi/ji-shu-fen-xi/normalization.md)
 
 ## 增强学习
 
