@@ -83,7 +83,13 @@
             * [Based on local context of matched terms](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-local-context-of-matched-terms/README.md)
               * [DeepRank](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-local-context-of-matched-terms/deeprank.md)
               * [PACRR](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-local-context-of-matched-terms/pacrr.md)
-        * [推荐](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/tui-jian.md)
+        * [推荐](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/tui-jian/README.md)
+          * [Representation learning](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/tui-jian/representation-learning/README.md)
+            * [协同过滤](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/tui-jian/representation-learning/xie-tong-guo-lv.md)
+            * [基于特征](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/tui-jian/representation-learning/ji-yu-te-zheng.md)
+          * [Matching function learning](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/tui-jian/matching-function-learning/README.md)
+            * [协同过滤](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/tui-jian/matching-function-learning/xie-tong-guo-lv.md)
+            * [基于特征](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/tui-jian/matching-function-learning/ji-yu-te-zheng.md)
 
 ## 机器学习
 
