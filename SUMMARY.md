@@ -74,7 +74,15 @@
             * [Matching with attention model](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/matching-function-learning/matching-with-attention-model/README.md)
               * [Decomposable attention model for matching](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/matching-function-learning/matching-with-attention-model/decomposable-attention-model-for-matching.md)
           * [Matching function learning&Representation learning](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/matching-function-learning-and-representation-learning.md)
-          * [Query-Doc Relevance matching](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching.md)
+          * [Query-Doc Relevance matching](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/README.md)
+            * [Based on global distribution of matching strengths](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-global-distribution-of-matching-strengths/README.md)
+              * [DRMM](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-global-distribution-of-matching-strengths/drmm.md)
+              * [aNMM](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-global-distribution-of-matching-strengths/anmm.md)
+              * [K-NRM](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-global-distribution-of-matching-strengths/k-nrm.md)
+              * [Conv-KNRM](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-global-distribution-of-matching-strengths/conv-knrm.md)
+            * [Based on local context of matched terms](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-local-context-of-matched-terms/README.md)
+              * [DeepRank](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-local-context-of-matched-terms/deeprank.md)
+              * [PACRR](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/sou-suo/query-doc-relevance-matching/based-on-local-context-of-matched-terms/pacrr.md)
         * [推荐](shu-ju-wa-jue/shu-ju-wa-jue/sou-suo-tui-jian/sou-suo-tui-jian/shen-du-xue-xi-pi-pei-mo-xing/tui-jian.md)
 
 ## 机器学习
