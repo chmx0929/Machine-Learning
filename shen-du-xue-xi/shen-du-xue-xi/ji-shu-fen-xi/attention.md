@@ -214,3 +214,13 @@ Attention被用来把假设中的每个单词与前提中的单词联系起来�
 
 {% embed url="https://zhuanlan.zhihu.com/p/31547842" %}
 
+{% embed url="https://zhuanlan.zhihu.com/p/47063917" %}
+
+{% embed url="https://zhuanlan.zhihu.com/p/47282410" %}
+
+{% embed url="https://zhuanlan.zhihu.com/p/47613793" %}
+
+{% embed url="https://jalammar.github.io/illustrated-transformer/" %}
+
+
+
