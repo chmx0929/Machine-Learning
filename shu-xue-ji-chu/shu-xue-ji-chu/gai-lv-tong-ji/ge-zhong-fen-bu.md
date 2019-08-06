@@ -52,7 +52,7 @@ $$C_n^{r_1,r_2,\dots,r_k} = C_n^{r_1}C_{n-r_1}^{r_2}C_{n-r_1-r_2}^{r_3}\dots C_{
 
                       $$=\frac{n!}{r_1!(n-r_1)!}\cdot\frac{(n-r_1)!}{r_2!(n-r_1-r_2)!}\cdots \frac{(n-r_1-r_2\dots r_{k-2})!}{r_{k-1}!(n-r_1-r_2\dots r_{k-1})!}$$ 
 
-                      $$=\frac{n!}{r_1!r_2!\dots r_{k-1}!(n-r_1-r_2\dots r_{k-1})!}$$                                        \(又 $$r_1+r_2+\dots r_k=n$$\)
+                      $$=\frac{n!}{r_1!r_2!\dots r_{k-1}!(n-r_1-r_2\dots r_{k-1})!}$$                                      \(又 $$r_1+r_2+\dots r_k=n$$\)
 
                       $$=\frac{n!}{r_1!r_2!\dots r_{k}!r_k!}$$ 
 
