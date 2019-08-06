@@ -12,37 +12,41 @@ $$\to \theta_{ML} = \mathop{argmax}\limits_\theta \prod\limits_i P(x_i;\theta)$$
 
 假设一个袋子装有白球与红球，比例未知，现在抽取10次（每次抽完都放回，保证事件独立性），假设抽到了7次白球和3次红球，在此数据样本条件下，可以采用最大似然估计法求解袋子中白球的比例（最大似然估计是一种“模型已定，参数未知”的方法）。当然，这种数据情况下很明显，白球的比例是70%，但如何通过理论的方法得到这个答案呢？一些复杂的条件下，是很难通过直观的方式获得答案的，这时候理论分析就尤为重要了，这也是学者们为何要提出最大似然估计的原因。我们可以定义从袋子中抽取白球和红球的概率如下：
 
-![x1&#x4E3A;&#x7B2C;&#x4E00;&#x6B21;&#x91C7;&#x6837;&#xFF0C;x2&#x4E3A;&#x7B2C;&#x4E8C;&#x6B21;&#x91C7;&#x6837;&#xFF0C;f&#x4E3A;&#x6A21;&#x578B;, theta&#x4E3A;&#x6A21;&#x578B;&#x53C2;&#x6570;](//upload-images.jianshu.io/upload_images/3728828-ec913f4289854429.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/429/format/webp)
+$$x_1$$ 为第一次采样， $$x_2$$ 为第二次， $$f$$ 为模型， $$\theta$$ 模型参数
+
+                                              $$f(x_1,x_2|\theta)=f(x_1|\theta)\times f(x_2|\theta)$$ 
 
 其中 $$a = b$$ 是未知的，因此，我们定义似然 $$L$$ 为：
 
-![L&#x4E3A;&#x4F3C;&#x7136;&#x7684;&#x7B26;&#x53F7;](//upload-images.jianshu.io/upload_images/3728828-bf2e1dd58e5237ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/522/format/webp)
+                                        $$L(\theta|x_1,x_2)=f(x_1,x_2|\theta)=\prod\limits_{i=1}^2f(x_i|\theta)$$ 
 
-两边取 $$ln$$ ，取 $$ln$$ 是为了将右边的乘号变为加号，方便求导。
+两边取 $$ln$$ ，取 $$ln$$ 是为了将右边的乘号变为加号，方便求导，左边的通常称之为对数似然：
 
-![&#x4E24;&#x8FB9;&#x53D6;ln&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5DE6;&#x8FB9;&#x7684;&#x901A;&#x5E38;&#x79F0;&#x4E4B;&#x4E3A;&#x5BF9;&#x6570;&#x4F3C;&#x7136;](//upload-images.jianshu.io/upload_images/3728828-020a0a025a0bb844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/606/format/webp)
+                                 $$\ln L(\theta|x_1,x_2)=\ln \sum\limits_{i=1}^2f(x_i|\theta)=\sum\limits_{i=1}^2\ln f(x_i|\theta)$$ 
 
-![&#x8FD9;&#x662F;&#x5E73;&#x5747;&#x5BF9;&#x6570;&#x4F3C;&#x7136;](//upload-images.jianshu.io/upload_images/3728828-d8ee0f466fb7a734.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/260/format/webp)
+平均似然对数：
 
-最大似然估计的过程，就是找一个合适的 $$\theta$$ ，使得平均对数似然的值为最大。因此，可以得到以下公式：
+                                                             $$\hat{l}=\frac{1}{2}\ln L(\theta|x_1,x_2)$$ 
 
-![&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x7684;&#x516C;&#x5F0F;](//upload-images.jianshu.io/upload_images/3728828-77df3d49053f6336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/329/format/webp)
+最大似然估计的过程，就是找一个合适的 $$\theta$$ ，使得平均对数似然的值为最大。因此，可以得到以下最大估计的公式：
 
-这里讨论的是2次采样的情况，当然也可以拓展到多次采样的情况：
+                                                       $$\hat{\theta}_{mle}=\mathop{\arg \max}\limits_{\theta\in \Theta}\hat{l}(\theta|x_1,x_2)$$ 
 
-![&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x7684;&#x516C;&#x5F0F;&#xFF08;n&#x6B21;&#x91C7;&#x6837;&#xFF09;](//upload-images.jianshu.io/upload_images/3728828-4591da9849b6dcde.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/407/format/webp)
+这里讨论的是2次采样的情况，拓展到多次采样的情况，n次采样最大似然估计公式：
+
+                                                $$\hat{\theta}_{mle}=\mathop{\arg \max}\limits_{\theta\in \Theta}\hat{l}(\theta|x_1,x_2,\dots,x_n)$$ 
 
 我们定义 $$M$$ 为模型（也就是之前公式中的 $$f$$ ），表示抽到白球的概率为 $$\theta$$ ，而抽到红球的概率为 $$1-\theta$$ ，因此10次抽取抽到白球7次的概率可以表示为：
 
-![10&#x6B21;&#x62BD;&#x53D6;&#x62BD;&#x5230;&#x767D;&#x7403;7&#x6B21;&#x7684;&#x6982;&#x7387;](//upload-images.jianshu.io/upload_images/3728828-6bff1817d919eee3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/877/format/webp)
+           $$P(x_1,x_2,\dots,x_{10}|M)=P(x_1|M)\times P(x_2|M)\dots P(x_{10}|M)=\theta^7(1-\theta)^3$$ 
 
 将其描述为平均似然可得：
 
-![10&#x6B21;&#x62BD;&#x53D6;&#x62BD;&#x5230;&#x767D;&#x7403;7&#x6B21;&#x7684;&#x5E73;&#x5747;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#xFF0C;&#x62BD;&#x7403;&#x7684;&#x60C5;&#x51B5;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;&#x5E73;&#x5747;&#x4F3C;&#x7136;&#x6765;&#x6C42;&#x89E3;](//upload-images.jianshu.io/upload_images/3728828-3322f78314093a5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/606/format/webp)
+                               $$\hat{l}=\frac{1}{10}\ln P(x_1,x_2,\dots, x_{10}|M)=\frac{1}{10}\ln[\theta^7(1-\theta)^3]$$           
 
 那么最大似然就是找到一个合适的 $$\theta$$ ，获得最大的平均似然。因此我们可以对平均似然的公式对 $$\theta$$ 求导，并令导数为0。
 
-![](//upload-images.jianshu.io/upload_images/3728828-022090faf75834c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/597/format/webp)
+                                $$\hat{l}'(\theta)=7\theta^6(1-\theta)^3-3\theta^7(1-\theta)^2=0 \Rightarrow \theta=0.7$$ 
 
 由此可得，当抽取白球的概率 $$\theta$$ 为0.7时，最可能产生10次抽取抽到白球7次的事件。
 
@@ -50,15 +54,21 @@ $$\to \theta_{ML} = \mathop{argmax}\limits_\theta \prod\limits_i P(x_i;\theta)$$
 
 假如有一组采样值 $$(x_1,\dots,x_n)$$ ，我们知道其服从正态分布，且标准差已知。当这个正态分布的期望为多少时，产生这个采样数据的概率为最大？
 
-这个例子中正态分布就是模型 $$M$$ ，而期望就是前文提到的 $$\theta$$ 
+这个例子中正态分布就是模型 $$M$$ ，而期望就是前文提到的 $$\theta$$ ，似然函数如下：
 
-![&#x4F3C;&#x7136;](//upload-images.jianshu.io/upload_images/3728828-d18925f6fb457102.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/597/format/webp)
+                           $$L(\theta|x_1,x_2,\dots,x_n)=f(x_1,x_2,\dots,x_n|\theta)=\prod\limits_{i=1}^nf(x_i|\theta)$$ 
 
-![&#x6B63;&#x6001;&#x5206;&#x5E03;&#x7684;&#x516C;&#x5F0F;&#xFF0C;&#x5F53;&#x7B2C;&#x4E00;&#x53C2;&#x6570;&#xFF08;&#x671F;&#x671B;&#xFF09;&#x4E3A;0&#xFF0C;&#x7B2C;&#x4E8C;&#x53C2;&#x6570;&#xFF08;&#x65B9;&#x5DEE;&#xFF09;&#x4E3A;1&#x65F6;&#xFF0C;&#x5206;&#x5E03;&#x4E3A;&#x6807;&#x51C6;&#x6B63;&#x6001;&#x5206;&#x5E03;](//upload-images.jianshu.io/upload_images/3728828-6db503a50ca2a6e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/602/format/webp)
+正态分布的公式，当第一参数（期望）为0，第二参数（方差）为1时，分布为标准正态分布：
 
-![&#x4F3C;&#x7136;&#x503C;](//upload-images.jianshu.io/upload_images/3728828-ef8d40955ecb7af6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/714/format/webp)
+                                    $$M=f(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp(-\frac{(x-\mu)^2}{2\sigma^2}),\ N(\mu,\sigma^2)$$ 
 
-![&#x5BF9;&#x4E0A;&#x5F0F;&#x6C42;&#x5BFC;&#x53EF;&#x5F97;](//upload-images.jianshu.io/upload_images/3728828-a1fc8f7ba6eee888.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/524/format/webp)
+所以似然值为：
+
+                          $$P(x_1,x_2,\dots,x_n|M)=(\frac{1}{\sqrt{2\pi}\sigma})^n\exp(-\frac{1}{2\sigma^2}\sum\limits_{i=1}^n(x-\mu)^2)$$ 
+
+对上式求导可得：
+
+                                    $$\hat{l}'(\theta)=0\Rightarrow\sum\limits_{i=1}^nx_i-n\mu=0\Rightarrow\mu=\frac{1}{n}\sum\limits_{i=1}^nx_i$$ 
 
 #### 综上所述，可得求解最大似然估计的一般过程为：
 
