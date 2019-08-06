@@ -38,11 +38,11 @@ $$\Phi(x,y,\lambda) = f(x,y)+\lambda(g(x,y)-c) = x^2y+\lambda((x^2+y^2)-1)$$
 
 将所有 $$\Phi$$ 方程的偏微分设为零，得到一个方程组，最小值是以下方程组的解中的一个：
 
-               $$2xy+2\lambda x = 0$$ 
+                     $$2xy+2\lambda x = 0$$ 
 
-               $$x^2+2\lambda y =0$$ 
+                     $$x^2+2\lambda y =0$$ 
 
-               $$x^2+y^2-1 = 0$$ 
+                     $$x^2+y^2-1 = 0$$ 
 
 ## [卡罗需－库恩－塔克条件\(KKT\)](https://www.zhihu.com/question/23311674)
 
@@ -59,7 +59,7 @@ $$\Phi(x,y,\lambda) = f(x,y)+\lambda(g(x,y)-c) = x^2y+\lambda((x^2+y^2)-1)$$
 
 上式即称为Karush-Kuhn-Tucker\(KKT\)条件。上式可推广到多个约束，比如问题：
 
-                         $$max_xf(x)\ \ \ s.t.\ \ \ h_j(x)=0,j=1,\dots,q\ ;\ \ g_i(x)\leq0,i=1,\dots,p$$ 
+                         $$\max_xf(x)\ \ \ s.t.\ \ \ h_j(x)=0,j=1,\dots,q\ ;\ \ g_i(x)\leq0,i=1,\dots,p$$ 
 
 也就是说，自变量 $$x$$ 是一个 $$n$$ 维向量，要最大化一个目标函数 $$f$$ ，满足若干等式和不等式约束。KKT条件宣称，如果有一个点 $$x^*$$ 是满足所有约束的极值点，则
 
@@ -71,7 +71,7 @@ $$\Phi(x,y,\lambda) = f(x,y)+\lambda(g(x,y)-c) = x^2y+\lambda((x^2+y^2)-1)$$
 
 #### Example
 
-求解    $$\mathop{min} (x_1^2+x_2^2) \ \ \ s.t.\ x_1+x_2=1, x_2\leq \alpha$$ 
+求解    $$\mathop{\min} (x_1^2+x_2^2) \ \ \ s.t.\ x_1+x_2=1, x_2\leq \alpha$$ 
 
 写出拉格朗日函数：
 
@@ -89,7 +89,7 @@ KKT方程组：
 
 假设 $$f(x),\ c_i(x),\ h_j(x)$$ 是定义在 $$R^n$$ 上的连续可微函数。考虑约束最优化问题：
 
-               $$\mathop{min}\limits_{x\in R^n}f(x)\ \ \ s.t.\ \  c_i(x)\leq 0,\ i=1,2,\dots,k\ \ \ \ h_j(x)=0,\ j=1,2,\dots,l$$ 
+               $$\mathop{\min}\limits_{x\in R^n}f(x)\ \ \ s.t.\ \  c_i(x)\leq 0,\ i=1,2,\dots,k\ \ \ \ h_j(x)=0,\ j=1,2,\dots,l$$ 
 
 称此约束最优化问题为原始最优化问题或原始问题。
 
@@ -99,11 +99,11 @@ KKT方程组：
 
 这里， $$x = (x^{(1)},x^{(2)},\cdots,x^{(n)})^T\in R^n,\ \alpha_i,\ \beta_j$$ 是拉格朗日乘子， $$\alpha\geq0$$ 。考虑 $$x$$ 的函数
 
-                                                $$\theta_P(x)=\mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)$$ 
+                                                $$\theta_P(x)=\mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)$$ 
 
 这里，下标 $$P$$ 表示原始问题。假定给定某个 $$x$$ 。如果 $$x$$ 违反原始问题的约束条件，即存在某个 $$i$$ 使得 $$c_i(w)>0$$ 或者存在某个 $$j$$ 使得 $$h_j(w)\neq0$$ ，那么就有
 
-                           $$\theta_P(x)=\mathop{max}\limits_{\alpha,\beta:\alpha\geq0}[f(x)+\sum\limits_{i=1}^k\alpha_ic_i(x)+\sum\limits_{j=1}^l\beta_jh_j(x)]=+\infty$$ 
+                           $$\theta_P(x)=\mathop{\max}\limits_{\alpha,\beta:\alpha\geq0}[f(x)+\sum\limits_{i=1}^k\alpha_ic_i(x)+\sum\limits_{j=1}^l\beta_jh_j(x)]=+\infty$$ 
 
 因为若某个 $$i$$ 使约束 $$c_i(x)>0$$ ，则可令 $$\alpha_i\to+\infty$$ ，若某个 $$j$$ 使约束 $$h_j(x)\neq0$$ ，则可令 $$\beta_jh_j(x)\to+\infty$$ ，而降将其余各项 $$\alpha_i,\ \beta_j$$ 均取值为 $$0$$ 
 
@@ -113,45 +113,45 @@ KKT方程组：
 
 所以如果考虑极小化问题
 
-                                            $$\mathop{min}\limits_x\theta_P(x)=\mathop{min}\limits_x\mathop{max}\limits_{\alpha,\beta:\alpha\geq0}\mathcal{L}(x,\alpha,\beta)$$ 
+                                            $$\mathop{\min}\limits_x\theta_P(x)=\mathop{\min}\limits_x\mathop{\max}\limits_{\alpha,\beta:\alpha\geq0}\mathcal{L}(x,\alpha,\beta)$$ 
 
 它是与原始最优化问题等价的，即他们有相同解。问题 $$\mathop{min}\limits_x\mathop{max}\limits_{\alpha,\beta:\alpha\geq0}\mathcal{L}(x,\alpha,\beta)$$ 称为广义拉格朗日函数的极小极大问题。这样一来，就把原始最优化问题表示为拉格朗日函数的极小极大问题。为了方便，定义原始问题的最优值
 
-                                                         $$p^* = \mathop{min}\limits_x\theta_P(x)$$ 
+                                                         $$p^* = \mathop{\min}\limits_x\theta_P(x)$$ 
 
 #### 对偶问题
 
-定义 $$\theta_D(\alpha,\beta)=\mathop{min}\limits_x\mathcal{L}(x,\alpha,\beta)$$ 再考虑极大化，即
+定义 $$\theta_D(\alpha,\beta)=\mathop{\min}\limits_x\mathcal{L}(x,\alpha,\beta)$$ 再考虑极大化，即
 
-                                          $$\mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta) = \mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{min}\limits_x\mathcal{L}(x,\alpha,\beta)$$ 
+                                          $$\mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta) = \mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{\min}\limits_x\mathcal{L}(x,\alpha,\beta)$$ 
 
 可以将广义拉格朗日函数的极大极小为表示为约束最优化问题：
 
-                     $$\mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta) = \mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{min}\limits_x\mathcal{L}(x,\alpha,\beta)\ \ \ \ s.t.\ \alpha_i\geq0,\ i=1,2,\dots,k$$ 
+                     $$\mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta) = \mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{\min}\limits_x\mathcal{L}(x,\alpha,\beta)\ \ \ \ s.t.\ \alpha_i\geq0,\ i=1,2,\dots,k$$ 
 
 称为原始问题的对偶问题。定义对偶问题的最优值
 
-                                                        $$d^* = \mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta)$$ 
+                                                        $$d^* = \mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta)$$ 
 
 #### 原始问题和对偶问题关系
 
 若原始问题和对偶问题都有最优值，则
 
-                           $$d^* = \mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{min}\limits_x\mathcal{L}(x,\alpha,\beta)\leq \mathop{min}\limits_x\mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)=p^*$$ 
+                           $$d^* = \mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{\min}\limits_x\mathcal{L}(x,\alpha,\beta)\leq \mathop{\min}\limits_x\mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)=p^*$$ 
 
 证明：
 
-由 $$\mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta) = \mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{min}\limits_x\mathcal{L}(x,\alpha,\beta)$$ 和 $$\theta_P(x)=\mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)$$ ，对任意 $$\alpha,\beta,x$$ 
+由 $$\mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta) = \mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{\min}\limits_x\mathcal{L}(x,\alpha,\beta)$$ 和 $$\theta_P(x)=\mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)$$ ，对任意 $$\alpha,\beta,x$$ 
 
-                  $$\theta_D(\alpha,\beta)=\mathop{min}\limits_x\mathcal{L}(x,\alpha,\beta)\leq\mathcal{L}(x,\alpha,\beta)\leq\mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)=\theta_P(x)$$ 
+                  $$\theta_D(\alpha,\beta)=\mathop{\min}\limits_x\mathcal{L}(x,\alpha,\beta)\leq\mathcal{L}(x,\alpha,\beta)\leq\mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)=\theta_P(x)$$ 
 
 即 $$\theta_D(\alpha,\beta)\leq\theta_P(x)$$ ，由于原始问题和对偶问题均有最优解，所以
 
-                                                 $$\mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta)\leq\mathop{min}\limits_x\theta_P(x)$$ 
+                                                 $$\mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\theta_D(\alpha,\beta)\leq\mathop{\min}\limits_x\theta_P(x)$$ 
 
 即
 
-                           $$d^* = \mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{min}\limits_x\mathcal{L}(x,\alpha,\beta)\leq \mathop{min}\limits_x\mathop{max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)=p^*$$ 
+                           $$d^* = \mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathop{\min}\limits_x\mathcal{L}(x,\alpha,\beta)\leq \mathop{\min}\limits_x\mathop{\max}\limits_{\alpha,\beta:\alpha_i\geq0}\mathcal{L}(x,\alpha,\beta)=p^*$$ 
 
 推论：设 $$x^*,\ \alpha^*,\ \beta^*$$ 分别是原始问题和对偶问题的可行解，并且 $$d^*=p^*$$ ，则 $$x^*,\ \alpha^*,\ \beta^*$$ 分别是原始问题和对偶问题的最优解。
 
@@ -165,7 +165,7 @@ KKT方程组：
 
 线性规划问题通常可以用矩阵形式表达成：
 
-                                             $$\mathop{max}c^Tx\ \ \ \ \ s.t.Ax\leq b, x\geq0$$ 
+                                             $$\mathop{\max}c^Tx\ \ \ \ \ s.t.Ax\leq b, x\geq0$$ 
 
 其他类型的问题，例如极小化问题，不同形式的约束问题，和有负变量的问题，都可以改写成其等价问题的标准型。
 
@@ -175,7 +175,7 @@ KKT方程组：
 
 二次规划包括凸二次优化和非凸二次优化。在此类问题中，目标函数是变量的二次函数，约束条件是变量的线性不等式。假定变量个数为 $$d$$ ，约束条件的个数为 $$m$$ ，则标准的二次规划问题形如下：
 
-                                                         $$\mathop{min}\limits_x\frac{1}{2}x^TQx+c^Tx\ \ s.t.\ Ax\leq b$$ 
+                                                         $$\mathop{\min}\limits_x\frac{1}{2}x^TQx+c^Tx\ \ s.t.\ Ax\leq b$$ 
 
 其中 $$x$$ 为 $$d$$ 维向量， $$Q\in \mathbb{R}^{d\times d}$$ 为[实对称矩阵](https://baike.baidu.com/item/%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5)， $$A\in \mathbb{R}^{m\times d}$$ 为[实矩阵](https://baike.baidu.com/item/%E5%AE%9E%E7%9F%A9%E9%98%B5)， $$b\in \mathbb{R}^m$$ 和 $$c\in \mathbb{R}^d$$ 为实向量， $$Ax\leq b$$ 的每一行对应一个约束。
 
@@ -193,7 +193,7 @@ KKT方程组：
 
 若 $$A_i(i=1,2,\dots,m)$$ 也是 $$d\times d$$ 的对称矩阵， $$b_i(i=1,2,\dots,m)$$ 为 $$m$$ 个实数，则半正定规划问题形如：
 
-                                     $$\mathop{min}\limits_{X} C\cdot X  \ \ \ s.t.\ A_i\cdot X=b_i,\ i=1,2,\dots,m\ \  X\succeq 0$$ 
+                                     $$\mathop{\min}\limits_{X} C\cdot X  \ \ \ s.t.\ A_i\cdot X=b_i,\ i=1,2,\dots,m\ \  X\succeq 0$$ 
 
 半正定规划与线性规划都拥有线性的目标函数和约束，但半正定规划中的约束 $$X\succeq 0$$ 是一个非线性、非光滑约束条件。在优化理论中，半正定规划具有的一般性，能将几种标准的优化问题\(如线性规划、二次规划\)统一起来。
 
