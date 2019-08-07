@@ -22,7 +22,7 @@
 
 通过减少 $$f(x_i)$$ 与 $$y_i$$ 的差别（即减少预测值与实际值的误差），就可以学得 $$w$$ 和 $$b$$ 即获得模型。通常使用均方差\(Mean Square Error\)来做，均方差的几何意义其实就是欧式距离：
 
-                            $$(w^*,b^*) = \mathop{arg\ min} \limits_{(w,b)} \sum \limits_{i=1}^m(f(x_i)-y_i)^2 = \mathop{arg\ min} \limits_{(w,b)} \sum \limits_{i=1}^m(y_i-wx_i-b)^2$$ 
+                            $$(w^*,b^*) = \mathop{\arg\min} \limits_{(w,b)} \sum \limits_{i=1}^m(f(x_i)-y_i)^2 = \mathop{\arg\min} \limits_{(w,b)} \sum \limits_{i=1}^m(y_i-wx_i-b)^2$$ 
 
 在线性回归中，最小二乘法（基于均方误差最小化来进行模型求解的方法）就是试图找到一条直线，使所有样本到直线的欧式距离之和最小：
 
@@ -62,7 +62,7 @@
 
 再把标记也写成向量形式 $$y=(y_1;y_2;\dots;y_m)$$ ，则有
 
-                                                   $$\hat{w}^*=\mathop{arg\ min}\limits_{\hat{w}}(y-X\hat{w})^T(y-X\hat{w})$$ 
+                                                   $$\hat{w}^*=\mathop{\arg\min}\limits_{\hat{w}}(y-X\hat{w})^T(y-X\hat{w})$$ 
 
 令 $$E_{\hat{w}}=(y-X\hat{w})^T(y-X\hat{w})$$ ，对 $$\hat{w}$$ 求导得：
 
@@ -250,7 +250,7 @@ $$P(Y=k|x)=\frac{\exp(w_k\cdot x)}{1+\sum\limits_{k=1}^{K-1}\exp(w_k\cdot x)},\ 
 
 显然，多分类LDA可以有多种实现方法：使用 $$S_b$$ , $$S_w$$ , $$S_t$$ 三者中的任何两个即可，常见的一种实现是采用优化目标：
 
-                                                                          $$\mathop{max}\limits_W\ \frac{tr(W^TS_bW)}{tr(W^TS_wW}$$ 
+                                                                          $$\mathop{\max}\limits_W\ \frac{tr(W^TS_bW)}{tr(W^TS_wW}$$ 
 
 其中 $$W\in \mathbb{R}^{d\times(N-1)}$$，上式可通过广义特征值问题求解： $$S_bW=\lambda S_wW$$ 。$$W$$的闭式解则是 $$S_w^{-1}S_b$$ 的 $$d'$$ 个最大非零广义特征值所对应的特征向量组成的矩阵， $$d'\leq N-1$$ 。
 
