@@ -22,7 +22,7 @@
 
 以及相应的分类决策函数：
 
-                                                               $$f(x)=\mathop{sign}(w^T x+b)$$ 
+                                                               $$f(x)=\mathop{\text{sign}}(w^T x+b)$$ 
 
 其中 $$w=(w_1;w_2;\dots;w_d)$$ 为法向量，决定了超平面的方向； $$b$$ 为位移项，决定了超平面与原点间的距离。显然，划分超平面可被法向量 $$w$$ 和位移 $$b$$ 确定，下面我们将其记为 $$(w,b)$$ 。样本空间中任意点 $$x$$到超平面 $$(w,b)$$ 的距离可写为：      $$r= \frac{|w^T x+b|}{||w||}$$ 。（[点到直线距离](https://baike.baidu.com/item/%E7%82%B9%E5%88%B0%E7%9B%B4%E7%BA%BF%E8%B7%9D%E7%A6%BB/8673346)公式 $$\frac{|Ax_0+by_0+C|}{\sqrt{A^2+B^2}}$$ ）
 
@@ -32,7 +32,7 @@
 
 一般来说，一个点距离分离超平面的远近可以表示分类预测的确信程度。在超平面 $$w^Tx+b=0$$ 确定的情况下， $$|w^Tx+b|$$ 能够相对地表示点 $$x$$ 距离超平面的远近。而 $$w^Tx+b$$ 的符号标记与类标记 $$y$$ 是否一致能够表示分类是否正确。所以可用量 $$y(w^Tx+b)$$ 来表示分类的正确性及确信度，这就是函数间隔。
 
-_定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义超平面 $$(w,b)$$ 关于样本点 $$(x_i,y_i)$$ 的函数间隔为： $$a = b$$ ；超平面 $$(w,b)$$ 关于训练数据集 $$T$$ 的函数间隔为超平面关于 $$T$$ 中所有样本点 $$(x_i,y_i)$$ 的函数间隔之最小值\(离超平面最近的点都分对了，其他的点肯定也对\)，即 $$\hat{\gamma} = \mathop{min}\limits_{i=1,\dots,N}\hat{\gamma}_i$$ 
+_定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义超平面 $$(w,b)$$ 关于样本点 $$(x_i,y_i)$$ 的函数间隔为： $$a = b$$ ；超平面 $$(w,b)$$ 关于训练数据集 $$T$$ 的函数间隔为超平面关于 $$T$$ 中所有样本点 $$(x_i,y_i)$$ 的函数间隔之最小值\(离超平面最近的点都分对了，其他的点肯定也对\)，即 $$\hat{\gamma} = \mathop{\min}\limits_{i=1,\dots,N}\hat{\gamma}_i$$ 
 
 #### 几何间隔\(Geometric margin\)
 
@@ -40,7 +40,7 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 下图给出了超平面 $$(w,b)$$ 及其法向量 $$w$$ 。点 $$A$$ 表示某一实例 $$x_i$$ ，其类标记为 $$y_i=+1$$ 。点 $$A$$ 与超平面 $$(w,b)$$ 的距离由线段 $$AB$$ 给出，记作 $$\gamma_i$$ ：
 
-                                                               $$\gamma_i=\frac{w}{||w||}\cdot x_i+\frac{b}{||w||}$$ 
+                                                            $$\gamma_i=\frac{w}{||w||}\cdot x_i+\frac{b}{||w||}$$ 
 
 其中， $$||w||$$ 为 $$w$$ 的 $$L_2$$ 范数。这是点 $$A$$ 在超平面正的的一侧的情形。如果点 $$A$$ 在超平面负的一侧，即 $$y_i=-1$$ ，那么点与超平面的距离为\(因为我们的超平面在两类的“正中央”，即距离相同\)：
 
@@ -52,13 +52,13 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 ![](../../.gitbook/assets/timline-jie-tu-20181107155245.png)
 
-_定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义超平面关于样本点 $$(x_i,y_i)$$ 的几何间隔为： $$\gamma_i=y_i(\frac{w}{||w||}\cdot x_i+\frac{b}{||w||})$$ ；超平面 $$(w,b)$$ 关于训练数据集 $$T$$ 的几何间隔为超平面关于 $$T$$ 中所有样本点 $$(x_i,y_i)$$ 的函数间隔之最小值\(离超平面最近的点都分对了，其他的点肯定也对\)，即 $$\gamma = \mathop{min}\limits_{i=1,\dots,N}\gamma_i$$ 
+_定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义超平面关于样本点 $$(x_i,y_i)$$ 的几何间隔为： $$\gamma_i=y_i(\frac{w}{||w||}\cdot x_i+\frac{b}{||w||})$$ ；超平面 $$(w,b)$$ 关于训练数据集 $$T$$ 的几何间隔为超平面关于 $$T$$ 中所有样本点 $$(x_i,y_i)$$ 的函数间隔之最小值\(离超平面最近的点都分对了，其他的点肯定也对\)，即 $$\gamma = \mathop{\min}\limits_{i=1,\dots,N}\gamma_i$$ 
 
 #### 两间隔关系
 
 超平面 $$(w,b)$$ 关于样本点 $$(x_i,y_i)$$ 的几何间隔一般是实例点到超平面的带符号的距离\(signed distance\)，当样本点被超平面正确分类时就是实例点到超平面的距离。从函数距离和几何距离的定义可知两者的关系\( $$\hat{\gamma}$$ 为函数距离， $$\gamma$$ 为几何距离\)：
 
-                                                            $$\gamma_i = \frac{\hat{\gamma}_i}{||w||} \ \    \mathop{\to}\limits^{min}\ \  \gamma = \frac{\hat{\gamma}}{||w||}$$ 
+                                                            $$\gamma_i = \frac{\hat{\gamma}_i}{||w||} \ \    \mathop{\to}\limits^{\min}\ \  \gamma = \frac{\hat{\gamma}}{||w||}$$ 
 
 如果 $$||w||=1$$ ，那么函数间隔和几何间隔相等。如果超平面参数 $$w$$ 和 $$b$$ 成比例地改变\(超平面没有改变\)，函数间隔也按此比例改变，而几何间隔不变。
 
@@ -70,15 +70,15 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 如何求得一个几何间隔最大的分离超平面，即最大间隔分离超平面。具体地，这个问题可以表示为下面的约束最优化问题：
 
-                                     $$\mathop{max}\limits_{w,b}\gamma \ \ \ s.t. \ y_i(\frac{w}{||w||}\cdot x_i+\frac{b}{||w||})\geq\gamma,\ i=1,2,\dots,N$$ 
+                                     $$\mathop{\max}\limits_{w,b}\gamma \ \ \ s.t. \ y_i(\frac{w}{||w||}\cdot x_i+\frac{b}{||w||})\geq\gamma,\ i=1,2,\dots,N$$ 
 
 我们希望最大化超平面 $$(w,b)$$ 关于训练数据集的几何间隔 $$\gamma$$ ，约束条件表示的是超平面关于每个训练样本点的几何间隔至少是 $$\gamma$$ ，结合几何间隔与函数间隔的关系式，可将上式改写为：
 
-                                     $$\mathop{max}\limits_{w,b}\frac{\hat{\gamma}}{||w||} \ \ \ s.t. \ y_i(w\cdot x_i+b)\geq\hat{\gamma},\ i=1,2,\dots,N$$ 
+                                     $$\mathop{\max}\limits_{w,b}\frac{\hat{\gamma}}{||w||} \ \ \ s.t. \ y_i(w\cdot x_i+b)\geq\hat{\gamma},\ i=1,2,\dots,N$$ 
 
 函数间隔 $$\hat{\gamma}$$ 的取值并不影响最优化问题的解。实际上，假设将 $$w$$ 和 $$b$$ 按比例改变为 $$\lambda w$$ 和 $$\lambda b$$ ，这时函数间隔成为 $$\lambda \hat{\gamma}$$ 。函数间隔的这一改变对上面最优化问题的不等式约束并没产生影响，对目标函数的优化也没有影响，也就是说，它产生一个等价的优化问题。这样，就可以取 $$\hat{\gamma} =1$$ 。将 $$\hat{\gamma} =1$$ 代入上面的最优化问题，就是最大化 $$\frac{1}{||w||}$$ ，为方便计算，我们转化为最小化 $$\frac{1}{2}||w||^2$$ \(两者等价，因为求最大化 $$\frac{1}{||w||}$$ 即最小化 $$||w||$$ ，即 $$\frac{1}{2}||w||^2$$ \)，于是就得到下面的线性可分支持向量机学习的最优化问题：
 
-                                      $$\mathop{min}\limits_{wb}\frac{1}{2}||w||^2\ \ \ s.t.\ y_i(w\cdot x+b)\geq1,\ i=1,2,\dots,N$$ 
+                                      $$\mathop{\min}\limits_{wb}\frac{1}{2}||w||^2\ \ \ s.t.\ y_i(w\cdot x+b)\geq1,\ i=1,2,\dots,N$$ 
 
 所以求解出最优解 $$w^*,\ b^*$$ ，就可以得到分离超平面
 
@@ -86,7 +86,7 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 从而得到分类决策函数
 
-                                                           $$f(x)=\mathop{sign}(w^*\cdot x+b^*)$$ 
+                                                           $$f(x)=\mathop{\text{sign}}(w^*\cdot x+b^*)$$ 
 
 ### 对偶问题
 
@@ -100,9 +100,9 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 将 $$w = \sum\limits_{i=1}^N\alpha_iy_ix_i$$ 代入拉格朗日函数，再考虑约束 $$0 = \sum\limits_{i=1}^N\alpha_yy_i$$ ，就得到原问题
 
- $$\mathop{min}\limits_{wb}\frac{1}{2}||w||^2\ \ \ s.t.\ y_i(w\cdot x+b)\geq1,\ i=1,2,\dots,N$$ 的对偶问题
+ $$\mathop{\min}\limits_{wb}\frac{1}{2}||w||^2\ \ \ s.t.\ y_i(w\cdot x+b)\geq1,\ i=1,2,\dots,N$$ 的对偶问题
 
-      $$\mathop{max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jx_i^Tx_j\ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ \alpha_i\geq0,\ i=1,2,\dots,N$$ 
+      $$\mathop{\max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jx_i^Tx_j\ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ \alpha_i\geq0,\ i=1,2,\dots,N$$ 
 
 解出 $$\alpha$$ 后，求出 $$w$$ 与 $$b$$ 即可得到模型
 
@@ -114,7 +114,7 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 于是，对任意训练样本 $$(x_i,y_i)$$ ，总有 $$\alpha_i=0$$ 或 $$y_if(x_i)=1$$ \(即需要满足最上面最后一个等式约束\)。若 $$\alpha_i=0$$ ，则该样本将不会在 $$f(x)=w\cdot x+b = \sum\limits_{i=1}^N\alpha_iy_ix_i^Tx+b$$ 的求和中出现，也就不会对 $$f(x)$$ 有任何影响；若 $$\alpha_i>0$$ ，则必有 $$y_if(x_i)=1$$ ，所对应的样本点位于最大间隔边界上，是一个支持向量。这显示出支持向量的一个重要性质：训练完成后，大部分的训练样本都不需要保留，最终模型仅与支持向量有关。
 
-那么，如何求解 $$\mathop{max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jx_i^Tx_j\ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ \alpha_i\geq0,\ i=1,2,\dots,N$$ 呢？不难发现，这是一个二次规划问题，可使用通用的二次规划算法来求解；然而，该问题的规模正比于训练样本数，这会在实际任务中造成很大的开销。为了避免这个障碍，人们提出利用问题本身的特性，提出了很多高效的算法，SMO（Sequential Minimal Optimization）是其中一个著名的代表。
+那么，如何求解 $$\mathop{\max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jx_i^Tx_j\ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ \alpha_i\geq0,\ i=1,2,\dots,N$$ 呢？不难发现，这是一个二次规划问题，可使用通用的二次规划算法来求解；然而，该问题的规模正比于训练样本数，这会在实际任务中造成很大的开销。为了避免这个障碍，人们提出利用问题本身的特性，提出了很多高效的算法，SMO（Sequential Minimal Optimization）是其中一个著名的代表。
 
 ## 线性支持向量机与软间隔最大化
 
@@ -134,21 +134,21 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 有了上面的思路，可以和训练数据集线性可分时一样来考虑训练数据集线性不可分时的线性支持向量机学习问题。相应于硬间隔最大化，它成为软间隔最大化。线性不可分的线性支持向量机的学习问题变成如下凸二次规划问题：
 
- $$\mathop{min}\limits_{w,b,\xi}\frac{1}{2}||w||^2+C\sum\limits_{i=1}^N\xi_i\ \ \ s.t.\ y_i(w\cdot x_i+b)\geq1-\xi_i,\ i=1,2,\dots,N\ \ \xi_i\geq0, i=1,2,\dots,N$$ 
+ $$\mathop{\min}\limits_{w,b,\xi}\frac{1}{2}||w||^2+C\sum\limits_{i=1}^N\xi_i\ \ \ s.t.\ y_i(w\cdot x_i+b)\geq1-\xi_i,\ i=1,2,\dots,N\ \ \xi_i\geq0, i=1,2,\dots,N$$ 
 
 问题是一个凸二次规划问题，因而关于 $$(w,b,\xi)$$ 的解是存在的。可以证明 $$w$$ 的解是唯一的，但 $$b$$ 的解可能不唯一，而是存在于一个区间。设问题的解是 $$w^*,\ b^*$$ 。于是可以得到分离超平面 $$w^*\cdot x+b^*=0$$ 及分类决策函数 $$f(x)=sign(w^*\cdot x+b^*)$$ ，称这样的模型为训练样本线性不可分时的线性支持向量机，简称线性支持向量机。显然，线性支持向量机包含线性可分支持向量机。由于现实中训练数据集往往是线性不可分的，线性支持向量即具有更广的适用性。
 
 优化目标函数可写为
 
-                                          $$\mathop{min}\limits_{w,b}\frac{1}{2}||w||^2+C\sum\limits_{i=1}^N\ell_{0/1}(y_i(w\cdot x_i+b)-1)$$ 
+                                          $$\mathop{\min}\limits_{w,b}\frac{1}{2}||w||^2+C\sum\limits_{i=1}^N\ell_{0/1}(y_i(w\cdot x_i+b)-1)$$ 
 
 其中 $$C>0$$ 是一个常数， $$\ell_{0/1}$$ 是“0/1损失函数”
 
-                                                            $$\ell_{0/1}(z)=\begin{cases}1,\ if\ z<0\\ 0,\ otherwise\end{cases}$$ 
+                                                            $$\ell_{0/1}(z)=\begin{cases}1,\ \text{if}\ z<0\\ 0,\ \text{otherwise}\end{cases}$$ 
 
 显然， $$C$$ 为无穷大时，优化目标函数迫使所有样本均满足约束 $$y_i(w\cdot x_i+b)\geq1$$ ；当 $$C$$ 取有限值时，优化目标函数允许一些样本不满足约束。然而， $$\ell_{0/1}$$ 非凸、非连续，数学性质不太好，使得优化目标函数不易直接求解。于是，通常用其他一些函数来代替 $$\ell_{0/1}$$ 称为“替代损失”。替代损失函数一般具有较好的数学性质，如通常它们是凸的连续函数且是 $$\ell_{0/1}$$ 的上界。常用三种替代损失函数：
 
-1. 1、 hinge损失： $$\ell_{hinge}(z)=max(0,1-z)$$ 
+1. 1、 hinge损失： $$\ell_{hinge}(z)=\max(0,1-z)$$ 
 2. 2、 指数损失： $$\ell_{\exp}(z)=\exp(-z)$$ 
 3. 3、 对率损失： $$\ell_{\log}(z)=\log(1+\exp(-z))$$ 
 
@@ -168,7 +168,7 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 将上面三式代入拉格朗日函数即可得对偶问题
 
-    $$\mathop{max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jx_i^Tx_j\ \ \ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ 0\leq\alpha_i\leq C,\ i=1,2,\dots,N$$ 
+$$\mathop{\max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jx_i^Tx_j\ \ \ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ 0\leq\alpha_i\leq C,\ i=1,2,\dots,N$$ 
 
 可以看出软间隔和硬间隔唯一的差别就在于对偶变量的约束不同：前者是 $$0\leq\alpha_i\leq C$$ ，后者是 $$0\leq\alpha_i$$ 于是，可采用同样的算法求解上式。对软间隔支持向量机，KKT条件要求
 
@@ -242,7 +242,7 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 同样，分类决策函数中的内积也可以用核函数代替，而分类决策函数式成为
 
-                   $$f(x)=\mathop{sign}(\sum\limits_{i=1}^N\alpha^*_iy_i\phi(x_i)\cdot\phi(x)+b^*)=\mathop{sign}(\sum\limits_{i=1}^N\alpha^*_iy_iK(x_i,x)+b^*)$$ 
+                   $$f(x)=\mathop{\text{sign}}(\sum\limits_{i=1}^N\alpha^*_iy_i\phi(x_i)\cdot\phi(x)+b^*)=\mathop{\text{sign}}(\sum\limits_{i=1}^N\alpha^*_iy_iK(x_i,x)+b^*)$$ 
 
 这等价于经过映射函数 $$\phi$$ 将原来的输入空间变换到一个新的特征空间，将输入空间中的内积 $$x_i\cdot x_j$$ 变换为特征空间中的内积 $$\phi(x_i)\phi(x_j)$$ ，在新的特征空间里从训练样本中学习线性支持向量机。当映射函数是非线性函数时，学习到的含有核函数的支持向量机是非线性分类模型。
 
@@ -254,7 +254,7 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 从非线性分类训练集，通过核函数与软间隔最大化，或凸二次规划，学习得到的分类决策函数
 
-                                            $$f(x)=\mathop{sign}(\sum\limits_{i=1}^N\alpha^*_iy_iK(x,x_i)+b^*)$$ 
+                                            $$f(x)=\mathop{\text{sign}}(\sum\limits_{i=1}^N\alpha^*_iy_iK(x,x_i)+b^*)$$ 
 
 称为非线性支持向量， $$K(x,z)$$ 是正定核函数。
 
@@ -268,7 +268,7 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 6. \(2\) 选择 $$\alpha^*$$ 的一个正分量 $$0<\alpha_j^*<C$$ ，计算
 7.                                                    $$b^*=y_j-\sum\limits_{i=1}^N\alpha_i^*y_iK(x_i,x_j)$$ 
 8. \(3\) 构造决策函数
-9.                                            $$f(x)=\mathop{sign}(\sum\limits_{i=1}^N\alpha_i^*y_iK(x\cdot x_i)+b^*)$$ 
+9.                                            $$f(x)=\mathop{\text{sign}}(\sum\limits_{i=1}^N\alpha_i^*y_iK(x\cdot x_i)+b^*)$$ 
 
 ## 序列最小最优化算法\(SMO\)
 
@@ -276,7 +276,7 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 SMO算法要解如下凸二次规划的对偶问题：
 
-  $$\mathop{min}\limits_\alpha\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jK(x_i,x_j)-\sum\limits_{i=1}^N\alpha_i\ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ 0\leq\alpha_i\leq C,\ i=1,2,\dots,N$$ 
+  $$\mathop{\min}\limits_\alpha\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jK(x_i,x_j)-\sum\limits_{i=1}^N\alpha_i\ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ 0\leq\alpha_i\leq C,\ i=1,2,\dots,N$$ 
 
 在这个问题中，变量是拉格朗日乘子，一个变量 $$\alpha_i$$ 对应于一个样本点 $$(x_i,y_i)$$ ；变量的总数等于训练样本总量 $$N$$ 
 
@@ -300,7 +300,7 @@ SMO算法之所以高效，恰由于在固定其他参数后，仅优化两个�
 
                                                              $$\alpha_iy_i+\alpha_jy_j=c$$ 
 
-代入对偶问题 $$\mathop{max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jx_i^Tx_j$$ 中消去变量 $$\alpha_j$$ ，则得到一个关于 $$\alpha_i$$ 的单变量二次规划问题，仅有的约束是 $$\alpha_i\geq0$$ 。不难发现，这样的二次规划问题具有闭式解，于是不必调用数值优化算法即可高效地计算出更新后的 $$\alpha_i,\alpha_j$$ 
+代入对偶问题 $$\mathop{\max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jx_i^Tx_j$$ 中消去变量 $$\alpha_j$$ ，则得到一个关于 $$\alpha_i$$ 的单变量二次规划问题，仅有的约束是 $$\alpha_i\geq0$$ 。不难发现，这样的二次规划问题具有闭式解，于是不必调用数值优化算法即可高效地计算出更新后的 $$\alpha_i,\alpha_j$$ 
 
 如何确定偏移项 $$b$$ 呢？注意到对任意支持向量 $$(x_s,y_s)$$ 都有 $$y_sf(x_s)=1$$ ，即
 
@@ -322,17 +322,17 @@ SMO算法之所以高效，恰由于在固定其他参数后，仅优化两个�
 
 于是，SVR问题可形式化为
 
-                                                     $$\mathop{min}\limits_{w,b}\frac{1}{2}||w||^2+C\sum\limits_{i=1}^N\ell_\epsilon(f(x_i)-y_i)$$ 
+                                                     $$\mathop{\min}\limits_{w,b}\frac{1}{2}||w||^2+C\sum\limits_{i=1}^N\ell_\epsilon(f(x_i)-y_i)$$ 
 
 其中 $$C$$ 为正则化常数， $$\ell_\epsilon$$ 是上图所示不敏感损失函数
 
-                                                  $$\ell_\epsilon(z)=\begin{cases}0,\ \ \ \ \ \ \ \ \ \ if\ |z|\leq\epsilon\\ |z|-\epsilon, \ otherwise\end{cases}$$ 
+                                                  $$\ell_\epsilon(z)=\begin{cases}0,\ \ \ \ \ \ \ \ \ \ \text{if}\ |z|\leq\epsilon\\ |z|-\epsilon, \ \text{otherwiae}\end{cases}$$ 
 
 ![](../../.gitbook/assets/33-1.png)
 
 引入松弛变量 $$\xi_i$$ 和 $$\hat{\xi}_i$$ ，可将问题重写为
 
-                                               $$\mathop{min}\limits_{w,b,\xi_i,\hat{\xi}_i}\frac{1}{2}||w||^2+C\sum\limits_{i=1}^N(\xi_i+\hat{\xi}_i)$$ 
+                                               $$\mathop{\min}\limits_{w,b,\xi_i,\hat{\xi}_i}\frac{1}{2}||w||^2+C\sum\limits_{i=1}^N(\xi_i+\hat{\xi}_i)$$ 
 
       $$s.t.\ f(x_i)-y_i\leq\epsilon+\xi_i,\ \ \ \ y_i-f(x_i)\leq\epsilon+\hat{\xi}_i,\ \ \ \ \xi_i\geq0,\ \hat{\xi}_i\geq0,\ i=1,2,\dots,N$$ 
 
@@ -350,7 +350,7 @@ SMO算法之所以高效，恰由于在固定其他参数后，仅优化两个�
 
 代入拉格朗日函数，即可得到SVR的对偶问题
 
-                $$\mathop{max}\limits_{\alpha,\hat{\alpha}}\sum\limits_{i=1}^Ny_i(\hat{\alpha}_i-\alpha_i)-\epsilon(\hat{\alpha}_i+\alpha)-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N(\hat{\alpha}_i-\alpha_i)(\hat{\alpha}_j-\alpha_j)x^T_ix_j$$ 
+                $$\mathop{\max}\limits_{\alpha,\hat{\alpha}}\sum\limits_{i=1}^Ny_i(\hat{\alpha}_i-\alpha_i)-\epsilon(\hat{\alpha}_i+\alpha)-\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N(\hat{\alpha}_i-\alpha_i)(\hat{\alpha}_j-\alpha_j)x^T_ix_j$$ 
 
                                       $$ s.t.\ \sum\limits_{i=1}^N(\hat{\alpha}_i-\alpha_i)=0,\ \ 0\leq\alpha_i,\hat{\alpha}_i\leq C$$ 
 
