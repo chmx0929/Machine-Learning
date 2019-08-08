@@ -18,7 +18,7 @@
 
 此时， $$h^*$$ 称为贝叶斯最优分类器，与之对应的总体风险 $$R(h^*)$$ 称为贝叶斯风险。 $$1-R(h^*)$$ 反映了分类器所能达到的最好性能，即通过机器学习所能产生的模型精度的上限。具体来说，若目标是最小化分类错误率，则误判损失 $$\lambda_{ij}$$ 可写为
 
-                                                                $$\lambda_{ij}=\begin{cases}0,\ if\ i=j\\ 1,\ otherwise\end{cases}$$ 
+                                                                $$\lambda_{ij}=\begin{cases}0,\ \text{if}\ i=j\\ 1,\ \text{otherwiae}\end{cases}$$ 
 
 此时条件风险
 

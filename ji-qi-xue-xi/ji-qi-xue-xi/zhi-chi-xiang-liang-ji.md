@@ -40,7 +40,7 @@ _定义_：对于给定的训练数据集 $$T$$ 和超平面 $$(w,b)$$ ，定义
 
 下图给出了超平面 $$(w,b)$$ 及其法向量 $$w$$ 。点 $$A$$ 表示某一实例 $$x_i$$ ，其类标记为 $$y_i=+1$$ 。点 $$A$$ 与超平面 $$(w,b)$$ 的距离由线段 $$AB$$ 给出，记作 $$\gamma_i$$ ：
 
-                                                            $$\gamma_i=\frac{w}{||w||}\cdot x_i+\frac{b}{||w||}$$ 
+                                                              $$\gamma_i=\frac{w}{||w||}\cdot x_i+\frac{b}{||w||}$$ 
 
 其中， $$||w||$$ 为 $$w$$ 的 $$L_2$$ 范数。这是点 $$A$$ 在超平面正的的一侧的情形。如果点 $$A$$ 在超平面负的一侧，即 $$y_i=-1$$ ，那么点与超平面的距离为\(因为我们的超平面在两类的“正中央”，即距离相同\)：
 
@@ -263,7 +263,7 @@ $$\mathop{\max}\limits_{\alpha}\sum\limits_{i=1}^N\alpha_i-\frac{1}{2}\sum\limit
 1. 输入：训练数据集 $$T=\{(x_1,y_1),(x_2,y_2),\dots,(x_N,y_N)\}$$ ，其中 $$x_i\in \mathcal{X}=R^n$$ ， $$y_i\in \mathcal{Y}=\{-1,+1\},i=1,2,\dots,N$$ 
 2. 输出：分类决策函数
 3. \(1\) 选取适当的核函数 $$K(x,z)$$ 和适合的参数 $$C$$ ，构造并求解最优化问题
-4.  $$\mathop{min}\limits_\alpha\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jK(x,z)-\sum\limits_{i=1}^N\alpha_i\ \ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ 0\leq\alpha_i\leq C,\ i=1,2,\dots,N$$ 
+4.  $$\mathop{\min}\limits_\alpha\frac{1}{2}\sum\limits_{i=1}^N\sum\limits_{j=1}^N\alpha_i\alpha_jy_iy_jK(x,z)-\sum\limits_{i=1}^N\alpha_i\ \ \ \ s.t.\ \sum\limits_{i=1}^N\alpha_iy_i=0,\ 0\leq\alpha_i\leq C,\ i=1,2,\dots,N$$ 
 5. 得到最优解 $$\alpha^*=(\alpha^*_1,\alpha^*_2,\dots,\alpha^*_N)^T$$ 
 6. \(2\) 选择 $$\alpha^*$$ 的一个正分量 $$0<\alpha_j^*<C$$ ，计算
 7.                                                    $$b^*=y_j-\sum\limits_{i=1}^N\alpha_i^*y_iK(x_i,x_j)$$ 
