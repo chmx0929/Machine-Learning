@@ -8,7 +8,7 @@
 
 ### Small-world性质
 
-平均路径长度 $$\mu_L$$大小和 $$n$$\(网络中节点数\)对数比例相关： $$\mu_L \propto log\ n$$ 
+平均路径长度 $$\mu_L$$大小和 $$n$$\(网络中节点数\)对数比例相关： $$\mu_L \propto \log\ n$$ 
 
 ### Scale-free性质\(幂定律分布\)
 
@@ -16,7 +16,7 @@
 
 一个节点有 $$k$$ 度的概率： $$f(k) \propto k^{-\gamma}$$ 
 
-log-log图上为一条直线： $$log\ f(k) = log(\alpha k^{-\gamma})=-\gamma log\ k\ +\ log\ \alpha $$ 
+log-log图上为一条直线： $$\log f(k) = \log(\alpha k^{-\gamma})=-\gamma \log k\ +\ \log\alpha $$ 
 
 ### Clustering effect
 
