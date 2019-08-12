@@ -41,6 +41,22 @@ LSTM解决了长距离信息丢失的问题，它拥有一个记忆区，通过�
 
 ![](../../../.gitbook/assets/v2-163c0c3dda50d1fe7a4f7a64ba728d27_hd.jpg)
 
+1、首先我们利用RNN结构得到encoder中的hidden state $$(h_1,h_2,\dots,h_T)$$ 
+
+2、假设当前decoder的hidden state 是 $$s_{t-1}$$ ，我们可以计算每一个输入位置j与当前输出位置的关联性， $$e_{tj}=a(s_{t-1},h_j)$$ ，写成相应的向量形式即为 $$\vec{e_t}=(a(s_{t-1},h_1),\dots,a(s_{t-1},h_T))$$ ，其中 $$a$$ 是一种相关性的算符，例如常见的有点乘形式 $$\vec{e_t}=\vec{s_{t-1}}^T\vec{h}$$ ，加权点乘 $$\vec{e_t} = \vec{s_{t-1}}^TW\vec{h}$$ ，加和 $$\vec{e_t}=\vec{v}^T \tanh(W_1\vec{h_1}+W_2 \vec{s_{t-1}})$$ 等
+
+![](../../../.gitbook/assets/v2-967a85861b81e81ac9f08067234e7dc4_hd.jpg)
+
+3、对于 $$\vec{e_t}$$ 进行softmax操作将其normalize得到attention的分布， $$\vec{\alpha_t}=\text{softmax}(\vec{e_t})$$ ，展开形式为 $$\alpha_{tj}=\frac{\exp(e_{tj})}{\sum_{k=1}^T\exp(e_{tk})}$$ 
+
+4、利用 $$\vec{\alpha_t}$$ 我们可以进行加权求和得到相应的context vector $$\vec{c_t}=\sum\limits_{j=1}^T\alpha_{tj}h_j$$ 
+
+5、由此，我们可以计算decoder的下一个hidden state $$s_t=f(s_{t-1},y_{t-1},c_t)$$ 以及该位置的输出 $$p(y_t|y_1,\dots,y_{t-1},\vec{x})=g(y_{t-1},s_t,c_t)$$ 
+
+这里关键的操作是计算encoder与decoder state之间的关联性的权重，得到Attention分布，从而对于当前输出位置得到比较重要的输入位置的权重，在预测输出时相应的会占较大的比重。
+
+#### 详细解释如下：
+
 在该模型中，定义了一个条件概率：
 
 ![](../../../.gitbook/assets/v2-63ec36313044de9414c6ecc76814b6ec_hd.jpg)
@@ -62,6 +78,10 @@ LSTM解决了长距离信息丢失的问题，它拥有一个记忆区，通过�
 ![](../../../.gitbook/assets/v2-967a85861b81e81ac9f08067234e7dc4_hd.jpg)
 
 其中， $$\text{Score}(h_t,h_s)=a_{ij}$$ 表示源端与目标单单词对齐程度。可见，常见的对齐关系计算方式有，点乘（Dot product），权值网络映射（General）和concat映射几种方式。
+
+通过Attention机制的引入，我们打破了只能利用encoder最终单一向量结果的限制，从而使模型可以集中在所有对于下一个目标单词重要的输入信息上，使模型效果得到极大的改善。还有一个优点是，我们通过观察attention 权重矩阵的变化，可以更好地知道哪部分翻译对应哪部分源文字，有助于更好的理解模型工作机制，如下图所示。
+
+![](../../../.gitbook/assets/v2-06af03965d27025cc8116c224badbb13_hd.jpg)
 
 ## Attention Mechanism分类
 
