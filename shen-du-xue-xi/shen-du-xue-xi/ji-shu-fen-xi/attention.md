@@ -27,6 +27,10 @@ LSTM解决了长距离信息丢失的问题，它拥有一个记忆区，通过�
 
 ### Attention原理
 
+为了解决这一由长序列到定长向量转化而造成的信息损失的瓶颈，Attention注意力机制被引入了。Attention机制跟人类翻译文章时候的思路有些类似，即将注意力关注于我们翻译部分对应的上下文。同样的，Attention模型中，当我们翻译当前词语时，我们会寻找源语句中相对应的几个词语，并结合之前的已经翻译的部分作出相应的翻译，如下图所示，当我们翻译“knowledge”时，只需将注意力放在源句中“知识”的部分，当翻译“power”时，只需将注意力集中在"力量“。这样，当我们decoder预测目标翻译的时候就可以看到encoder的所有信息，而不仅局限于原来模型中定长的隐藏向量，并且不会丧失长程的信息。
+
+![](../../../.gitbook/assets/v2-ef925bd2adec5f51836262527e5fa03b_b.gif)
+
 要介绍Attention Mechanism结构和原理，首先需要介绍下Seq2Seq模型的结构。基于RNN的Seq2Seq模型主要由两篇论文介绍，只是采用了不同的RNN模型。Ilya Sutskever等人与2014年在论文[Sequence to Sequence Learning with Neural Networks](https://arxiv.org/abs/1409.3215)中使用LSTM来搭建Seq2Seq模型。随后，2015年，Kyunghyun Cho等人在论文[Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/abs/1406.1078)提出了基于GRU的Seq2Seq模型。两篇文章所提出的Seq2Seq模型，想要解决的主要问题是，如何把机器翻译中，变长的输入 $$X$$ 映射到一个变长输出 $$Y$$ 的问题，其主要结构如下图所示
 
 ![](../../../.gitbook/assets/v2-2a5ba93492e047b60f4ebc73f2862fae_hd.jpg)
@@ -128,6 +132,64 @@ Self Attention也是在Scaled Dot-Product Attention单元里面实现的，如�
 
 最后，把encoder端self Attention计算的结果加入到decoder做为k和V，结合decoder自身的输出做为q，得到encoder端的attention与decoder端attention之间的依赖关系。
 
+了解了模型大致原理，我们可以详细的看一下究竟Self-Attention结构是怎样的。其基本结构如下
+
+![](../../../.gitbook/assets/v2-32eb6aa9e23b79784ed1ca22d3f9abf9_hd.jpg)
+
+对于self-attention来讲，Q\(Query\), K\(Key\), V\(Value\)三个矩阵均来自同一输入，首先我们要计算Q与K之间的点乘，然后为了防止其结果过大，会除以一个尺度标度 $$\sqrt{d_k}$$ ，其中 $$d_k$$ 为一个query和key向量的维度。再利用Softmax操作将其结果归一化为概率分布，然后再乘以矩阵V就得到权重求和的表示。该操作可以表示为
+
+                                               $$\text{Attention}(Q,K,V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$ 
+
+这里可能比较抽象，我们来看一个具体的例子（图片来源于[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)，，该博客讲解的极其清晰，强烈推荐）假如我们要翻译一个词组Thinking Machines，其中Thinking的输入的embedding vector用 $$x_1$$ 表示，Machines的embedding vector用 $$x_2$$ 表示。
+
+![](../../../.gitbook/assets/v2-f64cbdcf1d883ede36b26067e34f4e3e_hd.jpg)
+
+当我们处理Thinking这个词时，我们需要计算句子中所有词与它的Attention Score，这就像将当前词作为搜索的query，去和句子中所有词（包含该词本身）的key去匹配，看看相关度有多高。我们用 $$q_1$$ 代表Thinking对应的query vector， $$k_1$$ 及 $$k_2$$ 分别代表Thinking以及Machines对应的key vector，则计算Thinking的attention score的时候我们需要计算 $$q_1$$ 与 $$k_1$$ , $$k_2$$ 的点乘，同理，我们计算Machines的attention score的时候需要计算 $$q_2$$ 与 $$k_1$$ , $$k_2$$ 的点乘。如上图中所示我们分别得到了 $$q_1$$ 与 $$k_1$$ , $$k_2$$ 的点乘积，然后我们进行尺度缩放与softmax归一化，如下图所示：
+
+![](../../../.gitbook/assets/v2-03d0a60b60a0a28f52ed903c76bb9a22_hd.jpg)
+
+显然，当前单词与其自身的attention score一般最大，其他单词根据与当前单词重要程度有相应的score。然后我们在用这些attention score与value vector相乘，得到加权的向量。
+
+![](../../../.gitbook/assets/v2-087b831f622f83e4529c1bbf646530f0_hd.jpg)
+
+如果将输入的所有向量合并为矩阵形式，则所有query, key, value向量也可以合并为矩阵形式表示
+
+![](../../../.gitbook/assets/v2-eea2dcbfa49df9fb799ef8e6997260bf_r.jpg)
+
+其中 $$W^Q$$ , $$W^K$$ , $$W^V$$ 是我们模型训练过程学习到的合适的参数。上述操作即可简化为矩阵形式
+
+![](../../../.gitbook/assets/v2-752c1c91e1b4dbca1b64f59a7e026b9b_r.jpg)
+
+而multihead就是我们可以有不同的Q,K,V表示，最后再将其结果结合起来，如下图所示：
+
+![](../../../.gitbook/assets/v2-3cd76d3e0d8a20d87dfa586b56cc1ad3_r.jpg)
+
+这就是基本的Multihead Attention单元，对于encoder来说就是利用这些基本单元叠加，其中key, query, value均来自前一层encoder的输出，即encoder的每个位置都可以注意到之前一层encoder的所有位置。
+
+对于decoder来讲，我们注意到有两个与encoder不同的地方，一个是第一级的Masked Multi-head，另一个是第二级的Multi-Head Attention不仅接受来自前一级的输出，还要接收encoder的输出，下面分别解释一下是什么原理。
+
+![](../../../.gitbook/assets/v2-40cf3d31c1c0dca24872bd9fc1fc429f_r.jpg)
+
+第一级decoder的key, query, value均来自前一层decoder的输出，但加入了Mask操作，即我们只能attend到前面已经翻译过的输出的词语，因为翻译过程我们当前还并不知道下一个输出词语，这是我们之后才会推测到的。
+
+第二级decoder也被称作encoder-decoder attention layer，即它的query来自于之前一级的decoder层的输出，但其key和value来自于encoder的输出，这使得decoder的每一个位置都可以attend到输入序列的每一个位置。
+
+总结一下，k和v的来源总是相同的，q在encoder及第一级decoder中与k和v来源相同，在encoder-decoder attention layer中与k和v来源不同。
+
+我们再来看看论文其他方面的细节，一个使position encoding，这个目的是什么呢？注意由于该模型没有recurrence或convolution操作，所以没有明确的关于单词在源句子中位置的相对或绝对的信息，为了更好的让模型学习位置信息，所以添加了position encoding并将其叠加在word embedding上。该论文中选取了三角函数的encoding方式，其他方式也可以，该研究组最近还有relation-aware self-attention机制，可参考这篇[论文](https://arxiv.org/abs/1803.02155)。
+
+![](../../../.gitbook/assets/v2-4ae606c6ebf873c8bc691050f5fa5ad7_r.jpg)
+
+再来看看模型中这些Add & Norm模块的作用。
+
+![](../../../.gitbook/assets/v2-89bdb24ee44d5aff4463c21248ccfdb5_r.jpg)
+
+其中Add代表了Residual Connection，是为了解决多层神经网络训练困难的问题，通过将前一层的信息无差的传递到下一层，可以有效的仅关注差异部分，这一方法之前在图像处理结构如ResNet等中常常用到。
+
+![](../../../.gitbook/assets/v2-638cedb439c104c9d9165e61b3bccfd2_r.jpg)
+
+而Norm则代表了Layer Normalization，通过对层的激活值的归一化，可以加速模型的训练过程，使其更快的收敛，可参考这篇[论文](https://arxiv.org/abs/1607.06450)。
+
 ## 组合的Attention结构
 
 ###  **Hierarchical Attention**
@@ -165,6 +227,18 @@ Yiming Cui与2017年在论文[Attention-over-Attention Neural Networks for Readi
 ![](../../../.gitbook/assets/v2-016f8210eb05fb1b32bc75f4131a7dbf_hd.jpg)
 
 通过Attention来解释法语到英语单词之间的对应关系。摘自Dzmitry Bahdanau的论文。
+
+[Universal Transformers](https://arxiv.org/abs/1807.03819)主要是结合了Transformer结构与RNN中循环归纳的优点，使得Transformer结构能够适用更多自然语言理解的问题。其改进的结构如下
+
+![](../../../.gitbook/assets/v2-e66bfa1242646146ca69fccc68169588_hd.jpg)
+
+可以看到，通过引入Transition Function，我们对Attention可以进行多次循环。这一机制被有效的应用到诸如问答，根据主语推测谓语，根据上下填充缺失的单词，数字字符串运算处理，简易程序执行，机器翻译等场景。
+
+[BERT](https://arxiv.org/abs/1810.04805)是最近自然语言处理领域比较火的文章，打破了多项benchmark，会在自然语言处理部分详细阐述，主要是利用双向Transformer进行预处理，得到包含有上下文信息的表示，这一表示可进一步用来fine-tune很多种自然语言处理任务。下图是BERT模型（双向Tansformer结构）与OpenAI GPT\(单向Transformer结构）与ElMo（双向独立LSTM最终组合的结构）的对比。
+
+![](../../../.gitbook/assets/v2-bd74c96abfbf2b62260594b0f0ad6d74_hd.jpg)
+
+BERT的表示进行fine-tuning后，对于GLUE Benchmark\(主要包含MNLI,RTE：比较两个句子的语义关系，QQP：判别Quora上两个问题相似度，QNLI：问答，SST-2：情感分析，CoLA:语句合理性判别，STS-B, MRPC：句子相似度判别\)，SQuAD\(问答\)，NER（命名实体识别）等都有极大的提高。将来，可能BERT pre-train在自然语言处理领域就会像VGG, ResNet, Inception等在图像识别里的作用而成为预处理的标配。
 
 ### **图像标注（Image Captain）**
 
