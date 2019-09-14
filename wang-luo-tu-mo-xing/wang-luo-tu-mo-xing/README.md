@@ -40,6 +40,14 @@
 
         将网络图映射到矩阵或向量中，将新问题转化成之前解决过的问题
 
+## 应用
+
+怎样将网络图应用落地现在正是业界讨论的方向，大体思路有两种：
+
+1、使用图结构预训练，比如将网络映射成向量，代入到各种算法模型中去。
+
+2、将结构化的数据直接加入模型中，比如[Tensorflow的结构化](https://www.bilibili.com/video/av67654030)训练，将结构信息作为约束，当成正则项加进去，大致思路是Loss让模型准，在Loss后再加正则项让相邻或相似样本结果也相近，这样做很明显的好处就是可以解决只有少量标注样本的模型训练问题，比如我们只有少量论文标注了类别，但我们知道论文之间引用关系或其他meta-path，这个关系即可作为正则约束来帮助提高模型训练。
+
 ## Source
 
 {% embed url="https://github.com/chmx0929/UIUCclasses/blob/master/512DataMiningPrinciples/Slides-pdf/1-Intro\_Network.pdf" %}
