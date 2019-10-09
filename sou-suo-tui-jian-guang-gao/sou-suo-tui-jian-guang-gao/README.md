@@ -24,7 +24,31 @@
 
 个性化系统和搜索系统都是互联网时代具有挑战性的大规模计算问题。两者的主要差别在于大量的用户特征的使用。这个很好理解，因为搜索有query，带有很强的目的性，且我们为了尽快满足用户的搜索需求，大量的用户特征使用的较少。相较而言，推荐和广告采用个性化系统，为了达到用户感兴趣的目的，会使用大量的用户特征以匹配排序到更贴合用户的内容，怎样获取用户特征，怎样使用用户特征，这也是业界和学界探索的方向。
 
+搜索推荐对比及难点
+
+### 搜索推荐对比
+
+![](../../.gitbook/assets/screenshot-from-2019-04-05-10-28-26.png)
+
+![](../../.gitbook/assets/screenshot-from-2019-04-05-10-29-20.png)
+
+### 最大难点-语义差距
+
+![](../../.gitbook/assets/screenshot-from-2019-04-05-10-30-07.png)
+
+## 机器学习的应用
+
+![](../../.gitbook/assets/screenshot-from-2019-04-05-10-32-11.png)
+
 ## Source
+
+{% embed url="https://zhuanlan.zhihu.com/p/45849695" %}
+
+{% embed url="https://www.comp.nus.edu.sg/~xiangnan/sigir18-deep.pdf" %}
+
+{% embed url="https://zhuanlan.zhihu.com/p/58160982" %}
+
+{% embed url="http://www.hangli-hl.com/uploads/3/4/4/6/34465961/wsdm\_2019\_tutorial.pdf" %}
 
 
 
