@@ -50,7 +50,7 @@ $$X =  \left[  \begin{matrix}    x_1\\    . \\ . \\ .\\    x_N   \end{matrix}   
 
 从点乘运算衍生来，矩阵 $$X$$ 的列数必须与向量 $$y$$ 的元素数一致
 
-             $$X \cdot y =\left[  \begin{matrix}    x_1\\   x_2^T\\   x_3^T    \end{matrix}   \right] \cdot y = \left[  \begin{matrix}    x_1^T \cdot y\\   x_2^T \cdot y\\   x_3^T \cdot y   \end{matrix}   \right] = \left[  \begin{matrix}    \sum x_{1,i} \cdot y_i\\   \sum x_{2,i} \cdot y_i\\   \sum x_{3,i} \cdot y_i   \end{matrix}   \right] $$ 
+             $$X \cdot y =\left[  \begin{matrix}    x_1^T\\   x_2^T\\   x_3^T    \end{matrix}   \right] \cdot y = \left[  \begin{matrix}    x_1^T \cdot y\\   x_2^T \cdot y\\   x_3^T \cdot y   \end{matrix}   \right] = \left[  \begin{matrix}    \sum x_{1,i} \cdot y_i\\   \sum x_{2,i} \cdot y_i\\   \sum x_{3,i} \cdot y_i   \end{matrix}   \right] $$ 
 
 ### 矩阵-矩阵乘法\(Matrix-matrix product\)
 

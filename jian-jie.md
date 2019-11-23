@@ -28,9 +28,11 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 [数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理\(宗成庆\)](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)、 [情感分析\(刘兵\)](https://item.jd.com/12206675.html)
 
+[计算广告\(刘鹏\)](https://item.jd.com/12679404.html)
+
 #### 知乎：
 
-[贾扬清](https://www.zhihu.com/people/jiayangqing)、[陈天奇](https://www.zhihu.com/people/crowowrk/activities)、[柯国霖](https://www.zhihu.com/people/crowowrk/activities)、[刘知远](https://www.zhihu.com/people/zibuyu9/activities)、[王喆](https://www.zhihu.com/people/wang-zhe-58/activities)、[何之源](https://www.zhihu.com/people/he-zhi-yuan-16/activities)、[朱小强](https://www.zhihu.com/people/zhu-xiao-qiang-65/activities)、[张俊林](https://www.zhihu.com/people/zhang-jun-lin-76/activities)
+[贾扬清](https://www.zhihu.com/people/jiayangqing)、[陈天奇](https://www.zhihu.com/people/crowowrk/activities)、[柯国霖](https://www.zhihu.com/people/crowowrk/activities)、[刘知远](https://www.zhihu.com/people/zibuyu9/activities)、[王喆](https://www.zhihu.com/people/wang-zhe-58/activities)、[何之源](https://www.zhihu.com/people/he-zhi-yuan-16/activities)、[朱小强](https://www.zhihu.com/people/zhu-xiao-qiang-65/activities)、[张俊林](https://www.zhihu.com/people/zhang-jun-lin-76/activities)、[刘鹏](https://www.zhihu.com/people/bei-ming-cheng-hai-sheng/activities)
 
 #### 博客：
 
