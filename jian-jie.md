@@ -1,6 +1,6 @@
 # 简介
 
-微博广告部门长期找人～微信：AngSweet，加好友请备注一下
+微博广告部门长期招人～微信：AngSweet，加好友请备注一下
 
 知乎专栏：[https://zhuanlan.zhihu.com/c\_1160919670155833344](https://zhuanlan.zhihu.com/c_1160919670155833344)
 
@@ -18,11 +18,11 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 #### 学生时期课件：
 
-[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)
+[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)、[Data Mining\(任翔\)](http://www-bcf.usc.edu/~xiangren/)、[Data Mining\(蒋朦\)](http://www.meng-jiang.com/)、[Data Mining\(商静波\)](https://shangjingbo1226.github.io/)
 
 #### 流行课程及顶会演讲：
 
-[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)、[Computer Vision and Deep Learning\(何恺明\)](http://kaiminghe.com/)、[Machine Learning\(李航\)](http://www.hangli-hl.com/index.html)、[Data Mining\(任翔\)](http://www-bcf.usc.edu/~xiangren/)、[Data Mining\(蒋朦\)](http://www.meng-jiang.com/)
+[Convolutional Neural Networks for Visual Recognition\(李飞飞\)](http://cs231n.stanford.edu/)、[Network Embedding\(崔鹏\)](http://pengcui.thumedialab.com/)、[Computer Vision and Deep Learning\(何恺明\)](http://kaiminghe.com/)、[Machine Learning\(李航\)](http://www.hangli-hl.com/index.html)、[Data Mining\(赵鑫\)](http://info.ruc.edu.cn/academic_professor.php?teacher_id=55)
 
 #### 经典/优秀书籍：
 
@@ -31,6 +31,8 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 [Deep Learning\(Goodfellow Ian\)](http://item.jd.com/12128543.html)、[深度学习核心技术与实践\(猿辅导研究团队\)](http://item.jd.com/12316912.html)
 
 [数学之美\(吴军\)](http://item.jd.com/11572052.html)、[统计自然语言处理\(宗成庆\)](http://item.jd.com/11314362.html)、[Python自然语言处理实战\(涂铭\)](http://item.jd.com/12375644.html)、 [情感分析\(刘兵\)](https://item.jd.com/12206675.html)
+
+[知识图谱：方法实践与应用\(王昊奋\)](https://item.jd.com/12560557.html)、[知识图谱：概念与技术\(肖仰华\)](https://item.jd.com/12730382.html)
 
 [计算广告\(刘鹏\)](https://item.jd.com/12679404.html)
 
