@@ -1,5 +1,9 @@
 # 简介
 
+微博广告部门长期找人～微信：AngSweet，加好友请备注一下
+
+知乎专栏：[https://zhuanlan.zhihu.com/c\_1160919670155833344](https://zhuanlan.zhihu.com/c_1160919670155833344)
+
 GitBook地址：[https://chmx0929.gitbook.io/machine-learning](https://chmx0929.gitbook.io/machine-learning)
 
 eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/eBooks)

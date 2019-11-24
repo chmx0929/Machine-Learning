@@ -219,8 +219,6 @@
 ## 搜索推荐广告
 
 * [搜索推荐广告](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/README.md)
-  * [排序学习](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/pai-xu-xue-xi.md)
-  * [点击预估](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/dian-ji-yu-gu.md)
   * [搜索](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/sou-suo/README.md)
     * [传统匹配模型](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/sou-suo/chuan-tong-pi-pei-mo-xing.md)
     * [深度学习匹配模型](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/sou-suo/shen-du-xue-xi-pi-pei-mo-xing/README.md)
@@ -247,6 +245,8 @@
         * [协同过滤](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/tui-jian/shen-du-xue-xi-pi-pei-mo-xing/matching-function-learning/xie-tong-guo-lv.md)
         * [基于特征](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/tui-jian/shen-du-xue-xi-pi-pei-mo-xing/matching-function-learning/ji-yu-te-zheng.md)
   * [广告](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao.md)
+  * [排序学习](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/pai-xu-xue-xi.md)
+  * [点击预估](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/dian-ji-yu-gu.md)
 
 ## 计算机基础
 
