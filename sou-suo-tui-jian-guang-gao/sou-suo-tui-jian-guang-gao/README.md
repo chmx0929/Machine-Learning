@@ -54,9 +54,9 @@
 
 从上面的举例就可以看出下图对比的两者区别，比如delivery model，搜索是从信息库候选集中拉取信息，而推荐是push信息等。
 
-![](../../.gitbook/assets/screenshot-from-2019-04-05-10-28-26.png)
+![](../../.gitbook/assets/screenshot-from-2019-12-07-13-10-14.png)
 
-![](../../.gitbook/assets/screenshot-from-2019-04-05-10-29-20.png)
+![](../../.gitbook/assets/screenshot-from-2019-12-07-13-10-50.png)
 
 ## 推荐 vs. 广告
 

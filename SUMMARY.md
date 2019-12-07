@@ -244,7 +244,10 @@
       * [Matching function learning](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/tui-jian/shen-du-xue-xi-pi-pei-mo-xing/matching-function-learning/README.md)
         * [协同过滤](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/tui-jian/shen-du-xue-xi-pi-pei-mo-xing/matching-function-learning/xie-tong-guo-lv.md)
         * [基于特征](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/tui-jian/shen-du-xue-xi-pi-pei-mo-xing/matching-function-learning/ji-yu-te-zheng.md)
-  * [广告](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao.md)
+  * [广告](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/README.md)
+    * [行业知识](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/hang-ye-zhi-shi.md)
+    * [核心技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu.md)
+    * [相关技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/xiang-guan-ji-shu.md)
   * [排序学习](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/pai-xu-xue-xi.md)
   * [点击预估](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/dian-ji-yu-gu.md)
 
