@@ -252,9 +252,11 @@
     * [重排](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/tui-jian/zhong-pai.md)
   * [广告](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/README.md)
     * [行业知识](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/hang-ye-zhi-shi.md)
-    * [核心技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu.md)
+    * [核心技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/README.md)
+      * [召回](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/zhao-hui.md)
+      * [排序](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/pai-xu.md)
+      * [重排](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/zhong-pai.md)
     * [相关技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/xiang-guan-ji-shu.md)
-  * [排序学习](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/pai-xu-xue-xi.md)
 
 ## 计算机基础
 
