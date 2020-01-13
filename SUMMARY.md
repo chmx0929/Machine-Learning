@@ -80,6 +80,7 @@
     * [结构维持的网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/xin-xi-wang-luo-ying-she.md)
     * [性质维持的网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/yi-gou-wang-luo-ying-she.md)
     * [动态网络映射](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/wang-luo-ying-she/dong-tai-wang-luo-ying-she.md)
+  * [Graph Neural Network](wang-luo-tu-mo-xing/wang-luo-tu-mo-xing/graph-neural-network.md)
 
 ## 深度学习
 
@@ -252,10 +253,7 @@
     * [重排](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/tui-jian/zhong-pai.md)
   * [广告](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/README.md)
     * [行业知识](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/hang-ye-zhi-shi.md)
-    * [核心技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/README.md)
-      * [召回](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/zhao-hui.md)
-      * [排序](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/pai-xu.md)
-      * [重排](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/zhong-pai.md)
+    * [核心技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu.md)
     * [相关技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/xiang-guan-ji-shu.md)
 
 ## 计算机基础
