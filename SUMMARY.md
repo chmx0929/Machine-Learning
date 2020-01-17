@@ -257,6 +257,7 @@
       * [发展趋势](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/fa-zhan-qu-shi.md)
       * [CTR/CVR](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/ctr-cvr.md)
       * [智能定向](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/zhi-neng-ding-xiang.md)
+      * [技术难点](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/ji-shu-nan-dian.md)
     * [相关技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/xiang-guan-ji-shu.md)
 
 ## 时序预测
