@@ -253,7 +253,10 @@
     * [重排](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/tui-jian/zhong-pai.md)
   * [广告](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/README.md)
     * [行业知识](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/hang-ye-zhi-shi.md)
-    * [核心技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu.md)
+    * [核心技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/README.md)
+      * [发展趋势](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/fa-zhan-qu-shi.md)
+      * [CTR/CVR](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/ctr-cvr.md)
+      * [智能定向](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/zhi-neng-ding-xiang.md)
     * [相关技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/xiang-guan-ji-shu.md)
 
 ## 时序预测
@@ -268,6 +271,9 @@
   * [操作系统](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/cao-zuo-xi-tong.md)
   * [计算机网络](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/ji-suan-ji-wang-luo.md)
   * [计算机组成原理](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/ji-suan-ji-zu-cheng-yuan-li.md)
-  * [语言特性](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/yu-yan-te-xing/README.md)
-    * [python](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/yu-yan-te-xing/python.md)
+  * [python](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/python/README.md)
+    * [pandas](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/python/pandas.md)
+  * [Bash](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/bash.md)
+  * [SQL](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/sql.md)
+  * [Spark](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/spark.md)
 
