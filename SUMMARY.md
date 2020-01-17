@@ -256,6 +256,10 @@
     * [核心技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu.md)
     * [相关技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/xiang-guan-ji-shu.md)
 
+## 时序预测
+
+* [时序预测](shi-xu-yu-ce/shi-xu-yu-ce.md)
+
 ## 计算机基础
 
 * [计算机基础](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/README.md)
