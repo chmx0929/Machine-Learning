@@ -8,7 +8,7 @@
 
 ![](../../.gitbook/assets/hive%20%281%29.png)
 
-#### collect\_list：不去重直接成list\(李四看了两次霸王别姬\)
+### collect\_list：不去重直接成list\(李四看了两次霸王别姬\)
 
 ```text
 SELECT
@@ -20,7 +20,7 @@ FROM
 
 ![](../../.gitbook/assets/collect_list.png)
 
-#### collect\_set：进行去重\(李四看过霸王别姬\)
+### collect\_set：进行去重\(李四看过霸王别姬\)
 
 ```text
 SELECT
@@ -41,11 +41,7 @@ FROM
 
 ## Source
 
-{% embed url="https://www.cnblogs.com/cc11001100/p/9043946.html" %}
+{% embed url="https://www.cnblogs.com/cc11001100/p/9043946.html" caption="" %}
 
-{% embed url="https://www.runoob.com/mysql/mysql-functions.html" %}
-
-
-
-
+{% embed url="https://www.runoob.com/mysql/mysql-functions.html" caption="" %}
 
