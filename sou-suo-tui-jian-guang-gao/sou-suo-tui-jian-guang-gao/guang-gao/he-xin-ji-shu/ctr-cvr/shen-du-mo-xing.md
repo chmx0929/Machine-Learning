@@ -1,6 +1,10 @@
 # 深度模型
 
-随着微软的Deep Crossing，Google的Wide&Deep，以及FNN，PNN等一大批优秀的深度学习CTR预估模型在2016年被提出，**计算广告和推荐系统领域全面进入了深度学习时代**，时至今日，深度学习CTR模型已经成为广告和推荐领域毫无疑问的主流。在进入深度学习时代之后，CTR模型不仅在表达能力、模型效果上有了质的提升，而且大量借鉴并融合了深度学习在图像、语音以及自然语言处理方向的成果，在模型结构上进行了快速的演化。
+随着微软的Deep Crossing，Google的Wide&Deep，以及FNN，PNN等一大批优秀的深度学习CTR预估模型在2016年被提出，**计算广告和推荐系统全面进入了深度学习时代。**炼丹传送门
+
+{% embed url="https://github.com/shenweichen/DeepCTR" %}
+
+时至今日，深度学习CTR模型已经成为广告和推荐领域毫无疑问的主流。在进入深度学习时代之后，CTR模型不仅在表达能力、模型效果上有了质的提升，而且大量借鉴并融合了深度学习在图像、语音以及自然语言处理方向的成果，在模型结构上进行了快速的演化。
 
 ![](../../../../../.gitbook/assets/shen-du-mo-xing%20%281%29.jpg)
 
@@ -73,6 +77,8 @@ DIEN的全称为Deep Interest Evolution Network，它不仅是对DIN的进一步
 {% embed url="https://zhuanlan.zhihu.com/p/63186101" %}
 
 {% embed url="https://zhuanlan.zhihu.com/c\_188941548" %}
+
+{% embed url="https://github.com/shenweichen/DeepCTR" %}
 
 
 
