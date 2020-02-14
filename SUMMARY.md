@@ -264,7 +264,10 @@
 
 ## 时序预测
 
-* [时序预测](shi-xu-yu-ce/shi-xu-yu-ce.md)
+* [时序预测](shi-xu-yu-ce/shi-xu-yu-ce/README.md)
+  * [统计时序](shi-xu-yu-ce/shi-xu-yu-ce/tong-ji-shi-xu.md)
+  * [机器学习](shi-xu-yu-ce/shi-xu-yu-ce/ji-qi-xue-xi.md)
+  * [深度学习](shi-xu-yu-ce/shi-xu-yu-ce/shen-du-xue-xi.md)
 
 ## 计算机基础
 
