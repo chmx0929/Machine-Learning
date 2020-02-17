@@ -280,6 +280,7 @@
   * [python](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/python/README.md)
     * [pandas](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/python/pandas.md)
   * [Bash](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/bash.md)
-  * [SQL](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/sql.md)
   * [Spark](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/spark.md)
+  * [SQL](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/sql.md)
+  * [Excel](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/excel.md)
 
