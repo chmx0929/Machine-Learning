@@ -58,6 +58,47 @@ FROM
 | CONCAT\(s1,s2...sn\) | 字符串 s1,s2 等多个字符串合并为一个字符串 | SELECT CONCAT\("SQL ", "Runoob ", "Gooogle ", "Facebook"\) AS ConcatenatedString | SELECT CONCAT\(collect\_set\(video\_name\)\) AS ConcatenatedString |
 | CONCAT\_WS\(x, s1,s2...sn\) | 同 CONCAT\(s1,s2,...\) 函数，但是每个字符串之间要加上 x，x 可以是分隔符 | SELECT CONCAT\_WS\("-", "SQL", "Tutorial", "is", "fun!"\)AS ConcatenatedString; | SELECT CONCAT\_WS\(",",collect\_set\(video\_name\)\) AS ConcatenatedString |
 
+## split
+
+split\(str, regex\) - Splits str around occurances that match regex
+
+split\('a,b,c,d',','\) 得到的结果：\["a","b","c","d"\]
+
+split\('a,b,c,d',','\)\[0\] 得到的结果：a
+
+## 数组转行
+
+```text
+SELECT ID,itemsName,name,loc
+FROM Table
+LATERAL VIEW explode(items) itemTable AS itemsName;
+```
+
+```text
+ID   |    items                                  | name  |  loc  
+_________________________________________________________________
+
+id1  | ["item1","item2","item3","item4","item5"] | Mike | CT
+id2  | ["item3","item7","item4","item9","item8"] | Chris| MN
+```
+
+```text
+ID   |    items                       | name  |  loc  
+______________________________________________________
+id1  | item1                          | Mike  | CT
+id1  | item2                          | Mike  | CT
+id1  | item3                          | Mike  | CT
+id1  | item4                          | Mike  | CT
+id1  | item5                          | Mike  | CT
+id2  | item3                          | Chris | MN
+id2  | item7                          | Chris | MN
+id2  | item4                          | Chris | MN
+id2  | item9                          | Chris | MN
+id2  | item8                          | Chris | MN
+```
+
+
+
 ## 各种问题
 
 ### 内存溢出
