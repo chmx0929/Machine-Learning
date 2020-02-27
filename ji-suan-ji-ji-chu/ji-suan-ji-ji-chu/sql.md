@@ -23,6 +23,26 @@ LINES TERMINATED BY '\n'
 LOAD DATA LOCAL INPATH 'data.csv' OVERWRITE INTO TABLE tableName
 ```
 
+## [查看表占用空间大小](https://blog.csdn.net/dzjun/article/details/84749738)
+
+要查看一个hive表文件总大小时，我们可以通过一行脚本快速实现，其命令如下：
+
+```text
+hadoop fs -ls  /user/hive/warehouse/test_table/ds=20151111|awk -F ' ' '{print $5}'|awk '{a+=$1}END{print a}'
+```
+
+这样可以省去自己相加，下面命令是列出该表的详细文件列表
+
+```text
+hadoop fs -ls  /user/hive/warehouse/test_table/ds=20151111
+```
+
+方法二：查看该表总容量大小，单位为Ｇ
+
+```text
+hadoop fs -du /user/hive/warehouse/test_table|awk ' { SUM += $1 } END { print SUM/(1024*1024*1024) }'
+```
+
 ## collect\_list/collect\_set
 
 ![](../../.gitbook/assets/hive%20%281%29.png)
