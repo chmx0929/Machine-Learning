@@ -14,5 +14,7 @@
 
 ## [高亮显示每行或每列的最小值或最大值](https://www.taodabai.com/how/504546652.html)
 
+公式举例：=B2=MAX\($B2:$AH2\)
+
 ![](../../.gitbook/assets/gao-liang-zui-zhi.jpg)
 
