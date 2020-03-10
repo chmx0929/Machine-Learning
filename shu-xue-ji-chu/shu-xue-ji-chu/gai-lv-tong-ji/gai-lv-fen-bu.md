@@ -192,9 +192,9 @@ $$\mathcal{N}(x;\mu,\Sigma) = \frac{1}{\sqrt{2\pi^D|\Sigma|}}e^{-\frac{1}{2}(x-\
 
                                                            $$X\sim \chi^2(k)$$    或   $$X\sim \chi^2_k$$ 
 
-           ![](../../../.gitbook/assets/chi-square_distributionpdf.png)     ![](../../../.gitbook/assets/chi-square_distributioncdf.png) 
+![&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;](../../../.gitbook/assets/chi-square_distributionpdf.png)
 
-                                      概率密度函数                                                         累积分布函数
+![&#x7D2F;&#x79EF;&#x5206;&#x5E03;&#x51FD;&#x6570;](../../../.gitbook/assets/chi-square_distributioncdf.png)
 
 ## [t分布\(Student's t\)](https://baike.baidu.com/item/t%E5%88%86%E5%B8%83)
 
