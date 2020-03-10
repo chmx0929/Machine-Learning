@@ -218,9 +218,11 @@ $$T$$ 的分布称为t分布，参数 $$v$$ 一般称为自由度， $$\Gamma$$ 
 
 $$T$$ 的概率密度函数的形状类似于均值为0方差为1的正态分布，但更低更宽。随着自由度 $$v$$ 的增加，则越来越接近均值为0方差为1的正态分布。
 
-                 ![](../../../.gitbook/assets/tstudent.png)     ![](../../../.gitbook/assets/t_distributioncdf.png) 
+                       
 
-                                             概率密度函数                                                          累积分布函数
+![&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;](../../../.gitbook/assets/tstudent.png)
+
+![&#x7D2F;&#x79EF;&#x5206;&#x5E03;&#x51FD;&#x6570;](../../../.gitbook/assets/t_distributioncdf.png)
 
 ## [F分布\(F-distribution\)](https://blog.csdn.net/suzyu12345/article/details/80135732)
 
@@ -242,11 +244,9 @@ $$F(n_1,n_2)$$ 分布的概率密度为
 
 任何分布写成 $$P(X;\eta)=h(x)g(\eta)e^{\eta^Tu(x)}$$，其中 $$\eta$$ 包含参数，$$u(x)$$ 是 $$x$$ 的函数，$$g(\eta)$$ 为了标准化
 
-比如高斯：
+比如高斯：将 $$u(x) = \left[  \begin{matrix}    x \\ x^2   \end{matrix}   \right] $$ ， $$h(x) = (2\pi)^{-1/2}$$ ， $$\eta = \left[  \begin{matrix}    \mu/\sigma^2 \\ -1/2\sigma^2   \end{matrix}   \right] $$ ， $$g(\eta) = (-2\eta_2)^{1/2}e^{\eta_1^2/4\eta_2}$$ 代入 
 
-将 $$u(x) = \left[  \begin{matrix}    x \\ x^2   \end{matrix}   \right] $$ ， $$h(x) = (2\pi)^{-1/2}$$ ， $$\eta = \left[  \begin{matrix}    \mu/\sigma^2 \\ -1/2\sigma^2   \end{matrix}   \right] $$ ， $$g(\eta) = (-2\eta_2)^{1/2}e^{\eta_1^2/4\eta_2}$$ 代入
-
- $$P(X;\eta)=h(x)g(\eta)e^{\eta^Tu(x)} \to P(x;h)=\frac{1}{(2\pi\sigma^2)^{1/2}}e^{-\frac{1}{2\sigma^2}x^2+\frac{\mu}{\sigma^2}x-\frac{1}{2\sigma^2}\mu^2} = \frac{1}{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+$$P(X;\eta)=h(x)g(\eta)e^{\eta^Tu(x)} \to P(x;h)=\frac{1}{(2\pi\sigma^2)^{1/2}}e^{-\frac{1}{2\sigma^2}x^2+\frac{\mu}{\sigma^2}x-\frac{1}{2\sigma^2}\mu^2} = \frac{1}{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
 ## [共轭分布\(Conjugate\)](https://blog.csdn.net/baimafujinji/article/details/51374202)
 
