@@ -281,7 +281,29 @@ $$S(\beta_1,\beta_2) = [6-(\beta_1+1\beta_2)]^2+[5-(\beta_1+2\beta_2)]^2+[7-(\be
 
 如此就得到了一个只有两个未知数的方程组，易得 $$\beta_1=3.5,\ \beta_2 = 1.4$$ ，所以 $$y = 3.5+1.4x$$ 最佳
 
-## 置信域方法（Trust-region methods）
+## [置信域方法（Trust-region methods）](https://zh.wikipedia.org/wiki/%E7%BD%AE%E4%BF%A1%E5%9F%9F%E6%96%B9%E6%B3%95)
 
 置信域方法（Trust-region methods）又称为信赖域方法，它是一种最优化方法，能够保证最优化方法总体收敛。
+
+### 思想框架
+
+考虑 $$\min\limits_{x\in R^n}f(x)$$ ，其中 $$f(x)$$ 是定义在 $$R^n$$ 上的二阶连续可微函数。定义当前点的邻域 $$\Omega_k=\{x\in R^n｜|| x-x_k||\leq \Delta_k\}$$ 。这里 $$\Delta_k$$ 称为置信域半径。假定在这个邻域中，二次模型是目标函数 $$f(x)$$ 的一个合适的近似，则在这个邻域（称为置信域）中极小化二次模型，得到近似极小点 $$s_k$$ ，并取，其中 $$||s_k||\leq \Delta_k$$ 。
+
+置信域方法的模型子问题是
+
+                                           $$\begin{equation} \left\{ \begin{array}{lr} \min q^{(k)} (s)=f(x_k)+g^T_ks+\frac{1}{2}s^TB_ks \\ s.t.\ ||s||\leq\Delta_k \end{array} \right. \end{equation}$$ 
+
+其中， $$s=x-x_k$$ ， $$g_k=\nabla f(x_k)$$ ， $$B_k$$ 是一个对称矩阵，它是Hessian矩阵 $$\nabla^2f(x_k)$$ 或其近似， $$\Delta_k>0$$ 为置信域半径， $$||s||$$ 为某一范数，通常我们采用L2范数。选择 $$\Delta_k$$ 的方法：根据模型函数 $$q^{(k)}(s)$$ 对目标函数 $$f(x)$$ 的拟合程度来调整置信域半径 $$\Delta_k$$ 。对于置信域方法的模型子问题的解 $$s_k$$ ，设目标函数的下降量
+
+                                                  $$\text{Ared}_k=f(x_k)-f(x_k+s_k)$$ 
+
+为实际下降量，设模型函数的下降量
+
+                                                   $$\text{Pred}_k=q^{(k)}(0)-q^{(k)}(s_k)$$ 
+
+为预测下降量。 定义比值
+
+                                                  $$r_k=\frac{\text{Ared}_k}{\text{Pred}_k}=\frac{f(x_k)-f(x_k+s_k)}{q^{(k)}(0)-q^{(k)}(s_k)}$$ 
+
+它用来衡量模型函数 $$q^{(k)}$$ 与目标函数 $$f$$ 的一致性程度。
 

@@ -18,9 +18,9 @@
   * [优化降梯](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/README.md)
     * [极大、极小和鞍点](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/ji-da-ji-xiao-he-an-dian.md)
     * [泰勒及Jacobian、Hessian](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/jacobian-he-hessian-ju-zhen.md)
-    * [连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/you-hua-jiang-ti/README.md)
-      * [无约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/you-hua-jiang-ti/wu-yue-shu-you-hua.md)
-      * [有约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/you-hua-jiang-ti/you-yue-shu-you-hua.md)
+    * [连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/lian-xu-ke-wei/README.md)
+      * [无约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/lian-xu-ke-wei/wu-yue-shu-you-hua.md)
+      * [有约束优化](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/lian-xu-ke-wei/you-yue-shu-you-hua.md)
     * [非连续可微](shu-xue-ji-chu/shu-xue-ji-chu/you-hua-jiang-ti/fei-lian-xu-ke-wei.md)
   * [备查附录](shu-xue-ji-chu/shu-xue-ji-chu/bei-cha-fu-lu.md)
 
