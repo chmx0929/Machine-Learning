@@ -307,3 +307,21 @@ $$S(\beta_1,\beta_2) = [6-(\beta_1+1\beta_2)]^2+[5-(\beta_1+2\beta_2)]^2+[7-(\be
 
 它用来衡量模型函数 $$q^{(k)}$$ 与目标函数 $$f$$ 的一致性程度。
 
+### 具体算法
+
+Step 1：给出初始点 $$x_0$$ ，置信域半径的上界 $$\bar{\Delta}$$ ， $$\Delta_0\in (0,\bar{\Delta})$$ ， $$\varepsilon \geq 0$$ ， $$0<\eta_1\leq\eta_2<1$$ ， $$0<\gamma_1<1$$ ， $$k:=0$$ 
+
+Step 2：如果 $$||g_k||\leq \varepsilon$$ ，停止
+
+Step 3：\(近似地\)求解置信域方法的模型子问题，得到 $$s_k$$ 
+
+Step 4：计算 $$f(x_k+s_k)$$ 和 $$r_k$$ 。令
+
+                                                 $$x_{k+1}=\begin{equation} \left\{              \begin{array}{lr} x_k+s_k,\ \  \text{if}\ r_k\geq \eta_1 &\\  x_k, \ \ \ \ \ \ \ \ \ \ \  \text{else} \end{array} \right. \end{equation}$$ 
+
+Step 5：校正置信域半径，令
+
+                                   $$\Delta_{k+1}\in (0,\gamma_1\Delta_k],\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \text{if}\ \ r_k<\eta_1\\  \Delta_{k+1}\in [\gamma_1\Delta_k,\Delta_k], \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{if}\ \  r_k\in[\eta_1,\eta_2)\\  \Delta_{k+1}\in [\Delta_k,\min\{\gamma_2\Delta_k,\bar{\Delta}\}], \ \ \ \ \ \text{if}\ \  r_k\geq\eta_2$$ 
+
+Step 6：产生 $$B_{k+1}$$ ，校正 $$q^{k}$$ ，令 $$k:=k+1$$ ，转Step 2
+
