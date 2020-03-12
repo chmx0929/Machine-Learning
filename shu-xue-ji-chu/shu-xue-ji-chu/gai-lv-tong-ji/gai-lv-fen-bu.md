@@ -258,7 +258,3 @@ $$P(X;\eta)=h(x)g(\eta)e^{\eta^Tu(x)} \to P(x;h)=\frac{1}{(2\pi\sigma^2)^{1/2}}e
 
 {% embed url="https://github.com/chmx0929/UIUCclasses/blob/master/598MachLrngforSignalProcessng/Slide/Lecture%202%20-%20Probability%2C%20Statistics%2C%20PE.pdf" %}
 
-{% embed url="http://www.victoriawy.com/wp-content/uploads/2017/12/LDA%E6%95%B0%E5%AD%A6%E5%85%AB%E5%8D%A6.pdf" %}
-
-
-
