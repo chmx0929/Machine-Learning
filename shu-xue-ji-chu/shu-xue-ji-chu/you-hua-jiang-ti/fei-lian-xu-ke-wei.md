@@ -380,11 +380,5 @@ Y(i+1) = Y(i) ; //接受从Y(i)到Y(i+1)的移动
 
 {% embed url="https://baike.baidu.com/item/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95" %}
 
-{% embed url="https://bigquant.com/community/t/topic/125237?utm\_source=jiqizhixin&utm\_medium=jiqizhixin\_article&utm\_campaign=190125\_L2" %}
-
 {% embed url="https://zh.wikipedia.org/wiki/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95" %}
-
-{% embed url="https://www.jiqizhixin.com/articles/2019-01-25-19" %}
-
-
 
