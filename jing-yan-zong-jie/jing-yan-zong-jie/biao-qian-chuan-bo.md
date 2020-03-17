@@ -24,11 +24,11 @@ while Loss变小:
 
 损失如下公式，由精度损失和泛化损失两部分组成，其中 $$\alpha$$和 $$\beta$$ 调节更关注准确还是泛化：
 
-                             $$\text{Loss}=\alpha\sum\limits_{i=1}^I\sigma_i|\hat{y_i}-y_i|+\beta\sum\limits_{a,b}^S\omega_{a,b}|\hat{y_a}-\hat{y_b}|\\  =\alpha \sum\limits_{i=1}^I\sigma_i|\cos(\hat{f(t)_i},y_i)|+\beta\sum\limits_{a,b}^S\omega_{a,b}|\cos(\hat{f(t)_a},\hat{f(t)_b})|$$ 
+                             $$\text{Loss}=\alpha\sum\limits_{i=1}^I\sigma_i|\hat{y_i}-y_i|+\beta\sum\limits_{a,b}^S\omega_{a,b}|\hat{y_a}-\hat{y_b}|\\  =\alpha \sum\limits_{i=1}^I\sigma_i|\cos(\hat{p(t)_i},y_i)|+\beta\sum\limits_{a,b}^S\omega_{a,b}|\cos(\hat{p(t)_a},\hat{p(t)_b})|$$ 
 
-1、精度损失 $$\alpha \sum\limits_{i=1}^I\sigma_i|\cos(\hat{f(t)_i},y_i)|$$ 。集合 $$I$$ 为Ground Truth集合；参数 $$\sigma_i$$ 表示 $$i$$ 个已标注样本账号的重要程度，比如在微博场景下是此账号的粉丝数等，我们更倾向于将粉丝量大的账号类别预测准；余弦距离 $$|\cos(\hat{f(t)_i},y_i)|$$ 即第t轮账号 $$i$$ 的预测向量和其Ground Truth向量的余弦距离，向量每一列对应一个类别，比如分成语数外三类， $$\hat{f(t)_i}=(0.2,0.7,0.1)$$ ，账号 $$y_i=(0,1,0)$$ 实际属于数学类别。
+1、精度损失 $$\alpha \sum\limits_{i=1}^I\sigma_i|\cos(\hat{p(t)_i},y_i)|$$ 。集合 $$I$$ 为Ground Truth集合；参数 $$\sigma_i$$ 表示 $$i$$ 个已标注样本账号的重要程度，比如在微博场景下是此账号的粉丝数等，我们更倾向于将粉丝量大的账号类别预测准；余弦距离 $$|\cos(\hat{p(t)_i},y_i)|$$ 即第t轮账号 $$i$$ 的预测向量和其Ground Truth向量的余弦距离，向量每一列对应一个类别，比如分成语数外三类， $$\hat{p(t)_i}=(0.2,0.7,0.1)$$ ，账号 $$y_i=(0,1,0)$$ 实际属于数学类别。
 
-2、泛化损失 $$\beta\sum\limits_{a,b}^S\omega_{a,b}|\cos(\hat{f(t)_a},\hat{f(t)_b})|$$ 。集合 $$S$$ 为相似账号的集合；参数 $$w_{a,b}$$ 表示账号 $$a$$ 和 $$b$$ 的相似程度，比如微博场景下粉丝重合度 $$w_{a,b}=\frac{A\cap B}{A\cup B}$$ ，两账号粉丝交集数/两账号粉丝并集数，我们更倾向于关注粉丝重合度高的账号对，物理意义即若两账号粉丝相同，则两账号类别大概率相似；余弦距离 $$|\cos(\hat{f(t)_a},\hat{f(t)_b})|$$ 即第t轮账号 $$a$$ 的预测向量和第t轮账号 $$b$$ 的预测向量的余弦距离。
+2、泛化损失 $$\beta\sum\limits_{a,b}^S\omega_{a,b}|\cos(\hat{p(t)_a},\hat{p(t)_b})|$$ 。集合 $$S$$ 为相似账号的集合；参数 $$w_{a,b}$$ 表示账号 $$a$$ 和 $$b$$ 的相似程度，比如微博场景下粉丝重合度 $$w_{a,b}=\frac{A\cap B}{A\cup B}$$ ，两账号粉丝交集数/两账号粉丝并集数，我们更倾向于关注粉丝重合度高的账号对，物理意义即若两账号粉丝相同，则两账号类别大概率相似；余弦距离 $$|\cos(\hat{p(t)_a},\hat{p(t)_b})|$$ 即第t轮账号 $$a$$ 的预测向量和第t轮账号 $$b$$ 的预测向量的余弦距离。
 
 ### 标签传播
 
@@ -42,7 +42,11 @@ while Loss变小:
 
 ### 结果汇集
 
+获得第 $$t$$ 轮的结果 $$f(t)$$ 后，根据关系对聚合成对应账号的结果向量：
 
+                                                       $$p(x)=\sigma(\sum\limits_{a}^Af(t)_a)$$ 
+
+账号 $$x$$ 的最终结果通过其粉丝集合 $$A$$求和，然后经过标准化得到，标准化 $$\sigma$$ 方式任选，比如softmax。
 
 ## 算法解释
 
