@@ -262,13 +262,6 @@
       * [技术难点](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/he-xin-ji-shu/ji-shu-nan-dian.md)
     * [相关技术](sou-suo-tui-jian-guang-gao/sou-suo-tui-jian-guang-gao/guang-gao/xiang-guan-ji-shu.md)
 
-## 时序预测
-
-* [时序预测](shi-xu-yu-ce/shi-xu-yu-ce/README.md)
-  * [统计时序](shi-xu-yu-ce/shi-xu-yu-ce/tong-ji-shi-xu.md)
-  * [机器学习](shi-xu-yu-ce/shi-xu-yu-ce/ji-qi-xue-xi.md)
-  * [深度学习](shi-xu-yu-ce/shi-xu-yu-ce/shen-du-xue-xi.md)
-
 ## 计算机基础
 
 * [计算机基础](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/README.md)
@@ -283,4 +276,13 @@
   * [Spark](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/spark.md)
   * [SQL](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/sql.md)
   * [Excel](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/excel.md)
+
+## 工作总结
+
+* [工作总结](gong-zuo-zong-jie/gong-zuo-zong-jie/README.md)
+  * [标签传播](gong-zuo-zong-jie/gong-zuo-zong-jie/biao-qian-chuan-bo.md)
+  * [时序预测](gong-zuo-zong-jie/gong-zuo-zong-jie/shi-xu-yu-ce/README.md)
+    * [统计时序](gong-zuo-zong-jie/gong-zuo-zong-jie/shi-xu-yu-ce/tong-ji-shi-xu.md)
+    * [机器学习](gong-zuo-zong-jie/gong-zuo-zong-jie/shi-xu-yu-ce/ji-qi-xue-xi.md)
+    * [深度学习](gong-zuo-zong-jie/gong-zuo-zong-jie/shi-xu-yu-ce/shen-du-xue-xi.md)
 
