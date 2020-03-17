@@ -11,7 +11,7 @@
 ```text
 初始化: f(0)=y, Loss(0)=Inf
 
-while Loss(t)<Loss(t-1):
+while Loss变小:
     标签传播: 由第t轮结果f(t)和社交互动关系R，得到第t+1轮结果f(t+1)
     结果汇集: 基于第t+1轮结果f(t+1)计算Loss(t+1)
 
@@ -19,6 +19,10 @@ while Loss(t)<Loss(t-1):
 ```
 
 ## 损失设计
+
+损失如下公式，由精度损失和泛化损失两部分组成：
+
+                        $$\text{Loss}=\alpha\sum\limits_{i=1}^I\sigma_i|\hat{y_i}-y_i|+\beta\sum\limits_{a,b}^S\omega_{a,b}|\hat{y_a}-\hat{y_b}|\\  =\alpha \sum\limits_{i=1}^I\sigma_i|\cos(\hat{f(t)_i},y_i)|+\beta\sum\limits_{a,b}^S\omega_{a,b}|\cos(\hat{f(t)_a},\hat{f(t)_b})|$$ 
 
 ## 标签传播
 
