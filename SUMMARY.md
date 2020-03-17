@@ -277,12 +277,12 @@
   * [SQL](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/sql.md)
   * [Excel](ji-suan-ji-ji-chu/ji-suan-ji-ji-chu/excel.md)
 
-## 工作总结
+## 经验总结
 
-* [工作总结](gong-zuo-zong-jie/gong-zuo-zong-jie/README.md)
-  * [标签传播](gong-zuo-zong-jie/gong-zuo-zong-jie/biao-qian-chuan-bo.md)
-  * [时序预测](gong-zuo-zong-jie/gong-zuo-zong-jie/shi-xu-yu-ce/README.md)
-    * [统计时序](gong-zuo-zong-jie/gong-zuo-zong-jie/shi-xu-yu-ce/tong-ji-shi-xu.md)
-    * [机器学习](gong-zuo-zong-jie/gong-zuo-zong-jie/shi-xu-yu-ce/ji-qi-xue-xi.md)
-    * [深度学习](gong-zuo-zong-jie/gong-zuo-zong-jie/shi-xu-yu-ce/shen-du-xue-xi.md)
+* [经验总结](jing-yan-zong-jie/jing-yan-zong-jie/README.md)
+  * [标签传播](jing-yan-zong-jie/jing-yan-zong-jie/biao-qian-chuan-bo.md)
+  * [时序预测](jing-yan-zong-jie/jing-yan-zong-jie/shi-xu-yu-ce/README.md)
+    * [统计时序](jing-yan-zong-jie/jing-yan-zong-jie/shi-xu-yu-ce/tong-ji-shi-xu.md)
+    * [机器学习](jing-yan-zong-jie/jing-yan-zong-jie/shi-xu-yu-ce/ji-qi-xue-xi.md)
+    * [深度学习](jing-yan-zong-jie/jing-yan-zong-jie/shi-xu-yu-ce/shen-du-xue-xi.md)
 
