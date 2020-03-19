@@ -286,6 +286,6 @@
     * [深度学习](jing-yan-zong-jie/jing-yan-zong-jie/shi-xu-yu-ce/shen-du-xue-xi.md)
   * [标签传播](jing-yan-zong-jie/jing-yan-zong-jie/biao-qian-chuan-bo.md)
   * [策略评估](jing-yan-zong-jie/jing-yan-zong-jie/ce-lve-ping-gu/README.md)
-    * [均衡策略](jing-yan-zong-jie/jing-yan-zong-jie/ce-lve-ping-gu/jun-heng-ce-lve.md)
     * [激励策略](jing-yan-zong-jie/jing-yan-zong-jie/ce-lve-ping-gu/ji-li-ce-lve.md)
+    * [均衡策略](jing-yan-zong-jie/jing-yan-zong-jie/ce-lve-ping-gu/jun-heng-ce-lve.md)
 
