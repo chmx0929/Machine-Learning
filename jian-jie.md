@@ -38,7 +38,7 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 #### 知乎：
 
-[贾扬清](https://www.zhihu.com/people/jiayangqing)、[陈天奇](https://www.zhihu.com/people/crowowrk/activities)、[柯国霖](https://www.zhihu.com/people/crowowrk/activities)、[刘知远](https://www.zhihu.com/people/zibuyu9/activities)、[王喆](https://www.zhihu.com/people/wang-zhe-58/activities)、[何之源](https://www.zhihu.com/people/he-zhi-yuan-16/activities)、[朱小强](https://www.zhihu.com/people/zhu-xiao-qiang-65/activities)、[张俊林](https://www.zhihu.com/people/zhang-jun-lin-76/activities)、[刘鹏](https://www.zhihu.com/people/bei-ming-cheng-hai-sheng/activities)
+[贾扬清](https://www.zhihu.com/people/jiayangqing)、[陈天奇](https://www.zhihu.com/people/crowowrk/activities)、[柯国霖](https://www.zhihu.com/people/crowowrk/activities)、[刘知远](https://www.zhihu.com/people/zibuyu9/activities)、[王喆](https://www.zhihu.com/people/wang-zhe-58/activities)、[何之源](https://www.zhihu.com/people/he-zhi-yuan-16/activities)、[朱小强](https://www.zhihu.com/people/zhu-xiao-qiang-65/activities)、[张俊林](https://www.zhihu.com/people/zhang-jun-lin-76/activities)、[刘鹏](https://www.zhihu.com/people/bei-ming-cheng-hai-sheng/activities)、[辛俊波](https://www.zhihu.com/people/xinjunbo)
 
 #### 博客：
 
