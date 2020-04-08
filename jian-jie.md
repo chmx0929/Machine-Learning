@@ -18,7 +18,7 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 #### 学生时期课件：
 
-[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)、[Data Mining\(任翔\)](http://www-bcf.usc.edu/~xiangren/)、[Data Mining\(蒋朦\)](http://www.meng-jiang.com/)、[Data Mining\(商静波\)](https://shangjingbo1226.github.io/)
+[Data Mining\(韩家炜\)](http://hanj.cs.illinois.edu/)、[Machine Learning for Signal Processing\(Paris Smaragdis\)](https://paris.cs.illinois.edu/)、[Information Retrieval\(翟成祥\)](http://czhai.cs.illinois.edu/)、[Data Mining\(孙怡舟\)](http://web.cs.ucla.edu/~yzsun/)、[Data Mining\(任翔\)](http://www-bcf.usc.edu/~xiangren/)、[Data Mining\(蒋朦\)](http://www.meng-jiang.com/)、[Data Mining\(商静波\)](https://shangjingbo1226.github.io/)
 
 #### 流行课程及顶会演讲：
 
@@ -34,7 +34,7 @@ eBook自取：[https://github.com/chmx0929/eBooks](https://github.com/chmx0929/e
 
 [知识图谱：方法实践与应用\(王昊奋\)](https://item.jd.com/12560557.html)、[知识图谱：概念与技术\(肖仰华\)](https://item.jd.com/12730382.html)
 
-[计算广告\(刘鹏\)](https://item.jd.com/12679404.html)
+[计算广告\(刘鹏\)](https://item.jd.com/12679404.html)、[深度学习推荐系统\(王喆\)](https://item.jd.com/12630209.html)
 
 #### 知乎：
 
