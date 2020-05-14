@@ -12,7 +12,7 @@
 
 #### 但是这样丧失了很多隐含信息，比如high order的拓扑结构。（如果两个节点并未直接相连，我们并不能说两者之间没有关系，比如下图5与6虽然不相连，但second order approximation很高）
 
-![first/second-order proximity](../../../.gitbook/assets/assets-2f-ll7q-emix5pisunq85w-2f-ll7q3irecp5yvnt-kys-2f-ll7wft7cb1qu9znpfxk-2fv2-d17dcfc7fff87537f1f.jpg)
+![first/second-order proximity](../../../.gitbook/assets/assets-2f-ll7q-emix5pisunq85w-2f-ll7q3irecp5yvnt-kys-2f-ll7wft7cb1qu9znpfxk-2fv2-d17dcfc7fff87537f1f0aa5ab9fda339_hd.jpg)
 
 ### 2. 映射空间支持网络推断
 
