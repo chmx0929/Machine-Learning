@@ -74,15 +74,57 @@
 
 ### 样本采样
 
+#### 正样本
+
 因为我们的最终目的，是想对应类别的广告主的广告曝光给用户后，用户会进行互动或导流转化等。所以，最理想的正样本为与此类别广告进行过有效互动人群。然而这类用户非常非常少，这也是广告的难点之一。所以我们做了以下的扩充操作：
 
-| 途径 | 说明 |
-| :---: | :---: |
-| 官方号 | 通过官方号比如万通汽修没有投过广告但有官方账号，其粉丝作为潜在正样本集 |
-| 关键词 | 通过各类别有区分度的关键词与类别映射，进行词匹配等增加正样本 |
-| 直播间 | 通过直播间的直播内容，确定直播间与类别关系，其观众作为正样本候选 |
-| LBS | 通过LBS电子围栏定位了蓝翔、万通汽修等位置上线的账号作为汽修培训正样本集 |
-| APP | 通过手机上看是否安装汽车违章查询等APP确定有车账户作为汽车保养等正样本 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">&#x9014;&#x5F84;</th>
+      <th style="text-align:left">&#x8BF4;&#x660E;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center">&#x5B98;&#x65B9;&#x53F7;</td>
+      <td style="text-align:left">
+        <p>&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x6CA1;&#x6709;&#x6295;&#x8FC7;&#x5E7F;&#x544A;&#x4F46;&#x7C7B;&#x522B;&#x660E;&#x786E;&#x7684;&#x5B98;&#x65B9;&#x8D26;&#x53F7;&#xFF0C;&#x5176;&#x7C89;&#x4E1D;&#x4F5C;&#x4E3A;&#x6F5C;&#x5728;&#x6B63;&#x6837;&#x672C;&#x96C6;</p>
+        <p>eg.&#x5047;&#x8BBE;&#x675C;&#x857E;&#x65AF;&#x6CA1;&#x6295;&#x5E7F;&#x544A;&#xFF0C;&#x4F46;&#x5176;&#x4E3A;&#x65E5;&#x7528;&#x767E;&#x8D27;&#x7C7B;&#x522B;&#xFF0C;&#x5176;&#x7C89;&#x4E1D;&#x4E3A;&#x6F5C;&#x5728;&#x6B63;&#x6837;&#x672C;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:center">&#x5173;&#x952E;&#x8BCD;</td>
+      <td style="text-align:left">
+        <p>&#x901A;&#x8FC7;&#x5404;&#x7C7B;&#x522B;&#x6709;&#x533A;&#x5206;&#x5EA6;&#x7684;&#x5173;&#x952E;&#x8BCD;&#x4E0E;&#x7C7B;&#x522B;&#x6620;&#x5C04;&#xFF0C;&#x8FDB;&#x884C;&#x8BCD;&#x5339;&#x914D;&#x7B49;&#x589E;&#x52A0;&#x6F5C;&#x5728;&#x6B63;&#x6837;&#x672C;</p>
+        <p>eg.&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x6BD4;&#x8F83;&#x5E38;&#x89C4;&#xFF0C;&#x5C31;&#x4E0D;&#x4E3E;&#x4F8B;&#x4E86;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:center">&#x76F4;&#x64AD;&#x95F4;</td>
+      <td style="text-align:left">
+        <p>&#x901A;&#x8FC7;&#x76F4;&#x64AD;&#x95F4;&#x7684;&#x76F4;&#x64AD;&#x5185;&#x5BB9;&#xFF0C;&#x786E;&#x5B9A;&#x76F4;&#x64AD;&#x95F4;&#x4E0E;&#x7C7B;&#x522B;&#x5173;&#x7CFB;&#xFF0C;&#x5176;&#x89C2;&#x4F17;&#x4F5C;&#x4E3A;&#x6F5C;&#x5728;&#x6B63;&#x6837;&#x672C;</p>
+        <p>eg.&#x8003;&#x7814;&#x6570;&#x5B66;&#x8F85;&#x5BFC;&#x76F4;&#x64AD;&#x95F4;&#x7684;&#x89C2;&#x4F17;&#x4F5C;&#x4E3A;&#x8003;&#x7814;&#x57F9;&#x8BAD;&#x7684;&#x6F5C;&#x5728;&#x6B63;&#x6837;&#x672C;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:center">LBS</td>
+      <td style="text-align:left">
+        <p>&#x901A;&#x8FC7;LBS&#x7535;&#x5B50;&#x56F4;&#x680F;&#x5B9A;&#x4F4D;&#x7279;&#x6B8A;&#x4F4D;&#x7F6E;&#x4E0A;&#x7EBF;&#x7684;&#x8D26;&#x53F7;&#x4F5C;&#x4E3A;&#x6F5C;&#x5728;&#x6B63;&#x6837;&#x672C;&#x96C6;</p>
+        <p>eg.&#x4E07;&#x901A;&#x6C7D;&#x4FEE;&#x5B66;&#x6821;&#x56F4;&#x680F;&#x5185;&#x591A;&#x6B21;&#x4E0A;&#x7EBF;&#x7684;&#x7528;&#x6237;&#x4F5C;&#x4E3A;&#x6C7D;&#x4FEE;&#x57F9;&#x8BAD;&#x6F5C;&#x5728;&#x6B63;&#x6837;&#x672C;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:center">APP</td>
+      <td style="text-align:left">
+        <p>&#x901A;&#x8FC7;&#x7528;&#x6237;&#x624B;&#x673A;&#x4E0A;&#x7684;APP&#x5217;&#x8868;&#x786E;&#x5B9A;&#x8D26;&#x6237;&#x4E3A;&#x67D0;&#x7C7B;&#x522B;&#x6F5C;&#x5728;&#x6B63;&#x6837;&#x672C;</p>
+        <p>eg.&#x5B89;&#x88C5;&#x4E86;&#x6C7D;&#x8F66;&#x8FDD;&#x7AE0;&#x67E5;&#x8BE2;APP&#x7684;&#x4F5C;&#x4E3A;&#x6C7D;&#x8F66;&#x4FDD;&#x517B;&#x7684;&#x6F5C;&#x5728;&#x6B63;&#x6837;&#x672C;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>#### 负样本
+
+
 
 ### 特征处理
 
