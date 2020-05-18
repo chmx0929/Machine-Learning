@@ -9,14 +9,12 @@
 <table>
   <thead>
     <tr>
-      <th style="text-align:center">&#x5E8F;&#x53F7;</th>
       <th style="text-align:center">&#x539F;&#x5219;</th>
       <th style="text-align:center">&#x89E3;&#x91CA;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:center">1</td>
       <td style="text-align:center">&#x9002;&#x7528;</td>
       <td style="text-align:center">
         <p>&#x529F;&#x80FD;&#x4F5C;&#x51FA;&#x6765;&#x662F;&#x7ED9;&#x5E7F;&#x544A;&#x4E3B;&#x670D;&#x52A1;&#x7684;&#xFF0C;&#x8981;&#x8D34;&#x5408;&#x5E7F;&#x544A;&#x4E3B;&#x4F7F;&#x7528;&#x4E60;&#x60EF;</p>
@@ -24,15 +22,13 @@
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">2</td>
       <td style="text-align:center">&#x4EF7;&#x503C;</td>
       <td style="text-align:center">
         <p>&#x56E0;&#x4E3A;&#x662F;&#x7528;&#x505A;&#x5E7F;&#x544A;&#x4EBA;&#x7FA4;&#x5B9A;&#x5411;&#xFF0C;&#x6240;&#x4EE5;&#x5174;&#x8DA3;&#x7C7B;&#x522B;&#x8981;&#x6709;&#x5546;&#x4E1A;&#x4EF7;&#x503C;</p>
-        <p>&#x4E0D;&#x9700;&#x8981;&#x505A;UGC&#x5168;&#x90E8;&#x5174;&#x8DA3;</p>
+        <p>&#x4E0D;&#x9700;&#x8981;&#x505A;UGC&#x5168;&#x90E8;&#x5174;&#x8DA3;&#xFF0C;&#x4E14;&#x535A;&#x6587;&#x4E2D;&#x542B;&#x6709;&#x76F8;&#x5E94;&#x7C7B;&#x522B;&#x5173;&#x952E;&#x8BCD;</p>
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">3</td>
       <td style="text-align:center">&#x4F4E;&#x91CD;&#x5408;</td>
       <td style="text-align:center">
         <p>&#x6807;&#x7B7E;&#x610F;&#x4E49;&#x660E;&#x786E;&#xFF0C;&#x4E24;&#x7C7B;&#x522B;A&#x548C;B&#xFF0C;&#x6700;&#x7EC8;A&#x2229;B&#x4EBA;&#x7FA4;&#x5360;A&#x7C7B;&#x548C;B&#x7C7B;&#x7684;&#x5404;&#x81EA;30%&#x4EE5;&#x4E0B;</p>
@@ -40,12 +36,10 @@
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">4</td>
       <td style="text-align:center">&#x8986;&#x76D6;&#x5168;</td>
       <td style="text-align:center">&#x6BCF;&#x4E2A;&#x5E7F;&#x544A;&#x4E3B;&#x81F3;&#x5C11;&#x80FD;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x76F8;&#x5173;&#x5174;&#x8DA3;&#x7C7B;&#x522B;&#x6807;&#x7B7E;</td>
     </tr>
     <tr>
-      <td style="text-align:center">5</td>
       <td style="text-align:center">&#x4ECE;&#x5C5E;&#x5408;&#x7406;</td>
       <td style="text-align:center">
         <p>&#x591A;&#x7EA7;&#x5212;&#x5206;&#x57FA;&#x4E8E;&#x7528;&#x6237;&#x7684;&#x81EA;&#x7136;&#x7406;&#x89E3;&#xFF0C;&#x901A;&#x8FC7;A&#x7C7B;&#x522B;(&#x5B50;&#x7C7B;)&#x8BCD;&#x548C;B&#x7C7B;&#x522B;(&#x7236;&#x7C7B;)&#x8BCD;</p>
@@ -53,7 +47,6 @@
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">6</td>
       <td style="text-align:center">&#x91CF;&#x7EA7;&#x9002;&#x4E2D;</td>
       <td style="text-align:center">&#x82E5;&#x91CF;&#x7EA7;&#x8FC7;&#x5927;&#xFF0C;&#x5C06;&#x5176;&#x5347;&#x7EA7;&#x6216;&#x8FDB;&#x884C;&#x7EC6;&#x7C92;&#x5EA6;&#x62C6;&#x5206;
         <br
@@ -145,6 +138,10 @@
 #### 试探策略
 
 #### 反馈调节
+
+### 指标监控
+
+如何评价人群定向\(兴趣/行业\)做的好坏，也是一个值得探索的问题，有很多trick的点。
 
 
 
