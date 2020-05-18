@@ -282,6 +282,7 @@
 * [经验总结](jing-yan-zong-jie/jing-yan-zong-jie/README.md)
   * [广告应用](jing-yan-zong-jie/jing-yan-zong-jie/guang-gao-ying-yong/README.md)
     * [人群定向](jing-yan-zong-jie/jing-yan-zong-jie/guang-gao-ying-yong/ren-qun-ding-xiang.md)
+    * [召回通路](jing-yan-zong-jie/jing-yan-zong-jie/guang-gao-ying-yong/zhao-hui-tong-lu.md)
   * [时序预测](jing-yan-zong-jie/jing-yan-zong-jie/shi-xu-yu-ce/README.md)
     * [统计时序](jing-yan-zong-jie/jing-yan-zong-jie/shi-xu-yu-ce/tong-ji-shi-xu.md)
     * [机器学习](jing-yan-zong-jie/jing-yan-zong-jie/shi-xu-yu-ce/ji-qi-xue-xi.md)
