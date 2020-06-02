@@ -223,7 +223,9 @@
       <td style="text-align:center">&#x6DF7;&#x5408;&#x573A;&#x666F;</td>
     </tr>
   </tbody>
-</table>CPT\(Cost per Time\)：将某个广告位的一定时段以独占形式售卖给广告主收取费用的方式。
+</table>
+
+CPT\(Cost per Time\)：将某个广告位的一定时段以独占形式售卖给广告主收取费用的方式。
 
 CPM\(Cost per Mille\)：这里“Mille”是拉丁文千次的意思，即千次展示作为计费标准的衡量单位。
 
