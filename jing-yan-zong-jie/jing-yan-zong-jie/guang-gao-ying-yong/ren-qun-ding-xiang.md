@@ -18,7 +18,7 @@
 
 ![](../../../.gitbook/assets/yi-zhi-you-xi-%20%281%29.png)
 
-综上，一个好的体系十分重要。那什么算是好的合理的体系呢？就是符合大众认知即可，概括来说两点：1、父子类高关联；2、同级区分明显。我基于图谱构建经验制定了指标：
+综上，一个好的体系十分重要。那什么算是好的合理的体系呢？就是符合大众认知即可，概括来说两点：**1、父子类高关联；2、同级区分明显**。我基于图谱构建经验制定了指标：
 
 * 父子类高关联： $$p(A|B)*p(B|A)$$ ，其中， $$A$$ 为父类 $$B$$ 为子类，乘积越高关联越高
 * 同级区分明显： $$A\cap B$$ 占同级标签 $$A$$ 和 $$B$$ 各自的30%以下
@@ -27,19 +27,21 @@
 
 ![](../../../.gitbook/assets/guang-dian-tong-xing-qu-jiao-yu-.png) ![](../../../.gitbook/assets/ju-liang-xing-qu-ding-xiang.png) 
 
-我们的做法借鉴了巨量，在兴趣培训二级下设置艺术类、技能类两个三级，若某一类人群依旧过多，可以拆分成四级\(体育与运动、声乐与乐器、美术与书法、花艺与手工、舞蹈与表演等\)，为自己留后路，做到大类不调整，调整通过增删子类别微调。
+我们的做法借鉴了巨量，在兴趣培训二级下设置艺术类、技能类两个三级，若某一类人群依旧过多，可以拆分成四级\(体育与运动、声乐与乐器、美术与书法、花艺与手工、舞蹈与表演等\)，为自己留后路，做到**大类不调整，调整通过增删子类别微调**。
 
-再有就是要契合广告，像上图两家的中小学教育\(K12\)都按教育年级划分小学、初中、高中，符合人们认知。但实际各广告主投的广告划分多为3-12岁，小学至初二，初三至高二。当然按年级划分比较符合自然认知，但按小学至初二，初三至高二划分，可以方便我们基于广告计划做指标监控和人群优化。
+再有就是要**契合广告**，像上图两家的中小学教育\(K12\)都按教育年级划分小学、初中、高中，符合人们认知。但实际各广告主投的广告划分多为3-12岁，小学至初二，初三至高二。当然按年级划分比较符合自然认知，但按小学至初二，初三至高二划分，可以方便我们基于广告计划做指标监控和人群优化。
 
 ![](../../../.gitbook/assets/xiao-xue-zhi-chu-er-1.png) ![](../../../.gitbook/assets/xiao-xue-zhi-chu-er-2.png) 
 
 ![](../../../.gitbook/assets/chu-san-zhi-gao-er-1.png) ![](../../../.gitbook/assets/chu-san-zhi-gao-er-2.png) 
 
-再让我们回到游戏标签，对于商业标签来说最最重要的一个原则：听金主的。下图是百科的分类，可以代表一般人认知了。巨量在此基础上加了消除、卡牌、解谜、跑酷、棋类，可能是这几个类有大的广告主来，故而又开发出这几类。所以用于广告的兴趣标签画像体系，合理只是基础原则，根本还是给广告主服务。
+再让我们回到游戏标签，对于商业标签来说最最重要的一个原则：**听金主的**。下图是百科的分类，可以代表一般人认知了。巨量在此基础上加了消除、卡牌、解谜、跑酷、棋类，可能是这几个类有大的广告主来，故而又开发出这几类。所以用于广告的兴趣标签画像体系，合理只是基础原则，根本还是给广告主服务。
 
-![](../../../.gitbook/assets/you-xi-fen-lei-.png)
+![](../../../.gitbook/assets/you-xi-fen-lei-mu-lu-.png)
 
-当然再合理的体系设置，每个人理解总会有偏差，比如基础教育，有人理解为学前教育，有人理解为中小学教育，有人理解为面向全年龄的各种科普...所以展示标签的关键词是十分必要的。在这方面走在前面的是巨量，将对应标签的广告的分词作为关键词，但可能还未进行优化，现在不同标签关键词重合有些多，但是一个很好的功能。我们是通过人工筛选部分词汇，作为标签关键词用来给标签释义\(这部分词也作为文本匹配等的词库，虽然繁杂但一举多得，标注一小时，节省调参一整天，有多人工就有多智能\)。
+当然再合理的体系设置，每个人理解总会有偏差，所以展示标签的关键词是十分必要的。在这方面走在前面的是巨量，将对应标签的广告的分词作为关键词，但可能还未进行优化，现在不同标签关键词重合有些多，但是一个很好的功能。我们是通过人工筛选部分词汇，作为标签关键词用来给标签释义\(这部分词也作为文本匹配等的词库，虽然繁杂但一举多得，标注一小时，节省调参一整天，有多人工就有多智能\)。
+
+![&#x6807;&#x7B7E;&#x76F8;&#x5173;&#x8BCD;&#x91CA;&#x4E49;](../../../.gitbook/assets/yi-zhi-lei-guan-jian-ci-.png)
 
 ## 人群挖掘
 
@@ -50,48 +52,130 @@
 * 规则挖掘出人数过多的标签类别：进行排序取部分人群，保广告投放效果
 * 规则挖掘出人群过少的标签类别：进行扩量增加人数，以供广告进行跑量
 
-基于上述目标，有几种思路可选：
+基于上述目标，有两种思路可选：
 
-* 当成一个多标签来做，构建一个多标签任务模型针对全部标签类别
-* 当成多个二分类来做，每个标签训练一个二分类模型
-* 当成相似用户挖掘来做，使用Lookalike进行相似用户排名
-* 其他方法：图谱社区拓展等
+* 这是一个标准多标签问题，采用多标签方法
+* 当成相似用户挖掘来做，使用Lookalike进行相似用户计算
 
 #### 多标签
 
-#### 二分类
+_机器学习：_lightGBM例子
+
+```python
+##################################################################
+# multiple
+##################################################################
+from sklearn.multiclass import OneVsRestClassifier
+from lightgbm import LGBMClassifier
+import numpy as np
+
+train_data = np.random.rand(500, 100)  # 500 entities, each contains 100 features
+train_label = np.random.randint(2, size=(500,20))  # 20 targets
+val_data = np.random.rand(100, 100)
+
+clf_multilabel = OneVsRestClassifier(LGBMClassifier())
+clf_multilabel.fit(train_data,train_label)
+val_pred = clf_multilabel.predict(val_data)
+
+##################################################################
+# single
+##################################################################
+from sklearn.datasets import make_classification
+from lightgbm import LGBMClassifier
+
+X, y = make_classification(n_samples=1000, n_features=10, n_informative=5, n_redundant=5, random_state=1)
+model = LGBMClassifier()
+model.fit(X, y)
+
+row = [[2.56999479, -0.13019997, 3.16075093, -4.35936352, -1.61271951, -1.39352057, -2.48924933, -1.93094078, 3.26130366, 2.05692145]]
+yhat = model.predict(row)
+```
+
+_深度学习：_用了任务的思想，尝试了两种结构level1-3指的兴趣标签1-3级类别，1级:教育、游戏...；2级：教育-K12教育、教育-职业教育...；3级：教育-职业教育-财经考试、教育-职业教育-司法考试...
+
+   ![](../../../.gitbook/assets/model1.png)   __ ![](../../../.gitbook/assets/model2.png) 
+
+```python
+import tensorflow.python.util.deprecation as deprecation
+deprecation._PRINT_DEPRECATION_WARNINGS = False
+import numpy as np
+from keras.utils import plot_model
+from keras.models import Model, Sequential
+from keras.layers import Dense, Input, Dropout, Concatenate, Embedding
+
+label1_dim=5
+label2_dim=30
+label3_dim=100
+feature_dim=1000
+sample_num=10000
+
+inputs = Input(shape=(feature_dim,), name="inputs")
+hidden1 = Dense(units=1000, activation='relu', name="hidden1")(inputs)
+hidden2 = Dense(units=500, activation='relu', name="hidden2")(hidden1)
+hidden3 = Dense(units=100, activation='relu', name="hidden3")(hidden2)
+
+level1=Dense(label1_dim, activation='sigmoid',name = "level1")(hidden1)
+level2=Dense(label2_dim, activation='sigmoid',name = "level2")(hidden2)
+level3=Dense(label3_dim, activation='sigmoid',name = "level3")(hidden3)
+#level1=Dense(label1_dim, activation='sigmoid',name = "level1")(hidden3)
+#level2=Dense(label2_dim, activation='sigmoid',name = "level2")(hidden3)
+#level3=Dense(label3_dim, activation='sigmoid',name = "level3")(hidden3)
+
+model= Model(inputs=[inputs], outputs=[level1,level2,level3], name='multiLabelTaskModel')
+#model.summary()
+model.compile(optimizer='adam',
+              loss={'level1': 'binary_crossentropy', 'level2': 'binary_crossentropy', 'level3': 'binary_crossentropy'},
+              loss_weights={'level1':3, 'level2': 2, 'level3':1},
+              metrics=["accuracy"])
+#plot_model(model, to_file="model.png")
+
+train_data = np.random.rand(sample_num, feature_dim)
+train_level1 = np.random.randint(2, size=(sample_num,label1_dim))
+train_level2 = np.random.randint(2, size=(sample_num,label2_dim))
+train_level3 = np.random.randint(2, size=(sample_num,label3_dim))
+
+multiLabelTaskModel = model.fit(train_data, [train_level1,train_level2,train_level3], batch_size=64, epochs=5)
+```
 
 #### Lookalike
 
-问题转化成相似用户计算问题，即计算出最具代表性用户的用户表示，其他用户根据差异大小或距离远近进行排序，再倒排取一定量级用户。
+Lookalike我就不放示例代码了，微信看一看团队的RALM就挺优秀，大家可以进行参考
 
+{% embed url="https://mp.weixin.qq.com/s/b6XHZq6C0ZWOcDrysjMoog" %}
 
+### 特征工程
 
-### 特征处理
+论文层出不穷，新的深度学习模型，知识图谱应用...无非是在探寻如何将一些我们认为是强相关的特征加入进去或者模型自己能学到哪些是强相关的特征，学习到更好的特征到类别的映射函数，比如加attention是为了像弹钢琴一样有轻有重抓重点；用RNN为了引入时序特征；将图片、文字、音频映射成向量为了引入多模态信息...个人理解，不管模型多么fancy，其实都是为特征服务的，特征工程做得好，不是很复杂的模型也可以做出很好的效果。
 
-采用的特征可分为四大类：
+![Embedding&amp;MLP structure](../../../.gitbook/assets/embedding-and-mlp.png)
+
+由于也是采用的类Embedding&MLP框架，所以先将特征Embedding生成向量，再输入进模型，模型可以是经典机器学习模型，也可能是深度学习模型。所以我们先想办法把特征搞成向量。
+
+> 我们先设想一个比较完美的特征 Embedding 分配方案，如果它存在，应该是这个样子的：对于高频出现的特征，能够分配给它较长的 Embedding 大小，使其能更充分地编码和表达信息。而对于低频的特征，则希望分配较短的 Embedding，因为对于低频特征，它在训练数据中出现次数少，如果分配了较长的 Embedding，更容易出现过拟合现象，影响模型泛化性能。而对于那些极低频的特征，基本学不了什么知识，反而会带来各种噪音，那么我们可以不分配或者让它们共享一个公有 Embedding 即可。 ---- 张俊林
+
+我们采用的特征可大致分为四大类：
 
 * 用户基础画像：性别、年龄、地域、手机型号、登陆频次、在线时长...
 * 用户社交行为：关注、转发、评论、点赞、收藏...
 * 广告反馈信息：各类别广告不同场景\(广告位置...\)下此用户反馈\(关转评赞点击转化...\)
-* 自然热门数据：用户对频道标签排序、不同频道下时长/行为、原创度、图文...
+* 自然热门数据：用户对不同类别UGC反馈、不同频道下时长/行为、原创度、图文...
 
-![Embedding&amp;MLP structure](../../../.gitbook/assets/embedding-and-mlp.png)
-
-由于也是采用的Embedding&MLP框架，所以先将特征Embedding生成向量。这里其他三类特征都比较好处理，重点说一下用户社交行为。用户社交行为是广告/推荐系统中极有价值的特征，尤其在微博这样的偏社交的平台下。难点也显而易见，用户社交行为数量巨大，如何既兼顾效率又能产出好的效果。常规的套路分为两种：
+这里其他三类特征都比较好处理，重点说一下用户社交行为。用户社交行为是广告/推荐系统中极有价值的特征，尤其在微博这样的偏社交的平台下。难点也显而易见，用户社交行为数量巨大。如何既兼顾效率又能产出好的效果，常规的套路分为两种：
 
 * 将社交行为进行one-hot，直接使用sparse向量，或采用PCA等降维方法产出dense的向量
 * 利用序列或图谱等信息进行Embedding，直接生成dense的向量
 
-之前的方法采用了第一种，比如粉丝量大于10万的账号有100万个，则建立一个100万维的one hot向量，当前用户关注了哪些粉丝大于10万的账号，其对应维度值为1，否则为0，同理转评赞也这样构建，再进行多类型行为向量的拼接进行使用。或着采用PCA进行降维后再拼接，或拼接后降维进行使用。方案可行，但由于向量过于稀疏，且丢失了大量信息，比如时序信息\(先关注后关注等\)还有只是考虑了部分账号\(如果全网20亿账号，应当建立20亿维度\)，效果比较一般。本次重构是想进行提升，所以直接舍弃第一种，采用了第二种利用序列或图谱等信息直接进行Embedding生成dense的向量。
+第一种one-hot简单粗暴，比如粉丝量大于10万的账号有100万个，则建立一个100万维的向量，当前用户关注了哪些账号，其对应维度值为1，否则为0，同理转评赞也这样构建，再进行多类型行为向量的拼接进行使用。或着采用PCA进行降维后再拼接，或拼接后降维进行使用。但由于向量过于稀疏，且丢失了大量信息，比如时序信息\(去年关注vs昨天关注等\)还有只是考虑了部分账号\(如果全网20亿账号，应当建立20亿维度\)，效果比较一般。本次重构采用了第二种利用序列或图谱等信息直接进行Embedding生成dense的向量。
 
 现在有很多比较fancy的文章，但实际上能参考的不多，工业界数据过于巨大，十亿级的用户，千亿级的关注关系，转评赞行为更甚且增量巨大。所以我们结合工业界的几篇论文，根据自身特点进行了用户社交行为的Embedding。
 
-让我们来分析一下现状。首先，不论什么方法，不太可能也没有必要使用用户全部历史社交行为数据，一个是计算成本过高，其次是不论男女都善变，兴趣会随着时间变化。--- EGES, Alibaba。其次，我们有关转评赞\(还有收藏等等\)，至少四种维度的关系，是异构的。
+让我们来分析一下现状：
+
+> _不太可能也没有必要使用用户全部历史社交行为数据，一个是计算成本过高，其次是不论男女都善变，兴趣会随着时间变化。 --- EGES, Alibaba_
+
+再有我们有关注、转发、评论、点赞\(还有收藏等等\)，至少四种维度的关系，是异构的。
 
 
-
-我们先设想一个比较完美的特征 Embedding 分配方案，如果它存在，应该是这个样子的：对于高频出现的特征，能够分配给它较长的 Embedding 大小，使其能更充分地编码和表达信息。而对于低频的特征，则希望分配较短的 Embedding，因为对于低频特征，它在训练数据中出现次数少，如果分配了较长的 Embedding，更容易出现过拟合现象，影响模型泛化性能。而对于那些极低频的特征，基本学不了什么知识，反而会带来各种噪音，那么我们可以不分配或者让它们共享一个公有 Embedding 即可。
 
 ## 相关任务
 
@@ -104,10 +188,6 @@
 #### 试探策略
 
 #### 反馈调节
-
-### 指标监控
-
-如何评价人群定向\(兴趣/行业\)做的好坏，也是一个值得探索的问题，有很多trick的点。
 
 
 
