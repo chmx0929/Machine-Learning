@@ -160,7 +160,7 @@ Lookalike我就不放示例代码了，微信看一看团队的RALM就挺优秀�
 
 第一种one-hot简单粗暴，比如粉丝量大于10万的账号有100万个，则建立一个100万维的向量，当前用户关注了哪些账号，其对应维度值为1，否则为0，同理转评赞也这样构建，再进行多类型行为向量的拼接进行使用。或着采用PCA进行降维后再拼接，或拼接后降维进行使用。但由于向量过于稀疏，且丢失了大量信息，比如时序信息\(去年关注vs昨天关注等\)还有只是考虑了部分账号\(如果全网20亿账号，应当建立20亿维度\)。
 
-Graph Embedding现在有很多很好的方法，比如[EGES](https://arxiv.org/pdf/1803.02349.pdf)，[GraphSA](http://snap.stanford.edu/graphsage/)，[GCN](https://arxiv.org/pdf/1609.02907.pdf)等，非常有参考价值。
+Graph Embedding现在有很多很好的方法，比如[EGES](https://arxiv.org/pdf/1803.02349.pdf)，[GraphSA](http://snap.stanford.edu/graphsage/)，[GCN](https://arxiv.org/pdf/1609.02907.pdf)等，非常有参考价值。有兴趣的同学可以看一下我之前进行详细解读总结的[博客](https://chmx0929.gitbook.io/machine-learning/wang-luo-tu-mo-xing/wang-luo-tu-mo-xing)。
 
 ## 相关任务
 
