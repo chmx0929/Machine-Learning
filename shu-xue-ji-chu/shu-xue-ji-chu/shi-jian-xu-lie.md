@@ -197,29 +197,17 @@
 
 当f（t）为偶函数（或奇函数）时，其正弦（或余弦）分量将消亡，而可以称这时的变换为余弦变换（cosine transform）或正弦变换（sine transform）。另一个值得注意的性质是，当f（t）为纯实函数时，F\(−ω\) = F\*\(ω\)成立。
 
-### 离散时域傅里叶变换\(DTFT\)
+### [离散傅里叶变换\(DFT\)](https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)
 
-离散时间傅里叶变换（discrete-time Fourier transform, DTFT）针对的是定义域为Z的数列。设 ![](https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D61/sign=1cfbf54ea50f4bfb88d09d55014f588a/eaf81a4c510fd9f949d3cfb8242dd42a2934a41f.jpg) 为某一数列，则其DTFT被定义为
+离散傅里叶变换（Discrete Fourier Transform，缩写为DFT），是傅里叶变换在时域和频域上都呈离散的形式，将信号的时域采样变换为其DTFT的频域采样。
 
-![](https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D144/sign=be513f8deb50352ab561210c6742fb1a/e4dde71190ef76c6234dcb119f16fdfaaf516768.jpg)
+ 在形式上，变换两端（时域和频域上）的序列是有限长的，而实际上这两组序列都应当被认为是离散周期信号的主值序列。即使对有限长的离散信号作DFT，也应当将其看作其周期延拓的变换。在实际应用中通常采用快速傅里叶变换计算DFT。
 
-相应的逆变换为
+### [离散时域傅里叶变换\(DTFT\)](https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)
 
-![](https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D188/sign=f704a03ea8ec8a13101a53e8cf029157/d62a6059252dd42a881c857a023b5bb5c8eab8ce.jpg)
+在数学中，离散时间傅里叶变换（DTFT，Discrete-time Fourier Transform）是傅里叶分析的一种形式，适用于连续函数的均匀间隔采样。离散时间是指对采样间隔通常以时间为单位的离散数据（样本）的变换。仅根据这些样本，它就可以产生原始连续函数的连续傅里叶变换的周期求和的以频率为变量的函数。在采样定理所描述的一定理论条件下，可以由DTFT完全恢复出原来的连续函数，因此也能从原来的离散样本恢复。DTFT本身是频率的连续函数，但可以通过离散傅里叶变换（DFT）很容易计算得到它的离散样本（参见对DTFT采样），而DFT是迄今为止现代傅里叶分析最常用的方法。
 
-DTFT在时域上离散，在[频域](https://baike.baidu.com/item/%E9%A2%91%E5%9F%9F)上则是周期的，它一般用来对离散时间信号进行频谱分析。DTFT可以被看作是傅里叶级数的逆。
-
-### 离散傅里叶变换\(DFT\)
-
-为了在科学计算和[数字信号处理](https://baike.baidu.com/item/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86)等领域使用计算机进行傅里叶变换，必须将函数定义在离散点上而非连续域内，且须满足有限性或周期性条件。这种情况下，序列 ![](https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D53/sign=b7c01567c8177f3e1434fc0e71cf6e99/267f9e2f0708283879385bc5b999a9014c08f12e.jpg) 的离散傅里叶变换（discrete Fourier transform, DFT）为
-
-![](https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D159/sign=6f4ee5cd10dfa9ecf92e52125bd1f754/500fd9f9d72a6059b8b066cb2934349b023bbabb.jpg)
-
-其逆变换为
-
-![](https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D172/sign=eb1023c296dda144de0968b580b5d009/2cf5e0fe9925bc31bba786495fdf8db1ca13706d.jpg)
-
-直接使用DFT的定义计算的计算复杂度为 ![](https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D45/sign=b10f563ce61190ef05fb93dacf1b204d/9f510fb30f2442a7ed097b74d043ad4bd01302df.jpg) ，而快速傅里叶变换（fast Fourier transform, FFT）可以将复杂度改进为 ![](https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D67/sign=d8c3d6d90dd79123e4e09773ac34c05a/d000baa1cd11728b55530af3c9fcc3cec2fd2ce0.jpg) 。计算复杂度的降低以及数字电路计算能力的发展使得DFT成为在信号处理领域十分实用且重要的方法。
+这两种变换都是可逆的。离散时间傅里叶逆变换得到的是原始采样数据序列。离散傅里叶逆变换是原始序列的周期求和。快速傅里叶变换（FFT）是用于计算DFT的一个周期的算法，而它的逆变换会产生一个周期的离散傅里叶逆变换。
 
 ## **指数形式的傅里叶变换**
 
