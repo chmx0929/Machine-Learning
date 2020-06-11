@@ -33,9 +33,9 @@
 
 不过一般说CRF为序列建模，就专指CRF线性链（linear chain CRF）：![](https://pic3.zhimg.com/v2-c5e2e782e35f6412ed65e58cdda0964e_b.jpg)
 
-![](https://pic3.zhimg.com/80/v2-c5e2e782e35f6412ed65e58cdda0964e_hd.jpg)
+![](../../../.gitbook/assets/linear-chain-crf.jpg)
 
-在2.1.2中有提到过，概率无向图的联合概率分布可以在因子分解下表示为：
+概率无向图的联合概率分布可以在因子分解下表示为：
 
 ![](https://www.zhihu.com/equation?tex=P%28Y+%7C+X%29%3D%5Cfrac%7B1%7D%7BZ%28x%29%7D+%5Cprod_%7Bc%7D%5Cpsi_%7Bc%7D%28Y_%7Bc%7D%7CX+%29+%3D+%5Cfrac%7B1%7D%7BZ%28x%29%7D+%5Cprod_%7Bc%7D+e%5E%7B%5Csum_%7Bk%7D%5Clambda_%7Bk%7Df_%7Bk%7D%28c%2Cy%7Cc%2Cx%29%7D+%3D+%5Cfrac%7B1%7D%7BZ%28x%29%7D+e%5E%7B%5Csum_%7Bc%7D%5Csum_%7Bk%7D%5Clambda_%7Bk%7Df_%7Bk%7D%28y_%7Bi%7D%2Cy_%7Bi-1%7D%2Cx%2Ci%29%7D)
 
@@ -45,7 +45,7 @@
 
 ![](https://www.zhihu.com/equation?tex=P%28I+%7C+O%29%3D%5Cfrac%7B1%7D%7BZ%28O%29%7D+%5Cprod_%7Bi%7D%5Cpsi_%7Bi%7D%28I_%7Bi%7D%7CO+%29+%3D+%5Cfrac%7B1%7D%7BZ%28O%29%7D+%5Cprod_%7Bi%7D+e%5E%7B%5Csum_%7Bk%7D%5Clambda_%7Bk%7Df_%7Bk%7D%28O%2CI_%7Bi-1%7D%2CI_%7Bi%7D%2Ci%29%7D+%3D+%5Cfrac%7B1%7D%7BZ%28O%29%7D+e%5E%7B%5Csum_%7Bi%7D%5Csum_%7Bk%7D%5Clambda_%7Bk%7Df_%7Bk%7D%28O%2CI_%7Bi-1%7D%2CI_%7Bi%7D%2Ci%29%7D)
 
-我要敲黑板了，这个公式是非常非常关键的，注意递推过程啊，我是怎么从 ![&#x220F;](https://www.zhihu.com/equation?tex=%E2%88%8F) 跳到 ![e^{\sum}](https://www.zhihu.com/equation?tex=e%5E%7B%5Csum%7D) 的。
+我要敲黑板了，这个公式是非常非常关键的，注意递推过程啊，我是怎么从 ![&#x220F;](https://www.zhihu.com/equation?tex=%E2%88%8F) 跳到 ![e^{\sum}](https://www.zhihu.com/equation?tex=e%5E%7B%5Csum%7D) 的
 
 不过还是要多啰嗦一句，想要理解CRF，必须判别式模型的概念要深入你心。正因为是判别模型，所以不废话，我上来就直接为了确定边界而去建模，因为我创造出来就是为了这个分边界的目的的。比如说序列求概率（分类）问题，我直接考虑找出函数分类边界。所以才为什么会有这个公式。所以再看到这个公式也别懵逼了，he was born for discriminating the given data from different classes. 就这样。不过待会还会具体介绍特征函数部分的东西。除了建模总公式，关键的CRF重点概念在MEMM中已强调过：**判别式模型**、**特征函数**。
 
@@ -55,10 +55,10 @@
 
 ![](https://www.zhihu.com/equation?tex=P%28I+%7C+O%29%3D%5Cfrac%7B1%7D%7BZ%28O%29%7D+e%5E%7B%5Csum_%7Bi%7D%5E%7BT%7D%5Csum_%7Bk%7D%5E%7BM%7D%5Clambda_%7Bk%7Df_%7Bk%7D%28O%2CI_%7Bi-1%7D%2CI_%7Bi%7D%2Ci%29%7D)
 
-下标i表示我当前所在的节点（token）位置。
-
-下标k表示我这是第几个特征函数，并且每个特征函数都附属一个权重 ![\lambda\_{k}](https://www.zhihu.com/equation?tex=%5Clambda_%7Bk%7D) ，也就是这么回事，每个团里面，我将为 ![token\_{i}](https://www.zhihu.com/equation?tex=token_%7Bi%7D) 构造M个特征，每个特征执行一定的限定作用，然后建模时我再为每个特征函数加权求和。  
-![Z\(O\)](https://www.zhihu.com/equation?tex=Z%28O%29) 是用来归一化的，为什么？想想LR以及softmax为何有归一化呢，一样的嘛，形成概率值。再来个重要的理解。 ![P\(I\|O\)](https://www.zhihu.com/equation?tex=P%28I%7CO%29) 这个表示什么？具体地，表示了在给定的一条观测序列 ![O=\(o\_{1},\cdots, o\_{i}\)](https://www.zhihu.com/equation?tex=O%3D%28o_%7B1%7D%2C%5Ccdots%2C+o_%7Bi%7D%29) 条件下，我用CRF所求出来的隐状态序列 ![I=\(i\_{1},\cdots, i\_{i}\)](https://www.zhihu.com/equation?tex=I%3D%28i_%7B1%7D%2C%5Ccdots%2C+i_%7Bi%7D%29) 的概率，注意，这里的I是一条序列，有多个元素（一组随机变量），而至于观测序列 ![O=\(o\_{1},\cdots, o\_{i}\)](https://www.zhihu.com/equation?tex=O%3D%28o_%7B1%7D%2C%5Ccdots%2C+o_%7Bi%7D%29) ，它可以是一整个训练语料的所有的观测序列；也可以是在inference阶段的一句sample，比如说对于序列标注问题，我对一条sample进行预测，可能能得到 ![P\_{j}\(I \| O\)&#xFF08;j=1,&#x2026;,J&#xFF09;](https://www.zhihu.com/equation?tex=P_%7Bj%7D%28I+%7C+O%29%EF%BC%88j%3D1%2C%E2%80%A6%2CJ%EF%BC%89)J条隐状态I，但我肯定最终选的是最优概率的那条（by viterbi）。这一点希望你能理解。
+* 下标i表示我当前所在的节点（token）位置。
+* 下标k表示我这是第几个特征函数，并且每个特征函数都附属一个权重 ![\lambda\_{k}](https://www.zhihu.com/equation?tex=%5Clambda_%7Bk%7D) ，也就是这么回事，每个团里面，我将为 ![token\_{i}](https://www.zhihu.com/equation?tex=token_%7Bi%7D) 构造M个特征，每个特征执行一定的限定作用，然后建模时我再为每个特征函数加权求和。
+* ![Z\(O\)](https://www.zhihu.com/equation?tex=Z%28O%29) 是用来归一化的，为什么？想想LR以及softmax为何有归一化呢，一样的嘛，形成概率值。
+* 再来个重要的理解。 ![P\(I\|O\)](https://www.zhihu.com/equation?tex=P%28I%7CO%29) 这个表示什么？具体地，表示了在给定的一条观测序列 ![O=\(o\_{1},\cdots, o\_{i}\)](https://www.zhihu.com/equation?tex=O%3D%28o_%7B1%7D%2C%5Ccdots%2C+o_%7Bi%7D%29) 条件下，我用CRF所求出来的隐状态序列 ![I=\(i\_{1},\cdots, i\_{i}\)](https://www.zhihu.com/equation?tex=I%3D%28i_%7B1%7D%2C%5Ccdots%2C+i_%7Bi%7D%29) 的概率，注意，这里的I是一条序列，有多个元素（一组随机变量），而至于观测序列 ![O=\(o\_{1},\cdots, o\_{i}\)](https://www.zhihu.com/equation?tex=O%3D%28o_%7B1%7D%2C%5Ccdots%2C+o_%7Bi%7D%29) ，它可以是一整个训练语料的所有的观测序列；也可以是在inference阶段的一句sample，比如说对于序列标注问题，我对一条sample进行预测，可能能得到 ![P\_{j}\(I \| O\)&#xFF08;j=1,&#x2026;,J&#xFF09;](https://www.zhihu.com/equation?tex=P_%7Bj%7D%28I+%7C+O%29%EF%BC%88j%3D1%2C%E2%80%A6%2CJ%EF%BC%89)J条隐状态I，但我肯定最终选的是最优概率的那条（by viterbi）。这一点希望你能理解。
 
 对于CRF，可以为他定义两款特征函数：转移特征&状态特征。 我们将建模总公式展开：
 
@@ -95,21 +95,15 @@ sl为i处的状态特征，对应权重μl,每个tokeni都有L个特征。举个
 
 模型的工作流程，跟MEMM是一样的：
 
-* step1. 先预定义特征函数 ![ f\_{a}\(o,i\)](https://www.zhihu.com/equation?tex=+f_%7Ba%7D%28o%2Ci%29) ，
+* step1. 先预定义特征函数 ![ f\_{a}\(o,i\)](https://www.zhihu.com/equation?tex=+f_%7Ba%7D%28o%2Ci%29) 
 * step2. 在给定的数据上，训练模型，确定参数 ![\lambda\_{k}](https://www.zhihu.com/equation?tex=%5Clambda_%7Bk%7D)
-* step3. 用确定的模型做`序列标注问题`或者`序列求概率问题`。
-
-可能还是没做到100%懂，结合例子说明：
-
-> ……
+* step3. 用确定的模型做`序列标注问题`或者`序列求概率问题`
 
 ### **1. 学习训练过程**
 
 一套CRF由一套参数λ唯一确定（先定义好各种特征函数）。
 
 同样，CRF用极大似然估计方法、梯度下降、牛顿迭代、拟牛顿下降、IIS、BFGS、L-BFGS等等。各位应该对各种优化方法有所了解的。其实能用在log-linear models上的求参方法都可以用过来。
-
-嗯，具体详细求解过程貌似问题不大。
 
 ### **2. 序列标注过程**
 
