@@ -1,5 +1,25 @@
 # 网络映射
 
+## 网络映射方法与类别
+
+下面两张图取自[GATNE](https://github.com/THUDM/GATNE)论文，针对不同网络图类型列举出不同的网络映射方法。
+
+![GATNE&#x5217;&#x4E3E;&#x5404;&#x79CD;&#x7F51;&#x7EDC;&#x56FE;&#x7C7B;&#x578B;](../../../.gitbook/assets/graphs.png)
+
+1、HON即Node和Edge都是单一类型，比如Node都是账号，Edge都是关注关系
+
+2、AHON即Node和Edge都是单一类型并有Attribute，比如Node都是账号，Edge都是关注关系，且有账号性别年龄地域或加关注关系时间等属性
+
+3、HEN即Node多类型，Edge单类型，比如Node为账号或商品，Edge为购买关系
+
+4、AHEN即Node多类型，Edge单类型，并有Attribute，比如Node为账号或商品，Edge为购买关系，且有账号性别年龄地域或购买时间金额等属性
+
+5、MHEN即Node单类型或多类型，Edge多类型，比如Node为账号，Edge为关注、转发、点赞、评论；Node为账号或文章，Edge为关注、发表、转发、点赞
+
+6、AMHEN即Node多类型，Edge多类型，并有Attribute，Node为账号或文章，Edge为关注、发表、转发、点赞，且有账号性别年龄地域或文章发布时间内容领域等属性
+
+![GATNE&#x5217;&#x4E3E;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7F51;&#x7EDC;&#x56FE;&#x7684;&#x6620;&#x5C04;&#x65B9;&#x6CD5;](../../../.gitbook/assets/methods.png)
+
 ## 网络映射的目标
 
 ### 1. 网络重构性
