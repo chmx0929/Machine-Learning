@@ -289,7 +289,7 @@
     * [深度学习](jing-yan-zong-jie/jing-yan-zong-jie/shi-xu-yu-ce/shen-du-xue-xi.md)
   * [图谱探索](jing-yan-zong-jie/jing-yan-zong-jie/tu-pu-tan-suo/README.md)
     * [标签传播](jing-yan-zong-jie/jing-yan-zong-jie/tu-pu-tan-suo/biao-qian-chuan-bo.md)
-    * [真·图神经网络](jing-yan-zong-jie/jing-yan-zong-jie/tu-pu-tan-suo/zhen-tu-shen-jing-wang-luo.md)
+    * [图谱&网络](jing-yan-zong-jie/jing-yan-zong-jie/tu-pu-tan-suo/tu-pu-and-wang-luo.md)
   * [策略评估](jing-yan-zong-jie/jing-yan-zong-jie/ce-lve-ping-gu/README.md)
     * [激励策略](jing-yan-zong-jie/jing-yan-zong-jie/ce-lve-ping-gu/ji-li-ce-lve.md)
     * [均衡策略](jing-yan-zong-jie/jing-yan-zong-jie/ce-lve-ping-gu/jun-heng-ce-lve.md)
